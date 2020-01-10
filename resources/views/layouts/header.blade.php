@@ -17,7 +17,7 @@
         <div class="menu">
             <div class="container">
                 <div class="menu_div">
-                    <a href="index.html" class="genk_logo"><img src="assets/images/genk-logo.png"></a>
+                    <a href="index.php" class="genk_logo"><img src="assets/images/genk-logo.png"></a>
                     <ul class="menu_list">
                         <li><a href="#">Mobile</a></li>
                         <li><a href="#">Tin ICT</a></li>
