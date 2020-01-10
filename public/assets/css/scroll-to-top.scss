@@ -1,0 +1,46 @@
+#scroller {
+	#back-top {
+	    position: fixed;
+	    top:50%;
+	    right: 10px;
+	    a {
+		    width: 46px;
+		    display: block;
+		    text-align: center;
+		    font: 11px/100% Arial, Helvetica, sans-serif;
+		    text-transform: uppercase;
+		    text-decoration: none;
+		    color: #bbb;
+		 
+		    /* transition */
+		    -webkit-transition: 1s;
+		    -moz-transition: 1s;
+		    transition: 1s;
+		    span {
+			    width: 46px;
+			    height: 46px;
+			    display: block;
+			    margin-bottom: 7px;
+			    background: #ddd url(../images/toTop.png) no-repeat center center;
+
+			 
+			    /* rounded corners */
+			    -webkit-border-radius: 15px;
+			    -moz-border-radius: 15px;
+			    border-radius: 15px;
+			 
+			    /* transition */
+			    -webkit-transition: 1s;
+			    -moz-transition: 1s;
+			    transition: 1s;
+			}
+	    }
+	  	a:hover {
+		    color: #000;
+		    span {
+			    background-color: #777;
+			}
+		}
+
+	}
+}

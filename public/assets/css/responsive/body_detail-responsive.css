@@ -1,0 +1,43 @@
+@media (max-width: 767px) {
+  #body .body_content {
+    width: 100% !important; }
+  #body .detail_content .detail_left {
+    width: 100% !important; }
+    #body .detail_content .detail_left .detail_placeholder .detail_maincontent .content_menu_nav {
+      display: none; }
+    #body .detail_content .detail_left .detail_placeholder .detail_maincontent .content_w640 {
+      width: 100% !important; }
+      #body .detail_content .detail_left .detail_placeholder .detail_maincontent .content_w640 img {
+        width: 100% !important; }
+      #body .detail_content .detail_left .detail_placeholder .detail_maincontent .content_w640 div {
+        width: 100% !important; }
+    #body .detail_content .detail_left .detail_placeholder .detailtag_and_video .dav_social .dav_social_3 {
+      width: auto; }
+      #body .detail_content .detail_left .detail_placeholder .detailtag_and_video .dav_social .dav_social_3 #sponsorzone_button_vp_button_zone #vp_button_right {
+        margin: 0; }
+      #body .detail_content .detail_left .detail_placeholder .detailtag_and_video .dav_social .dav_social_3 #sponsorzone_button_vp_button_zone #vp_button_text_left {
+        display: none; }
+    #body .detail_content .detail_left .detail_placeholder .detailtag_and_video .dav_box_ads_details iframe {
+      width: 100% !important;
+      height: 162.028px; }
+    #body .detail_content .detail_left .detail_placeholder .detailtag_and_video .dav_box_ads_details .dav_box_ads div:last-child {
+      display: none; }
+    #body .detail_content .detail_left .detail_placeholder .detail_comment {
+      width: 100% !important; }
+    #body .detail_content .detail_left .same_category_news .same_category_news_content .same_category_news_title {
+      font-size: 26px; }
+      #body .detail_content .detail_left .same_category_news .same_category_news_content .same_category_news_title .view_news_by_date {
+        float: none; }
+    #body .detail_content .detail_left .same_category_news .same_category_news_content .same_category_news_list .rowccm li {
+      width: 100% !important;
+      margin-right: 0; }
+      #body .detail_content .detail_left .same_category_news .same_category_news_content .same_category_news_list .rowccm li .info {
+        width: 100% !important; }
+  #body .detail_content .detail_right {
+    display: none; }
+  #body .ads_middle img {
+    width: 100% !important; }
+  #body .news_content {
+    width: 100% !important; } }
+
+/*# sourceMappingURL=body_detail-responsive.css.map */

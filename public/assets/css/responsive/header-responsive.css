@@ -1,0 +1,39 @@
+@media (max-width: 767px) {
+  #header .genk_top_header .test_new_version {
+    display: none; }
+  #header .genk_bottom_header .menu {
+    height: auto; }
+    #header .genk_bottom_header .menu .menu_div .genk_logo {
+      left: 97px; }
+    #header .genk_bottom_header .menu .menu_div .menu_list {
+      margin-left: 0; }
+      #header .genk_bottom_header .menu .menu_div .menu_list li:not(.expand_icon) {
+        float: none;
+        display: none; }
+      #header .genk_bottom_header .menu .menu_div .menu_list .expand_icon {
+        margin-left: 0; }
+    #header .genk_bottom_header .menu .menu_div .linkvideo {
+      display: none; }
+    #header .genk_bottom_header .menu .menu_div .searchbox {
+      width: calc(100% - 48px);
+      height: 30px; }
+  #header .genk_bottom_header .menu_expand .menu_clear .menu_expand_list .menu_expand_item {
+    margin-left: 15px;
+    margin-bottom: 15px; }
+  #header .ads_header img {
+    width: 100% !important; } }
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+  #header .genk-top-header .xembanthunghiem {
+    display: none; }
+  #header .genk-bottom-header .menu {
+    height: auto; }
+    #header .genk-bottom-header .menu .menu-div .menu-list li:not(.expand-icon) {
+      float: none;
+      display: none; }
+  #header .genk-bottom-header .menu-expand .menu-clear .menu-expand-list .menu-expand-item {
+    margin-left: 15px;
+    margin-bottom: 15px; }
+  #header .ads-header img {
+    width: 100% !important; } }
+
+/*# sourceMappingURL=header-responsive.css.map */
