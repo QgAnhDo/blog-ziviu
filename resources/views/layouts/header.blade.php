@@ -17,7 +17,7 @@
         <div class="menu">
             <div class="container">
                 <div class="menu_div">
-                    <a href="index.html" class="genk_logo"><img src="images/genk-logo.png"></a>
+                    <a href="index.html" class="genk_logo"><img src="assets/images/genk-logo.png"></a>
                     <ul class="menu_list">
                         <li><a href="#">Mobile</a></li>
                         <li><a href="#">Tin ICT</a></li>
@@ -31,7 +31,7 @@
                         </li>
                     </ul>
                     <a href="#" class="linkvideo">Video</a>
-                    <a href="#" class="search_icon" id="btnSearch"><img src="images/icon-search.png"></a>
+                    <a href="#" class="search_icon" id="btnSearch"><img src="assets/images/icon-search.png"></a>
                     <form>
                         <input class="searchbox showsearch" type="text" name="" value="" placeholder="Nhập nội dung tìm kiếm ...">
                     </form>
@@ -54,7 +54,7 @@
                                     <a href="#">Máy tính bảng</a>
                                 </li>
                             </ul>
-                            <a href="#" class="mobile_download_btn_ios"><img src="images/mobile-download-btn-ios.png"></a>
+                            <a href="#" class="mobile_download_btn_ios"><img src="assets/images/mobile-download-btn-ios.png"></a>
                         </li>
                         <li class="menu_expand_item">
                             <ul class="submenu_expand_list">
@@ -68,7 +68,7 @@
                                     <a href="#">Media</a>
                                 </li>
                             </ul>
-                            <a href="#" class="mobile-download-btn-ios"><img src="images/mobile-download-btn-android.png"></a>
+                            <a href="#" class="mobile-download-btn-ios"><img src="assets/images/mobile-download-btn-android.png"></a>
                         </li>
                         <li class="menu_expand_item">
                             <ul class="submenu_expand_list">
@@ -133,7 +133,7 @@
     <div class="ads_header">
         <div class="container">
             <div>
-                <a href="#"><img src="images/ads_header.jpg"></a>
+                <a href="#"><img src="assets/images/ads_header.jpg"></a>
             </div>
         </div>
     </div>
