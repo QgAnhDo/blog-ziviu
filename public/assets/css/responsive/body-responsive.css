@@ -1,0 +1,162 @@
+@media (max-width: 767px) {
+  #body .news_content .main_content {
+    width: 100% !important; }
+    #body .news_content .main_content .main_content_1, #body .news_content .main_content .main_content_2, #body .news_content .main_content .main_content_3 {
+      width: 100% !important; }
+    #body .news_content .main_content .main_content_1 .main_content_1_big {
+      width: 100% !important; }
+      #body .news_content .main_content .main_content_1 .main_content_1_big div a img {
+        width: 100% !important;
+        height: auto; }
+    #body .news_content .main_content .main_content_1 .main_content_1_small {
+      width: 100% !important; }
+    #body .news_content .main_content .main_content_2 div ul li {
+      width: 100% !important;
+      margin-right: 0; }
+      #body .news_content .main_content .main_content_2 div ul li a {
+        width: 100% !important; }
+    #body .news_content .main_content .main_content_3 ul li.content_3_item {
+      width: 100% !important; }
+      #body .news_content .main_content .main_content_3 ul li.content_3_item .item_image {
+        width: 100% !important;
+        float: none;
+        margin-bottom: 10px; }
+        #body .news_content .main_content .main_content_3 ul li.content_3_item .item_image a {
+          width: 100% !important;
+          margin: 0; }
+          #body .news_content .main_content .main_content_3 ul li.content_3_item .item_image a img {
+            width: 100% !important;
+            height: auto; }
+      #body .news_content .main_content .main_content_3 ul li.content_3_item .item_info {
+        margin: 0; }
+        #body .news_content .main_content .main_content_3 ul li.content_3_item .item_info .item_sapo {
+          width: 100% !important; }
+      #body .news_content .main_content .main_content_3 ul li.content_3_item img {
+        width: 100% !important; }
+    #body .news_content .main_content .main_content_3 ul .content_extra li.content_3_trendAd .read_more_and_brands_stuff .read_more {
+      width: 100% !important;
+      float: none; }
+      #body .news_content .main_content .main_content_3 ul .content_extra li.content_3_trendAd .read_more_and_brands_stuff .read_more .item.first {
+        width: 100% !important;
+        float: none; }
+      #body .news_content .main_content .main_content_3 ul .content_extra li.content_3_trendAd .read_more_and_brands_stuff .read_more .item:not(.first) {
+        width: 100% !important;
+        margin: 0;
+        float: none; }
+    #body .news_content .main_content .main_content_3 ul .content_extra li.content_3_trendAd .read_more_and_brands_stuff .marketing_beats {
+      width: 100% !important; }
+      #body .news_content .main_content .main_content_3 ul .content_extra li.content_3_trendAd .read_more_and_brands_stuff .marketing_beats .list_marketing {
+        margin-bottom: 10px; }
+    #body .news_content .main_content .main_content_3 ul .content_extra_2 .mostview {
+      width: 100% !important; }
+      #body .news_content .main_content .main_content_3 ul .content_extra_2 .mostview ul li {
+        width: 44%; }
+        #body .news_content .main_content .main_content_3 ul .content_extra_2 .mostview ul li h3 a {
+          font-size: 14px; }
+    #body .news_content .main_content .main_content_3 ul .content_extra_2 .read_more_and_brands_stuff .brands {
+      width: 100% !important;
+      height: auto; }
+      #body .news_content .main_content .main_content_3 ul .content_extra_2 .read_more_and_brands_stuff .brands .other h3 {
+        width: auto;
+        margin: 0 19px; }
+    #body .news_content .main_content .main_content_3 ul .content_extra_3 .dontmiss ul {
+      display: block; }
+      #body .news_content .main_content .main_content_3 ul .content_extra_3 .dontmiss ul li {
+        width: 100% !important;
+        margin-left: 0;
+        float: none; }
+        #body .news_content .main_content .main_content_3 ul .content_extra_3 .dontmiss ul li .dontmiss_img {
+          width: 100% !important; }
+          #body .news_content .main_content .main_content_3 ul .content_extra_3 .dontmiss ul li .dontmiss_img a {
+            width: 100% !important; }
+            #body .news_content .main_content .main_content_3 ul .content_extra_3 .dontmiss ul li .dontmiss_img a img {
+              height: auto; }
+    #body .news_content .main_content .main_content_3 ul .content_extra_4 li .eMag-home_genk .swiper_container .swiper_wrapper {
+      padding: 0; }
+      #body .news_content .main_content .main_content_3 ul .content_extra_4 li .eMag-home_genk .swiper_container .swiper_wrapper .swiper_slide {
+        width: 100% !important;
+        padding: 0 10px; }
+  #body .news_content .ads {
+    display: none; } }
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+  #body .news_content .main_content {
+    width: 100% !important; }
+    #body .news_content .main_content .main_content_1, #body .news_content .main_content .main_content_2, #body .news_content .main_content .main_content_3 {
+      width: 100% !important; }
+    #body .news_content .main_content .main_content_1 .main_content_1_big {
+      width: 100% !important; }
+      #body .news_content .main_content .main_content_1 .main_content_1_big div a img {
+        width: 100% !important;
+        height: auto; }
+    #body .news_content .main_content .main_content_1 .main_content_1_small {
+      width: 100% !important; }
+    #body .news_content .main_content .main_content_2 div ul li {
+      width: 100% !important;
+      margin-right: 0; }
+      #body .news_content .main_content .main_content_2 div ul li a {
+        width: 100% !important; }
+    #body .news_content .main_content .main_content_3 ul li.content_3_item {
+      width: 100% !important; }
+      #body .news_content .main_content .main_content_3 ul li.content_3_item .item_image {
+        width: 100% !important;
+        float: none;
+        margin-bottom: 10px; }
+        #body .news_content .main_content .main_content_3 ul li.content_3_item .item_image a {
+          width: 100% !important;
+          margin: 0; }
+          #body .news_content .main_content .main_content_3 ul li.content_3_item .item_image a img {
+            width: 100% !important;
+            height: auto; }
+      #body .news_content .main_content .main_content_3 ul li.content_3_item .item_info {
+        margin: 0; }
+        #body .news_content .main_content .main_content_3 ul li.content_3_item .item_info .item_sapo {
+          width: 100% !important; }
+      #body .news_content .main_content .main_content_3 ul li.content_3_item img {
+        width: 100% !important; }
+    #body .news_content .main_content .main_content_3 ul .content_extra li.content_3_trendAd .read_more_and_brands_stuff .read_more {
+      width: 100% !important;
+      float: none; }
+      #body .news_content .main_content .main_content_3 ul .content_extra li.content_3_trendAd .read_more_and_brands_stuff .read_more .item.first {
+        width: 100% !important;
+        float: none; }
+      #body .news_content .main_content .main_content_3 ul .content_extra li.content_3_trendAd .read_more_and_brands_stuff .read_more .item:not(.first) {
+        width: 100% !important;
+        margin: 0;
+        float: none; }
+    #body .news_content .main_content .main_content_3 ul .content_extra li.content_3_trendAd .read_more_and_brands_stuff .marketing_beats {
+      width: 100% !important; }
+      #body .news_content .main_content .main_content_3 ul .content_extra li.content_3_trendAd .read_more_and_brands_stuff .marketing_beats .list_marketing {
+        margin-bottom: 10px; }
+    #body .news_content .main_content .main_content_3 ul .content_extra_2 .mostview {
+      width: 100% !important; }
+      #body .news_content .main_content .main_content_3 ul .content_extra_2 .mostview ul li {
+        width: 44%; }
+        #body .news_content .main_content .main_content_3 ul .content_extra_2 .mostview ul li h3 a {
+          font-size: 14px; }
+    #body .news_content .main_content .main_content_3 ul .content_extra_2 .read_more_and_brands_stuff .brands {
+      width: 100% !important;
+      height: auto; }
+      #body .news_content .main_content .main_content_3 ul .content_extra_2 .read_more_and_brands_stuff .brands .other h3 {
+        width: auto;
+        margin: 0 19px; }
+    #body .news_content .main_content .main_content_3 ul .content_extra_3 .dontmiss ul {
+      display: block; }
+      #body .news_content .main_content .main_content_3 ul .content_extra_3 .dontmiss ul li {
+        width: 100% !important;
+        margin-left: 0;
+        float: none; }
+        #body .news_content .main_content .main_content_3 ul .content_extra_3 .dontmiss ul li .dontmiss_img {
+          width: 100% !important; }
+          #body .news_content .main_content .main_content_3 ul .content_extra_3 .dontmiss ul li .dontmiss_img a {
+            width: 100% !important; }
+            #body .news_content .main_content .main_content_3 ul .content_extra_3 .dontmiss ul li .dontmiss_img a img {
+              height: auto; }
+    #body .news_content .main_content .main_content_3 ul .content_extra_4 li .eMag-home_genk .swiper_container .swiper_wrapper {
+      padding: 0; }
+      #body .news_content .main_content .main_content_3 ul .content_extra_4 li .eMag-home_genk .swiper_container .swiper_wrapper .swiper_slide {
+        width: 100% !important;
+        padding: 0 10px; }
+  #body .news_content .ads {
+    display: none; } }
+
+/*# sourceMappingURL=body-responsive.css.map */
