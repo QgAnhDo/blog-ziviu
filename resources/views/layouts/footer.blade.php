@@ -2,7 +2,7 @@
     <div class="top_footer">
         <div class="container">
             <div class="gfw_top_wrapper">
-                <a href="#"><img src="images/genk-logo.png"></a>
+                <a href="#"><img src="assets/images/genk-logo.png"></a>
             </div>
             <div class="gfw_bottom_wrapper">
                 <ul>
@@ -48,7 +48,7 @@
             </div>
             <div class="gfwbf_right">
                 <a href="#">
-                    <img src="images/vccorp-logo.png">
+                    <img src="assets/images/vccorp-logo.png">
                 </a>
                 <h4>Liên hệ quảng cáo</h4>
                 <span></span>
