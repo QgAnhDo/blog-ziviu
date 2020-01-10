@@ -1,5 +1,3 @@
-@extends('admin.layouts.master')
-@section('messages')
 <!-- Messages Dropdown Menu -->
       <li class="nav-item dropdown">
         <a class="nav-link" data-toggle="dropdown" href="#">
@@ -58,4 +56,3 @@
           <a href="#" class="dropdown-item dropdown-footer">See All Messages</a>
         </div>
       </li>
-@endsection

@@ -1,5 +1,3 @@
-@extends('admin.layouts.master')
-@section('search')
 <!-- Left navbar links -->
     <ul class="navbar-nav">
       <li class="nav-item">
@@ -24,4 +22,3 @@
         </div>
       </div>
     </form>
-@endsection
