@@ -1,7 +1,7 @@
 @extends('admin.layouts.master')
 
 @section('title')
-	Danh sách người dùng
+	Danh sách bài viết
 @endsection
 
 @section('css')
@@ -26,7 +26,7 @@
         <div class="col-12">
           <div class="card">
             <div class="card-header">
-              <h3 class="card-title">Danh sách người dùng</h3>
+              <h3 class="card-title">Danh sách bài viết</h3>
             </div>
             <!-- /.card-header -->
             <div class="card-body">
@@ -34,10 +34,11 @@
                 <thead>
                 <tr>
                   <th>ID</th>
-                  <th>Tên</th>
-                  <th>Email</th>
-                  <th>Phone</th>
+                  <th>Tiêu đề</th>
+                  <th>Nội dung</th>
+                  <th>Media</th>
                   <th>Ngày tạo</th>
+                  <th>Ngày cập nhật</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -47,15 +48,17 @@
                   <td>-</td>
                   <td>-</td>
                   <td>U</td>
+                  <td>abcdefghi</td>
                 </tr>
                 </tbody>
                 <tfoot>
                 <tr>
                   <th>ID</th>
-                  <th>Tên</th>
-                  <th>Email</th>
-                  <th>Phone</th>
+                  <th>Tiêu đề</th>
+                  <th>Nội dung</th>
+                  <th>Media</th>
                   <th>Ngày tạo</th>
+                  <th>Ngày cập nhật</th>
                 </tr>
                 </tfoot>
               </table>

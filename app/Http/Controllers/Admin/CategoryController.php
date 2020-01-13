@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-class AdminController extends Controller
+class CategoryController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -16,16 +16,8 @@ class AdminController extends Controller
     {
     }
 
-    public function index()
-    {
-        return view('admin.index');
-    }
     public function getList()
     {
-        return view('admin.users.list');
-    }
-    public function getEdit()
-    {
-        return view('admin.users.edit');
+        return view('admin.category.list');
     }
 }

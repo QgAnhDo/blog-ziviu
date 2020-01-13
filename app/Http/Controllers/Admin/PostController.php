@@ -18,6 +18,6 @@ class PostController extends Controller
 
     public function getList()
     {
-        return view('admin.posts');
+        return view('admin.posts.list');
     }
 }

@@ -15,43 +15,53 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('dangnhap', function () {
+    return view('login');
+});
+Route::post('dangnhap', 'LoginController@login');
+
+Route::get('dangky', function () {
+    return view('register');
+});
+Route::post('dangnhap', 'LoginController@getLogin');
+
 Route::prefix('admin')->group(function () {
-    Route::get('/', 'Admin\AdminController@index');
+    Route::get('/', 'Admin\AdminController@index')->name('admin');
 
-    Route::prefix('acc_admin')->group(function () {
-    	Route::get('/', 'Admin\AdminController@getList');
+    Route::prefix('acc-admin')->group(function () {
+    	Route::get('/', 'Admin\AdminController@getList')->name('admin.acc-admin');
 
-    	Route::get('add', 'Admin\AdminController@getAdd');
-    	Route::post('add', 'Admin\AdminController@postAdd');
+    	Route::get('add', 'Admin\AdminController@getAdd')->name('admin.acc-admin.add');
+    	Route::post('add', 'Admin\AdminController@postAdd')->name('admin.acc-admin.add');
 
-    	Route::get('edit', 'Admin\AdminController@getEdit');
-    	Route::post('edit', 'Admin\AdminController@postEdit');
+    	Route::get('edit', 'Admin\AdminController@getEdit')->name('admin.acc-admin.edit');
+    	Route::post('edit', 'Admin\AdminController@postEdit')->name('admin.acc-admin.edit');
 
-    	Route::get('delete', 'Admin\AdminController@getDelete');
+    	Route::get('delete', 'Admin\AdminController@getDelete')->name('admin.acc-admin.delete');
     });
 
     Route::prefix('posts')->group(function () {
-    	Route::get('/', 'Admin\PostController@getList');
+    	Route::get('/', 'Admin\PostController@getList')->name('admin.posts');
 
-    	Route::get('add', 'Admin\PostController@getAdd');
-    	Route::post('add', 'Admin\PostController@postAdd');
+    	Route::get('add', 'Admin\PostController@getAdd')->name('admin.posts.add');
+    	Route::post('add', 'Admin\PostController@postAdd')->name('admin.posts.add');
 
-    	Route::get('edit', 'Admin\PostController@getEdit');
-    	Route::post('edit', 'Admin\PostController@postEdit');
+    	Route::get('edit', 'Admin\PostController@getEdit')->name('admin.posts.edit');
+    	Route::post('edit', 'Admin\PostController@postEdit')->name('admin.posts.edit');
 
-    	Route::get('delete', 'Admin\PostController@getDelete');
+    	Route::get('delete', 'Admin\PostController@getDelete')->name('admin.posts.delete');
     });
 
     Route::prefix('users')->group(function () {
-    	Route::get('/', 'Admin\UserController@getList');
+    	Route::get('/', 'Admin\UserController@getList')->name('admin.users');
 
-    	Route::get('add', 'Admin\UserController@getAdd');
-    	Route::post('add', 'Admin\UserController@postAdd');
+    	Route::get('add', 'Admin\UserController@getAdd')->name('admin.users.add');
+    	Route::post('add', 'Admin\UserController@postAdd')->name('admin.users.add');
 
-    	Route::get('edit', 'Admin\UserController@getEdit');
-    	Route::post('edit', 'Admin\UserController@postEdit');
+    	Route::get('edit', 'Admin\UserController@getEdit')->name('admin.users.edit');
+    	Route::post('edit', 'Admin\UserController@postEdit')->name('admin.users.edit');
 
-    	Route::get('delete', 'Admin\UserController@getDelete');
+    	Route::get('delete', 'Admin\UserController@getDelete')->name('admin.users.delete');
     });
 
     Route::prefix('categories')->group(function () {
