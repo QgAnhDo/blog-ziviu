@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\Tag;
 
 class TagController extends Controller
 {
@@ -18,6 +19,7 @@ class TagController extends Controller
 
     public function getList()
     {
-        return view('admin.tag.list');
+        $tags = Tag::all();
+        return view('admin.tags.list', ['tags' => $tags]);
     }
 }

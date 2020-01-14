@@ -76,7 +76,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{route('admin.acc-admin')}}" class="nav-link">
+                <a href="{{route('admin.posts.add')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Thêm</p>
                 </a>
@@ -94,13 +94,13 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="{{route('admin.users')}}" class="nav-link">
+                <a href="{{route('admin.category')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Danh sách</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{route('admin.acc-admin')}}" class="nav-link">
+                <a href="{{route('admin.category.add')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Thêm</p>
                 </a>
@@ -118,13 +118,13 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="{{route('admin.users')}}" class="nav-link">
+                <a href="{{route('admin.tags')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Danh sách</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{route('admin.acc-admin')}}" class="nav-link">
+                <a href="{{route('admin.tags.add')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Thêm</p>
                 </a>

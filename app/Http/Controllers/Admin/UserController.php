@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\User;
 
 class UserController extends Controller
 {
@@ -18,6 +19,7 @@ class UserController extends Controller
 
     public function getList()
     {
-        return view('admin.users.list');
+        $users = User::all();
+        return view('admin.users.list', ['users' => $users]);
     }
 }

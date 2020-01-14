@@ -65,27 +65,27 @@ Route::prefix('admin')->group(function () {
     });
 
     Route::prefix('categories')->group(function () {
-    	Route::get('/', 'Admin\CategoryController@getList');
+    	Route::get('/', 'Admin\CategoryController@getList')->name('admin.category');
 
-    	Route::get('add', 'Admin\CategoryController@getAdd');
-    	Route::post('add', 'Admin\CategoryController@postAdd');
+    	Route::get('add', 'Admin\CategoryController@getAdd')->name('admin.category.add');
+    	Route::post('add', 'Admin\CategoryController@postAdd')->name('admin.category.add');
 
-    	Route::get('edit', 'Admin\CategoryController@getEdit');
-    	Route::post('edit', 'Admin\CategoryController@postEdit');
+    	Route::get('edit', 'Admin\CategoryController@getEdit')->name('admin.category.edit');
+    	Route::post('edit', 'Admin\CategoryController@postEdit')->name('admin.category.edit');
 
-    	Route::get('delete', 'Admin\CategoryController@getDelete');
+    	Route::get('delete', 'Admin\CategoryController@getDelete')->name('admin.category.delete');
     });
 
     Route::prefix('tags')->group(function () {
-    	Route::get('/', 'Admin\TagController@getList');
+    	Route::get('/', 'Admin\TagController@getList')->name('admin.tags');
 
-    	Route::get('add', 'Admin\TagController@getAdd');
-    	Route::post('add', 'Admin\TagController@postAdd');
+    	Route::get('add', 'Admin\TagController@getAdd')->name('admin.tags.add');
+    	Route::post('add', 'Admin\TagController@postAdd')->name('admin.tags.add');
 
-    	Route::get('edit', 'Admin\TagController@getEdit');
-    	Route::post('edit', 'Admin\TagController@postEdit');
+    	Route::get('edit', 'Admin\TagController@getEdit')->name('admin.tags.edit');
+    	Route::post('edit', 'Admin\TagController@postEdit')->name('admin.tags.edit');
 
-    	Route::get('delete', 'Admin\TagController@getDelete');
+    	Route::get('delete', 'Admin\TagController@getDelete')->name('admin.tags.delete');
     });
 
     Route::prefix('comments')->group(function () {

@@ -35,30 +35,46 @@
                 <tr>
                   <th>ID</th>
                   <th>Tiêu đề</th>
+                  <th>Link slug</th>
+                  <th>Meta</th>
+                  <th>Mô tả</th>
                   <th>Nội dung</th>
-                  <th>Media</th>
+                  <th>Bài viết hot</th>
+                  <th>Trạng thái</th>
+                  <th>Rating</th>
                   <th>Ngày tạo</th>
-                  <th>Ngày cập nhật</th>
+                  <th>Hành động</th>
                 </tr>
                 </thead>
                 <tbody>
-                <tr>
-                  <td>Other browsers</td>
-                  <td>All others</td>
-                  <td>-</td>
-                  <td>-</td>
-                  <td>U</td>
-                  <td>abcdefghi</td>
-                </tr>
+                @foreach($posts as $item)
+                  <tr>
+                    <td>{{ $item->pos_id }}</td>
+                    <td>{{ $item->pos_name }}</td>
+                    <td>{{ $item->pos_slug }}</td>
+                    <td>{{ $item->pos_meta }}</td>
+                    <td>{{ $item->pos_description }}</td>
+                    <td>{{ $item->pos_content }}</td>
+                    <td>{{ $item->pos_hot }}</td>
+                    <td>{{ $item->pos_active }}</td>
+                    <td>{{ $item->pos_rating }}</td>
+                    <td>{{ $item->pos_created_at }}</td>
+                    <td><a href="{{route('admin.posts.edit')}}">Sửa</a> | <a href="{{route('admin.posts.delete')}}">Xóa</a></td>
+                  </tr>
+                  @endforeach
                 </tbody>
                 <tfoot>
                 <tr>
                   <th>ID</th>
-                  <th>Tiêu đề</th>
-                  <th>Nội dung</th>
-                  <th>Media</th>
+                  <th>Tên</th>
+                  <th>Link slug</th>
+                  <th>Meta</th>
+                  <th>Mô tả</th>
+                  <th>Danh mục hot</th>
+                  <th>Trạng thái</th>
+                  <th>Rating</th>
                   <th>Ngày tạo</th>
-                  <th>Ngày cập nhật</th>
+                  <th>Hành động</th>
                 </tr>
                 </tfoot>
               </table>

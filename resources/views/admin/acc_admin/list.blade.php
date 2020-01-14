@@ -1,7 +1,7 @@
 @extends('admin.layouts.master')
 
 @section('title')
-	Danh sách người dùng
+	Danh sách admin
 @endsection
 
 @section('css')
@@ -26,7 +26,7 @@
         <div class="col-12">
           <div class="card">
             <div class="card-header">
-              <h3 class="card-title">Danh sách người dùng</h3>
+              <h3 class="card-title">Danh sách admin</h3>
             </div>
             <!-- /.card-header -->
             <div class="card-body">
@@ -35,27 +35,39 @@
                 <tr>
                   <th>ID</th>
                   <th>Tên</th>
+                  <th>Tên đăng nhập</th>
                   <th>Email</th>
+                  <th>Avatar</th>
                   <th>Phone</th>
-                  <th>Ngày tạo</th>
+                  <th>Trạng thái</th>
+                  <th>Hành động</th>
                 </tr>
                 </thead>
                 <tbody>
-                <tr>
-                  <td>Other browsers</td>
-                  <td>All others</td>
-                  <td>-</td>
-                  <td>-</td>
-                  <td>U</td>
-                </tr>
+                  @foreach($admin as $item)
+                  <tr>
+                    <td>{{ $item->adm_id }}</td>
+                    <td>{{ $item->adm_name }}</td>
+                    <td>{{ $item->adm_loginname }}</td>
+                    <td><a target="_blank" href="mallto:{{ $item->adm_email }}">{{ $item->adm_email }}</a></td>
+                    <td>{{ $item->adm_avatar }}</td>
+                    <td>{{ $item->adm_phone }}</td>
+                    <td>{{ $item->adm_active }}</td>
+                    <td><a href="{{route('admin.acc-admin.delete')}}">Xóa</a></td>
+                    <td><a href="{{route('admin.acc-admin.edit')}}">Sửa</a> | <a href="{{route('admin.acc-admin.delete')}}">Xóa</a></td>
+                  </tr>
+                  @endforeach
                 </tbody>
                 <tfoot>
                 <tr>
                   <th>ID</th>
                   <th>Tên</th>
+                  <th>Tên đăng nhập</th>
                   <th>Email</th>
+                  <th>Avatar</th>
                   <th>Phone</th>
-                  <th>Ngày tạo</th>
+                  <th>Trạng thái</th>
+                  <th>Hành động</th>
                 </tr>
                 </tfoot>
               </table>

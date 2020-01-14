@@ -25,14 +25,7 @@ class HomeController extends Controller
         $email = $request->input('email');
         $password = $request->input('password');
         if( User::attempt(['email' => $email, 'password' =>$password])) {
-            if(Auth::check()){
-	            $user = Auth::user();
-	            if ($user->quyen == 1) {
-	                return redirect('admin');
-	            }
-	            else return redirect('/');
-	        }
-	        else return redirect('dangnhap');
+            return redirect('/');
         } 
         else {                
             return redirect('dangnhap')->with('thongbao','Đăng nhập ko thành công!');

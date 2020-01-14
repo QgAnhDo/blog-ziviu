@@ -1,7 +1,7 @@
 @extends('admin.layouts.master')
 
 @section('title')
-	Danh sách người dùng
+	Quản lý tag
 @endsection
 
 @section('css')
@@ -26,7 +26,7 @@
         <div class="col-12">
           <div class="card">
             <div class="card-header">
-              <h3 class="card-title">Danh sách người dùng</h3>
+              <h3 class="card-title">Danh sách tag</h3>
             </div>
             <!-- /.card-header -->
             <div class="card-body">
@@ -35,29 +35,27 @@
                 <tr>
                   <th>ID</th>
                   <th>Tên</th>
-                  <th>Tên đăng nhập</th>
-                  <th>Email</th>
-                  <th>Avatar</th>
-                  <th>Phone</th>
-                  <th>Facebook</th>
+                  <th>Link slug</th>
+                  <th>Meta</th>
+                  <th>Mô tả</th>
                   <th>Trạng thái</th>
                   <th>Ngày tạo</th>
+                  <th>Ngày cập nhật</th>
                   <th>Hành động</th>
                 </tr>
                 </thead>
                 <tbody>
-                  @foreach($users as $item)
+                @foreach($tags as $item)
                   <tr>
-                    <td>{{ $item->use_id }}</td>
-                    <td>{{ $item->use_name }}</td>
-                    <td>{{ $item->use_loginname }}</td>
-                    <td><a target="_blank" href="mallto:{{ $item->use_email }}">{{ $item->use_email }}</a></td>
-                    <td style="max-width: 100px">{{ $item->use_avatar }}</td>
-                    <td>{{ $item->use_phone }}</td>
-                    <td><a target="_blank" href="https://facebook.com/profile.php?id={{ $item->use_facebook_id }}">{{ $item->use_facebook_id }}</a></td>
-                    <td>{{ $item->use_active }}</td>
-                    <td>{{ $item->use_created_at }}</td>
-                    <td><a href="{{route('admin.users.edit')}}">Sửa</a> | <a href="{{route('admin.users.delete')}}">Xóa</a></td>
+                    <td>{{ $item->tag_id }}</td>
+                    <td>{{ $item->tag_name }}</td>
+                    <td>{{ $item->tag_slug }}</td>
+                    <td>{{ $item->tag_meta }}</td>
+                    <td>{{ $item->tag_description }}</td>
+                    <td>{{ $item->tag_active }}</td>
+                    <td>{{ $item->tag_created_at }}</td>
+                    <td>{{ $item->tag_updated_at }}</td>
+                    <td><a href="{{route('admin.tags.edit')}}">Sửa</a> | <a href="{{route('admin.tags.delete')}}">Xóa</a></td>
                   </tr>
                   @endforeach
                 </tbody>
@@ -65,13 +63,12 @@
                 <tr>
                   <th>ID</th>
                   <th>Tên</th>
-                  <th>Tên đăng nhập</th>
-                  <th>Email</th>
-                  <th>Avatar</th>
-                  <th>Phone</th>
-                  <th>Facebook</th>
+                  <th>Link slug</th>
+                  <th>Meta</th>
+                  <th>Mô tả</th>
                   <th>Trạng thái</th>
                   <th>Ngày tạo</th>
+                  <th>Ngày cập nhật</th>
                   <th>Hành động</th>
                 </tr>
                 </tfoot>

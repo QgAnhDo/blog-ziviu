@@ -12,6 +12,19 @@
                 <div class="card-header">{{ __('Đăng nhập người dùng') }}</div>
 
                 <div class="card-body">
+                	@if(count($errors)>0)
+					    <div class="alert alert-danger">
+					        @foreach($errors->all() as $err)
+					            {{ $err }}<br />
+					        @endforeach
+					    </div>
+					@endif
+
+					@if(session('thongbao'))
+					    <div class="alert alert-success">
+					        {{ session('thongbao') }}
+					    </div>
+					@endif
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
 
