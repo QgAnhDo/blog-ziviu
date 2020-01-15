@@ -46,10 +46,10 @@ Route::prefix('admin')->group(function () {
     	Route::get('add', 'Admin\PostController@getAdd')->name('admin.posts.add');
     	Route::post('add', 'Admin\PostController@postAdd')->name('admin.posts.add');
 
-    	Route::get('edit', 'Admin\PostController@getEdit')->name('admin.posts.edit');
-    	Route::post('edit', 'Admin\PostController@postEdit')->name('admin.posts.edit');
+    	Route::get('edit/{id}', 'Admin\PostController@getEdit')->name('admin.posts.edit');
+    	Route::post('edit/{id}', 'Admin\PostController@postEdit')->name('admin.posts.edit');
 
-    	Route::get('delete', 'Admin\PostController@getDelete')->name('admin.posts.delete');
+    	Route::get('delete/{id}', 'Admin\PostController@getDelete')->name('admin.posts.delete');
     });
 
     Route::prefix('users')->group(function () {
