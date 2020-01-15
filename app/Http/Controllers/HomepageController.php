@@ -13,6 +13,7 @@ class HomepageController extends Controller
      */
     public function __construct()
     {
+
     }
 
     /**
