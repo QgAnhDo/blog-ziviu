@@ -4,9 +4,9 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Models\Post;
+use App\Models\Tag;
 
-class PostController extends Controller
+class TagController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -19,7 +19,7 @@ class PostController extends Controller
 
     public function getList()
     {
-        $posts = Post::all();
-        return view('admin.posts.list', ['posts' => $posts]);
+        $tags = Tag::all();
+        return view('admin.tags.list', ['tags' => $tags]);
     }
 }

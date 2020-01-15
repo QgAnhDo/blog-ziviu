@@ -4,9 +4,9 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Models\Post;
+use App\Models\Category;
 
-class PostController extends Controller
+class CategoryController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -19,7 +19,7 @@ class PostController extends Controller
 
     public function getList()
     {
-        $posts = Post::all();
-        return view('admin.posts.list', ['posts' => $posts]);
+        $category = Category::all();
+        return view('admin.categories.list', ['category' => $category]);
     }
 }
