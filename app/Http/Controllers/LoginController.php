@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class HomeController extends Controller
+class LoginController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -26,8 +26,8 @@ class HomeController extends Controller
         $password = $request->input('password');
         if( User::attempt(['email' => $email, 'password' =>$password])) {
             return redirect('/');
-        } 
-        else {                
+        }
+        else {
             return redirect('dangnhap')->with('thongbao','Đăng nhập ko thành công!');
         }
     }

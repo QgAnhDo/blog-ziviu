@@ -17,6 +17,18 @@ class AppServiceProvider extends ServiceProvider
             'App\Repositories\HomeRepositoryInterface',
             'App\Repositories\HomeRepository'
         );
+        $this->app->bind(
+            'App\Repositories\PostRepositoryInterface',
+            'App\Repositories\PostRepository'
+        );
+        $this->app->bind(
+            'App\Repositories\CategoryRepositoryInterface',
+            'App\Repositories\CategoryRepository'
+        );
+        $this->app->bind(
+            'App\Repositories\SearchRepositoryInterface',
+            'App\Repositories\SearchRepository'
+        );
     }
 
     /**

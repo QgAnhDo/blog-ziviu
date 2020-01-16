@@ -2,12 +2,16 @@
     <div class="top_footer">
         <div class="container">
             <div class="gfw_top_wrapper">
-                <a href="#"><img src="assets/images/genk-logo.png"></a>
+                <a href="#"><img src="assets/images/logo-1.png"></a>
             </div>
             <div class="gfw_bottom_wrapper">
                 <ul>
                     <?php foreach ($categories as $item) { ?>
-                    <li><a href="#"><?= $item->cat_name ?></a></li>
+                    <li>
+                        <a href="<?= route('categories.index', ['slug'=> $item->cat_slug, 'id'=> $item->cat_id]) ?>">
+                            <?= $item->cat_name ?>
+                        </a>
+                    </li>
                     <?php } ?>
                 </ul>
             </div>
