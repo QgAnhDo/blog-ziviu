@@ -37,6 +37,9 @@ body {
         font-size: 12px;
         margin-top: 7px;
         font-family: Roboto-Regular; }
+        #header .genk_top_header .menu_channel .test_new_version a {
+          text-decoration: none;
+          color: #fff; }
         #header .genk_top_header .menu_channel .test_new_version i {
           width: 29px;
           height: 15px;
@@ -65,6 +68,8 @@ body {
           position: absolute;
           top: 14px;
           left: 0; }
+          #header .genk_bottom_header .menu .menu_div .genk_logo img {
+            width: 100%; }
         #header .genk_bottom_header .menu .menu_div .menu_list {
           list-style-type: none;
           float: left;
@@ -837,6 +842,8 @@ body {
         float: left;
         background-size: 210%;
         margin-top: 10px; }
+        #footer .top_footer .gfw_top_wrapper a img {
+          width: 100%; }
     #footer .top_footer .gfw_bottom_wrapper {
       display: flex; }
       #footer .top_footer .gfw_bottom_wrapper ul {

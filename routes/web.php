@@ -11,9 +11,36 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//Route::get('/', function () {
+//    return view('welcome');
+//});
+
+
+Auth::routes();
+
+//Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/','HomeController@index')->name('index');
+
+Route::get('/{slug}-p{id}.html','HomeController@postDetail')->name('posts.index')->where(['id'=>'\d+', 'slug'=> '.*']);
+
+Route::get('/{slug}-c{id}','HomeController@categoryDetail')->name('categories.index')->where(['id'=>'\d+', 'slug'=> '.*']);
+
+Route::get('/tim-kiem','HomeController@searchPostsName')->name('search.index');
+/*
+|--------------------------------------------------------------------------
+| Application Routes
+|--------------------------------------------------------------------------
+|
+| Here is where you can register all of the routes for an application.
+| It's a breeze. Simply tell Laravel the URIs it should respond to
+| and give it the Closure to execute when that URI is requested.
+|
+*/
+
+Route::resource('home', 'HomeController');
+
+
 
 Route::get('dangnhap', function () {
     return view('login');
@@ -112,10 +139,3 @@ Route::prefix('admin')->group(function () {
     	Route::get('delete', 'Admin\MenuController@getDelete');
     });
 });
-
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
-
-Route::get('/homepage','HomepageController@index')->name('layouts/master');

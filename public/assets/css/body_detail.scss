@@ -289,6 +289,14 @@
 						    color: #222;
 						    font-family: "Times New Roman",Georgia,Serif;
 						    -webkit-font-smoothing: subpixel-antialiased;
+                            table {
+                                table-layout: fixed;
+                                width: 100%;
+                            }
+                            img {
+                                width: 100%;
+                                height: auto;
+                            }
 						    p {
 								font-size: 17px;
 								line-height: 25px;
@@ -500,7 +508,7 @@
 						margin-left: 15px;
 						text-transform: uppercase;
 						font-size: 24px;
-						
+
 						position: relative;
 						margin-left: 20px;
 						display: block;

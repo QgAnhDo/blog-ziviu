@@ -2,19 +2,17 @@
     <div class="top_footer">
         <div class="container">
             <div class="gfw_top_wrapper">
-                <a href="#"><img src="assets/images/genk-logo.png"></a>
+                <a href="#"><img src="assets/images/logo-1.png"></a>
             </div>
             <div class="gfw_bottom_wrapper">
                 <ul>
-                    <li><a href="#">Video</a></li>
-                    <li><a href="#">Mobile</a></li>
-                    <li><a href="#">Tin ICT</a></li>
-                    <li><a href="#">Internet</a></li>
-                    <li><a href="#">Khám phá</a></li>
-                    <li><a href="#">Trà đá công nghệ</a></li>
-                    <li><a href="#">Thủ thuật</a></li>
-                    <li><a href="#">Apps - Games</a></li>
-                    <li><a href="#">Đồ chơi số</a></li>
+                    <?php foreach ($categories as $item) { ?>
+                    <li>
+                        <a href="<?= route('categories.index', ['slug'=> $item->cat_slug, 'id'=> $item->cat_id]) ?>">
+                            <?= $item->cat_name ?>
+                        </a>
+                    </li>
+                    <?php } ?>
                 </ul>
             </div>
         </div>
@@ -47,9 +45,6 @@
                 </p>
             </div>
             <div class="gfwbf_right">
-                <a href="#">
-                    <img src="assets/images/vccorp-logo.png">
-                </a>
                 <h4>Liên hệ quảng cáo</h4>
                 <span></span>
                 <p>

@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class HomepageController extends Controller
+class PostController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -13,7 +13,7 @@ class HomepageController extends Controller
      */
     public function __construct()
     {
-
+        $this->middleware('auth');
     }
 
     /**
@@ -23,6 +23,6 @@ class HomepageController extends Controller
      */
     public function index()
     {
-        return view('layouts/master');
+        return view('home');
     }
 }
