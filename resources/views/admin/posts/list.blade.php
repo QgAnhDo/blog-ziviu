@@ -65,7 +65,7 @@
                 @foreach($posts as $item)
                   <tr>
                     <td>{{ $item->pos_id }}</td>
-                    <td>{{ $item->pos_name }}</td>
+                    <td>{{ $item->pos_title }}</td>
                     <td>{{ $item->pos_slug }}</td>
                     <td>{{ $item->pos_meta }}</td>
                     <td>{{ $item->pos_description }}</td>
