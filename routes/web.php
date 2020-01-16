@@ -22,6 +22,11 @@ Auth::routes();
 
 Route::get('/','HomeController@index')->name('index');
 
+Route::get('/{slug}-p{id}.html','HomeController@postDetail')->name('posts.index')->where(['id'=>'\d+', 'slug'=> '.*']);
+
+Route::get('/{slug}-c{id}','HomeController@categoryDetail')->name('categories.index')->where(['id'=>'\d+', 'slug'=> '.*']);
+
+Route::get('/tim-kiem','HomeController@searchPostsName')->name('search.index');
 /*
 |--------------------------------------------------------------------------
 | Application Routes

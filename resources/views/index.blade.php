@@ -5,18 +5,28 @@
                 <div class="main_content_1">
                     <div class="main_content_1_big">
                         <div>
-                            <a href="#"><img src="images/qc1.png"></a>
+                            <a href="<?= route('posts.index', ['slug' => $postsHot->pos_slug, 'id' => $postsHot->pos_id]) ?>">
+                                <img src="images/qc1.png" title="<?= $postsHot->pos_title ?>"
+                                     alt="<?= $postsHot->pos_title ?>">
+                            </a>
                             <h2>
-                                <a href="#"><?= $postsHot->pos_title ?></a>
+                                <a href="<?= route('posts.index', ['slug' => $postsHot->pos_slug, 'id' => $postsHot->pos_id]) ?>">
+                                    <?= $postsHot->pos_title ?>
+                                </a>
                             </h2>
                             <p><?= $postsHot->pos_description ?></p>
                         </div>
                     </div>
                     <div class="main_content_1_small">
                         <div>
-                            <a href="#"><img src="images/qc2.jpg"></a>
+                            <a href="<?= route('posts.index', ['slug' => $postsHot->hotSmall->pos_slug, 'id' => $postsHot->hotSmall->pos_id]) ?>">
+                                <img src="images/qc2.jpg" title="<?= $postsHot->hotSmall->pos_title ?>"
+                                     alt="<?= $postsHot->hotSmall->pos_title ?>">
+                            </a>
                             <h2>
-                                <a href="#"><?= $postsHot->hotSmall->pos_title ?></a>
+                                <a href="<?= route('posts.index', ['slug' => $postsHot->hotSmall->pos_slug, 'id' => $postsHot->hotSmall->pos_id]) ?>">
+                                    <?= $postsHot->hotSmall->pos_title ?>
+                                </a>
                             </h2>
                             <span><?= $postsHot->hotSmall->pos_description ?></span>
                         </div>
@@ -27,9 +37,14 @@
                         <ul class="owl-carousel owl-theme item-carousel">
                             <?php foreach ($categoriesHot->posts as $item) { ?>
                             <li class="item">
-                                <a href="#"><img src="images/qc3.jpg"></a>
+                                <a href="<?= route('posts.index', ['slug' => $item->pos_slug, 'id' => $item->pos_id]) ?>">
+                                    <img src="images/qc3.jpg" title="<?= $item->pos_title ?>"
+                                         alt="<?= $item->pos_title ?>">
+                                </a>
                                 <h3>
-                                    <a href="#"><?= $item->pos_title ?></a>
+                                    <a href="<?= route('posts.index', ['slug' => $item->pos_slug, 'id' => $item->pos_id]) ?>">
+                                        <?= $item->pos_title ?>
+                                    </a>
                                 </h3>
                             </li>
                             <?php } ?>
@@ -38,29 +53,34 @@
                 </div>
                 <div class="main_content_3">
                     <ul>
-                        <?php foreach($posts as $item) { ?>
-                        <li class="content_3_item">
-                            <div class="item_image">
-                                <a href="#">
-                                    <img src="images/qc6.jpg" width="250" height="155">
-                                </a>
-                            </div>
-                            <div class="item_info">
-                                <h4 class="item_title">
-                                    <a href="#"><?= $item->pos_title ?></a>
-                                </h4>
-                                <div class="item_meta">
-                                    <a href="#"><?= $item->cat_name ?></a>
-                                    -
-                                    <span><?= $item->pos_created_at ?></span>
+                        @foreach($posts as $item)
+                            <li class="content_3_item">
+                                <div class="item_image">
+                                    <a href="<?= route('posts.index', ['slug' => $item->pos_slug, 'id' => $item->pos_id]) ?>">
+                                        <img src="images/qc6.jpg" width="250" height="155"
+                                             title="<?= $item->pos_title ?>" alt="<?= $item->pos_title ?>">
+                                    </a>
                                 </div>
-                                <span class="item_sapo">
+                                <div class="item_info">
+                                    <h4 class="item_title">
+                                        <a href="<?= route('posts.index', ['slug' => $item->pos_slug, 'id' => $item->pos_id]) ?>">
+                                            {{$item->pos_title}}
+                                        </a>
+                                    </h4>
+                                    <div class="item_meta">
+                                        <a href="<?= route('categories.index', ['slug' => $item->cat_slug, 'id' => $item->cat_id]) ?>">
+                                            <?= $item->cat_name ?>
+                                        </a>
+                                        -
+                                        <span><?= $item->pos_created_at ?></span>
+                                    </div>
+                                    <span class="item_sapo">
                                     <?= $item->pos_description ?>
                                 </span>
-                                <div class="item_relate_wrap"></div>
-                            </div>
-                        </li>
-                        <?php } ?>
+                                    <div class="item_relate_wrap"></div>
+                                </div>
+                            </li>
+                        @endforeach
                         <div class="content_extra">
                             <li class="content_3_trendAd">
                                 <div class="read_more_and_brands_stuff">
@@ -248,7 +268,7 @@
                                                 <?= $item->pos_title ?>
                                             </a>
                                         </h3>
-                                            <?php } ?>
+                                        <?php } ?>
                                     </div>
                                 </div>
                             </div>
@@ -260,7 +280,8 @@
                                 </a>
                             </div>
                             <div class="item_info">
-                                <h4 class="item_title"><a href="#">'Đầu gấu' là thế, nhưng vì sao loài mèo hễ nhìn thấy dưa chuột là sợ khiếp vía?</a></h4>
+                                <h4 class="item_title"><a href="#">'Đầu gấu' là thế, nhưng vì sao loài mèo hễ nhìn thấy
+                                        dưa chuột là sợ khiếp vía?</a></h4>
                                 <div class="item_meta">
                                     <a href="#">Khám phá</a>
                                     -
@@ -279,7 +300,8 @@
                                 </a>
                             </div>
                             <div class="item_info">
-                                <h4 class="item_title"><a href="#">'Đầu gấu' là thế, nhưng vì sao loài mèo hễ nhìn thấy dưa chuột là sợ khiếp vía?</a></h4>
+                                <h4 class="item_title"><a href="#">'Đầu gấu' là thế, nhưng vì sao loài mèo hễ nhìn thấy
+                                        dưa chuột là sợ khiếp vía?</a></h4>
                                 <div class="item_meta">
                                     <a href="#">Khám phá</a>
                                     -
@@ -298,7 +320,8 @@
                                 </a>
                             </div>
                             <div class="item_info">
-                                <h4 class="item_title"><a href="#">'Đầu gấu' là thế, nhưng vì sao loài mèo hễ nhìn thấy dưa chuột là sợ khiếp vía?</a></h4>
+                                <h4 class="item_title"><a href="#">'Đầu gấu' là thế, nhưng vì sao loài mèo hễ nhìn thấy
+                                        dưa chuột là sợ khiếp vía?</a></h4>
                                 <div class="item_meta">
                                     <a href="#">Khám phá</a>
                                     -
@@ -317,7 +340,8 @@
                                 </a>
                             </div>
                             <div class="item_info">
-                                <h4 class="item_title"><a href="#">'Đầu gấu' là thế, nhưng vì sao loài mèo hễ nhìn thấy dưa chuột là sợ khiếp vía?</a></h4>
+                                <h4 class="item_title"><a href="#">'Đầu gấu' là thế, nhưng vì sao loài mèo hễ nhìn thấy
+                                        dưa chuột là sợ khiếp vía?</a></h4>
                                 <div class="item_meta">
                                     <a href="#">Khám phá</a>
                                     -
@@ -336,7 +360,8 @@
                                 </a>
                             </div>
                             <div class="item_info">
-                                <h4 class="item_title"><a href="#">'Đầu gấu' là thế, nhưng vì sao loài mèo hễ nhìn thấy dưa chuột là sợ khiếp vía?</a></h4>
+                                <h4 class="item_title"><a href="#">'Đầu gấu' là thế, nhưng vì sao loài mèo hễ nhìn thấy
+                                        dưa chuột là sợ khiếp vía?</a></h4>
                                 <div class="item_meta">
                                     <a href="#">Khám phá</a>
                                     -
@@ -376,7 +401,8 @@
                                 </a>
                             </div>
                             <div class="item_info">
-                                <h4 class="item_title"><a href="#">Bộ ba Predator Helios 300, Triton 500 và Helios 700: Laptop gaming quái thú vạn người mê!</a></h4>
+                                <h4 class="item_title"><a href="#">Bộ ba Predator Helios 300, Triton 500 và Helios 700:
+                                        Laptop gaming quái thú vạn người mê!</a></h4>
                                 <div class="item_meta">
                                     <a href="#">Đồ chơi số</a>
                                     -
@@ -395,7 +421,8 @@
                                 </a>
                             </div>
                             <div class="item_info">
-                                <h4 class="item_title"><a href="#">Bộ ba Predator Helios 300, Triton 500 và Helios 700: Laptop gaming quái thú vạn người mê!</a></h4>
+                                <h4 class="item_title"><a href="#">Bộ ba Predator Helios 300, Triton 500 và Helios 700:
+                                        Laptop gaming quái thú vạn người mê!</a></h4>
                                 <div class="item_meta">
                                     <a href="#">Đồ chơi số</a>
                                     -
@@ -414,7 +441,8 @@
                                 </a>
                             </div>
                             <div class="item_info">
-                                <h4 class="item_title"><a href="#">Bộ ba Predator Helios 300, Triton 500 và Helios 700: Laptop gaming quái thú vạn người mê!</a></h4>
+                                <h4 class="item_title"><a href="#">Bộ ba Predator Helios 300, Triton 500 và Helios 700:
+                                        Laptop gaming quái thú vạn người mê!</a></h4>
                                 <div class="item_meta">
                                     <a href="#">Đồ chơi số</a>
                                     -
@@ -433,7 +461,8 @@
                                 </a>
                             </div>
                             <div class="item_info">
-                                <h4 class="item_title"><a href="#">Bộ ba Predator Helios 300, Triton 500 và Helios 700: Laptop gaming quái thú vạn người mê!</a></h4>
+                                <h4 class="item_title"><a href="#">Bộ ba Predator Helios 300, Triton 500 và Helios 700:
+                                        Laptop gaming quái thú vạn người mê!</a></h4>
                                 <div class="item_meta">
                                     <a href="#">Đồ chơi số</a>
                                     -
@@ -452,7 +481,8 @@
                                 </a>
                             </div>
                             <div class="item_info">
-                                <h4 class="item_title"><a href="#">Bộ ba Predator Helios 300, Triton 500 và Helios 700: Laptop gaming quái thú vạn người mê!</a></h4>
+                                <h4 class="item_title"><a href="#">Bộ ba Predator Helios 300, Triton 500 và Helios 700:
+                                        Laptop gaming quái thú vạn người mê!</a></h4>
                                 <div class="item_meta">
                                     <a href="#">Đồ chơi số</a>
                                     -
@@ -465,28 +495,12 @@
                             </div>
                         </li>
                     </ul>
-                    <div class="wrapperbtn">
-                        <a href="#" class="btnviewmore">Xem thêm</a>
-                    </div>
+                    {{--                    <div class="wrapperbtn">--}}
+                    {{--                        <a href="#" class="btnviewmore">Xem thêm</a>--}}
+                    {{--                    </div>--}}
                 </div>
             </div>
-            <div class="ads">
-                <div class="ads_1">
-                    <div class="ads_1_banner">
-                        <img src="assets/images/ads-1.jpg">
-                    </div>
-                </div>
-                <div class="ads_2">
-                    <div class="ads_2_banner">
-                        <img src="images/ads-1.jpg">
-                    </div>
-                </div>
-                <div class="ads_3">
-                    <div class="ads_3_banner">
-                        <img src="images/ads-1.jpg">
-                    </div>
-                </div>
-            </div>
+            @include('layouts/sidebar')
         </div>
     </div>
 </div>

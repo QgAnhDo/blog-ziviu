@@ -243,6 +243,12 @@
             color: #222;
             font-family: "Times New Roman",Georgia,Serif;
             -webkit-font-smoothing: subpixel-antialiased; }
+            #body .detail_content .detail_left .detail_placeholder .detail_maincontent .content_w640 .knc_content table {
+              table-layout: fixed;
+              width: 100%; }
+            #body .detail_content .detail_left .detail_placeholder .detail_maincontent .content_w640 .knc_content img {
+              width: 100%;
+              height: auto; }
             #body .detail_content .detail_left .detail_placeholder .detail_maincontent .content_w640 .knc_content p {
               font-size: 17px;
               line-height: 25px;

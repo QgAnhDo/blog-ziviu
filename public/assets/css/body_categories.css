@@ -15,10 +15,10 @@
         #body .categories_content .main_content .main_content_1 .main_content_1_submenu {
           background: #222;
           width: 100%;
-          height: 40px;
+          height: auto;
           padding-left: 20px;
           margin-bottom: 18px;
-          display: block; }
+          display: inline-block; }
           #body .categories_content .main_content .main_content_1 .main_content_1_submenu ul {
             list-style: none; }
             #body .categories_content .main_content .main_content_1 .main_content_1_submenu ul li {
