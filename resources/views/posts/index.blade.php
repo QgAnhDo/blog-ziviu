@@ -15,18 +15,22 @@
                                     <span class="split_arrow">›</span>
                                 </li>
                                 <li class="active">
-                                    <strong><a href="#"><span><?= $post->cat_name ?></span></a></strong>
+                                    <strong>
+                                        <a href="{{ route('categories.index', ['slug' => $post->cat_slug, 'id' => $post->cat_id]) }}">
+                                            <span>{{$post->cat_name}}</span>
+                                        </a>
+                                    </strong>
                                 </li>
                             </ul>
                         </div>
-                        <h1><?= $post->pos_title; ?></h1>
+                        <h1> {{$post->pos_title}} </h1>
                         <div class="detail_meta">
-                            <span class="meta_author"><?= $post->adm_name ?>,</span>
+                            <span class="meta_author">{{$post->adm_loginname}} ,</span>
 {{--                            <span class="meta_source">Theo <a href="#">Trí Thức Trẻ</a></span>--}}
-                            <span class="meta_time"><?= $post->pos_created_at ?></span>
+                            <span class="meta_time">{{$post->pos_created_at}}</span>
                         </div>
                         <div class="detail_socials">
-                            <div class="fb-like" data-href="/<?= $post->pos_slug ?>-p<?= $post->pos_id ?>.html" data-width="" data-layout="button_count" data-action="like" data-size="small" data-show-faces="true" data-share="true">
+                            <div class="fb-like" data-href="http://genk.vn/vi-sao-ios-13-cang-cap-nhat-cang-lam-loi-cuu-ki-su-apple-vua-dua-ra-cau-tra-loi-cuc-ky-xac-dang-cho-van-de-nay-20191027175708348.chn" data-width="" data-layout="button_count" data-action="like" data-size="small" data-show-faces="true" data-share="true">
                             </div>
                             <div class="fr">
                                 <div class="mgr5"></div>
@@ -48,17 +52,17 @@
                             </div>
                         </div>
                         <div class="content_w640">
-                            <h2><?= $post->pos_description ?></h2>
+                            <h2>{{$post->pos_description}}</h2>
                             <div class="knc_relate_wrapper">
                                 <ul>
-                                    <?php foreach ($categoriesHot->hot2->hot3->posts as $item) { ?>
+                                    @foreach ($categoriesHot->hot2->hot3->posts as $item)
                                     <li>
-                                        <a href="#">
-                                            <?= $item->pos_title ?>
+                                        <a href="{{ route('posts.index', ['slug' => $item->pos_slug, 'id' => $item->pos_id]) }}">
+                                            {{$item->pos_title}}
                                             <i class="icon-show-popup"></i>
                                         </a>
                                     </li>
-                                    <?php } ?>
+                                    @endforeach
                                 </ul>
                                 <div style="clear: both;"></div>
                             </div>

@@ -1080,6 +1080,7 @@ body {
               table-layout: fixed;
               width: 100%; }
             #body .detail_content .detail_left .detail_placeholder .detail_maincontent .content_w640 .knc_content img {
+              max-width: 640px;
               width: 100%;
               height: auto; }
             #body .detail_content .detail_left .detail_placeholder .detail_maincontent .content_w640 .knc_content p {

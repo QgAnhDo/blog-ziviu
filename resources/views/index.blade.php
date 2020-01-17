@@ -5,49 +5,49 @@
                 <div class="main_content_1">
                     <div class="main_content_1_big">
                         <div>
-                            <a href="<?= route('posts.index', ['slug' => $postsHot->pos_slug, 'id' => $postsHot->pos_id]) ?>">
-                                <img src="images/qc1.png" title="<?= $postsHot->pos_title ?>"
-                                     alt="<?= $postsHot->pos_title ?>">
+                            <a href="{{route('posts.index', ['slug' => $postsHot->pos_slug, 'id' => $postsHot->pos_id])}}">
+                                <img src="images/qc1.png" title="{{$postsHot->pos_title}}"
+                                     alt="{{$postsHot->pos_title}}">
                             </a>
                             <h2>
-                                <a href="<?= route('posts.index', ['slug' => $postsHot->pos_slug, 'id' => $postsHot->pos_id]) ?>">
-                                    <?= $postsHot->pos_title ?>
+                                <a href="{{route('posts.index', ['slug' => $postsHot->pos_slug, 'id' => $postsHot->pos_id])}}">
+                                    {{$postsHot->pos_title}}
                                 </a>
                             </h2>
-                            <p><?= $postsHot->pos_description ?></p>
+                            <p>{{$postsHot->pos_description}}</p>
                         </div>
                     </div>
                     <div class="main_content_1_small">
                         <div>
-                            <a href="<?= route('posts.index', ['slug' => $postsHot->hotSmall->pos_slug, 'id' => $postsHot->hotSmall->pos_id]) ?>">
-                                <img src="images/qc2.jpg" title="<?= $postsHot->hotSmall->pos_title ?>"
-                                     alt="<?= $postsHot->hotSmall->pos_title ?>">
+                            <a href="{{route('posts.index', ['slug' => $postsHot->hotSmall->pos_slug, 'id' => $postsHot->hotSmall->pos_id])}}">
+                                <img src="images/qc2.jpg" title="{{$postsHot->hotSmall->pos_title}}"
+                                     alt="{{$postsHot->hotSmall->pos_title}}">
                             </a>
                             <h2>
-                                <a href="<?= route('posts.index', ['slug' => $postsHot->hotSmall->pos_slug, 'id' => $postsHot->hotSmall->pos_id]) ?>">
-                                    <?= $postsHot->hotSmall->pos_title ?>
+                                <a href="{{route('posts.index', ['slug' => $postsHot->hotSmall->pos_slug, 'id' => $postsHot->hotSmall->pos_id])}}">
+                                    {{$postsHot->hotSmall->pos_title}}
                                 </a>
                             </h2>
-                            <span><?= $postsHot->hotSmall->pos_description ?></span>
+                            <span>{{$postsHot->hotSmall->pos_description}}</span>
                         </div>
                     </div>
                 </div>
                 <div class="main_content_2">
                     <div>
                         <ul class="owl-carousel owl-theme item-carousel">
-                            <?php foreach ($categoriesHot->posts as $item) { ?>
+                            @foreach ($categoriesHot->posts as $item)
                             <li class="item">
-                                <a href="<?= route('posts.index', ['slug' => $item->pos_slug, 'id' => $item->pos_id]) ?>">
-                                    <img src="images/qc3.jpg" title="<?= $item->pos_title ?>"
-                                         alt="<?= $item->pos_title ?>">
+                                <a href="{{route('posts.index', ['slug' => $item->pos_slug, 'id' => $item->pos_id])}}">
+                                    <img src="images/qc3.jpg" title="{{$item->pos_title}}"
+                                         alt="{{$item->pos_title}}">
                                 </a>
                                 <h3>
-                                    <a href="<?= route('posts.index', ['slug' => $item->pos_slug, 'id' => $item->pos_id]) ?>">
-                                        <?= $item->pos_title ?>
+                                    <a href="{{route('posts.index', ['slug' => $item->pos_slug, 'id' => $item->pos_id])}}">
+                                        {{$item->pos_title}}
                                     </a>
                                 </h3>
                             </li>
-                            <?php } ?>
+                            @endforeach
                         </ul>
                     </div>
                 </div>
@@ -56,27 +56,27 @@
                         @foreach($posts as $item)
                             <li class="content_3_item">
                                 <div class="item_image">
-                                    <a href="<?= route('posts.index', ['slug' => $item->pos_slug, 'id' => $item->pos_id]) ?>">
+                                    <a href="{{route('posts.index', ['slug' => $item->pos_slug, 'id' => $item->pos_id])}}">
                                         <img src="images/qc6.jpg" width="250" height="155"
-                                             title="<?= $item->pos_title ?>" alt="<?= $item->pos_title ?>">
+                                             title="{{$item->pos_title}}" alt="{{$item->pos_title}}">
                                     </a>
                                 </div>
                                 <div class="item_info">
                                     <h4 class="item_title">
-                                        <a href="<?= route('posts.index', ['slug' => $item->pos_slug, 'id' => $item->pos_id]) ?>">
+                                        <a href="{{route('posts.index', ['slug' => $item->pos_slug, 'id' => $item->pos_id])}}">
                                             {{$item->pos_title}}
                                         </a>
                                     </h4>
                                     <div class="item_meta">
-                                        <a href="<?= route('categories.index', ['slug' => $item->cat_slug, 'id' => $item->cat_id]) ?>">
-                                            <?= $item->cat_name ?>
+                                        <a href="{{route('categories.index', ['slug' => $item->cat_slug, 'id' => $item->cat_id])}}">
+                                            {{$item->cat_name}}
                                         </a>
                                         -
-                                        <span><?= $item->pos_created_at ?></span>
+                                        <span>{{$item->pos_created_at}}</span>
                                     </div>
                                     <span class="item_sapo">
-                                    <?= $item->pos_description ?>
-                                </span>
+                                        {{$item->pos_description}}
+                                    </span>
                                     <div class="item_relate_wrap"></div>
                                 </div>
                             </li>
@@ -88,52 +88,54 @@
                                         <div class="tab">ĐÁNG CHÚ Ý</div>
                                         <div class="item first">
                                             <div class="ava">
-                                                <a href="#">
-                                                    <img src="images/extra1.jpg">
+                                                <a href="{{route('posts.index', ['slug' => $postsHot->hotSmaller->pos_slug, 'id' => $postsHot->hotSmaller->pos_id])}}">
+                                                    <img src="images/extra1.jpg" title="{{$postsHot->hotSmaller->pos_title}}" alt="{{$postsHot->hotSmaller->pos_title}}">
                                                 </a>
                                             </div>
                                             <h3>
-                                                <a href="#">
-                                                    <?= $postsHot->hotSmaller->pos_title ?>
+                                                <a href="{{route('posts.index', ['slug' => $postsHot->hotSmaller->pos_slug, 'id' => $postsHot->hotSmaller->pos_id])}}" title="{{$postsHot->hotSmaller->pos_title}}">
+                                                    {{$postsHot->hotSmaller->pos_title}}
                                                 </a>
                                             </h3>
                                         </div>
-                                        <?php foreach ($categoriesHot->posts as $item) { ?>
+                                        @foreach ($categoriesHot->posts as $item)
                                         <div class="item">
                                             <h3>
-                                                <a href="#">
-                                                    <?= $item->pos_title ?>
+                                                <a href="{{route('posts.index', ['slug' => $item->pos_slug, 'id' => $item->pos_id])}}" title="{{$item->pos_title}}">
+                                                    {{$item->pos_title}}
                                                 </a>
                                             </h3>
                                         </div>
-                                        <?php } ?>
+                                        @endforeach
                                     </div>
                                     <div class="marketing_beats">
                                         <div class="tab">
-                                            <a href="#" class="tabTitle">MYGENK</a>
+                                            <a href="/" class="tabTitle">NEWS.TRIP247</a>
                                             <a href="#" class="tabViewMore"></a>
                                         </div>
                                         <div class="list_marketing">
                                             <ul>
-                                                <?php foreach ($categoriesHot->hot2->posts as $item) { ?>
+                                                @foreach ($categoriesHot->hot2->posts as $item)
                                                 <li class="item" style="display: list-item;">
                                                     <h3>
-                                                        <a href="#">
-                                                            <?= $item->pos_title ?>
+                                                        <a href="{{route('posts.index', ['slug' => $item->pos_slug, 'id' => $item->pos_id])}}" title="{{$item->pos_title}}">
+                                                            {{$item->pos_title}}
                                                         </a>
                                                     </h3>
-                                                    <a class="item_image" href="#"><img src="images/extra2.jpg"></a>
+                                                    <a class="item_image" href="{{route('posts.index', ['slug' => $item->pos_slug, 'id' => $item->pos_id])}}">
+                                                        <img src="images/extra2.jpg" title="{{$item->pos_title}}" alt="{{$item->pos_title}}">
+                                                    </a>
                                                 </li>
-                                                <?php } ?>
-                                                <?php foreach ($categoriesHot->hot2->hot3->posts as $item) { ?>
+                                                @endforeach
+                                                @foreach ($categoriesHot->hot2->hot3->posts as $item)
                                                 <li class="item after" style="display: list-item;">
                                                     <h3>
-                                                        <a href="#">
-                                                            <?= $item->pos_title ?>
+                                                        <a href="{{route('posts.index', ['slug' => $item->pos_slug, 'id' => $item->pos_id])}}" title="{{$item->pos_title}}">
+                                                            {{$item->pos_title}}
                                                         </a>
                                                     </h3>
                                                 </li>
-                                                <?php } ?>
+                                                @endforeach
                                             </ul>
                                         </div>
                                     </div>
