@@ -58,7 +58,7 @@ class HomeRepository implements HomeRepositoryInterface {
             $postsHot->hotSmall = $postsHotSmall;
         }
         if($postsHotSmall) {
-            $postsHotSmaller = Posts:: where('pos_id', '<', $postsHotSmall->pos_id)
+            $postsHotSmaller = Posts::where('pos_id', '<', $postsHotSmall->pos_id)
                 ->where('pos_hot', 1)
                 ->where('pos_status', 1)
                 ->select('pos_id','pos_title', 'pos_slug', 'pos_description', 'pos_status', 'pos_hot', 'pos_created_at')
@@ -85,8 +85,8 @@ class HomeRepository implements HomeRepositoryInterface {
             $categoriesHot->posts = $categoriesHotPosts;
         if($categoriesHot) {
             $categoriesHot2 = Categories::join('posts', 'pos_cat_id', '=', 'cat_id')
-                ->where('cat_id', '<', $categoriesHot->cat_id)
-                ->where('cat_hot', 1)
+                ->where('cat_id', '<>', $categoriesHot->cat_id)
+                // ->where('cat_hot', 1)
                 ->where('cat_active', 1)
                 ->select('cat_id', 'cat_name')
                 ->orderBy('cat_id', 'desc')

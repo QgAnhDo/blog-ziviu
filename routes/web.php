@@ -11,10 +11,6 @@
 |
 */
 
-//Route::get('/', function () {
-//    return view('welcome');
-//});
-
 
 Auth::routes();
 
@@ -27,16 +23,6 @@ Route::get('/{slug}-p{id}.html','HomeController@postDetail')->name('posts.index'
 Route::get('/{slug}-c{id}','HomeController@categoryDetail')->name('categories.index')->where(['id'=>'\d+', 'slug'=> '.*']);
 
 Route::get('/tim-kiem','HomeController@searchPostsName')->name('search.index');
-/*
-|--------------------------------------------------------------------------
-| Application Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register all of the routes for an application.
-| It's a breeze. Simply tell Laravel the URIs it should respond to
-| and give it the Closure to execute when that URI is requested.
-|
-*/
 
 Route::resource('home', 'HomeController');
 
