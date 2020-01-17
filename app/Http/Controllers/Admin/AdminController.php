@@ -30,4 +30,8 @@ class AdminController extends Controller
     {
         return view('admin.acc_admin.edit');
     }
+    public function getAdd()
+    {
+        return view('admin.acc_admin.add');
+    }
 }

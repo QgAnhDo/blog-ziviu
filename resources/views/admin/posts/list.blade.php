@@ -21,7 +21,22 @@
 
 @section('content')
 <!-- Main content -->
+    @if(count($errors)>0)
+        <div class="alert alert-danger">
+            @foreach($errors->all() as $err)
+                {{ $err }}<br />
+            @endforeach
+        </div>
+    @endif
+
+    @if(session('thongbao'))
+        <div class="alert alert-success">
+            {{ session('thongbao') }}
+        </div>
+    @endif
+    
     <section class="content">
+      <a class="btn btn-primary btn-sm" href="{{route('admin.posts.add')}}">Thêm mới</a><br /><br />
       <div class="row">
         <div class="col-12">
           <div class="card">
@@ -59,7 +74,7 @@
                     <td>{{ $item->pos_active }}</td>
                     <td>{{ $item->pos_rating }}</td>
                     <td>{{ $item->pos_created_at }}</td>
-                    <td><a href="{{route('admin.posts.edit')}}">Sửa</a> | <a href="{{route('admin.posts.delete')}}">Xóa</a></td>
+                    <td><a href="{{route('admin.posts.edit', ['id' => $item->pos_id])}}">Sửa</a> | <a href="{{route('admin.posts.delete', ['id' => $item->pos_id])}}">Xóa</a></td>
                   </tr>
                   @endforeach
                 </tbody>

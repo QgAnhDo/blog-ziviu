@@ -28,7 +28,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{route('admin.acc-admin')}}" class="nav-link">
+                <a href="{{route('admin.acc-admin.add')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Thêm</p>
                 </a>
