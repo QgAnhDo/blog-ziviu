@@ -25,7 +25,7 @@
                         </div>
                         <h1> {{$post->pos_title}} </h1>
                         <div class="detail_meta">
-                            <span class="meta_author">{{$post->adm_name}} ,</span>
+                            <span class="meta_author">{{$post->adm_loginname}} ,</span>
 {{--                            <span class="meta_source">Theo <a href="#">Trí Thức Trẻ</a></span>--}}
                             <span class="meta_time">{{$post->pos_created_at}}</span>
                         </div>
