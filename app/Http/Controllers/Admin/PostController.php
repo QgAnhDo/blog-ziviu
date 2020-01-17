@@ -104,7 +104,7 @@ class PostController extends Controller
     }
     public function getDelete($id)
     {
-        Post::where('pos_id', $id)->first()->delete();
-        return redirect('admin/posts/list')->with('thongbao', 'Xóa thành công');
+        Post::where('pos_id', $id)->delete();
+        return redirect('admin/posts')->with('thongbao', 'Xóa thành công');
     }
 }

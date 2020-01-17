@@ -65,6 +65,7 @@ class CrawlIvivuCat extends Command
                 $url = $item["url"]."page/{$page}";
 
                 $html = HtmlDomParser::file_get_html($url, false, null, 0 );
+                 //Insert multi 
                 $data_insert = [];
                 foreach($html->find('.one-half') as $article) {
                     preg_match_all('/(\d*) views/', $article->find('.views', 0)->plaintext, $view);
@@ -92,19 +93,22 @@ class CrawlIvivuCat extends Command
                             'pos_website' => $response['website'],
                             'pos_view' => $response['view'],
                             'pos_image' => $response['image'],
-                            'pos_hot' => 0,
-                            'pos_status' => 0,
+                            'pos_hot' => 1,
+                            'pos_status' => 1,
                             'pos_cat_id' => $item["cat_id"],
-                            'pos_admin_id' => 0,
-                            'pos_crawl_status' => 0,
+                            'pos_admin_id' => 1,
+                            'pos_crawl_status' => 1,
                             'pos_created_at' => $response['created_at'],
                         ];
                     }    
+                    
                 }
-                echo 'Đã insert '. count($data_insert) .' bản ghi.';
+                Post::insert($data_insert);
+                // echo 'Đã insert '. count($data_insert) .' bản ghi.';
             }
         }
     }
+    
     private function saveImage($url, $base_name) {
         $ext = explode('.', $url);
         $ext = $ext[count($ext)-1];
