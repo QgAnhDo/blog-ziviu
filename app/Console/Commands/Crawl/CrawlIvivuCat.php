@@ -97,14 +97,14 @@ class CrawlIvivuCat extends Command
                             'pos_status' => 1,
                             'pos_cat_id' => $item["cat_id"],
                             'pos_admin_id' => 1,
-                            'pos_crawl_status' => 1,
+                            'pos_crawl_status' => 0,
                             'pos_created_at' => $response['created_at'],
                         ];
                     }    
                     
                 }
                 Post::insert($data_insert);
-                // echo 'Đã insert '. count($data_insert) .' bản ghi.';
+                echo 'Đã insert '.count($data_insert).' bản ghi. ';
             }
         }
     }

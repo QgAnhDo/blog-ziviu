@@ -91,6 +91,7 @@ class HomeRepository implements HomeRepositoryInterface {
                 ->select('cat_id', 'cat_name')
                 ->orderBy('cat_id', 'desc')
                 ->first();
+            dd($categoriesHot2);
                 $categoriesHotPosts2 = Posts::where('pos_cat_id', $categoriesHot2->cat_id)
                     ->where('pos_status', 1)
                     ->select('pos_id', 'pos_title', 'pos_slug')
