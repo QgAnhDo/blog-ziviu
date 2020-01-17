@@ -283,11 +283,6 @@
             </div>
         </div>
     </div>
-    <div class="ads_middle">
-        <div class="container">
-            <img src="images/detail/ads_middle.jpg">
-        </div>
-    </div>
     <?php /*
     <div class="body_content news_content">
         <div class="container">

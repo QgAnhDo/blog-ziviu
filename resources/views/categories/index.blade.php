@@ -1,6 +1,5 @@
 <link rel="stylesheet" type="text/css" href="assets/css/style_categories.css">
 <link rel="stylesheet" type="text/css" href="assets/css/responsive/style_categories-responsive.css">
-
 <div id="body">
     <div class="categories_content">
         <div class="container">
@@ -9,14 +8,24 @@
                     <div class="main_content_1_submenu">
                         <ul>
                             <li>
-                                <a href="#" class="active">
-                                    <?=  $category->cat_name ?>
+                                <a href="{{route('categories.index', ['slug' => $category->cat_slug, 'id' => $category->cat_id])}}"
+                                   class="@foreach($post as $value)
+                                               @if($value->pos_cat_id == $category->cat_id) {{'active'}}
+                                               @else {{null}}
+                                               @endif
+                                           @endforeach">
+                                    {{$category->cat_name}}
                                     <span></span>
                                 </a>
                             </li>
                             <?php foreach ($category->cat_child as $item) { ?>
                             <li>
-                                <a href="#">
+                                <a href="{{route('categories.index', ['slug' => $item->cat_slug, 'id' => $item->cat_id])}}"
+                                   class="@foreach($post as $value)
+                                               @if($value->pos_cat_id == $item->cat_id) {{'active'}}
+                                               @else {{null}}
+                                               @endif
+                                           @endforeach">
                                     <?= $item->cat_name ?>
                                     <span></span>
                                 </a>
@@ -85,9 +94,16 @@
 {{--                        <a href="#" class="btnviewmore">Xem thêm</a>--}}
 {{--                    </div>--}}
                 </div>
+                {{ $post->links() }}
                 @else
                 <div class="main_content_3">
-                    <p>KHÔNG CÓ DỮ LIỆU</p>
+                    <ul>
+                        <li class="content_3_item">
+                            <div class="item_info">
+                                <h4 class="item_title"><a>KHÔNG CÓ DỮ LIỆU</a></h4>
+                            </div>
+                        </li>
+                    </ul>
                 </div>
                 @endif
             </div>

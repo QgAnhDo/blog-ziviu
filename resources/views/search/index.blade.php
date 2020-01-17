@@ -4,6 +4,7 @@
     <div class="categories_content">
         <div class="container">
             <div class="main_content">
+                <h1>Kết quả tìm kiếm: {{$_GET['name']}}</h1>
                 <div class="main_content_3">
                     <ul>
                         @foreach($findPost as $item)
@@ -33,12 +34,10 @@
                         </li>
                         @endforeach
                     </ul>
-                    <?php /*<div class="wrapperbtn">
-                        <a href="#" class="btnviewmore">Xem thêm</a>
-                    </div> */?>
                 </div>
+                {{ $findPost->appends(['name' => $_GET['name']])->links() }}
             </div>
-            @include('layouts.sidebar');
+            @include('layouts.sidebar')
         </div>
     </div>
 </div>

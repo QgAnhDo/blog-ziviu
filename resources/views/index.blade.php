@@ -35,7 +35,9 @@
                 <div class="main_content_2">
                     <div>
                         <ul class="owl-carousel owl-theme item-carousel">
-                            @foreach ($categoriesHot->posts as $item)
+                            @if($categoriesHot)
+                                @if($categoriesHot->posts)
+                                    @foreach ($categoriesHot->posts as $item)
                             <li class="item">
                                 <a href="{{route('posts.index', ['slug' => $item->pos_slug, 'id' => $item->pos_id])}}">
                                     <img src="images/qc3.jpg" title="{{$item->pos_title}}"
@@ -47,7 +49,9 @@
                                     </a>
                                 </h3>
                             </li>
-                            @endforeach
+                                    @endforeach
+                                @endif
+                            @endif
                         </ul>
                     </div>
                 </div>
@@ -98,7 +102,9 @@
                                                 </a>
                                             </h3>
                                         </div>
-                                        @foreach ($categoriesHot->posts as $item)
+                                        @if($categoriesHot)
+                                            @if($categoriesHot->posts)
+                                                @foreach ($categoriesHot->posts as $item)
                                         <div class="item">
                                             <h3>
                                                 <a href="{{route('posts.index', ['slug' => $item->pos_slug, 'id' => $item->pos_id])}}" title="{{$item->pos_title}}">
@@ -106,7 +112,9 @@
                                                 </a>
                                             </h3>
                                         </div>
-                                        @endforeach
+                                                @endforeach
+                                            @endif
+                                        @endif
                                     </div>
                                     <div class="marketing_beats">
                                         <div class="tab">
@@ -115,7 +123,10 @@
                                         </div>
                                         <div class="list_marketing">
                                             <ul>
-                                                @foreach ($categoriesHot->hot2->posts as $item)
+                                                @if($categoriesHot)
+                                                    @if($categoriesHot->hot2)
+                                                        @if($categoriesHot->hot2->posts)
+                                                            @foreach ($categoriesHot->hot2->posts as $item)
                                                 <li class="item" style="display: list-item;">
                                                     <h3>
                                                         <a href="{{route('posts.index', ['slug' => $item->pos_slug, 'id' => $item->pos_id])}}" title="{{$item->pos_title}}">
@@ -126,8 +137,16 @@
                                                         <img src="images/extra2.jpg" title="{{$item->pos_title}}" alt="{{$item->pos_title}}">
                                                     </a>
                                                 </li>
-                                                @endforeach
-                                                @foreach ($categoriesHot->hot2->hot3->posts as $item)
+                                                            @endforeach
+                                                        @endif
+                                                    @endif
+                                                @endif
+
+                                                @if($categoriesHot)
+                                                    @if($categoriesHot->hot2)
+                                                        @if($categoriesHot->hot2->hot3)
+                                                            @if($categoriesHot->hot2->hot3->posts)
+                                                                @foreach ($categoriesHot->hot2->hot3->posts as $item)
                                                 <li class="item after" style="display: list-item;">
                                                     <h3>
                                                         <a href="{{route('posts.index', ['slug' => $item->pos_slug, 'id' => $item->pos_id])}}" title="{{$item->pos_title}}">
@@ -135,7 +154,11 @@
                                                         </a>
                                                     </h3>
                                                 </li>
-                                                @endforeach
+                                                                @endforeach
+                                                            @endif
+                                                        @endif
+                                                    @endif
+                                                @endif
                                             </ul>
                                         </div>
                                     </div>
@@ -242,35 +265,56 @@
                                 <div class="mostview">
                                     <div class="tab">Đọc nhiều</div>
                                     <ul>
-                                        <?php foreach ($categoriesHot->posts as $item) { ?>
+                                        @if($categoriesHot)
+                                            @if($categoriesHot->posts)
+                                                @foreach ($categoriesHot->posts as $item)
                                         <li>
-                                            <a class="item_images" href="#"><img src="images/extra3.jpg"></a>
+                                            <a class="item_images" href="{{route('posts.index', ['slug' => $item->pos_slug, 'id' => $item->pos_id])}}">
+                                                <img src="images/extra3.jpg" title="{{$item->pos_title}}" alt="{{$item->pos_title}}">
+                                            </a>
                                             <h3>
-                                                <a href="#">
-                                                    <?= $item->pos_title ?>
+                                                <a href="{{route('posts.index', ['slug' => $item->pos_slug, 'id' => $item->pos_id])}}" title="{{$item->pos_title}}">
+                                                    {{$item->pos_title}}
                                                 </a>
                                             </h3>
                                         </li>
-                                        <?php } ?>
+                                                @endforeach
+                                            @endif
+                                        @endif
                                     </ul>
                                 </div>
                                 <div class="brands">
                                     <div class="tab">Cũ mà hay</div>
                                     <div class="other">
-                                        <?php foreach ($categoriesHot->hot2->posts as $item) { ?>
+                                        @if($categoriesHot)
+                                            @if($categoriesHot->hot2)
+                                                @if($categoriesHot->hot2->posts)
+                                                    @foreach ($categoriesHot->hot2->posts as $item)
                                         <h3 class="first">
-                                            <a href="#">
-                                                <?= $item->pos_title ?>
+                                            <a href="{{route('posts.index', ['slug' => $item->pos_slug, 'id' => $item->pos_id])}}" title="{{$item->pos_title}}">
+                                                {{$item->pos_title}}
                                             </a>
                                         </h3>
-                                        <?php } ?>
-                                        <?php foreach ($categoriesHot->hot2->hot3->posts as $item) { ?>
+                                                    @endforeach
+                                                @endif
+                                            @endif
+                                        @endif
+
+                                        @if($categoriesHot)
+                                            @if($categoriesHot->hot2)
+                                                @if($categoriesHot->hot2->hot3)
+                                                    @if($categoriesHot->hot2->hot3->posts)
+                                                        @foreach ($categoriesHot->hot2->hot3->posts as $item)
                                         <h3>
-                                            <a href="#">
-                                                <?= $item->pos_title ?>
+                                            <a href="{{route('posts.index', ['slug' => $item->pos_slug, 'id' => $item->pos_id])}}" title="{{$item->pos_title}}">
+                                                {{$item->pos_title}}
                                             </a>
                                         </h3>
-                                        <?php } ?>
+                                                        @endforeach
+                                                    @endif
+                                                @endif
+                                            @endif
+                                        @endif
                                     </div>
                                 </div>
                             </div>
@@ -379,20 +423,30 @@
                             <div class="dontmiss">
                                 <p class="title-box">Đừng bỏ lỡ</p>
                                 <ul>
-                                    <?php foreach ($categoriesHot->hot2->hot3->posts as $item) { ?>
+                                    @if($categoriesHot)
+                                        @if($categoriesHot->hot2)
+                                            @if($categoriesHot->hot2->hot3)
+                                                @if($categoriesHot->hot2->hot3->posts)
+                                                    @foreach ($categoriesHot->hot2->hot3->posts as $item)
                                     <li>
                                         <div class="dontmiss_img">
-                                            <a href="#"><img src="images/extra4.jpg"></a>
+                                            <a href="{{route('posts.index', ['slug' => $item->pos_slug, 'id' => $item->pos_id])}}" title="{{$item->pos_title}}">
+                                                <img src="images/extra4.jpg" title="{{$item->pos_title}}" alt="{{$item->pos_title}}">
+                                            </a>
                                         </div>
                                         <div class="dontmiss_text">
                                             <h4>
-                                                <a href="#">
-                                                    <?= $item->pos_title ?>
+                                                <a href="{{route('posts.index', ['slug' => $item->pos_slug, 'id' => $item->pos_id])}}" title="{{$item->pos_title}}">
+                                                    {{$item->pos_title}}
                                                 </a>
                                             </h4>
                                         </div>
                                     </li>
-                                    <?php } ?>
+                                                    @endforeach
+                                                @endif
+                                            @endif
+                                        @endif
+                                    @endif
                                 </ul>
                             </div>
                         </div>
