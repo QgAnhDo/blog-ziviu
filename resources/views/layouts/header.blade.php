@@ -32,7 +32,7 @@
                     </ul>
                     <a href="#" class="search_icon" id="btnSearch"><img src="assets/images/icon-search.png"></a>
                     <form action="<?= route('search.index') ?>" method="GET">
-                        <input class="searchbox showsearch" type="text" name="name" value="" placeholder="Nhập nội dung tìm kiếm ...">
+                        <input class="searchbox showsearch" type="text" name="name" value="<?= isset($_GET['name']) ? $_GET['name'] :'' ?>" placeholder="Nhập nội dung tìm kiếm ...">
                     </form>
                 </div>
             </div>
