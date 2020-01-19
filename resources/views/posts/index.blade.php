@@ -82,10 +82,10 @@
                                 <div class="fb-send"></div>
                             </div>
                             <div class="dav_social_2">
-                                <div class="fb-like" data-href="http://genk.vn/vi-sao-ios-13-cang-cap-nhat-cang-lam-loi-cuu-ki-su-apple-vua-dua-ra-cau-tra-loi-cuc-ky-xac-dang-cho-van-de-nay-20191027175708348.chn" data-width="" data-layout="button_count" data-action="like" data-size="small" data-show-faces="true" data-share="true">
+                                <div class="fb-like" data-href="http://genk.vn/vi-sao-ios-13-cang-cap-nhat-cang-lam-loi-cuu-ki-su-apple-vua-dua-ra-cau-tra-loi-cuc-ky-xac-dang-cho-van-de-nay-20191027175708348.chn" data-width="710px" data-layout="button_count" data-action="like" data-size="small" data-show-faces="true" data-share="true">
                                 </div>
                             </div>
-                            <div class="dav_social_3">
+                            <?php /* <div class="dav_social_3">
                                 <div id="sponsorzone_button_vp_button_zone">
                                     <a href="#">
                                         <div id="vp_button_right"></div>
@@ -95,21 +95,17 @@
                                         <span class="vpb_text">Bấm để thiết lập</span>
                                     </div>
                                 </div>
-                            </div>
+                            </div> */ ?>
                         </div>
                         <div class="dav_new_tags clearfix">
                             <span class="tgname">Tags:</span>
                             <ul>
-                                <li><a href="#"><strong>tính năng mới</strong></a></li>
-                                <li><a href="#"><strong>ceo tìm book</strong></a></li>
-                                <li><a href="#"><strong>chia sẻ ảnh</strong></a></li>
-                                <li><a href="#"><strong>kỹ sư phần mềm</strong></a></li>
-                                <li><a href="#"><strong>phần mềm mac</strong></a></li>
-                                <li><a href="#"><strong>hệ điều hành mới</strong></a></li>
-                                <li><a href="#"><strong>lỗi nghiêm trọng</strong></a></li>
+                                @foreach($postTag as $item)
+                                <li><a href="#"><strong>{{$item->tag_name}}</strong></a></li>
+                                @endforeach
                             </ul>
                         </div>
-                        <div class="dav_box_ads_details">
+                        <?php /* <div class="dav_box_ads_details">
                             <div class="dav_box_video">
                                 <div class="dav_box_video_title">
                                     <h3>VIDEO HAY TỪ WORLD CUP 2022</h3>
@@ -120,7 +116,7 @@
                                 <div style="float: left;"><img src="images/detail/ads_video.jpg"></div>
                                 <div style="float: right;"><img src="images/detail/ads_video.jpg"></div>
                             </div>
-                        </div>
+                        </div> */ ?>
                     </div>
                     <div class="detail_comment">
                         <p class="detail_comment_title">Bình luận</p>
