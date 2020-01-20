@@ -15,4 +15,8 @@ interface HomeRepositoryInterface {
     public function getPostsHot();
 
     public function getCategoriesHot();
+
+    public function getPostRating();
+
+    public function getPostView();
 }

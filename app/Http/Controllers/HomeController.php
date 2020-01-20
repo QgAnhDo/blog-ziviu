@@ -43,10 +43,14 @@ class HomeController extends Controller
         $categories = $this->home->getCategories();
         $posts = $this->home->getPosts();
         $postsHot = $this->home->getPostsHot();
+        $postRating = $this->home->getPostRating();
+        $postView = $this->home->getPostView();
         $categoriesHot = $this->home->getCategoriesHot();
         $dataShow['view'] = view('index')->with([
             'posts' => $posts,
             'postsHot' => $postsHot,
+            'postRating' => $postRating,
+            'postView' => $postView,
             'categoriesHot' => $categoriesHot,
         ]);
         return view('layouts/master')->with([
@@ -60,8 +64,10 @@ class HomeController extends Controller
         $categories = $this->home->getCategories();
         $categoriesHot = $this->home->getCategoriesHot();
         $post = $this->post->getPostById($id);
+        $postTag = $this->post->getPostTags($id);
         $dataShow['view'] = view('posts.index')->with([
             'post' => $post,
+            'postTag' => $postTag,
             'categoriesHot' => $categoriesHot,
         ]);
         return view('layouts/master')->with(['categories' => $categories,"dataShow" => $dataShow]);

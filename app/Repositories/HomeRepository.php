@@ -32,7 +32,7 @@ class HomeRepository implements HomeRepositoryInterface {
     {
         return Posts::join('categories', 'pos_cat_id', '=', 'cat_id')
             ->where('pos_status', 1)
-            ->select('pos_id','pos_title', 'pos_slug', 'pos_description', 'pos_cat_id', 'pos_status', 'pos_created_at', 'cat_id', 'cat_name', 'cat_slug')
+            ->select('pos_id','pos_title', 'pos_slug', 'pos_description', 'pos_cat_id', 'pos_status', 'pos_rating', 'pos_view', 'pos_created_at', 'cat_id', 'cat_name', 'cat_slug')
             ->orderBy('pos_id', 'desc')
             ->limit(5)
             ->get();
@@ -56,6 +56,15 @@ class HomeRepository implements HomeRepositoryInterface {
                 ->orderBy('pos_id', 'desc')
                 ->first();
             $postsHot->hotSmall = $postsHotSmall;
+            if($postsHotSmall) {
+                $postsHotSmaller = Posts:: where('pos_id', '<', $postsHotSmall->pos_id)
+                    ->where('pos_hot', 1)
+                    ->where('pos_status', 1)
+                    ->select('pos_id','pos_title', 'pos_slug', 'pos_description', 'pos_status', 'pos_hot', 'pos_created_at')
+                    ->orderBy('pos_id', 'desc')
+                    ->first();
+                $postsHot->hotSmaller = $postsHotSmaller;
+            }
         }
         if($postsHotSmall) {
             $postsHotSmaller = Posts::where('pos_id', '<', $postsHotSmall->pos_id)
@@ -76,6 +85,7 @@ class HomeRepository implements HomeRepositoryInterface {
             ->select('cat_id', 'cat_name')
             ->orderBy('cat_id', 'desc')
             ->first();
+        if ($categoriesHot) {
             $categoriesHotPosts = Posts::where('pos_cat_id', $categoriesHot->cat_id)
                 ->where('pos_status', 1)
                 ->select('pos_id', 'pos_title', 'pos_slug')
@@ -83,7 +93,7 @@ class HomeRepository implements HomeRepositoryInterface {
                 ->limit(4)
                 ->get();
             $categoriesHot->posts = $categoriesHotPosts;
-        if($categoriesHot) {
+
             $categoriesHot2 = Categories::join('posts', 'pos_cat_id', '=', 'cat_id')
                 ->where('cat_id', '<>', $categoriesHot->cat_id)
                 // ->where('cat_hot', 1)
@@ -91,6 +101,7 @@ class HomeRepository implements HomeRepositoryInterface {
                 ->select('cat_id', 'cat_name')
                 ->orderBy('cat_id', 'desc')
                 ->first();
+            if($categoriesHot2) {
                 $categoriesHotPosts2 = Posts::where('pos_cat_id', $categoriesHot2->cat_id)
                     ->where('pos_status', 1)
                     ->select('pos_id', 'pos_title', 'pos_slug')
@@ -98,8 +109,8 @@ class HomeRepository implements HomeRepositoryInterface {
                     ->limit(2)
                     ->get();
                 $categoriesHot2->posts = $categoriesHotPosts2;
-            $categoriesHot->hot2 = $categoriesHot2;
-            if($categoriesHot2) {
+                $categoriesHot->hot2 = $categoriesHot2;
+
                 $categoriesHot3 = Categories::join('posts', 'pos_cat_id', '=', 'cat_id')
                     ->where('cat_id', '<', $categoriesHot2->cat_id)
                     ->where('cat_hot', 1)
@@ -107,16 +118,38 @@ class HomeRepository implements HomeRepositoryInterface {
                     ->select('cat_id', 'cat_name')
                     ->orderBy('cat_id', 'desc')
                     ->first();
-                $categoriesHotPosts3 = Posts::where('pos_cat_id', $categoriesHot3->cat_id)
-                    ->where('pos_status', 1)
-                    ->select('pos_id', 'pos_title', 'pos_slug')
-                    ->orderBy('pos_id', 'desc')
-                    ->limit(3)
-                    ->get();
-                $categoriesHot3->posts = $categoriesHotPosts3;
-            $categoriesHot2->hot3 = $categoriesHot3;
+                if($categoriesHot3) {
+                    $categoriesHotPosts3 = Posts::where('pos_cat_id', $categoriesHot3->cat_id)
+                        ->where('pos_status', 1)
+                        ->select('pos_id', 'pos_title', 'pos_slug')
+                        ->orderBy('pos_id', 'desc')
+                        ->limit(3)
+                        ->get();
+                    $categoriesHot3->posts = $categoriesHotPosts3;
+                    $categoriesHot2->hot3 = $categoriesHot3;
+                }
             }
         }
         return $categoriesHot;
+    }
+
+    public function getPostRating()
+    {
+        return Posts::join('categories', 'pos_cat_id', '=', 'cat_id')
+            ->where('pos_status', 1)
+            ->select('pos_id','pos_title', 'pos_slug', 'pos_description', 'pos_cat_id', 'pos_status', 'pos_rating', 'pos_view', 'pos_created_at', 'cat_id', 'cat_name', 'cat_slug')
+            ->orderBy('pos_rating', 'desc')
+            ->limit(5)
+            ->get();
+    }
+
+    public function getPostView()
+    {
+        return Posts::join('categories', 'pos_cat_id', '=', 'cat_id')
+            ->where('pos_status', 1)
+            ->select('pos_id','pos_title', 'pos_slug', 'pos_description', 'pos_cat_id', 'pos_status', 'pos_rating', 'pos_view', 'pos_created_at', 'cat_id', 'cat_name', 'cat_slug')
+            ->orderBy('pos_view', 'desc')
+            ->limit(5)
+            ->get();
     }
 }
