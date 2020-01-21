@@ -1,7 +1,7 @@
 @extends('admin.layouts.master')
 
 @section('title')
-	Thêm admin mới
+	Thêm danh mục mới
 @endsection
 
 @section('css')
@@ -26,20 +26,16 @@
 		<div class="panel-body">
 			<form action="" method="post" enctype="multipart/form-data">
 				<div class="form-group">
-					<label for="name">Tên tài khoản admin</label>
-					<input type="text" class="form-control" name="adm_name" id="adm_name" placeholder="Nhập tên tài khoản">
+					<label for="name">Tên danh mục</label>
+					<input type="text" class="form-control" name="cat_name" id="cat_name" placeholder="Nhập tên tài khoản">
 				</div>
 				<div class="form-group">
-					<label for="name">Tên tài khoản admin</label>
-					<input type="text" class="form-control" name="adm_loginname" id="adm_loginname" placeholder="Nhập tên admin">
+					<label for="name">Link slug</label>
+					<input type="text" class="form-control" name="slug" id="slug" placeholder="Nhập tên admin">
 				</div>
 				<div class="form-group">
 					<label for="name">Email</label>
 					<input type="text" class="form-control" name="adm_email" id="adm_email" placeholder="Nhập email">
-				</div>
-				<div class="form-group">
-					<label for="name">Password</label>
-					<input type="password" class="form-control" name="password" id="password">
 				</div>
 				<div class="form-group">
 					<label for="name">Ảnh đại diện</label>
