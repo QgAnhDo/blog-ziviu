@@ -37,7 +37,7 @@ function parse_image($folder, $size, $fileName)
     if ($fileName == "") {
         return "";
     } else {
-        $explode = explode('_', $fileName);
+        $explode = explode('/', $fileName);
         $source = url('/uploads/' . $folder . '/' . $size . '/' . $explode[0] . '/' . $explode[1] . '/' . $explode[2] . '/' . $fileName);
         return $source;
     }
