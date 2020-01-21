@@ -49,6 +49,12 @@
 							line-height: 20px;
 							color: #444;
 							margin: 10px 0;
+
+                            -webkit-line-clamp: 4;
+                            display: -webkit-box;
+                            -webkit-box-orient: vertical;
+                            overflow: hidden;
+                            text-overflow: ellipsis;
 						}
 					}
 				}
@@ -87,6 +93,12 @@
 							color: #555;
 							margin: 8px 0 13px;
 							display: block;
+
+                            -webkit-line-clamp: 5;
+                            display: -webkit-box;
+                            -webkit-box-orient: vertical;
+                            overflow: hidden;
+                            text-overflow: ellipsis;
 						}
 					}
 				}
@@ -174,8 +186,7 @@
 									color: #333;
 									text-decoration: none;
 									display: block;
-									margin-bottom: 10px;
-									margin-top: -5px;
+                                    margin: -5px 0 10px 0;
 									transition: all .3s;
 									-webkit-transition: all .3s;
 
@@ -218,9 +229,8 @@
 								text-overflow: ellipsis;
 							}
 							.item_relate_wrap {
-								padding-left: 15px;
 								display: block;
-								padding-top: 5px;
+                                padding: 5px 0 0 15px;
 							}
     					}
 					}
@@ -235,7 +245,7 @@
 							    float: left;
 							    .read_more {
 							    	width: 400px;
-									max-height: 575px;
+									//max-height: 575px;
 								    float: left;
 								    background: #fff;
 								    .tab {
@@ -273,7 +283,7 @@
 											    margin-top: 6px;
 											    text-decoration: none;
 
-												-webkit-line-clamp: 2;
+												-webkit-line-clamp: 1;
 												display: -webkit-box;
 												-webkit-box-orient: vertical;
 												overflow: hidden;
@@ -314,8 +324,7 @@
 									.item:not(.first) {
 										width: 380px;
 									    float: left;
-									    margin: 15px 0 -4px;
-									    margin-right: 20px;
+                                        margin: 15px 20px -4px 0;
 									    border-top: 1px solid #ebebeb;
 									    padding-top: 5px;
 									}
@@ -333,21 +342,19 @@
 								    background: linear-gradient(to right,#ebebeb42,#fff);
 								    background: #f0f1f5;
 								    .tab {
-										margin-bottom: 3px;
+                                        margin: 20px 0 3px 0;
 									    color: #4d4d4d;
 									    font-size: 22px;
 									    font-family: Roboto-Bold;
 									    font-weight: 700;
-									    margin-top: 20px;
 									    position: relative;
 									    padding-left: 22px;
 									    a {
-									    	margin-bottom: 3px;
+                                            margin: 20px 0 3px 0;
 										    color: #4d4d4d;
 										    font-size: 22px;
 										    font-family: Roboto-Bold;
 										    font-weight: 700;
-										    margin-top: 20px;
 										    position: relative;
 										    padding-left: 0;
 									    }
@@ -356,13 +363,12 @@
 										    width: 20px;
 										    height: 18px;
 										    background: url(../images/sprite-genk_v11.png) -255px -528px no-repeat;
-										    margin-left: 8px;
 										    position: absolute;
 										    top: 5px;
 										    right: 21px;
 										    display: inline-block;
 										    z-index: 999;
-										    margin-top: 0;
+                                            margin: 0 0 0 8px;
 									    }
 								    }
 								    .tab:before {
@@ -389,10 +395,9 @@
 								    .item {
 								    	width: 270px;
 									    float: right;
-									    margin-top: 16px;
 									    padding-top: 16px;
 									    position: relative;
-									    margin-right: 20px;
+                                        margin: 16px 20px 0 0;
 									    h3 {
 										    float: left;
 										    width: 185px;
@@ -422,7 +427,7 @@
 											    height: 80px;
 											    float: right;
 											    position: relative;
-											    z-index: 12;										    
+											    z-index: 12;
     											border: 1px solid rgba(0,0,0,0.05);
     										}
 									    }
@@ -482,13 +487,12 @@
 							    position: relative;
 							    border-left: 1px solid #e4e4e4;
 							    .tab {
-									margin-bottom: 18px;
+                                    margin: 22px 0 18px 0;
 									color: #333;
 									font-size: 20px;
 									font-family: Roboto-Bold;
 									font-weight: 700;
 									position: relative;
-									margin-top: 22px;
 									position: relative;
 									padding-left: 22px;
 							    }
@@ -542,12 +546,11 @@
 						    float: left;
 						    background: #fff;
 						    .tab {
-							    margin-bottom: 18px;
+                                margin: 22px 0 18px 0;
 							    color: #333;
 							    font-size: 20px;
 							    font-family: Arial;
 							    font-weight: 700;
-							    margin-top: 22px;
 							    position: relative;
 							    padding-left: 22px;
 						    }
@@ -566,8 +569,7 @@
 						    	li {
 								    float: left;
 								    width: 195px;
-								    margin-right: 18px;
-								    margin-bottom: 15px;
+                                    margin: 0 18px 15px 0;
 								    .item_images {
 								    	position: relative;
     									display: block;
@@ -621,8 +623,7 @@
 								li {
 									width: 210px;
 									float: left;
-									margin-left: 20px;
-									margin-top: 20px;
+                                    margin: 20px 0 0 20px;
 									border-bottom: none;
 									padding-right: 0!important;
 									background: none!important;
@@ -641,8 +642,7 @@
 										}
 									}
 									.dontmiss_text {
-									    margin-left: 0;
-									    margin-top: 5px;
+                                        margin: 5px 0 0 0;
 									    display: inline-block;
 									    h4 {
 									    	font: normal 15px/20px Arial;
