@@ -252,7 +252,12 @@ body {
               font-size: 14px;
               line-height: 20px;
               color: #444;
-              margin: 10px 0; }
+              margin: 10px 0;
+              -webkit-line-clamp: 4;
+              display: -webkit-box;
+              -webkit-box-orient: vertical;
+              overflow: hidden;
+              text-overflow: ellipsis; }
         #body .news_content .main_content .main_content_1 .main_content_1_small {
           float: right;
           width: 220px; }
@@ -282,7 +287,12 @@ body {
               font-family: Arial;
               color: #555;
               margin: 8px 0 13px;
-              display: block; }
+              display: block;
+              -webkit-line-clamp: 5;
+              display: -webkit-box;
+              -webkit-box-orient: vertical;
+              overflow: hidden;
+              text-overflow: ellipsis; }
       #body .news_content .main_content .main_content_2 {
         border-bottom: 4px solid #ed2e2e;
         margin-top: 15px;
@@ -349,8 +359,7 @@ body {
               color: #333;
               text-decoration: none;
               display: block;
-              margin-bottom: 10px;
-              margin-top: -5px;
+              margin: -5px 0 10px 0;
               transition: all .3s;
               -webkit-transition: all .3s;
               -webkit-line-clamp: 3;
@@ -384,9 +393,8 @@ body {
               overflow: hidden;
               text-overflow: ellipsis; }
             #body .news_content .main_content .main_content_3 ul li.content_3_item .item_info .item_relate_wrap {
-              padding-left: 15px;
               display: block;
-              padding-top: 5px; }
+              padding: 5px 0 0 15px; }
         #body .news_content .main_content .main_content_3 ul .content_extra li.content_3_trendAd {
           padding: 0;
           border: none; }
@@ -397,7 +405,6 @@ body {
             float: left; }
             #body .news_content .main_content .main_content_3 ul .content_extra li.content_3_trendAd .read_more_and_brands_stuff .read_more {
               width: 400px;
-              max-height: 575px;
               float: left;
               background: #fff; }
               #body .news_content .main_content .main_content_3 ul .content_extra li.content_3_trendAd .read_more_and_brands_stuff .read_more .tab {
@@ -430,7 +437,7 @@ body {
                   font-family: Roboto-Light;
                   margin-top: 6px;
                   text-decoration: none;
-                  -webkit-line-clamp: 2;
+                  -webkit-line-clamp: 1;
                   display: -webkit-box;
                   -webkit-box-orient: vertical;
                   overflow: hidden;
@@ -459,8 +466,7 @@ body {
               #body .news_content .main_content .main_content_3 ul .content_extra li.content_3_trendAd .read_more_and_brands_stuff .read_more .item:not(.first) {
                 width: 380px;
                 float: left;
-                margin: 15px 0 -4px;
-                margin-right: 20px;
+                margin: 15px 20px -4px 0;
                 border-top: 1px solid #ebebeb;
                 padding-top: 5px; }
             #body .news_content .main_content .main_content_3 ul .content_extra li.content_3_trendAd .read_more_and_brands_stuff .marketing_beats {
@@ -476,21 +482,19 @@ body {
               background: linear-gradient(to right, #ebebeb42, #fff);
               background: #f0f1f5; }
               #body .news_content .main_content .main_content_3 ul .content_extra li.content_3_trendAd .read_more_and_brands_stuff .marketing_beats .tab {
-                margin-bottom: 3px;
+                margin: 20px 0 3px 0;
                 color: #4d4d4d;
                 font-size: 22px;
                 font-family: Roboto-Bold;
                 font-weight: 700;
-                margin-top: 20px;
                 position: relative;
                 padding-left: 22px; }
                 #body .news_content .main_content .main_content_3 ul .content_extra li.content_3_trendAd .read_more_and_brands_stuff .marketing_beats .tab a {
-                  margin-bottom: 3px;
+                  margin: 20px 0 3px 0;
                   color: #4d4d4d;
                   font-size: 22px;
                   font-family: Roboto-Bold;
                   font-weight: 700;
-                  margin-top: 20px;
                   position: relative;
                   padding-left: 0; }
                 #body .news_content .main_content .main_content_3 ul .content_extra li.content_3_trendAd .read_more_and_brands_stuff .marketing_beats .tab .tabViewMore {
@@ -498,13 +502,12 @@ body {
                   width: 20px;
                   height: 18px;
                   background: url(../images/sprite-genk_v11.png) -255px -528px no-repeat;
-                  margin-left: 8px;
                   position: absolute;
                   top: 5px;
                   right: 21px;
                   display: inline-block;
                   z-index: 999;
-                  margin-top: 0; }
+                  margin: 0 0 0 8px; }
               #body .news_content .main_content .main_content_3 ul .content_extra li.content_3_trendAd .read_more_and_brands_stuff .marketing_beats .tab:before {
                 content: '';
                 display: block;
@@ -526,10 +529,9 @@ body {
               #body .news_content .main_content .main_content_3 ul .content_extra li.content_3_trendAd .read_more_and_brands_stuff .marketing_beats .item {
                 width: 270px;
                 float: right;
-                margin-top: 16px;
                 padding-top: 16px;
                 position: relative;
-                margin-right: 20px; }
+                margin: 16px 20px 0 0; }
                 #body .news_content .main_content .main_content_3 ul .content_extra li.content_3_trendAd .read_more_and_brands_stuff .marketing_beats .item h3 {
                   float: left;
                   width: 185px;
@@ -602,13 +604,12 @@ body {
             position: relative;
             border-left: 1px solid #e4e4e4; }
             #body .news_content .main_content .main_content_3 ul .content_extra_2 .read_more_and_brands_stuff .brands .tab {
-              margin-bottom: 18px;
+              margin: 22px 0 18px 0;
               color: #333;
               font-size: 20px;
               font-family: Roboto-Bold;
               font-weight: 700;
               position: relative;
-              margin-top: 22px;
               position: relative;
               padding-left: 22px; }
             #body .news_content .main_content .main_content_3 ul .content_extra_2 .read_more_and_brands_stuff .brands .tab:before {
@@ -649,12 +650,11 @@ body {
           float: left;
           background: #fff; }
           #body .news_content .main_content .main_content_3 ul .content_extra_2 .mostview .tab {
-            margin-bottom: 18px;
+            margin: 22px 0 18px 0;
             color: #333;
             font-size: 20px;
             font-family: Arial;
             font-weight: 700;
-            margin-top: 22px;
             position: relative;
             padding-left: 22px; }
           #body .news_content .main_content .main_content_3 ul .content_extra_2 .mostview .tab:before {
@@ -671,8 +671,7 @@ body {
             #body .news_content .main_content .main_content_3 ul .content_extra_2 .mostview ul li {
               float: left;
               width: 195px;
-              margin-right: 18px;
-              margin-bottom: 15px; }
+              margin: 0 18px 15px 0; }
               #body .news_content .main_content .main_content_3 ul .content_extra_2 .mostview ul li .item_images {
                 position: relative;
                 display: block; }
@@ -714,8 +713,7 @@ body {
             #body .news_content .main_content .main_content_3 ul .content_extra_3 .dontmiss ul li {
               width: 210px;
               float: left;
-              margin-left: 20px;
-              margin-top: 20px;
+              margin: 20px 0 0 20px;
               border-bottom: none;
               padding-right: 0 !important;
               background: none !important; }
@@ -731,8 +729,7 @@ body {
                     height: 130px;
                     border: 1px solid rgba(0, 0, 0, 0.05); }
               #body .news_content .main_content .main_content_3 ul .content_extra_3 .dontmiss ul li .dontmiss_text {
-                margin-left: 0;
-                margin-top: 5px;
+                margin: 5px 0 0 0;
                 display: inline-block; }
                 #body .news_content .main_content .main_content_3 ul .content_extra_3 .dontmiss ul li .dontmiss_text h4 {
                   font: normal 15px/20px Arial; }
@@ -1324,52 +1321,52 @@ body {
           #body .detail_content .detail_left .same_category_news .same_category_news_content .same_category_news_list {
             list-style: none;
             display: inline-block; }
-            #body .detail_content .detail_left .same_category_news .same_category_news_content .same_category_news_list .rowccm li {
-              width: 223px;
-              margin-right: 20px;
-              margin-top: 2px;
-              padding-right: 0;
-              margin-bottom: 20px;
-              float: left; }
-              #body .detail_content .detail_left .same_category_news .same_category_news_content .same_category_news_list .rowccm li img {
-                width: 100%;
-                height: 140px; }
-              #body .detail_content .detail_left .same_category_news .same_category_news_content .same_category_news_list .rowccm li .info {
+            #body .detail_content .detail_left .same_category_news .same_category_news_content .same_category_news_list .rowccm {
+              display: inline-block; }
+              #body .detail_content .detail_left .same_category_news .same_category_news_content .same_category_news_list .rowccm li {
                 width: 223px;
-                margin-top: 5px; }
-                #body .detail_content .detail_left .same_category_news .same_category_news_content .same_category_news_list .rowccm li .info h4 {
-                  font-size: 15px;
-                  color: #292929;
-                  line-height: 20px;
-                  text-align: left;
-                  margin: 8px 0;
-                  font-family: Arial;
-                  font-weight: 500;
-                  font-weight: normal; }
-                  #body .detail_content .detail_left .same_category_news .same_category_news_content .same_category_news_list .rowccm li .info h4 a {
-                    text-decoration: none;
-                    color: #222;
-                    font: bold 15px/22px Arial;
-                    -webkit-line-clamp: 3;
-                    display: -webkit-box;
-                    -webkit-box-orient: vertical;
-                    overflow: hidden;
-                    text-overflow: ellipsis; }
-                  #body .detail_content .detail_left .same_category_news .same_category_news_content .same_category_news_list .rowccm li .info h4 span {
-                    background: #9ca7b7;
-                    color: #fff !important;
-                    font: normal 12px Arial !important;
-                    padding: 3px 5px;
-                    border-radius: 5px;
-                    position: relative;
-                    top: 0;
-                    display: inline-block;
-                    margin-top: 4px; }
-                #body .detail_content .detail_left .same_category_news .same_category_news_content .same_category_news_list .rowccm li .info .time {
-                  color: #72767c;
-                  font-size: 13px; }
-            #body .detail_content .detail_left .same_category_news .same_category_news_content .same_category_news_list .rowccm li:last-child {
-              margin-right: 0; }
+                margin: 2px 20px 20px 0;
+                padding-right: 0;
+                float: left; }
+                #body .detail_content .detail_left .same_category_news .same_category_news_content .same_category_news_list .rowccm li img {
+                  width: 100%;
+                  height: 140px; }
+                #body .detail_content .detail_left .same_category_news .same_category_news_content .same_category_news_list .rowccm li .info {
+                  width: 223px;
+                  margin-top: 5px; }
+                  #body .detail_content .detail_left .same_category_news .same_category_news_content .same_category_news_list .rowccm li .info h4 {
+                    font-size: 15px;
+                    color: #292929;
+                    line-height: 20px;
+                    text-align: left;
+                    margin: 8px 0;
+                    font-family: Arial;
+                    font-weight: 500;
+                    font-weight: normal; }
+                    #body .detail_content .detail_left .same_category_news .same_category_news_content .same_category_news_list .rowccm li .info h4 a {
+                      text-decoration: none;
+                      color: #222;
+                      font: bold 15px/22px Arial;
+                      -webkit-line-clamp: 3;
+                      display: -webkit-box;
+                      -webkit-box-orient: vertical;
+                      overflow: hidden;
+                      text-overflow: ellipsis; }
+                    #body .detail_content .detail_left .same_category_news .same_category_news_content .same_category_news_list .rowccm li .info h4 span {
+                      background: #9ca7b7;
+                      color: #fff !important;
+                      font: normal 12px Arial !important;
+                      padding: 3px 5px;
+                      border-radius: 5px;
+                      position: relative;
+                      top: 0;
+                      display: inline-block;
+                      margin-top: 4px; }
+                  #body .detail_content .detail_left .same_category_news .same_category_news_content .same_category_news_list .rowccm li .info .time {
+                    color: #72767c;
+                    font-size: 13px; }
+              #body .detail_content .detail_left .same_category_news .same_category_news_content .same_category_news_list .rowccm li:last-child {
+                margin-right: 0; }
         #body .detail_content .detail_left .same_category_news .same_category_news_content:before {
           content: '';
           background: url(https://genknews.genkcdn.vn/web_images/bg-split.jpg) top left repeat-x;

@@ -65,7 +65,7 @@
                         <li class="content_3_item">
                             <div class="item_image">
                                 <a href="{{ route('posts.index', ['slug' => $item->pos_slug, 'id' => $item->pos_id]) }}" title="{{ $item->pos_title }}">
-                                    <img src="images/qc6.jpg" width="250" height="155"
+                                    <img src="{{$item->getImgPosts()}}" width="250" height="155"
                                          title="{{$item->pos_title}}" alt="{{$item->pos_title}}">
                                 </a>
                             </div>
@@ -80,7 +80,7 @@
                                         {{$item->cat_name}}
                                     </a>
                                     -
-                                    <span>{{$item->pos_created_at}}</span>
+                                    <span>{{getTimeDuration(time()-strtotime($item->pos_created_at))}}</span>
                                 </div>
                                 <span class="item_sapo">
                                     {{$item->pos_description}}
@@ -94,7 +94,7 @@
 {{--                        <a href="#" class="btnviewmore">Xem thêm</a>--}}
 {{--                    </div>--}}
                 </div>
-                {{ $post->links() }}
+                <div align="center">{{ $post->links() }}</div>
                 @else
                 <div class="main_content_3">
                     <ul>

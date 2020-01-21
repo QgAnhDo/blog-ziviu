@@ -24,6 +24,8 @@ Route::get('/{slug}-c{id}','HomeController@categoryDetail')->name('categories.in
 
 Route::get('/tim-kiem','HomeController@searchPostsName')->name('search.index');
 
+Route::get('/{slug}-t{id}','HomeController@tagWithPost')->name('tags.index')->where(['id'=>'\d+', 'slug'=> '.*']);;
+
 Route::resource('home', 'HomeController');
 
 

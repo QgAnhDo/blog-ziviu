@@ -7,7 +7,6 @@
 
     "content-hash": "1cef188e28d04efe45308dc92c13a1c1",
 
-
     "packages": [
         {
             "name": "barryvdh/laravel-debugbar",

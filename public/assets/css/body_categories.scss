@@ -4,7 +4,7 @@
 	.categories_content {
 		width: 100%;
 		display: flex;
-		padding-top: 25px;
+		padding: 25px 0 50px 0;
 		.main_content {
 			float: left;
 			width: 710px;
@@ -12,6 +12,28 @@
 			.main_content_1 {
 				margin-top: 20px;
 				display: flow-root;
+                .tagsLabelTitle {
+                    padding-bottom: 10px;
+                    //padding-top: 30px;
+                    span.active {
+                        width: 45px;
+                        height: 45px;
+                        color: #fff;
+                        background: #ed2e2e;
+                        border-radius: 100%;
+                        -webkit-border-radius: 100%;
+                        -moz-border-radius: 100%;
+                        font: bold 32px/45px Roboto-Bold;
+                        text-align: center;
+                        float: left;
+                        margin-right: 10px;
+                    }
+                    h1 {
+                        font: bold 30px/45px Roboto-Bold;
+                        text-transform: uppercase;
+                        color: #222;
+                    }
+                }
 				.main_content_1_submenu {
 					background: #222;
 					width: 100%;
@@ -235,9 +257,9 @@
 				}
 			}
             nav {
+                display: inline-block;
                 .pagination {
                     list-style: none;
-                    float: right;
                     margin-bottom: 30px;
                     .active {
                         .page-link {color: #ed2e2e!important;}
