@@ -363,9 +363,6 @@
                             </div>
                         </li>
                     </ul>
-                    {{--                    <div class="wrapperbtn">--}}
-                    {{--                        <a href="#" class="btnviewmore">Xem thêm</a>--}}
-                    {{--                    </div>--}}
                 </div>
             </div>
             @include('layouts/sidebar')

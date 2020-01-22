@@ -22,7 +22,7 @@
 @section('content')
 <!-- Main content -->
     <section class="content">
-      <a class="btn btn-primary btn-sm" href="{{route('admin.acc-admin.add')}}">Thêm mới</a><br /><br />
+      <a class="btn btn-primary btn-sm" href="{{route('admin.posts.add')}}">Thêm mới</a><br /><br />
       <div class="row">
         <div class="col-12">
           <div class="card">

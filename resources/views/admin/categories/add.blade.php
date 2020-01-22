@@ -1,7 +1,7 @@
 @extends('admin.layouts.master')
 
 @section('title')
-	Thêm admin mới
+	Thêm danh mục mới
 @endsection
 
 @section('css')
@@ -26,34 +26,32 @@
 		<div class="panel-body">
 			<form action="" method="post" enctype="multipart/form-data">
 				<div class="form-group">
-					<label for="name">Tên tài khoản admin</label>
-					<input type="text" class="form-control" name="adm_name" id="adm_name" placeholder="Nhập tên tài khoản">
+					<label for="name">Tên danh mục</label>
+					<input type="text" class="form-control" name="cat_name" id="cat_name" placeholder="Nhập tên danh mục">
 				</div>
 				<div class="form-group">
-					<label for="name">Tên tài khoản admin</label>
-					<input type="text" class="form-control" name="adm_loginname" id="adm_loginname" placeholder="Nhập tên admin">
-				</div>
-				<div class="form-group">
-					<label for="name">Email</label>
-					<input type="text" class="form-control" name="adm_email" id="adm_email" placeholder="Nhập email">
-				</div>
-				<div class="form-group">
-					<label for="name">Password</label>
-					<input type="password" class="form-control" name="password" id="password">
+					<label for="name">Mô tả</label>
+					<input type="text" class="form-control" name="description" id="description" placeholder="Nhập mô tả">
 				</div>
 				<div class="form-group">
 					<label for="name">Ảnh đại diện</label>
 					<input type="file" class="form-control" name="avatar" id="avatar">
 				</div>
+
 				<div class="form-group">
-					<label for="name">Phone</label>
-					<input type="text" class="form-control" name="adm_phone" id="adm_phone" placeholder="Nhập số điện thoại">
+					<label for="cat_hot">Danh mục hot?</label>
+					<input type="radio" name="cat_hot" value="1"> Nổi bật
+					<input type="radio" name="cat_hot" value="0"> Không<br>
+				</div>
+
+				<div class="form-group">
+					<label for="cat_status">Trạng thái?</label>
+					<input type="radio" name="cat_active" value="1"> Hoạt động
+					<input type="radio" name="cat_active" value="0"> Không<br>
 				</div>
 
 				<button class="btn btn-primary" type="submit" name="submit">Thêm Mới</button>
-				<a class="btn btn-danger" type="submit" name="" href="list.php">Trở lại</a>
-
-			
+				<a class="btn btn-danger" type="submit" name="" href="list.php">Trở lại</a>			
 			</form>
 		</div>
 	</section>
