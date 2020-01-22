@@ -45,6 +45,10 @@
 					<label for="name">Ảnh đại diện</label>
 					<input type="file" class="form-control" name="avatar" id="avatar">
 				</div>
+				<div class="form-group">
+					<label for="name">Phone</label>
+					<input type="text" class="form-control" name="adm_phone" id="adm_phone" placeholder="Nhập số điện thoại">
+				</div>
 
 				<button class="btn btn-primary" type="submit" name="submit">Thêm Mới</button>
 				<a class="btn btn-danger" type="submit" name="" href="list.php">Trở lại</a>
