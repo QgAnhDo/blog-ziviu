@@ -27,7 +27,7 @@ class CategoryRepository implements CategoryRepositoryInterface {
             ->where('pos_cat_id', $id)->where('pos_status', 1)
             ->select('pos_id','pos_title', 'pos_slug', 'pos_image', 'pos_description', 'pos_cat_id', 'pos_status', 'pos_created_at', 'cat_id', 'cat_name', 'cat_slug')
             ->orderBy('pos_id', 'desc')
-            ->paginate(2);
+            ->paginate(10);
     }
 
     public function getPostHotByCategory($id)

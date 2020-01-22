@@ -95,7 +95,7 @@ class HomeRepository implements HomeRepositoryInterface {
             $categoriesHot->posts = $categoriesHotPosts;
 
             $categoriesHot2 = Categories::join('posts', 'pos_cat_id', '=', 'cat_id')
-                ->where('cat_id', '<>', $categoriesHot->cat_id)
+                ->where('cat_id', '<', $categoriesHot->cat_id)
                 // ->where('cat_hot', 1)
                 ->where('cat_active', 1)
                 ->select('cat_id', 'cat_name')

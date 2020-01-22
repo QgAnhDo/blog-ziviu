@@ -56,7 +56,7 @@
                                         {{$item->cat_name}}
                                     </a>
                                     -
-                                    <span>{{getTimeDuration(time()-strtotime($item->pos_created_at))}}</span>
+                                    <span>{{getTimeDuration(time()-$item->pos_created_at)}}</span>
                                 </div>
                                 <span class="item_sapo">
                                     {{$item->pos_description}}
@@ -66,9 +66,6 @@
                         </li>
                         @endforeach
                     </ul>
-{{--                    <div class="wrapperbtn">--}}
-{{--                        <a href="#" class="btnviewmore">Xem thêm</a>--}}
-{{--                    </div>--}}
                 </div>
                 <div align="center">{{ $post->links() }}</div>
                 @else

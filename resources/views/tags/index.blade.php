@@ -18,30 +18,6 @@
                             </li>
                         </ul>
                     </div>
-                    <? /*
-                    <div class="main_content_1_big">
-                        <div>
-                            <a href="#"><img src="images/qc1.png" title="<?= $postHot->pos_title ?>" alt="<?= $postHot->pos_title ?>"></a>
-                            <h2>
-                                <a href="#">
-                                    <?= $postHot->pos_title ?>
-                                </a>
-                            </h2>
-                            <p><?= $postHot->pos_description ?></p>
-                        </div>
-                    </div>
-                    <div class="main_content_1_small">
-                        <div>
-                            <a href="#">
-                                <img src="images/qc2.jpg" title="<?= $postHot->hotSmall->pos_title ?>" alt="<?= $postHot->hotSmall->pos_title ?>">
-                            </a>
-                            <h2>
-                                <a href="#"><?= $postHot->hotSmall->pos_title ?></a>
-                            </h2>
-                            <span><?= $postHot->hotSmall->pos_description ?></span>
-                        </div>
-                    </div>
-                    */ ?>
                 </div>
                 @if(count($postTag) > 0)
                     <div class="main_content_3">
@@ -65,7 +41,7 @@
                                                 {{$item->cat_name}}
                                             </a>
                                             -
-                                            <span>{{getTimeDuration(time()-strtotime($item->pos_created_at))}}</span>
+                                            <span>{{getTimeDuration(time()-$item->pos_created_at)}}</span>
                                         </div>
                                         <span class="item_sapo">
                                     {{$item->pos_description}}
