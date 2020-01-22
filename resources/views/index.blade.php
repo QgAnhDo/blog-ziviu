@@ -82,7 +82,7 @@
                                             {{$item->cat_name}}
                                         </a>
                                         -
-                                        <span>{{getTimeDuration(time()-strtotime($item->pos_created_at))}}</span>
+                                        <span>{{getTimeDuration(time()-$item->pos_created_at)}}</span>
                                     </div>
                                     <span class="item_sapo">
                                         {{$item->pos_description}}
@@ -195,7 +195,7 @@
                                             {{$item->cat_name}}
                                         </a>
                                         -
-                                        <span>{{getTimeDuration(time()-strtotime($item->pos_created_at))}}</span>
+                                        <span>{{getTimeDuration(time()-$item->pos_created_at)}}</span>
                                     </div>
                                     <span class="item_sapo">
                                     {{$item->pos_description}}
@@ -282,7 +282,7 @@
                                             {{$item->cat_name}}
                                         </a>
                                         -
-                                        <span>{{getTimeDuration(time()-strtotime($item->pos_created_at))}}</span>
+                                        <span>{{getTimeDuration(time()-$item->pos_created_at)}}</span>
                                     </div>
                                     <span class="item_sapo">
                                 {{$item->pos_description}}

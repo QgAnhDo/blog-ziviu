@@ -66,7 +66,7 @@ class HomeController extends Controller
     public function postDetail($slug,$id)
     {
         $categories = $this->home->getCategories();
-        $categoriesHot = $this->home->getCategoriesHot();
+
         $post = $this->post->getPostById($id);
         $postTag = $this->post->getPostTags($id);
         $postRelateHot = $this->post->getPostRelateHot($id);
@@ -76,7 +76,6 @@ class HomeController extends Controller
             'postTag' => $postTag,
             'postRelateHot' => $postRelateHot,
             'postRelate' => $postRelate,
-            'categoriesHot' => $categoriesHot,
         ]);
         return view('layouts/master')->with(['categories' => $categories,"dataShow" => $dataShow]);
     }

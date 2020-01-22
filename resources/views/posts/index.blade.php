@@ -26,8 +26,10 @@
                         <h1> {{$post->pos_title}} </h1>
                         <div class="detail_meta">
                             <span class="meta_author">{{$post->adm_loginname}} ,</span>
-{{--                            <span class="meta_source">Theo <a href="#">Trí Thức Trẻ</a></span>--}}
-                            <span class="meta_time">{{getTimeDuration(time()-strtotime($post->pos_created_at))}}</span>
+                            <span class="meta_source">Theo <a href="{{$post->pos_website}}" target="_blank">
+                                    {{str_ireplace('www.', '', parse_url($post->pos_website, PHP_URL_HOST))}}</a>
+                            </span>
+                            <span class="meta_time">{{date('h:m - d/m/Y',$post->pos_created_at)}}</span>
                         </div>
                         <div class="detail_socials">
                             <div class="fb-like" data-href="http://genk.vn/vi-sao-ios-13-cang-cap-nhat-cang-lam-loi-cuu-ki-su-apple-vua-dua-ra-cau-tra-loi-cuc-ky-xac-dang-cho-van-de-nay-20191027175708348.chn" data-width="" data-layout="button_count" data-action="like" data-size="small" data-show-faces="true" data-share="true">
@@ -55,14 +57,16 @@
                             <h2>{{$post->pos_description}}</h2>
                             <div class="knc_relate_wrapper">
                                 <ul>
-                                    @foreach ($categoriesHot->hot2->hot3->posts as $item)
+                                    @if($postRelate)
+                                        @foreach ($postRelate as $item)
                                     <li>
                                         <a href="{{ route('posts.index', ['slug' => $item->pos_slug, 'id' => $item->pos_id]) }}">
                                             {{$item->pos_title}}
                                             <i class="icon-show-popup"></i>
                                         </a>
                                     </li>
-                                    @endforeach
+                                        @endforeach
+                                    @endif
                                 </ul>
                                 <div style="clear: both;"></div>
                             </div>
@@ -226,7 +230,7 @@
                                                     <span>Nổi bật</span>
                                                     @endif
                                                 </h4>
-                                                <span class="time">{{getTimeDuration(time()-strtotime($item->pos_created_at))}}</span>
+                                                <span class="time">{{getTimeDuration(time()-$item->pos_created_at)}}</span>
                                             </div>
                                         </li>
                                             @endforeach
@@ -248,7 +252,7 @@
                                                                 <span>Nổi bật</span>
                                                             @endif
                                                         </h4>
-                                                        <span class="time">{{getTimeDuration(time()-strtotime($item->pos_created_at))}}</span>
+                                                        <span class="time">{{getTimeDuration(time()-$item->pos_created_at)}}</span>
                                                     </div>
                                                 </li>
                                             @endforeach

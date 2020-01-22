@@ -19,6 +19,6 @@ class TagRepository implements TagRepositoryInterface {
             ->join('categories', 'cat_id', '=', 'pos_cat_id')
             ->where('pota_tag_id', $id)->where('pos_status', 1)
             ->select('pos_id', 'pos_title', 'pos_slug', 'pos_description', 'pos_image', 'pos_cat_id', 'pos_hot', 'pos_status', 'pos_created_at', 'cat_id', 'cat_name', 'cat_slug', 'pota_post_id', 'pota_tag_id')
-            ->paginate(2);
+            ->paginate(10);
     }
 }
