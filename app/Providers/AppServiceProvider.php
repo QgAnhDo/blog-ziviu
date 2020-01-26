@@ -13,7 +13,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        require ('..\App\Helpers\helpers.php');
+        //require ('..\App\Helpers\helpers.php');
 
         $this->app->bind(
             'App\Repositories\HomeRepositoryInterface',
