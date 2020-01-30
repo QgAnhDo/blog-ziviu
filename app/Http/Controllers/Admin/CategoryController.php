@@ -22,4 +22,9 @@ class CategoryController extends Controller
         $category = Category::all();
         return view('admin.categories.list', ['category' => $category]);
     }
+    public function getEdit($id)
+    {
+        $category = Category::where('cat_id', $id)->first();
+        return view('admin.categories.edit', ['category' => $category]);
+    }
 }

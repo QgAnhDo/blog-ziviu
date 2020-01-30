@@ -3,7 +3,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" href="assets/images/favicon.png">
-    <title>Trang thông tin dành cho tín đồ công nghệ | GenK.vn</title>
+    <title>Trang thông tin dành cho các tín đồ công nghệ</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
     <link rel="stylesheet" type="text/css" href="assets/css/responsive/style-responsive.css">

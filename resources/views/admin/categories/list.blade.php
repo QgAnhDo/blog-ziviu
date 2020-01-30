@@ -55,7 +55,7 @@
                     <td>{{ $item->cat_hot }}</td>
                     <td>{{ $item->cat_active }}</td>
                     <td>{{ $item->cat_created_at }}</td>
-                    <td><a href="{{route('admin.category.edit')}}">Sửa</a> | <a href="{{route('admin.category.delete')}}">Xóa</a></td>
+                    <td><a href="{{route('admin.category.edit', ['id' => $item->cat_id])}}">Sửa</a> | <a href="{{route('admin.category.delete', ['id' => $item->cat_id])}}">Xóa</a></td>
                   </tr>
                   @endforeach
                 </tbody>
