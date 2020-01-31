@@ -24,7 +24,7 @@ class LoginController extends Controller
     {
         $email = $request->input('email');
         $password = $request->input('password');
-        if( User::attempt(['email' => $email, 'password' =>$password])) {
+        if( User::attempt(['use_email' => $email, 'use_password' =>$password])) {
             return redirect('/');
         }
         else {

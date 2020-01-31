@@ -13,6 +13,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
+        //require ('..\App\Helpers\helpers.php');
+
         $this->app->bind(
             'App\Repositories\HomeRepositoryInterface',
             'App\Repositories\HomeRepository'
@@ -28,6 +30,10 @@ class AppServiceProvider extends ServiceProvider
         $this->app->bind(
             'App\Repositories\SearchRepositoryInterface',
             'App\Repositories\SearchRepository'
+        );
+        $this->app->bind(
+            'App\Repositories\TagRepositoryInterface',
+            'App\Repositories\TagRepository'
         );
     }
 

@@ -7,7 +7,7 @@
                         @if($postsHot)
                         <div>
                             <a href="{{route('posts.index', ['slug' => $postsHot->pos_slug, 'id' => $postsHot->pos_id])}}">
-                                <img src="images/qc1.png" title="{{$postsHot->pos_title}}"
+                                <img src="{{$postsHot->getImgPosts()}}" title="{{$postsHot->pos_title}}"
                                      alt="{{$postsHot->pos_title}}">
                             </a>
                             <h2>
@@ -24,7 +24,7 @@
                             @if($postsHot->hotSmall)
                         <div>
                             <a href="{{route('posts.index', ['slug' => $postsHot->hotSmall->pos_slug, 'id' => $postsHot->hotSmall->pos_id])}}">
-                                <img src="images/qc2.jpg" title="{{$postsHot->hotSmall->pos_title}}"
+                                <img src="{{$postsHot->hotSmall->getImgPosts()}}" title="{{$postsHot->hotSmall->pos_title}}"
                                      alt="{{$postsHot->hotSmall->pos_title}}">
                             </a>
                             <h2>
@@ -46,7 +46,7 @@
                                     @foreach ($categoriesHot->posts as $item)
                             <li class="item">
                                 <a href="{{route('posts.index', ['slug' => $item->pos_slug, 'id' => $item->pos_id])}}">
-                                    <img src="images/qc3.jpg" title="{{$item->pos_title}}"
+                                    <img src="{{$item->getImgPosts()}}" title="{{$item->pos_title}}"
                                          alt="{{$item->pos_title}}">
                                 </a>
                                 <h3>
@@ -67,8 +67,7 @@
                             <li class="content_3_item">
                                 <div class="item_image">
                                     <a href="{{route('posts.index', ['slug' => $item->pos_slug, 'id' => $item->pos_id])}}">
-                                        <img src="" width="250" height="155"
-                                             title="{{$item->pos_title}}" alt="{{$item->pos_title}}">
+                                        <img src="{{$item->getImgPosts()}}" width="250" height="155" title="{{$item->pos_title}}" alt="{{$item->pos_title}}">
                                     </a>
                                 </div>
                                 <div class="item_info">
@@ -82,7 +81,7 @@
                                             {{$item->cat_name}}
                                         </a>
                                         -
-                                        <span>{{date('d-m-Y H:i:s', $item->pos_created_at)}}</span>
+                                        <span>{{getTimeDuration(time()-$item->pos_created_at)}}</span>
                                     </div>
                                     <span class="item_sapo">
                                         {{$item->pos_description}}
@@ -101,7 +100,7 @@
                                         <div class="item first">
                                             <div class="ava">
                                                 <a href="{{route('posts.index', ['slug' => $postsHot->hotSmaller->pos_slug, 'id' => $postsHot->hotSmaller->pos_id])}}">
-                                                    <img src="images/extra1.jpg" title="{{$postsHot->hotSmaller->pos_title}}" alt="{{$postsHot->hotSmaller->pos_title}}">
+                                                    <img src="{{$postsHot->hotSmaller->getImgPosts()}}" title="{{$postsHot->hotSmaller->pos_title}}" alt="{{$postsHot->hotSmaller->pos_title}}">
                                                 </a>
                                             </div>
                                             <h3>
@@ -145,7 +144,7 @@
                                                         </a>
                                                     </h3>
                                                     <a class="item_image" href="{{route('posts.index', ['slug' => $item->pos_slug, 'id' => $item->pos_id])}}">
-                                                        <img src="images/extra2.jpg" title="{{$item->pos_title}}" alt="{{$item->pos_title}}">
+                                                        <img src="{{$item->getImgPosts()}}" title="{{$item->pos_title}}" alt="{{$item->pos_title}}">
                                                     </a>
                                                 </li>
                                                             @endforeach
@@ -180,7 +179,7 @@
                             <li class="content_3_item">
                                 <div class="item_image">
                                     <a href="{{route('posts.index', ['slug' => $item->pos_slug, 'id' => $item->pos_id])}}">
-                                        <img src="images/qc6.jpg" width="250" height="155"
+                                        <img src="{{$item->getImgPosts()}}" width="250" height="155"
                                              title="{{$item->pos_title}}" alt="{{$item->pos_title}}">
                                     </a>
                                 </div>
@@ -195,7 +194,7 @@
                                             {{$item->cat_name}}
                                         </a>
                                         -
-                                        <span>{{$item->pos_created_at}}</span>
+                                        <span>{{getTimeDuration(time()-$item->pos_created_at)}}</span>
                                     </div>
                                     <span class="item_sapo">
                                     {{$item->pos_description}}
@@ -214,7 +213,7 @@
                                                 @foreach ($categoriesHot->posts as $item)
                                         <li>
                                             <a class="item_images" href="{{route('posts.index', ['slug' => $item->pos_slug, 'id' => $item->pos_id])}}">
-                                                <img src="images/extra3.jpg" title="{{$item->pos_title}}" alt="{{$item->pos_title}}">
+                                                <img src="{{$item->getImgPosts()}}" title="{{$item->pos_title}}" alt="{{$item->pos_title}}">
                                             </a>
                                             <h3>
                                                 <a href="{{route('posts.index', ['slug' => $item->pos_slug, 'id' => $item->pos_id])}}" title="{{$item->pos_title}}">
@@ -267,7 +266,7 @@
                             <li class="content_3_item">
                                 <div class="item_image">
                                     <a href="{{route('posts.index', ['slug' => $item->pos_slug, 'id' => $item->pos_id])}}">
-                                        <img src="images/qc6.jpg" width="250" height="155"
+                                        <img src="{{$item->getImgPosts()}}" width="250" height="155"
                                              title="{{$item->pos_title}}" alt="{{$item->pos_title}}">
                                     </a>
                                 </div>
@@ -282,7 +281,7 @@
                                             {{$item->cat_name}}
                                         </a>
                                         -
-                                        <span>{{$item->pos_created_at}}</span>
+                                        <span>{{getTimeDuration(time()-$item->pos_created_at)}}</span>
                                     </div>
                                     <span class="item_sapo">
                                 {{$item->pos_description}}
@@ -303,7 +302,7 @@
                                     <li>
                                         <div class="dontmiss_img">
                                             <a href="{{route('posts.index', ['slug' => $item->pos_slug, 'id' => $item->pos_id])}}" title="{{$item->pos_title}}">
-                                                <img src="images/extra4.jpg" title="{{$item->pos_title}}" alt="{{$item->pos_title}}">
+                                                <img src="{{$item->getImgPosts()}}" title="{{$item->pos_title}}" alt="{{$item->pos_title}}">
                                             </a>
                                         </div>
                                         <div class="dontmiss_text">
@@ -362,70 +361,7 @@
                                 <div class="item_relate_wrap"></div>
                             </div>
                         </li>
-                        <li class="content_3_item">
-                            <div class="item_image">
-                                <a href="#">
-                                    <img src="images/qc10.jpg" width="250" height="155">
-                                </a>
-                            </div>
-                            <div class="item_info">
-                                <h4 class="item_title"><a href="#">Bộ ba Predator Helios 300, Triton 500 và Helios 700:
-                                        Laptop gaming quái thú vạn người mê!</a></h4>
-                                <div class="item_meta">
-                                    <a href="#">Đồ chơi số</a>
-                                    -
-                                    <span>1 giờ trước</span>
-                                </div>
-                                <span class="item_sapo">
-										Laptop gaming không chỉ cần hiệu năng khủng mà còn phải có thiết kế đẹp hoặc độc kèm theo các công nghệ...
-									</span>
-                                <div class="item_relate_wrap"></div>
-                            </div>
-                        </li>
-                        <li class="content_3_item">
-                            <div class="item_image">
-                                <a href="#">
-                                    <img src="images/qc10.jpg" width="250" height="155">
-                                </a>
-                            </div>
-                            <div class="item_info">
-                                <h4 class="item_title"><a href="#">Bộ ba Predator Helios 300, Triton 500 và Helios 700:
-                                        Laptop gaming quái thú vạn người mê!</a></h4>
-                                <div class="item_meta">
-                                    <a href="#">Đồ chơi số</a>
-                                    -
-                                    <span>1 giờ trước</span>
-                                </div>
-                                <span class="item_sapo">
-										Laptop gaming không chỉ cần hiệu năng khủng mà còn phải có thiết kế đẹp hoặc độc kèm theo các công nghệ...
-									</span>
-                                <div class="item_relate_wrap"></div>
-                            </div>
-                        </li>
-                        <li class="content_3_item">
-                            <div class="item_image">
-                                <a href="#">
-                                    <img src="images/qc10.jpg" width="250" height="155">
-                                </a>
-                            </div>
-                            <div class="item_info">
-                                <h4 class="item_title"><a href="#">Bộ ba Predator Helios 300, Triton 500 và Helios 700:
-                                        Laptop gaming quái thú vạn người mê!</a></h4>
-                                <div class="item_meta">
-                                    <a href="#">Đồ chơi số</a>
-                                    -
-                                    <span>1 giờ trước</span>
-                                </div>
-                                <span class="item_sapo">
-										Laptop gaming không chỉ cần hiệu năng khủng mà còn phải có thiết kế đẹp hoặc độc kèm theo các công nghệ...
-									</span>
-                                <div class="item_relate_wrap"></div>
-                            </div>
-                        </li>
                     </ul>
-                    {{--                    <div class="wrapperbtn">--}}
-                    {{--                        <a href="#" class="btnviewmore">Xem thêm</a>--}}
-                    {{--                    </div>--}}
                 </div>
             </div>
             @include('layouts/sidebar')

@@ -24,6 +24,8 @@ Route::get('/{slug}-c{id}','HomeController@categoryDetail')->name('categories.in
 
 Route::get('/tim-kiem','HomeController@searchPostsName')->name('search.index');
 
+Route::get('/{slug}-t{id}','HomeController@tagWithPost')->name('tags.index')->where(['id'=>'\d+', 'slug'=> '.*']);
+
 Route::resource('home', 'HomeController');
 
 
@@ -71,8 +73,8 @@ Route::prefix('admin')->group(function () {
     	Route::get('add', 'Admin\UserController@getAdd')->name('admin.users.add');
     	Route::post('add', 'Admin\UserController@postAdd')->name('admin.users.add');
 
-    	Route::get('edit', 'Admin\UserController@getEdit')->name('admin.users.edit');
-    	Route::post('edit', 'Admin\UserController@postEdit')->name('admin.users.edit');
+    	Route::get('edit/{id}', 'Admin\UserController@getEdit')->name('admin.users.edit');
+    	Route::post('edit/{id}', 'Admin\UserController@postEdit')->name('admin.users.edit');
 
     	Route::get('delete', 'Admin\UserController@getDelete')->name('admin.users.delete');
     });
@@ -83,8 +85,8 @@ Route::prefix('admin')->group(function () {
     	Route::get('add', 'Admin\CategoryController@getAdd')->name('admin.category.add');
     	Route::post('add', 'Admin\CategoryController@postAdd')->name('admin.category.add');
 
-    	Route::get('edit', 'Admin\CategoryController@getEdit')->name('admin.category.edit');
-    	Route::post('edit', 'Admin\CategoryController@postEdit')->name('admin.category.edit');
+    	Route::get('edit/{id}', 'Admin\CategoryController@getEdit')->name('admin.category.edit');
+    	Route::post('edit/{id}', 'Admin\CategoryController@postEdit')->name('admin.category.edit');
 
     	Route::get('delete', 'Admin\CategoryController@getDelete')->name('admin.category.delete');
     });
@@ -95,8 +97,8 @@ Route::prefix('admin')->group(function () {
     	Route::get('add', 'Admin\TagController@getAdd')->name('admin.tags.add');
     	Route::post('add', 'Admin\TagController@postAdd')->name('admin.tags.add');
 
-    	Route::get('edit', 'Admin\TagController@getEdit')->name('admin.tags.edit');
-    	Route::post('edit', 'Admin\TagController@postEdit')->name('admin.tags.edit');
+    	Route::get('edit/{id}', 'Admin\TagController@getEdit')->name('admin.tags.edit');
+    	Route::post('edit/{id}', 'Admin\TagController@postEdit')->name('admin.tags.edit');
 
     	Route::get('delete', 'Admin\TagController@getDelete')->name('admin.tags.delete');
     });
@@ -107,8 +109,8 @@ Route::prefix('admin')->group(function () {
     	Route::get('add', 'Admin\CommentController@getAdd');
     	Route::post('add', 'Admin\CommentController@postAdd');
 
-    	Route::get('edit', 'Admin\CommentController@getEdit');
-    	Route::post('edit', 'Admin\CommentController@postEdit');
+    	Route::get('edit/{id}', 'Admin\CommentController@getEdit');
+    	Route::post('edit/{id}', 'Admin\CommentController@postEdit');
 
     	Route::get('delete', 'Admin\CommentController@getDelete');
     });
@@ -119,8 +121,8 @@ Route::prefix('admin')->group(function () {
     	Route::get('add', 'Admin\MenuController@getAdd');
     	Route::post('add', 'Admin\MenuController@postAdd');
 
-    	Route::get('edit', 'Admin\MenuController@getEdit');
-    	Route::post('edit', 'Admin\MenuController@postEdit');
+    	Route::get('edit/{id}', 'Admin\MenuController@getEdit');
+    	Route::post('edit/{id}', 'Admin\MenuController@postEdit');
 
     	Route::get('delete', 'Admin\MenuController@getDelete');
     });

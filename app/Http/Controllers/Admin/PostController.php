@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Models\Post;
+use App\Models\Posts;
 use App\Models\Category;
 use App\Models\Tag;
 use Illuminate\Support\Str;
@@ -22,7 +22,7 @@ class PostController extends Controller
 
     public function getList()
     {
-        $posts = Post::all();
+        $posts = Posts::all();
         return view('admin.posts.list', ['posts' => $posts]);
     }
     public function getAdd()
@@ -50,7 +50,7 @@ class PostController extends Controller
             'pos_status.required' => 'Chọn trạng thái',
         ]);
 
-        Post::insert([
+        Posts::insert([
             'pos_title' => $request->title,
             'pos_slug' => slug($request->title),
             'pos_description' => $request->description,
@@ -65,7 +65,7 @@ class PostController extends Controller
     }
     public function getEdit($id)
     {
-        $post = Post::where('pos_id', $id)->first();
+        $post = Posts::where('pos_id', $id)->first();
         $category = Category::all();
         $tag = Tag::all();
         return view('admin.posts.edit', ['post' => $post, 'category' => $category, 'tag' => $tag]);
@@ -89,7 +89,7 @@ class PostController extends Controller
             'pos_status.required' => 'Chọn trạng thái',
         ]);
 
-        Post::insert([
+        Posts::insert([
             'pos_title' => $request->title,
             'pos_slug' => slug($request->title),
             'pos_description' => $request->description,
@@ -104,7 +104,7 @@ class PostController extends Controller
     }
     public function getDelete($id)
     {
-        Post::where('pos_id', $id)->delete();
+        Posts::where('pos_id', $id)->delete();
         return redirect('admin/posts')->with('thongbao', 'Xóa thành công');
     }
 }

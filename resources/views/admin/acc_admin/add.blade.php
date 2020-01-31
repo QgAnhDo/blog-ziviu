@@ -26,45 +26,34 @@
 		<div class="panel-body">
 			<form action="" method="post" enctype="multipart/form-data">
 				<div class="form-group">
-					<label for="name">Tìm kiếm khách sạn</label>
-					<input type="text" class="form-control" name="name" id="name" placeholder="Nhập tên khách sạn">
+					<label for="name">Tên tài khoản admin</label>
+					<input type="text" class="form-control" name="adm_name" id="adm_name" placeholder="Nhập tên tài khoản">
 				</div>
 				<div class="form-group">
-					<label for="result">Kết quả tìm kiếm</label>
-					<select name="result" id="result" class="form-control">
-						<option value="null">-- Chọn khách sạn --</option>
-					</select>
+					<label for="name">Tên tài khoản admin</label>
+					<input type="text" class="form-control" name="adm_loginname" id="adm_loginname" placeholder="Nhập tên admin">
 				</div>
 				<div class="form-group">
-					<label for="fanpage">Link fanpage facebook</label>
-					<input type="text" class="form-control" name="fanpage" id="fanpage">
+					<label for="name">Email</label>
+					<input type="text" class="form-control" name="adm_email" id="adm_email" placeholder="Nhập email">
 				</div>
-				<button data-toggle="modal" data-target="#exampleModal" class="btn btn-primary" type="button" name="show_fanpage" id="show_fanpage">Hiển thị link fanpage</button>
+				<div class="form-group">
+					<label for="name">Password</label>
+					<input type="password" class="form-control" name="password" id="password">
+				</div>
+				<div class="form-group">
+					<label for="name">Ảnh đại diện</label>
+					<input type="file" class="form-control" name="avatar" id="avatar">
+				</div>
+				<div class="form-group">
+					<label for="name">Phone</label>
+					<input type="text" class="form-control" name="adm_phone" id="adm_phone" placeholder="Nhập số điện thoại">
+				</div>
+
 				<button class="btn btn-primary" type="submit" name="submit">Thêm Mới</button>
 				<a class="btn btn-danger" type="submit" name="" href="list.php">Trở lại</a>
 
-				<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-				  <div style="width: 800px;" class="modal-dialog" role="document">
-				    <div class="modal-content">
-				      <div class="modal-header">
-				        <h5 class="modal-title" id="exampleModalLabel">Kết quả tìm kiếm trên facebook</h5>
-				        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-				          <span aria-hidden="true">&times;</span>
-				        </button>
-				      </div>
-				      <div class="modal-body">
-				      	<div id="fb-root"></div>
-<script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v5.0"></script>
-<div class="fb-page" data-href="https://www.facebook.com/search/top/?q=kh%C3%A1ch%20s%E1%BA%A1n%20n%E1%BB%99i%20b%C3%A0i" data-tabs="timeline" data-width="800" data-height="400" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"></div>
-			    
-				      </div>
-				      <div class="modal-footer">
-				        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-				        <button type="button" class="btn btn-primary">Save changes</button>
-				      </div>
-				    </div>
-				  </div>
-				</div>
+			
 			</form>
 		</div>
 	</section>
