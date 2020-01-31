@@ -19,4 +19,6 @@ interface HomeRepositoryInterface {
     public function getPostRating();
 
     public function getPostView();
+
+    public function getConfiguration();
 }

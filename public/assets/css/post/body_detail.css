@@ -77,7 +77,7 @@
           #body .detail_content .detail_left .detail_placeholder .detail_header .detail_meta .meta_time:before {
             position: absolute;
             content: '';
-            background: url(../images/sprite-genk_v11.png) -256px -22px no-repeat;
+            background: url(../../images/sprite-genk_v11.png) -256px -22px no-repeat;
             width: 16px;
             height: 16px;
             left: -2px;
@@ -110,7 +110,7 @@
               padding: 0 6px; }
           #body .detail_content .detail_left .detail_placeholder .detail_header .detail_socials .kbwcs_fb:before {
             content: '';
-            background: url(../images/sprite-genk_v11.png) -200px 2px no-repeat;
+            background: url(../../images/sprite-genk_v11.png) -200px 2px no-repeat;
             width: 10px;
             height: 16px;
             position: absolute;
@@ -118,7 +118,7 @@
             left: 7px;
             background-size: 260px; }
           #body .detail_content .detail_left .detail_placeholder .detail_header .detail_socials .sprite_genk {
-            background: url(../images/sprite-genk_v11.png);
+            background: url(../../images/sprite-genk_v11.png);
             background-repeat: no-repeat; }
           #body .detail_content .detail_left .detail_placeholder .detail_header .detail_socials .fb_iframe_widget {
             display: inline-block;
@@ -137,7 +137,7 @@
             #body .detail_content .detail_left .detail_placeholder .detail_header .detail_socials .fr .ico-mailto {
               width: 28px;
               height: 20px;
-              background-image: url(../images/sprite-genk_v11.png);
+              background-image: url(../../images/sprite-genk_v11.png);
               background-repeat: no-repeat;
               display: inline-block;
               background-position: -81px -191px; }
@@ -163,7 +163,7 @@
           position: relative;
           display: inline-block; }
         #body .detail_content .detail_left .detail_placeholder .detail_maincontent .kc_facebook a:before {
-          background: url(../images/sprite-genk_v11.png) -1px -807px no-repeat;
+          background: url(../../images/sprite-genk_v11.png) -1px -807px no-repeat;
           width: 8px;
           height: 16px;
           display: block;
@@ -181,7 +181,7 @@
           position: relative;
           display: inline-block; }
         #body .detail_content .detail_left .detail_placeholder .detail_maincontent .kc_email a:before {
-          background: url(../images/sprite-genk_v11.png) -73px -806px no-repeat;
+          background: url(../../images/sprite-genk_v11.png) -73px -806px no-repeat;
           width: 20px;
           height: 16px;
           display: block;
@@ -284,7 +284,7 @@
                 top: 8px;
                 left: -25px;
                 content: '';
-                background: url(../images/sprite-genk_v11.png) no-repeat;
+                background: url(../../images/sprite-genk_v11.png) no-repeat;
                 position: absolute;
                 width: 25px;
                 height: 16px;
@@ -303,7 +303,7 @@
             width: 65px;
             height: 20px;
             display: block;
-            background: url(../images/sprite-genk_v11.png);
+            background: url(../../images/sprite-genk_v11.png);
             background-position: -72px -519px;
             background-repeat: no-repeat; }
         #body .detail_content .detail_left .detail_placeholder .detailtag_and_video .dav_social .dav_social_2 {
@@ -407,7 +407,7 @@
           top: 6px;
           left: -30px;
           content: '';
-          background: url(../images/sprite-genk_v11.png) -24px -157px no-repeat;
+          background: url(../../images/sprite-genk_v11.png) -24px -157px no-repeat;
           width: 20px;
           height: 20px; }
       #body .detail_content .detail_left .same_category_news {
@@ -557,7 +557,7 @@
       position: relative; }
     #body .news_content .main_content_1:after {
       content: '';
-      background: url(../images/detail/bg-split.jpg) top left repeat-x;
+      background: url(../../images/detail/bg-split.jpg) top left repeat-x;
       bottom: 0;
       left: 0;
       width: 100%;

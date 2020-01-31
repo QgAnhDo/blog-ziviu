@@ -1,5 +1,5 @@
 // style gốc trang chủ
-html { 
+html {
 	// scroll-behavior: smooth;
 }
 * {
@@ -16,7 +16,7 @@ body {
 	margin: 0 auto;
 }
 // header
-@import 'header';
-@import 'body';
-@import 'footer';
-@import 'scroll-to-top';
+@import '../index_layout/header.css';
+@import 'body_categories';
+@import '../index_layout/footer.css';
+@import '../scroll-to-top.css';

@@ -2,7 +2,7 @@
 	width: 100%;
 	background: #191919;
 	.top_footer {
-	    border-bottom: 1px solid #ed2e2e;
+	    border-bottom: 1px solid #45BD33;
 	    .gfw_top_wrapper {
 		    padding: 25px 0;
 		    border-bottom: 1px solid #333;
@@ -43,6 +43,7 @@
 	}
 	.bottom_footer {
 		padding: 35px 0;
+        display: flex;
 		.gfwbf_left {
 			width: 515px;
 		    float: left;
@@ -52,7 +53,8 @@
 			width: 375px;
 		    margin-left: 595px;
 		    img {
-		        margin-bottom: 10px;
+		        margin: 10px;
+                margin-left: 0;
 		    }
 		    h4 {
 			    font-family: Roboto-Medium;
