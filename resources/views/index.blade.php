@@ -67,7 +67,7 @@
                             <li class="content_3_item">
                                 <div class="item_image">
                                     <a href="{{route('posts.index', ['slug' => $item->pos_slug, 'id' => $item->pos_id])}}">
-                                        <img src="images/qc6.jpg" width="250" height="155"
+                                        <img src="" width="250" height="155"
                                              title="{{$item->pos_title}}" alt="{{$item->pos_title}}">
                                     </a>
                                 </div>
@@ -82,7 +82,7 @@
                                             {{$item->cat_name}}
                                         </a>
                                         -
-                                        <span>{{$item->pos_created_at}}</span>
+                                        <span>{{date('d-m-Y H:i:s', $item->pos_created_at)}}</span>
                                     </div>
                                     <span class="item_sapo">
                                         {{$item->pos_description}}
