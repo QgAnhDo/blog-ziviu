@@ -5,7 +5,7 @@ namespace App\Console\Commands\Crawl;
 use Illuminate\Console\Command;
 use KubAT\PhpSimple\HtmlDomParser;
 use Illuminate\Support\Str;
-use App\Models\Post;
+use App\Models\Posts;
 
 class IvivuDetail extends Command
 {
@@ -41,10 +41,10 @@ class IvivuDetail extends Command
     public function handle()
     {
         //lấy bài post chưa crawl trong db
-        $posts = Post::select('pos_id', 'pos_website')->where('pos_crawl_status', 0)->limit(10)->get();
+        $posts = Posts::select('pos_id', 'pos_website')->where('pos_crawl_status', 0)->limit(10)->get();
 
         foreach ($posts as $item) {
-            //git file html với link pos_website
+            //get file html với link pos_website
             $html = HtmlDomParser::file_get_html($item->pos_website, false, null, 0 );
             //mảng lưu trữ
             $response = [
@@ -58,9 +58,9 @@ class IvivuDetail extends Command
                 "pos_updated_at"=> time()
             ];
 
-            Post::where('pos_id', $item->pos_id)->update($data_insert);
+            Posts::where('pos_id', $item->pos_id)->update($data_insert);
         }
 
-        dd($data_insert);
+        dd(count($data_insert));
     }
 }
