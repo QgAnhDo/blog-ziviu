@@ -10,6 +10,9 @@ class Posts extends Model
     public $prefix = 'pos';
     public $primaryKey = 'pos_id';
 
+    // const CREATED_AT = 'pos_created_at';
+    // const UPDATED_AT = 'pos_updated_at';
+
     public function getImgPosts($size = 'default', $folder = 'posts')
     {
 

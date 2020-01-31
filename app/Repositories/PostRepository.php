@@ -2,7 +2,6 @@
 
 namespace App\Repositories;
 
-use App\Models\Post;
 use App\Models\Posts;
 use App\Models\PostTag;
 use Carbon\Carbon;
