@@ -65,6 +65,10 @@ class HomeController extends Controller
 
     public function postDetail($slug,$id)
     {
+        $request = [
+            'slug'=> $slug 
+        ];
+        dd($request);
         $categories = $this->home->getCategories();
 
         $post = $this->post->getPostById($id);
