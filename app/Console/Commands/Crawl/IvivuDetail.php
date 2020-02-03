@@ -41,11 +41,28 @@ class IvivuDetail extends Command
     public function handle()
     {
         //lấy bài post chưa crawl trong db
-        $posts = Posts::select('pos_id', 'pos_website')->where('pos_crawl_status', 0)->limit(10)->get();
+        // $posts = Posts::select('pos_id', 'pos_website')->where('pos_crawl_status', 0)->limit(10)->get();
+        $ch = curl_init(); 
+        curl_setopt_array($ch, array(
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_URL => "http://localhost:9083/api/posts",
+            CURLOPT_SSL_VERIFYPEER => false
+        ));
+        $posts = curl_exec($ch);
+
+        $posts = json_decode($posts, true);
 
         foreach ($posts as $item) {
             //get file html với link pos_website
-            $html = HtmlDomParser::file_get_html($item->pos_website, false, null, 0 );
+            // $html = HtmlDomParser::file_get_html($item->pos_website, false, null, 0 );
+            $ch = curl_init();
+            curl_setopt($ch, CURLOPT_URL, $item['pos_website']);
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+            curl_exec($ch);
+             
+            $result = curl_close($ch);
+            dd($result);
+
             //mảng lưu trữ
             $response = [
                 "content" => $html->find('.entry-content', 0)->plaintext,
@@ -58,9 +75,10 @@ class IvivuDetail extends Command
                 "pos_updated_at"=> time()
             ];
 
-            Posts::where('pos_id', $item->pos_id)->update($data_insert);
+
+            // Posts::where('pos_id', $item->pos_id)->update($data_insert);
         }
 
-        dd(count($data_insert));
+        dd('Đã insert '.count($data_insert).' bản ghi. ');
     }
 }

@@ -62,6 +62,7 @@ class PostController extends Controller
             'pos_admin_id' => 1,
             'pos_created_at' => date('Y-m-d H:i:s'),
         ]);
+        return redirect('admin/posts')->with('thongbao', 'Thêm bài viết thành công');
     }
     public function getEdit($id)
     {
