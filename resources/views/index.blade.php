@@ -347,26 +347,6 @@
                                 <div class="item_relate_wrap"></div>
                             </div>
                         </li>
-                        <li class="content_3_item">
-                            <div class="item_image">
-                                <a href="#">
-                                    <img src="images/qc10.jpg" width="250" height="155">
-                                </a>
-                            </div>
-                            <div class="item_info">
-                                <h4 class="item_title"><a href="#">Bộ ba Predator Helios 300, Triton 500 và Helios 700:
-                                        Laptop gaming quái thú vạn người mê!</a></h4>
-                                <div class="item_meta">
-                                    <a href="#">Đồ chơi số</a>
-                                    -
-                                    <span>1 giờ trước</span>
-                                </div>
-                                <span class="item_sapo">
-										Laptop gaming không chỉ cần hiệu năng khủng mà còn phải có thiết kế đẹp hoặc độc kèm theo các công nghệ...
-									</span>
-                                <div class="item_relate_wrap"></div>
-                            </div>
-                        </li>
                     </ul>
                 </div>
             </div>
