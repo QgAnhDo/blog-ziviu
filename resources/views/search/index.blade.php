@@ -1,3 +1,10 @@
+@extends('layouts.master')
+
+@section('title')
+    Tìm kiếm: {{$_GET['name']}} - Blog.Ziviu
+@endsection
+
+@section('content')
 <link rel="stylesheet" type="text/css" href="assets/css/category/style_categories.css">
 <link rel="stylesheet" type="text/css" href="assets/css/responsive/style_categories-responsive.css">
 <div id="body">
@@ -41,3 +48,4 @@
         </div>
     </div>
 </div>
+@endsection

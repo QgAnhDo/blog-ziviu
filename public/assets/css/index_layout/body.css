@@ -24,7 +24,7 @@
                 width: 470px;
                 height: 289px;
                 vertical-align: middle; }
-            #body .news_content .main_content .main_content_1 .main_content_1_big div h2 a {
+            #body .news_content .main_content .main_content_1 .main_content_1_big div h1 a {
               margin-top: 12px;
               display: block;
               font-family: Roboto-Bold;
@@ -35,7 +35,7 @@
               transition: color .3s;
               -webkit-transition: color .3s;
               -moz-transition: color .3s; }
-            #body .news_content .main_content .main_content_1 .main_content_1_big div h2 :hover {
+            #body .news_content .main_content .main_content_1 .main_content_1_big div h1 :hover {
               color: #374370; }
             #body .news_content .main_content .main_content_1 .main_content_1_big div p {
               font-family: Arial;
@@ -533,81 +533,6 @@
                     -webkit-box-orient: vertical;
                     overflow: hidden;
                     text-overflow: ellipsis; }
-        #body .news_content .main_content .main_content_3 ul .content_extra_4 li {
-          padding: 25px 0;
-          border-bottom: 1px solid #ebebeb; }
-          #body .news_content .main_content .main_content_3 ul .content_extra_4 li .eMag-home_genk {
-            background-color: #222;
-            border-top: 3px solid #e7343c;
-            padding: 20px 0; }
-            #body .news_content .main_content .main_content_3 ul .content_extra_4 li .eMag-home_genk .title {
-              display: flex;
-              justify-content: space-between;
-              padding: 0 20px;
-              margin-bottom: 20px;
-              align-items: center; }
-              #body .news_content .main_content .main_content_3 ul .content_extra_4 li .eMag-home_genk .title a {
-                font-family: Gilroy-Bold;
-                font-size: 30px;
-                color: #fff;
-                text-decoration: none; }
-                #body .news_content .main_content .main_content_3 ul .content_extra_4 li .eMag-home_genk .title a span {
-                  color: #e7343c; }
-            #body .news_content .main_content .main_content_3 ul .content_extra_4 li .eMag-home_genk .swiper_container {
-              margin: 0 auto;
-              position: relative;
-              overflow: hidden;
-              z-index: 1; }
-              #body .news_content .main_content .main_content_3 ul .content_extra_4 li .eMag-home_genk .swiper_container .swiper_wrapper {
-                padding-left: 20px; }
-                #body .news_content .main_content .main_content_3 ul .content_extra_4 li .eMag-home_genk .swiper_container .swiper_wrapper .swiper_slide {
-                  width: 260px; }
-                  #body .news_content .main_content .main_content_3 ul .content_extra_4 li .eMag-home_genk .swiper_container .swiper_wrapper .swiper_slide .post_slide {
-                    width: 100%;
-                    border-radius: 5px;
-                    overflow: hidden; }
-                    #body .news_content .main_content .main_content_3 ul .content_extra_4 li .eMag-home_genk .swiper_container .swiper_wrapper .swiper_slide .post_slide .thumb {
-                      display: block; }
-                      #body .news_content .main_content .main_content_3 ul .content_extra_4 li .eMag-home_genk .swiper_container .swiper_wrapper .swiper_slide .post_slide .thumb i {
-                        width: 100%;
-                        padding-top: 61.53%;
-                        display: block;
-                        background-size: cover;
-                        background-position: center center;
-                        background-repeat: no-repeat; }
-                    #body .news_content .main_content .main_content_3 ul .content_extra_4 li .eMag-home_genk .swiper_container .swiper_wrapper .swiper_slide .post_slide .post {
-                      background-color: #fff;
-                      display: block;
-                      height: 120px;
-                      padding: 12px; }
-                      #body .news_content .main_content .main_content_3 ul .content_extra_4 li .eMag-home_genk .swiper_container .swiper_wrapper .swiper_slide .post_slide .post span {
-                        font-family: Arial;
-                        font-weight: bold;
-                        font-size: 17px;
-                        line-height: 22px;
-                        color: #333;
-                        display: block; }
-      #body .news_content .main_content .main_content_3 .wrapperbtn {
-        height: 50px;
-        text-align: center;
-        padding-top: 30px;
-        margin-bottom: 65px; }
-        #body .news_content .main_content .main_content_3 .wrapperbtn a {
-          width: 140px;
-          height: 45px;
-          background: #ed2e2e;
-          font-family: Arial;
-          font-weight: bold;
-          font-size: 20px;
-          line-height: 45px;
-          color: #fff;
-          text-decoration: none;
-          text-transform: uppercase;
-          display: inline-block;
-          border-radius: 25px;
-          text-align: center; }
-        #body .news_content .main_content .main_content_3 .wrapperbtn :hover {
-          background: #222; }
     #body .news_content .ads {
       float: right;
       width: 300px;

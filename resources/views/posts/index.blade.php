@@ -1,3 +1,10 @@
+@extends('layouts.master')
+
+@section('title')
+    {{$post->pos_title}} - Blog.Ziviu
+@endsection
+
+@section('content')
 <link rel="stylesheet" type="text/css" href="assets/css/post/style_detail.css">
 <link rel="stylesheet" type="text/css" href="assets/css/responsive/style_detail-responsive.css">
 <div id="body">
@@ -9,16 +16,24 @@
                         <div class="detail_wrapper">
                             <ul>
                                 <li>
-                                    <strong><a href="/"><span>Trang chủ</span></a></strong>
+                                    <strong><a href="/" title="Quay lại trang chủ"><span>Trang chủ</span></a></strong>
+                                </li>
+                                <li>
+                                    <span class="split_arrow">›</span>
+                                </li>
+                                <li>
+                                    <strong>
+                                        <a href="{{route('categories.index', ['slug' => $post->cat_slug, 'id' => $post->cat_id])}}" title="{{$post->cat_name}}">
+                                            <span>{{$post->cat_name}}</span>
+                                        </a>
+                                    </strong>
                                 </li>
                                 <li>
                                     <span class="split_arrow">›</span>
                                 </li>
                                 <li class="active">
                                     <strong>
-                                        <a href="{{ route('categories.index', ['slug' => $post->cat_slug, 'id' => $post->cat_id]) }}">
-                                            <span>{{$post->cat_name}}</span>
-                                        </a>
+                                        <a href="" title="{{$post->pos_title}}">{{$post->pos_title}}</a>
                                     </strong>
                                 </li>
                             </ul>
@@ -72,7 +87,7 @@
                             </div>
                             <div class="clearfix"></div>
                             <div data-check-position="genk_body_start">
-                                <img src= "{{$post->getImgPosts()}}" width="100%">
+                                <img src= "{{$post->getImgPosts()}}" width="100%" title="{{$post->pos_title}}" alt="{{$post->pos_title}}">
                             </div>
                             <div class="knc_content"><?= $post->pos_content ?></div>
                             <div data-check-position="genk_body_end"></div>
@@ -115,18 +130,6 @@
                                 @endforeach
                             </ul>
                         </div>
-                        <?php /* <div class="dav_box_ads_details">
-                            <div class="dav_box_video">
-                                <div class="dav_box_video_title">
-                                    <h3>VIDEO HAY TỪ WORLD CUP 2022</h3>
-                                </div>
-                                <iframe width="100%" height="357.188" src="https://www.youtube.com/embed/bMKyVwqW2aM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                            </div>
-                            <div class="dav_box_ads">
-                                <div style="float: left;"><img src="images/post/ads_video.jpg"></div>
-                                <div style="float: right;"><img src="images/post/ads_video.jpg"></div>
-                            </div>
-                        </div> */ ?>
                     </div>
                     <div class="detail_comment">
                         <p class="detail_comment_title">Bình luận</p>
@@ -270,3 +273,4 @@
         </div>
     </div>
 </div>
+@endsection

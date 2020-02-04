@@ -34,7 +34,7 @@
             {{ session('thongbao') }}
         </div>
     @endif
-    
+
     <section class="content">
       <a class="btn btn-primary btn-sm" href="{{route('admin.posts.add')}}">Thêm mới</a><br /><br />
       <div class="row">
@@ -50,15 +50,12 @@
                 <tr>
                   <th>ID</th>
                   <th>Tiêu đề</th>
-                  <th>Link slug</th>
-                  <th>Meta</th>
                   <th>Mô tả</th>
-                  <th>Nội dung</th>
                   <th>Bài viết hot</th>
                   <th>Trạng thái</th>
                   <th>Rating</th>
                   <th>Ngày tạo</th>
-                  <th>Hành động</th>
+                  <th width="70">Hành động</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -66,15 +63,22 @@
                   <tr>
                     <td>{{ $item->pos_id }}</td>
                     <td>{{ $item->pos_title }}</td>
-                    <td>{{ $item->pos_slug }}</td>
-                    <td>{{ $item->pos_meta }}</td>
                     <td>{{ $item->pos_description }}</td>
-                    <td>{{ $item->pos_content }}</td>
-                    <td>{{ $item->pos_hot }}</td>
-                    <td>{{ $item->pos_active }}</td>
+                    <td>
+                        @if($item->pos_hot == 1) {{'Có'}}
+                        @elseif($item->pos_hot == 0) {{'Không'}}
+                        @endif
+                    </td>
+                    <td>
+                        @if($item->pos_active == 1) {{'Bật'}}
+                        @elseif($item->pos_active == 0) {{'Tắt'}}
+                        @endif
+                    </td>
                     <td>{{ $item->pos_rating }}</td>
                     <td>{{ date('d-m-Y H:i:s', $item->pos_created_at) }}</td>
-                    <td><a href="{{route('admin.posts.edit', ['id' => $item->pos_id])}}">Sửa</a> | <a href="{{route('admin.posts.delete', ['id' => $item->pos_id])}}">Xóa</a></td>
+                    <td>
+                        <a href="{{route('admin.posts.edit', ['id' => $item->pos_id])}}">Sửa</a> | <a href="{{route('admin.posts.delete', ['id' => $item->pos_id])}}">Xóa</a>
+                    </td>
                   </tr>
                   @endforeach
                 </tbody>
@@ -82,8 +86,6 @@
                 <tr>
                   <th>ID</th>
                   <th>Tên</th>
-                  <th>Link slug</th>
-                  <th>Meta</th>
                   <th>Mô tả</th>
                   <th>Danh mục hot</th>
                   <th>Trạng thái</th>

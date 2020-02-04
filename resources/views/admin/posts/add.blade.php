@@ -39,6 +39,7 @@
     	<a class="btn btn-primary btn-sm" href="{{route('admin.posts')}}">Về trang danh sách</a><br /><br />
 		<div class="panel-body">
 			<form action="" method="post" enctype="multipart/form-data">
+                @csrf
 				<div class="form-group">
 					<label for="name">Tiêu đề</label>
 					<input type="text" class="form-control" name="title" id="title" placeholder="Nhập tiêu đề">

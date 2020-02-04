@@ -1,3 +1,8 @@
+@extends('layouts.master')
+@section('title')
+    Blog.Ziviu - Trang thông tin của Trip247.net
+@endsection
+@section('content')
 <div id="body">
     <div class="news_content">
         <div class="container">
@@ -10,11 +15,11 @@
                                 <img src="{{$postsHot->getImgPosts()}}" title="{{$postsHot->pos_title}}"
                                      alt="{{$postsHot->pos_title}}">
                             </a>
-                            <h2>
+                            <h1>
                                 <a href="{{route('posts.index', ['slug' => $postsHot->pos_slug, 'id' => $postsHot->pos_id])}}">
                                     {{$postsHot->pos_title}}
                                 </a>
-                            </h2>
+                            </h1>
                             <p>{{$postsHot->pos_description}}</p>
                         </div>
                         @endif
@@ -369,3 +374,4 @@
         </div>
     </div>
 </div>
+@endsection

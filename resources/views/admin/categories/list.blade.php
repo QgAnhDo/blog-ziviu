@@ -36,8 +36,7 @@
                   <th>ID</th>
                   <th>Tên</th>
                   <th>Link slug</th>
-                  <th>Meta</th>
-                  <th>Mô tả</th>
+                  <th>ID cha</th>
                   <th>Danh mục hot</th>
                   <th>Trạng thái</th>
                   <th>Ngày tạo</th>
@@ -50,10 +49,17 @@
                     <td>{{ $item->cat_id }}</td>
                     <td>{{ $item->cat_name }}</td>
                     <td>{{ $item->cat_slug }}</td>
-                    <td>{{ $item->cat_meta }}</td>
-                    <td>{{ $item->cat_description }}</td>
-                    <td>{{ $item->cat_hot }}</td>
-                    <td>{{ $item->cat_active }}</td>
+                    <td>{{ $item->cat_parent_id }}</td>
+                    <td>
+                        @if($item->cat_hot == 1) {{'Có'}}
+                        @else {{'Không'}}
+                        @endif
+                    </td>
+                    <td>
+                        @if($item->cat_active == 1) {{'Bật'}}
+                        @else {{'Tắt'}}
+                        @endif
+                    </td>
                     <td>{{ $item->cat_created_at }}</td>
                     <td><a href="{{route('admin.category.edit', ['id' => $item->cat_id])}}">Sửa</a> | <a href="{{route('admin.category.delete', ['id' => $item->cat_id])}}">Xóa</a></td>
                   </tr>
@@ -64,8 +70,7 @@
                   <th>ID</th>
                   <th>Tên</th>
                   <th>Link slug</th>
-                  <th>Meta</th>
-                  <th>Mô tả</th>
+                  <th>ID cha</th>
                   <th>Danh mục hot</th>
                   <th>Trạng thái</th>
                   <th>Ngày tạo</th>

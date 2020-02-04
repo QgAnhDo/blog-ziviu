@@ -37,8 +37,8 @@ class PostController extends Controller
             'title' => 'required|min:5',
             'content' => 'required|min:50',
             'image' => 'required',
-            'pos_hot' => 'required', 
-            'pos_status' => 'required',          
+            'pos_hot' => 'required',
+            'pos_status' => 'required',
         ],
         [
             'title.required' => 'Chưa nhập tiêu đề',
@@ -62,6 +62,7 @@ class PostController extends Controller
             'pos_admin_id' => 1,
             'pos_created_at' => date('Y-m-d H:i:s'),
         ]);
+        return view('admin.posts.list');
     }
     public function getEdit($id)
     {
@@ -76,8 +77,8 @@ class PostController extends Controller
             'title' => 'required|min:5',
             'content' => 'required|min:50',
             'image' => 'required',
-            'pos_hot' => 'required', 
-            'pos_status' => 'required',          
+            'pos_hot' => 'required',
+            'pos_status' => 'required',
         ],
         [
             'title.required' => 'Chưa nhập tiêu đề',
@@ -101,6 +102,7 @@ class PostController extends Controller
             'pos_admin_id' => 1,
             'pos_updated_at' => date('Y-m-d H:i:s'),
         ]);
+        return view('admin.posts.list');
     }
     public function getDelete($id)
     {
