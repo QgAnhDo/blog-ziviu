@@ -19,3 +19,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 //api lấy danh sách bài viết chưa update
 Route::get('posts', 'Crawl\PostController@index')->name('posts');
+Route::post('posts/{id}', 'Crawl\PostController@update')->name('posts');
+Route::post('posts', 'Crawl\PostController@insert')->name('posts');

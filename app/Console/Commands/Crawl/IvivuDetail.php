@@ -54,31 +54,25 @@ class IvivuDetail extends Command
 
         foreach ($posts as $item) {
             //get file html với link pos_website
-            // $html = HtmlDomParser::file_get_html($item->pos_website, false, null, 0 );
-            $ch = curl_init();
-            curl_setopt($ch, CURLOPT_URL, $item['pos_website']);
-            curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-            curl_exec($ch);
-             
-            $result = curl_close($ch);
-            dd($result);
-
+            $html = HtmlDomParser::file_get_html($item['pos_website'], false, null, 0 );  
+            
             //mảng lưu trữ
             $response = [
                 "content" => $html->find('.entry-content', 0)->plaintext,
             ];
 
-            $data_insert = [
-                "pos_content"=> $response["content"],
-                "pos_crawl_status"=> 1,
-                "pos_status"=> 1,
-                "pos_updated_at"=> time()
-            ];
-
-
-            // Posts::where('pos_id', $item->pos_id)->update($data_insert);
+            //curl post data nhận từ api
+            $ch = curl_init();
+            curl_setopt_array($ch, array(
+                CURLOPT_RETURNTRANSFER => true,
+                CURLOPT_SSL_VERIFYPEER => false,
+                CURLOPT_URL => "http://localhost:9083/api/posts/{$item['pos_id']}",
+                CURLOPT_POST => count($response),
+                CURLOPT_POSTFIELDS => $response,
+            ));
+            
+            $result = curl_exec($ch);
         }
-
-        dd('Đã insert '.count($data_insert).' bản ghi. ');
+        dd('success');
     }
 }
