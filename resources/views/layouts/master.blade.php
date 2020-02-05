@@ -34,6 +34,7 @@
 @include('layouts.header')
 @yield('content')
 @include('layouts.footer')
+
 <div id="scroller" align="center">
     <p id="back-top" align="center">
         <a href="#top"><span></span></a>
