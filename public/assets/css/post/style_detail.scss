@@ -19,8 +19,8 @@ body {
     zoom: 1;
 }
 //Import scss
-@import '../index_layout/header.css';
-@import '../index_layout/body.css';
-@import 'body_detail.css';
-@import '../index_layout/footer.css';
-@import '../scroll-to-top.css';
+@import '../index_layout/header';
+@import '../index_layout/body';
+@import 'body_detail';
+@import '../index_layout/footer';
+@import '../index_layout/scroll-to-top';

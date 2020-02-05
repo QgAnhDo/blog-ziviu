@@ -20,14 +20,14 @@
     <meta name="twitter:title" content="" />
     <meta name="twitter:description" content="" />
     <meta name="twitter:image" content="" />
-    <meta name="robots" content="index, follow"/>
-    <link rel="canonical" href="http://blog.ziviu.com/" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="assets/css/index_layout/style.min.css">
-    <link rel="stylesheet" type="text/css" href="assets/css/responsive/style-responsive.min.css">
+    <meta name="robots" content="noindex"/>
+    <link rel="canonical" href="{{asset('')}}" />
+    <link rel="stylesheet" type="text/css" href="assets/css/font.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="assets/css/owl_carousel/owl.carousel.min.css">
     <link rel="stylesheet" type="text/css" href="assets/css/owl_carousel/owl.theme.default.css">
-    <link rel="stylesheet" type="text/css" href="assets/css/font.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/index_layout/style.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/responsive/style-responsive.min.css">
 </head>
 <body>
 
@@ -40,9 +40,24 @@
         <a href="#top"><span></span></a>
     </p>
 </div>
-<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="assets/js/jquery.min.js"></script>
 <script type="text/javascript" src="assets/js/owl.carousel.min.js"></script>
 <script type="text/javascript" src="assets/js/main-carousel.js"></script>
 <script type="text/javascript" src="assets/js/menu_header.min.js"></script>
+<?php
+$schema_data = [
+    "@context" => "http://schema.org",
+    "@type" => "WebSite",
+    "url" => asset(''),
+    "name" => 'Blog.Ziviu - Trang thông tin của Trip247.net',
+    "description" => 'Blog.Ziviu là trang blog chính thức của Trip247.net, chuyên tổng hợp các tin tức chính từ Trip247 như nhà hàng, khách sạn... và các tin tức lớn nhỏ khác liên quan đến danh mục của trang web. Mục đích là để cho người dùng được cập nhật thông tin một cách chính xác và nhanh chóng nhất',
+    // "potentialAction" => [
+    //     "@type" => "SearchAction",
+    //     "target" => "http://localhost:9088/khach-san/search?&q={query}",
+    //     "query-input" => "required name=query"
+    // ]
+];
+?>
+<script type="application/ld+json"><?= json_encode($schema_data) ?></script>
 </body>
 </html>

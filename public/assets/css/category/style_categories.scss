@@ -16,7 +16,7 @@ body {
 	margin: 0 auto;
 }
 // header
-@import '../index_layout/header.css';
+@import '../index_layout/header';
 @import 'body_categories';
-@import '../index_layout/footer.css';
-@import '../scroll-to-top.css';
+@import '../index_layout/footer';
+@import '../index_layout/scroll-to-top';

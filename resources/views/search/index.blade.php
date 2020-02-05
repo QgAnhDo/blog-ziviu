@@ -23,11 +23,11 @@
                                 </a>
                             </div>
                             <div class="item_info">
-                                <h4 class="item_title">
+                                <h2 class="item_title">
                                     <a href="{{ route('posts.index', ['slug' => $item->pos_slug, 'id' => $item->pos_id]) }}" title="{{ $item->pos_title }}">
                                         {{ $item->pos_title }}
                                     </a>
-                                </h4>
+                                </h2>
                                 <div class="item_meta">
                                     <a href="{{ route('categories.index', ['slug'=> $item->cat_slug, 'id'=> $item->cat_id]) }}" title="{{ $item->cat_name }}">
                                         {{ $item->cat_name }}
