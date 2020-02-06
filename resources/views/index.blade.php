@@ -1,6 +1,6 @@
 @extends('layouts.master')
 @section('title')
-    Blog.Ziviu - Trang thông tin của Trip247.net
+    Ziviu - trang tin tức cập nhật 24h
 @endsection
 @section('content')
 <div id="body">
@@ -87,7 +87,7 @@
                                             {{$item->cat_name}}
                                         </a>
                                         -
-                                        <span>{{getTimeDuration(time()-$item->pos_created_at)}}</span>
+                                        <span>{{getTimeDuration(time()-strtotime($item->pos_created_at))}}</span>
                                     </div>
                                     <span class="item_sapo">
                                         {{$item->pos_description}}
@@ -200,7 +200,7 @@
                                             {{$item->cat_name}}
                                         </a>
                                         -
-                                        <span>{{getTimeDuration(time()-$item->pos_created_at)}}</span>
+                                        <span>{{getTimeDuration(time()-strtotime($item->pos_created_at))}}</span>
                                     </div>
                                     <span class="item_sapo">
                                     {{$item->pos_description}}
@@ -287,7 +287,7 @@
                                             {{$item->cat_name}}
                                         </a>
                                         -
-                                        <span>{{getTimeDuration(time()-$item->pos_created_at)}}</span>
+                                        <span>{{getTimeDuration(time()-strtotime($item->pos_created_at))}}</span>
                                     </div>
                                     <span class="item_sapo">
                                 {{$item->pos_description}}

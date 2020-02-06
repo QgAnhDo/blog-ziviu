@@ -6,8 +6,8 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8">
-    <meta name="description" content="Blog.Ziviu là trang blog chính thức của Trip247.net, chuyên tổng hợp các tin tức chính từ Trip247 như nhà hàng, khách sạn... và các tin tức lớn nhỏ khác liên quan đến danh mục của trang web. Mục đích là để cho người dùng được cập nhật thông tin một cách chính xác và nhanh chóng nhất">
-    <meta name="keywords" content="trip247, ziviu, nhà hàng, khách sạn, địa điểm, so sánh giá, tin tức">
+    <meta name="description" content="Đây là 1 trang blog Ziviu chuyên tổng hợp các tin tức liên quan nhà hàng, khách sạn, địa điểm du lịch, v.v... Mục đích là để cho người dùng được cập nhật thông tin một cách chính xác và nhanh chóng nhất">
+    <meta name="keywords" content="trip247, ziviu, nhà hàng, khách sạn, địa điểm, so sánh giá, tin tức, du lịch">
     <meta property="og:title" content="@yield('title')" />
     <meta property="og:type" content="image/jpeg" />
     <meta property="og:url" content="{{asset('')}}" />
@@ -49,8 +49,8 @@ $schema_data = [
     "@context" => "http://schema.org",
     "@type" => "WebSite",
     "url" => asset(''),
-    "name" => 'Blog.Ziviu - Trang thông tin của Trip247.net',
-    "description" => 'Blog.Ziviu là trang blog chính thức của Trip247.net, chuyên tổng hợp các tin tức chính từ Trip247 như nhà hàng, khách sạn... và các tin tức lớn nhỏ khác liên quan đến danh mục của trang web. Mục đích là để cho người dùng được cập nhật thông tin một cách chính xác và nhanh chóng nhất',
+    "name" => 'Ziviu - trang tin tức cập nhật 24h',
+    "description" => 'Đây là 1 trang blog Ziviu chuyên tổng hợp các tin tức liên quan nhà hàng, khách sạn, địa điểm du lịch, v.v... Mục đích là để cho người dùng được cập nhật thông tin một cách chính xác và nhanh chóng nhất',
     // "potentialAction" => [
     //     "@type" => "SearchAction",
     //     "target" => "http://localhost:9088/khach-san/search?&q={query}",

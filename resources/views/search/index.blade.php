@@ -48,4 +48,24 @@
         </div>
     </div>
 </div>
+<?php
+$schema_data = [
+    "@context"=> "http://schema.org",
+    "@type"=> "CollectionPage",
+    "mainEntity"=> [
+        "@type"=> "ItemList",
+        "itemListElement"=> []
+    ]
+];
+foreach($findPost as $item) {
+    $schema_data["mainEntity"]["itemListElement"][] = [
+        "@type" => "ListItem",
+        "url" => route('posts.index', ['slug' => $item->pos_slug, 'id' => $item->pos_id]),
+        "name" => $item->pos_title,
+        "description" => $item->pos_description,
+        "image" => $item->getImgPosts()
+    ];
+}
+?>
+<script type="application/ld+json"><?= json_encode($schema_data) ?></script>
 @endsection

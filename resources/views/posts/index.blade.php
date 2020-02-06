@@ -178,28 +178,29 @@
 <?php
 $schema_data = [
     "@context"=> "http://schema.org",
-    "@type"=> "CollectionPage",
-    "mainEntity"=> [
-        "@type"=> "ItemList",
-        "itemListElement"=> [
-            "@type" => "NewsArticle",
-            "url" => route('posts.index', ['slug' => $post->pos_slug, 'id' => $post->pos_id]),
-            "name" => $post->pos_title,
-            "author" => [
-                "@type" => "Person",
-                "name" => $post->adm_loginname
-            ],
-            "datePublished" => date('h:m - d/m/Y',$post->pos_created_at),
-            "headline" => $post->pos_title,
-            "image" => $post->pos_image,
-            "publisher" => [
-                "@type" => "Organization",
-                "name" => str_ireplace('www.', '', parse_url($post->pos_website, PHP_URL_HOST)),
-                "logo" => [
-                    "@type" => "ImageObject",
-                    "url" => "http://www.google.com/s2/favicons?domain=".$post->pos_website
-                ]
-            ]
+    "@type" => "NewsArticle",
+    "headline" => $post->pos_title,
+    "description" => $post->pos_description,
+    "datePublished" => date('h:m - d/m/Y',$post->pos_created_at),
+    "dateModified" => date('h:m - d/m/Y',$post->pos_updated_at),
+    "mainEntityOfPage" => [
+        "@type" => "WebPage",
+        "@id" => route('posts.index', ['slug' => $post->pos_slug, 'id' => $post->pos_id]),
+    ],
+    "image" => [
+        "@type" => "ImageObject",
+        "url" => "http://blog.ziviu.com/uploads/posts/default/".$post->pos_image,
+    ],
+    "author" => [
+        "@type" => "Person",
+        "name" => $post->adm_loginname
+    ],
+    "publisher" => [
+        "@type" => "Organization",
+        "name" => "Blog.Ziviu",
+        "logo" => [
+            "@type" => "ImageObject",
+            "url" => "http://blog.ziviu.com/assets/images/favicon.png"
         ]
     ]
 ];
