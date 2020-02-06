@@ -19,7 +19,7 @@
       height: 46px;
       display: block;
       margin-bottom: 7px;
-      background: #ddd url(../images/toTop.png) no-repeat center center;
+      background: #ddd url(../../images/toTop.png) no-repeat center center;
       /* rounded corners */
       -webkit-border-radius: 15px;
       -moz-border-radius: 15px;

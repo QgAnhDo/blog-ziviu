@@ -1,5 +1,12 @@
-<link rel="stylesheet" type="text/css" href="assets/css/category/style_categories.css">
-<link rel="stylesheet" type="text/css" href="assets/css/responsive/style_categories-responsive.css">
+@extends('layouts.master')
+
+@section('title')
+    {{$category->cat_name}} - Blog.Ziviu
+@endsection
+
+@section('content')
+<link rel="stylesheet" type="text/css" href="assets/css/category/style_categories.min.css">
+<link rel="stylesheet" type="text/css" href="assets/css/responsive/style_categories-responsive.min.css">
 <div id="body">
     <div class="categories_content">
         <div class="container">
@@ -84,3 +91,26 @@
         </div>
     </div>
 </div>
+<?php
+$schema_data = [
+    "@context"=> "http://schema.org",
+    "@type"=> "CollectionPage",
+    "mainEntity"=> [
+        "@type"=> "ItemList",
+        "itemListElement"=> []
+    ]
+];
+foreach($post as $item) {
+    $schema_data["mainEntity"]["itemListElement"][] = [
+        "@type" => "ListItem",
+        "url" => route('posts.index', ['slug' => $item->pos_slug, 'id' => $item->pos_id]),
+        "name" => $item->pos_title,
+//        "category" => $item->cat_name,
+//        "time" => getTimeDuration(time()-$item->pos_created_at),
+        "description" => $item->pos_description,
+        "image" => $item->getImgPosts()
+    ];
+}
+?>
+<script type="application/ld+json"><?= json_encode($schema_data) ?></script>
+@endsection

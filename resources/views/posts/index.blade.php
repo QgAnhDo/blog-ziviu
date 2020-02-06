@@ -1,6 +1,15 @@
-<link rel="stylesheet" type="text/css" href="assets/css/post/style_detail.css">
-<link rel="stylesheet" type="text/css" href="assets/css/responsive/style_detail-responsive.css">
+@extends('layouts.master')
+
+@section('title')
+    {{$post->pos_title}} - Blog.Ziviu
+@endsection
+
+@section('content')
+<link rel="stylesheet" type="text/css" href="assets/css/post/style_detail.min.css">
+<link rel="stylesheet" type="text/css" href="assets/css/responsive/style_detail-responsive.min.css">
 <div id="body">
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v4.0"></script>
     <div class="body_content detail_content">
         <div class="container">
             <div class="detail_left">
@@ -9,16 +18,24 @@
                         <div class="detail_wrapper">
                             <ul>
                                 <li>
-                                    <strong><a href="/"><span>Trang chủ</span></a></strong>
+                                    <strong><a href="/" title="Quay lại trang chủ"><span>Trang chủ</span></a></strong>
+                                </li>
+                                <li>
+                                    <span class="split_arrow">›</span>
+                                </li>
+                                <li>
+                                    <strong>
+                                        <a href="{{route('categories.index', ['slug' => $post->cat_slug, 'id' => $post->cat_id])}}" title="{{$post->cat_name}}">
+                                            <span>{{$post->cat_name}}</span>
+                                        </a>
+                                    </strong>
                                 </li>
                                 <li>
                                     <span class="split_arrow">›</span>
                                 </li>
                                 <li class="active">
                                     <strong>
-                                        <a href="{{ route('categories.index', ['slug' => $post->cat_slug, 'id' => $post->cat_id]) }}">
-                                            <span>{{$post->cat_name}}</span>
-                                        </a>
+                                        <a href="" title="{{$post->pos_title}}">{{$post->pos_title}}</a>
                                     </strong>
                                 </li>
                             </ul>
@@ -32,11 +49,7 @@
                             <span class="meta_time">{{date('h:m - d/m/Y',$post->pos_created_at)}}</span>
                         </div>
                         <div class="detail_socials">
-                            <div class="fb-like" data-href="http://genk.vn/vi-sao-ios-13-cang-cap-nhat-cang-lam-loi-cuu-ki-su-apple-vua-dua-ra-cau-tra-loi-cuc-ky-xac-dang-cho-van-de-nay-20191027175708348.chn" data-width="" data-layout="button_count" data-action="like" data-size="small" data-show-faces="true" data-share="true">
-                            </div>
-                            <div class="fr">
-                                <div class="mgr5"></div>
-                                <a href="#"><div class="ico-mailto"></div></a>
+                            <div class="fb-like" data-href="{{route('posts.index', ['slug' => $post->pos_slug, 'id' => $post->pos_id])}}" data-width="" data-layout="button_count" data-action="like" data-size="small" data-show-faces="true" data-share="true">
                             </div>
                         </div>
                     </div>
@@ -72,7 +85,7 @@
                             </div>
                             <div class="clearfix"></div>
                             <div data-check-position="genk_body_start">
-                                <img src= "{{$post->getImgPosts()}}" width="100%">
+                                <img src= "{{$post->getImgPosts()}}" width="100%" title="{{$post->pos_title}}" alt="{{$post->pos_title}}">
                             </div>
                             <div class="knc_content"><?= $post->pos_content ?></div>
                             <div data-check-position="genk_body_end"></div>
@@ -80,29 +93,7 @@
                         </div>
                     </div>
                     <div class="detailtag_and_video">
-                        <div class="dav_social clearfix">
-                            <div class="dav_social_1">
-                                <a href="#"><i class="linkhaytop"></i></a>
-                            </div>
-                            <div class="dav_social_1">
-                                <div class="fb-send"></div>
-                            </div>
-                            <div class="dav_social_2">
-                                <div class="fb-like" data-href="http://genk.vn/vi-sao-ios-13-cang-cap-nhat-cang-lam-loi-cuu-ki-su-apple-vua-dua-ra-cau-tra-loi-cuc-ky-xac-dang-cho-van-de-nay-20191027175708348.chn" data-width="710px" data-layout="button_count" data-action="like" data-size="small" data-show-faces="true" data-share="true">
-                                </div>
-                            </div>
-                            <?php /* <div class="dav_social_3">
-                                <div id="sponsorzone_button_vp_button_zone">
-                                    <a href="#">
-                                        <div id="vp_button_right"></div>
-                                    </a>
-                                    <div id="vp_button_text_left">
-                                        <div class="vpb_icon"></div>
-                                        <span class="vpb_text">Bấm để thiết lập</span>
-                                    </div>
-                                </div>
-                            </div> */ ?>
-                        </div>
+                        <div class="dav_social clearfix"></div>
                         <div class="dav_new_tags clearfix">
                             <span class="tgname">Tags:</span>
                             <ul>
@@ -115,18 +106,6 @@
                                 @endforeach
                             </ul>
                         </div>
-                        <?php /* <div class="dav_box_ads_details">
-                            <div class="dav_box_video">
-                                <div class="dav_box_video_title">
-                                    <h3>VIDEO HAY TỪ WORLD CUP 2022</h3>
-                                </div>
-                                <iframe width="100%" height="357.188" src="https://www.youtube.com/embed/bMKyVwqW2aM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                            </div>
-                            <div class="dav_box_ads">
-                                <div style="float: left;"><img src="images/post/ads_video.jpg"></div>
-                                <div style="float: right;"><img src="images/post/ads_video.jpg"></div>
-                            </div>
-                        </div> */ ?>
                     </div>
                     <div class="detail_comment">
                         <p class="detail_comment_title">Bình luận</p>
@@ -136,81 +115,7 @@
                 </div>
                 <div class="same_category_news">
                     <div class="same_category_news_content clearfix">
-                        <span class="same_category_news_title">Tin cùng chuyên mục
-                            <?php /* <div class="view_news_by_date">
-                                <span>Xem theo ngày</span>
-                                <form action="detail_submit" method="get" accept-charset="utf-8">
-                                    <ul class="clearfix">
-                                        <li>
-                                            <select name="">
-                                                <option value="0">Ngày</option>
-                                                <option value="1">1</option>
-                                                <option value="2">2</option>
-                                                <option value="3">3</option>
-                                                <option value="4">4</option>
-                                                <option value="5">5</option>
-                                                <option value="6">6</option>
-                                                <option value="7">7</option>
-                                                <option value="8">8</option>
-                                                <option value="9">9</option>
-                                                <option value="10">10</option>
-                                                <option value="11">11</option>
-                                                <option value="12">12</option>
-                                                <option value="13">13</option>
-                                                <option value="14">14</option>
-                                                <option value="15">15</option>
-                                                <option value="16">16</option>
-                                                <option value="17">17</option>
-                                                <option value="18">18</option>
-                                                <option value="19">19</option>
-                                                <option value="20">20</option>
-                                                <option value="21">21</option>
-                                                <option value="22">22</option>
-                                                <option value="23">23</option>
-                                                <option value="24">24</option>
-                                                <option value="25">25</option>
-                                                <option value="26">26</option>
-                                                <option value="27">27</option>
-                                                <option value="28">28</option>
-                                                <option value="29">29</option>
-                                                <option value="30">30</option>
-                                                <option value="31">31</option>
-                                            </select>
-                                        </li>
-                                        <li>
-                                            <select name="">
-                                                <option value="0">Tháng</option>
-                                                <option value="1">Tháng 1</option>
-                                                <option value="2">Tháng 2</option>
-                                                <option value="3">Tháng 3</option>
-                                                <option value="4">Tháng 4</option>
-                                                <option value="5">Tháng 5</option>
-                                                <option value="6">Tháng 6</option>
-                                                <option value="7">Tháng 7</option>
-                                                <option value="8">Tháng 8</option>
-                                                <option value="9">Tháng 9</option>
-                                                <option value="10">Tháng 10</option>
-                                                <option value="11">Tháng 11</option>
-                                                <option value="12">Tháng 12</option>
-                                            </select>
-                                        </li>
-                                        <li>
-                                            <select name="">
-                                                <option value="0">Năm</option>
-                                                <option value="2019">2019</option>
-                                                <option value="2018">2018</option>
-                                                <option value="2017">2017</option>
-                                                <option value="2016">2016</option>
-                                                <option value="2015">2015</option>
-                                            </select>
-                                        </li>
-                                        <li>
-                                            <button type="button" class="view" id="viewbydate">Xem</button>
-                                        </li>
-                                    </ul>
-                                </form>
-                            </div> */ ?>
-                        </span>
+                        <h3 class="same_category_news_title">Tin cùng chuyên mục</h3>
                         <ul class="same_category_news_list">
                             <li style="padding: 25px 0 10px 0;">
                                 <ul class="same_category_news_list">
@@ -270,3 +175,66 @@
         </div>
     </div>
 </div>
+<?php
+$schema_data = [
+    "@context"=> "http://schema.org",
+    "@type" => "NewsArticle",
+    "headline" => $post->pos_title,
+    "description" => $post->pos_description,
+    "datePublished" => date('h:m - d/m/Y',$post->pos_created_at),
+    "dateModified" => date('h:m - d/m/Y',$post->pos_updated_at),
+    "mainEntityOfPage" => [
+        "@type" => "WebPage",
+        "@id" => route('posts.index', ['slug' => $post->pos_slug, 'id' => $post->pos_id]),
+    ],
+    "image" => [
+        "@type" => "ImageObject",
+        "url" => "http://blog.ziviu.com/uploads/posts/default/".$post->pos_image,
+    ],
+    "author" => [
+        "@type" => "Person",
+        "name" => $post->adm_loginname
+    ],
+    "publisher" => [
+        "@type" => "Organization",
+        "name" => "Blog.Ziviu",
+        "logo" => [
+            "@type" => "ImageObject",
+            "url" => "http://blog.ziviu.com/assets/images/favicon.png"
+        ]
+    ]
+];
+$schema_data_bread = [
+    "@context"=> "http://schema.org",
+    "@type"=> "BreadcrumbList",
+    "itemListElement"=> [
+        [
+            "@type" => "ListItem",
+            "position" => 0,
+            "item" => [
+                "@id" => asset(''),
+                "name" => "Trang chủ"
+            ]
+        ],
+        [
+            "@type" => "ListItem",
+            "position" => 1,
+            "item" => [
+                "@id" => route('categories.index', ['slug' => $post->cat_slug, 'id' => $post->cat_id]),
+                "name" => $post->cat_name
+            ]
+        ],
+        [
+            "@type" => "ListItem",
+            "position" => 2,
+            "item" => [
+                "@id" => route('posts.index', ['slug' => $post->pos_slug, 'id' => $post->pos_id]),
+                "name" => $post->pos_title
+            ]
+        ]
+    ]
+];
+?>
+<script type="application/ld+json"><?= json_encode($schema_data_bread) ?></script>
+<script type="application/ld+json"><?= json_encode($schema_data) ?></script>
+@endsection

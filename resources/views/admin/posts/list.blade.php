@@ -34,7 +34,7 @@
             {{ session('thongbao') }}
         </div>
     @endif
-    
+
     <section class="content">
       <a class="btn btn-primary btn-sm" href="{{route('admin.posts.add')}}">Thêm mới</a><br /><br />
       <div class="row">
@@ -52,12 +52,12 @@
                   <th>Tiêu đề</th>
                   <th>Link slug</th>
                   <th>Mô tả</th>
-                  <th>Nội dung</th>
-                  <th>Bài viết hot</th>
+                  <th>Bài viết</th>
+                  <th>Nổi bật</th>
                   <th>Trạng thái</th>
                   <th>Lượt xem</th>
                   <th>Ngày tạo</th>
-                  <th>Hành động</th>
+                  <th width="70">Hành động</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -68,11 +68,21 @@
                     <td>{{ $item->pos_slug }}</td>
                     <td>{{ $item->pos_description }}</td>
                     <td>{{ $item->pos_content }}</td>
-                    <td>{{ $item->pos_hot }}</td>
-                    <td>{{ $item->pos_status }}</td>
+                    <td>
+                        @if($item->pos_hot == 1) {{'Có'}}
+                        @elseif($item->pos_hot == 0) {{'Không'}}
+                        @endif
+                    </td>
+                    <td>
+                        @if($item->pos_active == 1) {{'Bật'}}
+                        @elseif($item->pos_active == 0) {{'Tắt'}}
+                        @endif
+                    </td>
                     <td>{{ $item->pos_view }}</td>
-                    <td>{{ $item->pos_created_at }}</td>
-                    <td><a href="{{route('admin.posts.edit', ['id' => $item->pos_id])}}">Sửa</a> | <a href="{{route('admin.posts.delete', ['id' => $item->pos_id])}}">Xóa</a></td>
+                    <td>{{ date('d-m-Y H:i:s', $item->pos_created_at) }}</td>
+                    <td>
+                        <a href="{{route('admin.posts.edit', ['id' => $item->pos_id])}}">Sửa</a> | <a href="{{route('admin.posts.delete', ['id' => $item->pos_id])}}">Xóa</a>
+                    </td>
                   </tr>
                   @endforeach
                 </tbody>
@@ -82,12 +92,12 @@
                   <th>Tiêu đề</th>
                   <th>Link slug</th>
                   <th>Mô tả</th>
-                  <th>Nội dung</th>
-                  <th>Bài viết hot</th>
+                  <th>Bài viết</th>
+                  <th>Nổi bật</th>
                   <th>Trạng thái</th>
                   <th>Lượt xem</th>
                   <th>Ngày tạo</th>
-                  <th>Hành động</th>
+                  <th width="70">Hành động</th>
                 </tr>
                 </tfoot>
               </table>

@@ -1,3 +1,10 @@
+@extends('layouts.master')
+
+@section('title')
+    #{{$tag->tag_name}} - Blog.Ziviu
+@endsection
+
+@section('content')
 <link rel="stylesheet" type="text/css" href="assets/css/category/style_categories.css">
 <link rel="stylesheet" type="text/css" href="assets/css/responsive/style_categories-responsive.css">
 <div id="body">
@@ -31,11 +38,11 @@
                                         </a>
                                     </div>
                                     <div class="item_info">
-                                        <h4 class="item_title">
+                                        <h2 class="item_title">
                                             <a href="{{ route('posts.index', ['slug' => $item->pos_slug, 'id' => $item->pos_id]) }}" title="{{$item->pos_title}}">
                                                 {{$item->pos_title}}
                                             </a>
-                                        </h4>
+                                        </h2>
                                         <div class="item_meta">
                                             <a href="{{ route('categories.index', ['slug' => $item->cat_slug, 'id' => $item->cat_id]) }}">
                                                 {{$item->cat_name}}
@@ -69,3 +76,24 @@
         </div>
     </div>
 </div>
+<?php
+$schema_data = [
+    "@context"=> "http://schema.org",
+    "@type"=> "CollectionPage",
+    "mainEntity"=> [
+        "@type"=> "ItemList",
+        "itemListElement"=> []
+    ]
+];
+foreach($postTag as $item) {
+    $schema_data["mainEntity"]["itemListElement"][] = [
+        "@type" => "ListItem",
+        "url" => route('posts.index', ['slug' => $item->pos_slug, 'id' => $item->pos_id]),
+        "name" => $item->pos_title,
+        "description" => $item->pos_description,
+        "image" => $item->getImgPosts()
+    ];
+}
+?>
+<script type="application/ld+json"><?= json_encode($schema_data) ?></script>
+@endsection

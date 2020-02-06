@@ -42,3 +42,13 @@ function parse_image($folder, $size, $fileName)
         return $source;
     }
 }
+
+function parse_image_no_explode($folder, $size, $fileName)
+{
+    if ($fileName == "") {
+        return "";
+    } else {
+        $source = url('/uploads/' . $folder . '/' . $size . '/' . $fileName);
+        return $source;
+    }
+}

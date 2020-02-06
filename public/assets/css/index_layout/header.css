@@ -1,41 +1,5 @@
 #header {
   width: 100%; }
-  #header .genk_top_header {
-    background: #2e2e2e;
-    height: 25px; }
-    #header .genk_top_header .menu_channel {
-      position: relative; }
-      #header .genk_top_header .menu_channel ul {
-        list-style-type: none; }
-        #header .genk_top_header .menu_channel ul li {
-          float: left;
-          margin-right: 22px; }
-          #header .genk_top_header .menu_channel ul li a {
-            font-family: Roboto-Medium;
-            font-size: 12px;
-            line-height: 25px;
-            display: block;
-            color: #aaa;
-            text-decoration: none;
-            text-transform: uppercase; }
-      #header .genk_top_header .menu_channel .test_new_version {
-        float: right;
-        color: #fff;
-        font-size: 12px;
-        margin-top: 7px;
-        font-family: Roboto-Regular; }
-        #header .genk_top_header .menu_channel .test_new_version a {
-          text-decoration: none;
-          color: #fff; }
-        #header .genk_top_header .menu_channel .test_new_version i {
-          width: 29px;
-          height: 15px;
-          float: right;
-          margin-left: 10px;
-          margin-top: -2px;
-          display: inline-block;
-          background: url(../../images/trangthaithunghiemoff.jpg) no-repeat;
-          cursor: pointer; }
   #header .genk_bottom_header {
     background: #222;
     height: 45px;

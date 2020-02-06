@@ -19,7 +19,7 @@ class CategoryController extends Controller
 
     public function getList()
     {
-        $category = Category::all();
+        $category = Category::orderBy('cat_id', 'desc')->get();
         return view('admin.categories.list', ['category' => $category]);
     }
     public function getEdit($id)
