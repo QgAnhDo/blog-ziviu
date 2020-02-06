@@ -73,7 +73,7 @@
                     <td>{{ $item->pos_hot }}</td>
                     <td>{{ $item->pos_active }}</td>
                     <td>{{ $item->pos_rating }}</td>
-                    <td>{{ $item->pos_created_at }}</td>
+                    <td>{{ date('d-m-Y H:i:s', $item->pos_created_at) }}</td>
                     <td><a href="{{route('admin.posts.edit', ['id' => $item->pos_id])}}">Sửa</a> | <a href="{{route('admin.posts.delete', ['id' => $item->pos_id])}}">Xóa</a></td>
                   </tr>
                   @endforeach

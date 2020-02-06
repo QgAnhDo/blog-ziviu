@@ -1,4 +1,4 @@
-<link rel="stylesheet" type="text/css" href="assets/css/style_categories.css">
+<link rel="stylesheet" type="text/css" href="assets/css/category/style_categories.css">
 <link rel="stylesheet" type="text/css" href="assets/css/responsive/style_categories-responsive.css">
 <div id="body">
     <div class="categories_content">

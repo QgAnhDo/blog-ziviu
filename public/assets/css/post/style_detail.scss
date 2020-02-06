@@ -1,0 +1,26 @@
+//Style gốc trang chủ
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+* a {
+	text-decoration: none;
+}
+body {
+	margin: 0 auto;
+}
+.container {
+	width: 1040px;
+	height: auto;
+	margin: 0 auto;
+}
+.clearfix {
+    zoom: 1;
+}
+//Import scss
+@import '../index_layout/header.css';
+@import '../index_layout/body.css';
+@import 'body_detail.css';
+@import '../index_layout/footer.css';
+@import '../scroll-to-top.css';

@@ -1,0 +1,25 @@
+@import url(../index_layout/header.css);
+@import url(../index_layout/body.css);
+@import url(body_detail.css);
+@import url(../index_layout/footer.css);
+@import url(../scroll-to-top.css);
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box; }
+
+* a {
+  text-decoration: none; }
+
+body {
+  margin: 0 auto; }
+
+.container {
+  width: 1040px;
+  height: auto;
+  margin: 0 auto; }
+
+.clearfix {
+  zoom: 1; }
+
+/*# sourceMappingURL=style_detail.css.map */

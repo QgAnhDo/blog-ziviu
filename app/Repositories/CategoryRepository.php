@@ -2,18 +2,18 @@
 
 namespace App\Repositories;
 
-use App\Models\Categories;
+use App\Models\Category;
 use App\Models\Posts;
 
 class CategoryRepository implements CategoryRepositoryInterface {
 //SELECT * FROM categories WHERE cat_id IN ( SELECT IF(cat_parent_id=0,cat_id,cat_parent_id) FROM categories WHERE cat_id = $id);
     public function getCategoryById($id)
     {
-        $a = Categories::where('cat_id', $id)->selectRaw('IF(cat_parent_id=0,cat_id,cat_parent_id)')->first();
-        $categoryId = Categories::whereIn('cat_id', $a)
+        $a = Category::where('cat_id', $id)->selectRaw('IF(cat_parent_id=0,cat_id,cat_parent_id)')->first();
+        $categoryId = Category::whereIn('cat_id', $a)
             ->select('cat_id','cat_name','cat_slug','cat_parent_id')
             ->first();
-            $categoryChild = Categories::where('cat_parent_id', $categoryId->cat_id)
+            $categoryChild = Category::where('cat_parent_id', $categoryId->cat_id)
                 ->where('cat_active', 1)
                 ->select('cat_id', 'cat_name', 'cat_slug', 'cat_parent_id', 'cat_active')
                 ->get();

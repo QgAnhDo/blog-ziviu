@@ -1,0 +1,22 @@
+// style gốc trang chủ
+html {
+	// scroll-behavior: smooth;
+}
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+body {
+	margin: 0 auto;
+}
+.container {
+	width: 1040px;
+	height: auto;
+	margin: 0 auto;
+}
+// header
+@import 'header';
+@import 'body';
+@import 'footer';
+@import '../scroll-to-top.css';

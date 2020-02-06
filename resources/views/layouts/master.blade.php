@@ -5,10 +5,10 @@
     <link rel="shortcut icon" href="assets/images/favicon.png">
     <title>Trang thông tin dành cho các tín đồ công nghệ</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/index_layout/style.css">
     <link rel="stylesheet" type="text/css" href="assets/css/responsive/style-responsive.css">
-    <link rel="stylesheet" type="text/css" href="assets/css/owl.carousel.min.css">
-    <link rel="stylesheet" type="text/css" href="assets/css/owl.theme.default.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/owl_carousel/owl.carousel.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/owl_carousel/owl.theme.default.css">
     <link rel="stylesheet" type="text/css" href="assets/css/font.css">
 
     <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
@@ -18,13 +18,12 @@
     <script type="text/javascript" src="assets/js/searchbox.js"></script>
     <script type="text/javascript" src="assets/js/scroll-to-top.js"></script>
     <script type="text/javascript" src="assets/js/sticky-menu.js"></script>
-
-
 </head>
 
 <body>
 <div id="fb-root"></div>
 <script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v5.0"></script>
+
 <?php
 require('../resources/views/layouts/header.blade.php');
 echo $dataShow['view'];

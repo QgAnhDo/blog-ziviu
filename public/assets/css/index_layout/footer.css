@@ -1,0 +1,72 @@
+#footer {
+  width: 100%;
+  background: #191919; }
+  #footer .top_footer {
+    border-bottom: 1px solid #45BD33; }
+    #footer .top_footer .gfw_top_wrapper {
+      padding: 25px 0;
+      border-bottom: 1px solid #333;
+      display: flex; }
+      #footer .top_footer .gfw_top_wrapper a {
+        background-position: 0 0;
+        width: 164px;
+        height: 23px;
+        display: block;
+        float: left;
+        background-size: 210%;
+        margin-top: 10px; }
+        #footer .top_footer .gfw_top_wrapper a img {
+          width: 100%; }
+    #footer .top_footer .gfw_bottom_wrapper {
+      display: flex; }
+      #footer .top_footer .gfw_bottom_wrapper ul {
+        list-style-type: none; }
+        #footer .top_footer .gfw_bottom_wrapper ul li {
+          float: left;
+          margin-right: 40px; }
+          #footer .top_footer .gfw_bottom_wrapper ul li a {
+            color: #fff;
+            font-size: 13px;
+            line-height: 18px;
+            font-family: Roboto-Medium;
+            text-decoration: none;
+            text-transform: uppercase;
+            line-height: 60px; }
+          #footer .top_footer .gfw_bottom_wrapper ul li a:hover {
+            color: #ED2E2E; }
+  #footer .bottom_footer {
+    padding: 35px 0;
+    display: flex; }
+    #footer .bottom_footer .gfwbf_left {
+      width: 515px;
+      float: left;
+      margin-right: 80px; }
+    #footer .bottom_footer .gfwbf_right {
+      width: 375px;
+      margin-left: 595px; }
+      #footer .bottom_footer .gfwbf_right img {
+        margin: 10px;
+        margin-left: 0; }
+      #footer .bottom_footer .gfwbf_right h4 {
+        font-family: Roboto-Medium;
+        font-size: 24px;
+        text-transform: uppercase;
+        color: #fff;
+        margin-bottom: 12px; }
+      #footer .bottom_footer .gfwbf_right span {
+        background-position: -92px -122px;
+        width: 65px;
+        height: 15px;
+        display: block;
+        margin-bottom: 10px; }
+    #footer .bottom_footer p {
+      font-family: Arial;
+      font-size: 12px;
+      line-height: 18px;
+      color: #999;
+      margin-bottom: 20px; }
+      #footer .bottom_footer p a {
+        text-decoration: none;
+        color: #ed2e2e; }
+
+/*# sourceMappingURL=footer.css.map */

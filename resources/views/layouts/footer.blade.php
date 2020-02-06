@@ -21,44 +21,29 @@
         <div class="container">
             <div class="gfwbf_left">
                 <p>
-                    Chịu trách nhiệm quản lý nội dung: Bà Nguyễn Bích Minh
-                    <br>
-                    Hà Nội: Tầng 20, Tòa nhà Center Building - Hapulico Complex, Số 1 Nguyễn Huy Tưởng, Thanh Xuân, Hà Nội.
-                    <br>
-                    Email:
-                    <a href="#" rel="nofollow">info@genk.vn</a>
-                    <br>
-                    Điện thoại: 024.73095555, máy lẻ 62374
-                    <br>
-                    VPĐD tại TP.HCM: Tầng 4, Tòa nhà 123
-                    <br>
-                    Võ Văn Tần, Phường 6, Quận 3, Tp. Hồ Chí Minh
-                    <br>
+                    <b><?= $configuration->con_site_title ?></b>
                 </p>
                 <p>
-                    <b>© Copyright 2010 - 2019 - Công ty Cổ phần VCCorp</b>
+                    <?= $configuration->con_address ?>
                     <br>
-                    Tầng 17, 19, 20, 21 Toà nhà Center Building - Hapulico Complex, Số 1 Nguyễn Huy Tưởng, Thanh Xuân, Hà Nội.
+                    Hotline: <?= $configuration->con_hotline ?> (Giờ hành chính)
                     <br>
-                    Trang tin điện tử trên internet: Giấy phép số 460/GP-TTĐT do Sở Thông tin và Truyền thông Hà Nội cấp ngày 03/02/2016
+                    <?= $configuration->con_meta_keywords ?>
                     <br>
+                    <?= $configuration->con_meta_description ?>
                 </p>
             </div>
             <div class="gfwbf_right">
-                <h4>Liên hệ quảng cáo</h4>
-                <span></span>
                 <p>
-                    Hotline hỗ trợ quảng cáo: 0942 86 11 33
-                    <br>
-                    <br>
                     Email:
-                    <a href="#" rel="nofollow">giaitrixahoi@admicro.vn</a>
-                    <br>
-                    Hỗ trợ & CSKH: Admicro
-                    <br>
-                    Address: Tầng 20, Tòa nhà Center Building - Hapulico Complex, Số 1 Nguyễn Huy Tưởng, Thanh Xuân, Hà Nội.
+                    <a href="#"><?= $configuration->con_admin_email ?></a>
                     <br>
                     <br>
+                    Mạng xã hội:
+                    <br>
+                    <a href="<?= $configuration->con_facebook ?>" target="_blank"><img src="assets/images/icon_fb.png"></a>
+                    <a href="<?= $configuration->con_youtube ?>" target="_blank"><img src="assets/images/icon_youtube.png"></a>
+                    <a href="<?= $configuration->con_google_plus ?>" target="_blank"><img src="assets/images/icon_insta.png"></a>
                 </p>
             </div>
         </div>

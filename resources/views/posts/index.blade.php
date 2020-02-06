@@ -1,4 +1,4 @@
-<link rel="stylesheet" type="text/css" href="assets/css/style_detail.css">
+<link rel="stylesheet" type="text/css" href="assets/css/post/style_detail.css">
 <link rel="stylesheet" type="text/css" href="assets/css/responsive/style_detail-responsive.css">
 <div id="body">
     <div class="body_content detail_content">
@@ -123,8 +123,8 @@
                                 <iframe width="100%" height="357.188" src="https://www.youtube.com/embed/bMKyVwqW2aM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                             </div>
                             <div class="dav_box_ads">
-                                <div style="float: left;"><img src="images/detail/ads_video.jpg"></div>
-                                <div style="float: right;"><img src="images/detail/ads_video.jpg"></div>
+                                <div style="float: left;"><img src="images/post/ads_video.jpg"></div>
+                                <div style="float: right;"><img src="images/post/ads_video.jpg"></div>
                             </div>
                         </div> */ ?>
                     </div>
@@ -265,7 +265,7 @@
                 </div>
             </div>
             <div class="detail_right">
-                @include('../layouts/sidebar')
+                @include('layouts.sidebar')
             </div>
         </div>
     </div>

@@ -2,19 +2,20 @@
 
 namespace App\Repositories;
 
-use App\Models\Categories;
+use App\Models\Category;
 use App\Models\Posts;
+use App\Models\Configuration;
 
 class HomeRepository implements HomeRepositoryInterface {
 
     public function getCategories()
     {
-        $categories = Categories::where('cat_parent_id', 0)
+        $categories = Category::where('cat_parent_id', 0)
             ->where('cat_active', 1)
             ->select('cat_id', 'cat_name', 'cat_slug', 'cat_parent_id', 'cat_active')
             ->get();
         foreach ($categories as $value) {
-            $categoriesChild = Categories::where('cat_parent_id', $value->cat_id)
+            $categoriesChild = Category::where('cat_parent_id', $value->cat_id)
                 ->where('cat_active', 1)
                 ->select('cat_id', 'cat_name', 'cat_slug', 'cat_parent_id', 'cat_active')
                 ->get();
@@ -25,7 +26,7 @@ class HomeRepository implements HomeRepositoryInterface {
 
     public function getCategoriesId($id)
     {
-        return Categories::find($id);
+        return Category::find($id);
     }
 
     public function getPosts()
@@ -79,7 +80,7 @@ class HomeRepository implements HomeRepositoryInterface {
     }
 
     public function getCategoriesHot() {
-        $categoriesHot = Categories::join('posts', 'pos_cat_id', '=', 'cat_id')
+        $categoriesHot = Category::join('posts', 'pos_cat_id', '=', 'cat_id')
             ->where('cat_hot', 1)
             ->where('cat_active', 1)
             ->select('cat_id', 'cat_name')
@@ -94,7 +95,7 @@ class HomeRepository implements HomeRepositoryInterface {
                 ->get();
             $categoriesHot->posts = $categoriesHotPosts;
 
-            $categoriesHot2 = Categories::join('posts', 'pos_cat_id', '=', 'cat_id')
+            $categoriesHot2 = Category::join('posts', 'pos_cat_id', '=', 'cat_id')
                 ->where('cat_id', '<', $categoriesHot->cat_id)
                 // ->where('cat_hot', 1)
                 ->where('cat_active', 1)
@@ -112,7 +113,7 @@ class HomeRepository implements HomeRepositoryInterface {
                 $categoriesHot2->posts = $categoriesHotPosts2;
                 $categoriesHot->hot2 = $categoriesHot2;
 
-                $categoriesHot3 = Categories::join('posts', 'pos_cat_id', '=', 'cat_id')
+                $categoriesHot3 = Category::join('posts', 'pos_cat_id', '=', 'cat_id')
                     ->where('cat_id', '<', $categoriesHot2->cat_id)
                     ->where('cat_hot', 1)
                     ->where('cat_active', 1)
@@ -152,5 +153,11 @@ class HomeRepository implements HomeRepositoryInterface {
             ->orderBy('pos_view', 'desc')
             ->limit(5)
             ->get();
+    }
+
+    public function getConfiguration()
+    {
+        return Configuration::select('con_id', 'con_admin_email', 'con_site_title', 'con_meta_description', 'con_meta_keywords', 'con_hotline', 'con_address', 'con_youtube', 'con_twitter', 'con_google_plus', 'con_facebook', 'con_word_text', 'con_total_restaurant')
+            ->orderBy('con_id','asc')->first();
     }
 }

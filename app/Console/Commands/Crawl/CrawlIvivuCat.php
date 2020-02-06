@@ -5,7 +5,7 @@ namespace App\Console\Commands\Crawl;
 use Illuminate\Console\Command;
 use KubAT\PhpSimple\HtmlDomParser;
 use Illuminate\Support\Str;
-use App\Models\Post;
+use App\Models\Posts;
 
 class CrawlIvivuCat extends Command
 {
@@ -49,7 +49,9 @@ class CrawlIvivuCat extends Command
                 "cat_id"=> 1,
             ],
         ];
+        //vòng lặp tạo category
         foreach($cats as $item) {
+            //check diều kiện nếu data cũ tồn tại
             if($request["mode"]) {
                 // Get total page
                 $html = HtmlDomParser::file_get_html($item["url"], false, null, 0 );
@@ -67,6 +69,7 @@ class CrawlIvivuCat extends Command
                 $html = HtmlDomParser::file_get_html($url, false, null, 0 );
                  //Insert multi 
                 $data_insert = [];
+                //vòng lặp để add các bài viết
                 foreach($html->find('.one-half') as $article) {
                     preg_match_all('/(\d*) views/', $article->find('.views', 0)->plaintext, $view);
                     $view = empty($view[1][0]) ? 0 : (int)$view[1][0];
@@ -85,7 +88,8 @@ class CrawlIvivuCat extends Command
                     $result = $this->saveImage($response['image'], Str::slug($response['title']));        
                     $response['image'] = implode('/', $result);
 
-                    if(Post::where('pos_slug', Str::slug($response["title"]))->first() === null) {
+                    //check trùng
+                    if(Posts::where('pos_slug', Str::slug($response["title"]))->first() === null) {
                         $data_insert[] = [
                             'pos_title' => $response['title'],
                             'pos_slug' => Str::slug($response['title']),
@@ -103,7 +107,7 @@ class CrawlIvivuCat extends Command
                     }    
                     
                 }
-                Post::insert($data_insert);
+                Posts::insert($data_insert);
                 echo 'Đã insert '.count($data_insert).' bản ghi. ';
             }
         }
@@ -118,7 +122,7 @@ class CrawlIvivuCat extends Command
         $file_name = $base_name .'.'. $ext;
 
         $date = date('Y/m/d', time());
-        $folder = storage_path('app/public/uploads/post/'. $date);
+        $folder = storage_path('uploads/post/'. $date);
         if (!is_dir($folder)) {
             mkdir($folder, 0777, true);
         }

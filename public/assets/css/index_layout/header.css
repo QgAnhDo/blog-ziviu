@@ -1,0 +1,191 @@
+#header {
+  width: 100%; }
+  #header .genk_top_header {
+    background: #2e2e2e;
+    height: 25px; }
+    #header .genk_top_header .menu_channel {
+      position: relative; }
+      #header .genk_top_header .menu_channel ul {
+        list-style-type: none; }
+        #header .genk_top_header .menu_channel ul li {
+          float: left;
+          margin-right: 22px; }
+          #header .genk_top_header .menu_channel ul li a {
+            font-family: Roboto-Medium;
+            font-size: 12px;
+            line-height: 25px;
+            display: block;
+            color: #aaa;
+            text-decoration: none;
+            text-transform: uppercase; }
+      #header .genk_top_header .menu_channel .test_new_version {
+        float: right;
+        color: #fff;
+        font-size: 12px;
+        margin-top: 7px;
+        font-family: Roboto-Regular; }
+        #header .genk_top_header .menu_channel .test_new_version a {
+          text-decoration: none;
+          color: #fff; }
+        #header .genk_top_header .menu_channel .test_new_version i {
+          width: 29px;
+          height: 15px;
+          float: right;
+          margin-left: 10px;
+          margin-top: -2px;
+          display: inline-block;
+          background: url(../../images/trangthaithunghiemoff.jpg) no-repeat;
+          cursor: pointer; }
+  #header .genk_bottom_header {
+    background: #222;
+    height: 45px;
+    position: relative;
+    z-index: 999; }
+    #header .genk_bottom_header .menu {
+      position: absolute;
+      background: #222;
+      width: 100%;
+      height: 45px; }
+      #header .genk_bottom_header .menu .menu_div {
+        position: relative; }
+        #header .genk_bottom_header .menu .menu_div .genk_logo {
+          width: 140px;
+          height: 20px;
+          display: block;
+          position: absolute;
+          top: 14px;
+          left: 0; }
+          #header .genk_bottom_header .menu .menu_div .genk_logo img {
+            width: 100%; }
+        #header .genk_bottom_header .menu .menu_div .menu_list {
+          list-style-type: none;
+          float: left;
+          margin-left: 160px; }
+          #header .genk_bottom_header .menu .menu_div .menu_list li {
+            float: left;
+            margin-left: 20px;
+            height: 45px; }
+            #header .genk_bottom_header .menu .menu_div .menu_list li a {
+              font-family: Roboto-Medium;
+              font-size: 15px;
+              color: #fff;
+              text-decoration: none;
+              text-transform: uppercase;
+              line-height: 48px;
+              height: 45px;
+              display: block; }
+            #header .genk_bottom_header .menu .menu_div .menu_list li a:hover {
+              color: #ed2e2e; }
+            #header .genk_bottom_header .menu .menu_div .menu_list li .menu_icon {
+              width: 30px;
+              height: 45px;
+              display: block;
+              position: relative;
+              padding: 10px 5px;
+              font-size: 25px; }
+          #header .genk_bottom_header .menu .menu_div .menu_list .expand_icon {
+            margin-left: 25px; }
+        #header .genk_bottom_header .menu .menu_div .linkvideo {
+          font-family: Roboto-Medium;
+          font-size: 16px;
+          color: #fff;
+          text-decoration: none;
+          text-transform: uppercase;
+          line-height: 48px;
+          height: 45px;
+          display: block;
+          margin-right: 25px;
+          position: absolute;
+          right: 30px;
+          float: right; }
+        #header .genk_bottom_header .menu .menu_div .search_icon {
+          width: 25px;
+          height: 25px;
+          position: absolute;
+          margin-top: 10px;
+          right: 5px;
+          float: right; }
+        #header .genk_bottom_header .menu .menu_div .searchbox {
+          float: left;
+          width: 258px;
+          height: 24px;
+          position: absolute;
+          top: 10px;
+          right: 50px;
+          padding-left: 5px;
+          overflow: hidden;
+          border: 1px solid #a9a9a9;
+          display: none; }
+    #header .genk_bottom_header .menu_expand {
+      position: absolute;
+      width: 100%;
+      top: 45px;
+      left: 0;
+      background: #f1f1f1;
+      z-index: 9999;
+      display: none; }
+      #header .genk_bottom_header .menu_expand .menu_clear {
+        width: 100%;
+        background: #f1f1f1;
+        position: relative;
+        box-shadow: 0 11px 84px 0 rgba(0, 0, 0, 0.35);
+        padding-top: 35px;
+        padding-bottom: 25px;
+        display: inline-block; }
+        #header .genk_bottom_header .menu_expand .menu_clear ul {
+          list-style-type: none; }
+        #header .genk_bottom_header .menu_expand .menu_clear .menu_expand_list {
+          position: relative;
+          display: inline-block; }
+          #header .genk_bottom_header .menu_expand .menu_clear .menu_expand_list .menu_expand_item:first-of-type {
+            margin-left: 15px; }
+          #header .genk_bottom_header .menu_expand .menu_clear .menu_expand_list .menu_expand_item {
+            width: 150px;
+            margin-left: 20px;
+            color: #000;
+            float: left; }
+            #header .genk_bottom_header .menu_expand .menu_clear .menu_expand_list .menu_expand_item .submenu_expand_item.cate {
+              border-bottom: 1px solid #acacac;
+              margin-bottom: 24px;
+              position: relative; }
+              #header .genk_bottom_header .menu_expand .menu_clear .menu_expand_list .menu_expand_item .submenu_expand_item.cate a {
+                padding-bottom: 10px;
+                font-size: 13.5px;
+                font-family: Roboto-Bold;
+                color: #333;
+                text-transform: uppercase; }
+              #header .genk_bottom_header .menu_expand .menu_clear .menu_expand_list .menu_expand_item .submenu_expand_item.cate a:hover {
+                color: #ed2e2e; }
+              #header .genk_bottom_header .menu_expand .menu_clear .menu_expand_list .menu_expand_item .submenu_expand_item.cate .emagazine::before {
+                content: "";
+                background: url(http://genknews.genkcdn.vn/web_images/icon_star1.png) no-repeat;
+                width: 15px;
+                height: 14px;
+                display: inline-block;
+                background-size: 15px;
+                margin-right: 5px; }
+            #header .genk_bottom_header .menu_expand .menu_clear .menu_expand_list .menu_expand_item .submenu_expand_item.cate::before {
+              position: absolute;
+              right: 0;
+              top: 0;
+              background: url(../../images/sprite-genk_v11.png) -75px -39px no-repeat;
+              content: '';
+              width: 8px;
+              height: 13px; }
+            #header .genk_bottom_header .menu_expand .menu_clear .menu_expand_list .menu_expand_item .submenu_expand_item a {
+              font-family: Roboto-Medium;
+              font-size: 15px;
+              color: #555;
+              padding-bottom: 15px;
+              display: block;
+              text-decoration: none; }
+            #header .genk_bottom_header .menu_expand .menu_clear .menu_expand_list .menu_expand_item .submenu_expand_item a:hover {
+              color: #ed2e2e; }
+  #header .ads_header {
+    background: #f1f1f1;
+    padding: 20px 0;
+    width: 100%;
+    display: block;
+    text-align: center; }
+
+/*# sourceMappingURL=header.css.map */

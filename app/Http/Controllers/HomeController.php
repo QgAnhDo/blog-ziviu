@@ -45,11 +45,14 @@ class HomeController extends Controller
     public function index()
     {
         $categories = $this->home->getCategories();
+        $configuration = $this->home->getConfiguration();
+
         $posts = $this->home->getPosts();
         $postsHot = $this->home->getPostsHot();
         $postRating = $this->home->getPostRating();
         $postView = $this->home->getPostView();
         $categoriesHot = $this->home->getCategoriesHot();
+
         $dataShow['view'] = view('index')->with([
             'posts' => $posts,
             'postsHot' => $postsHot,
@@ -57,19 +60,23 @@ class HomeController extends Controller
             'postView' => $postView,
             'categoriesHot' => $categoriesHot,
         ]);
+
         return view('layouts/master')->with([
             'categories' => $categories,
             "dataShow" => $dataShow,
+            'configuration' => $configuration,
         ]);
     }
 
     public function postDetail($slug,$id)
     {
         $request = [
-            'slug'=> $slug 
+            'slug' => $slug,
+            'id' => $id,
         ];
-        dd($request);
+
         $categories = $this->home->getCategories();
+        $configuration = $this->home->getConfiguration();
 
         $post = $this->post->getPostById($id);
         $postTag = $this->post->getPostTags($id);
@@ -81,12 +88,23 @@ class HomeController extends Controller
             'postRelateHot' => $postRelateHot,
             'postRelate' => $postRelate,
         ]);
-        return view('layouts/master')->with(['categories' => $categories,"dataShow" => $dataShow]);
+        return view('layouts/master')->with([
+            'categories' => $categories,
+            "dataShow" => $dataShow,
+            'configuration' => $configuration,
+        ]);
     }
 
     public function categoryDetail($slug,$id)
     {
+        $request = [
+            'slug' => $slug,
+            'id' => $id,
+        ];
+
         $categories = $this->home->getCategories();
+        $configuration = $this->home->getConfiguration();
+
         $category = $this->category->getCategoryById($id);
         $post = $this->category->getPostByCategory($id);
         $postHot = $this->category->getPostHotByCategory($id);
@@ -95,23 +113,40 @@ class HomeController extends Controller
             'post' => $post,
             'postHot' => $postHot,
         ]);
-        return view('layouts/master')->with(['categories' => $categories,"dataShow" => $dataShow]);
+        return view('layouts/master')->with([
+            'categories' => $categories,
+            "dataShow" => $dataShow,
+            'configuration' => $configuration,
+        ]);
     }
 
     public function searchPostsName()
     {
         $name = $_GET['name'];
+
         $categories = $this->home->getCategories();
+        $configuration = $this->home->getConfiguration();
+
         $findPost = $this->search->searchPosts($name);
         $dataShow['view'] = view('search.index')->with([
             'findPost' => $findPost,
         ]);
-        return view('layouts/master')->with(['categories' => $categories,"dataShow" => $dataShow]);
+        return view('layouts/master')->with([
+            'categories' => $categories,
+            "dataShow" => $dataShow,
+            'configuration' => $configuration,
+        ]);
     }
 
     public function tagWithPost($slug, $id)
     {
+        $request = [
+            'slug' => $slug,
+            'id' => $id,
+        ];
+
         $categories = $this->home->getCategories();
+        $configuration = $this->home->getConfiguration();
 
         $tag = $this->tag->getTagById($id);
         $postTag = $this->tag->getPostByTag($id);
@@ -119,6 +154,10 @@ class HomeController extends Controller
             'tag' => $tag,
             'postTag' => $postTag,
         ]);
-        return view('layouts/master')->with(['categories' => $categories,"dataShow" => $dataShow]);
+        return view('layouts/master')->with([
+            'categories' => $categories,
+            "dataShow" => $dataShow,
+            'configuration' => $configuration,
+        ]);
     }
 }
