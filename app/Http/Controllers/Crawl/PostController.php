@@ -8,6 +8,8 @@ use App\Http\Controllers\Controller;
 use KubAT\PhpSimple\HtmlDomParser;
 use Illuminate\Support\Str;
 use App\Models\Posts;
+use App\Exceptions\Handler;
+use Illuminate\Support\Facades\Storage;
 
 class PostController extends Controller
 {
@@ -53,6 +55,15 @@ class PostController extends Controller
 
     public function insert(Request $request)
     {
+        $this->validate($request, [
+            'title' => 'required',
+            'image' => 'required',
+            'content' => 'required',
+            'view' => 'required', 
+            'description' => 'required',
+            'website' => 'required'
+        ]);
+
     	$response = [
     		'title' => $request->input('title'),
     		'image' => $request->input('image'),
@@ -73,7 +84,7 @@ class PostController extends Controller
             'pos_content' => $response['content'],
             'pos_hot' => 1,
             'pos_status' => 1,
-            'pos_cat_id' => 1,
+            'pos_cat_id' => 12,
             'pos_admin_id' => 1,
             'pos_crawl_status' => 0,
             'pos_created_at' => $response['created_at'],
@@ -87,3 +98,6 @@ class PostController extends Controller
         }
     }
 }
+
+y-m-d H:i
+time mess ." /n";

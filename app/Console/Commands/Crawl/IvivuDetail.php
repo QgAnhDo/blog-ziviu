@@ -42,7 +42,7 @@ class IvivuDetail extends Command
     {
         //lấy bài post chưa crawl trong db
         // $posts = Posts::select('pos_id', 'pos_website')->where('pos_crawl_status', 0)->limit(10)->get();
-        $ch = curl_init(); 
+        $ch = curl_init();
         curl_setopt_array($ch, array(
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_URL => "http://localhost:9083/api/posts",

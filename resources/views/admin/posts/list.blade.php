@@ -51,12 +51,11 @@
                   <th>ID</th>
                   <th>Tiêu đề</th>
                   <th>Link slug</th>
-                  <th>Meta</th>
                   <th>Mô tả</th>
                   <th>Nội dung</th>
                   <th>Bài viết hot</th>
                   <th>Trạng thái</th>
-                  <th>Rating</th>
+                  <th>Lượt xem</th>
                   <th>Ngày tạo</th>
                   <th>Hành động</th>
                 </tr>
@@ -67,13 +66,12 @@
                     <td>{{ $item->pos_id }}</td>
                     <td>{{ $item->pos_title }}</td>
                     <td>{{ $item->pos_slug }}</td>
-                    <td>{{ $item->pos_meta }}</td>
                     <td>{{ $item->pos_description }}</td>
                     <td>{{ $item->pos_content }}</td>
                     <td>{{ $item->pos_hot }}</td>
-                    <td>{{ $item->pos_active }}</td>
-                    <td>{{ $item->pos_rating }}</td>
-                    <td>{{ date('d-m-Y H:i:s', $item->pos_created_at) }}</td>
+                    <td>{{ $item->pos_status }}</td>
+                    <td>{{ $item->pos_view }}</td>
+                    <td>{{ $item->pos_created_at }}</td>
                     <td><a href="{{route('admin.posts.edit', ['id' => $item->pos_id])}}">Sửa</a> | <a href="{{route('admin.posts.delete', ['id' => $item->pos_id])}}">Xóa</a></td>
                   </tr>
                   @endforeach
@@ -81,13 +79,13 @@
                 <tfoot>
                 <tr>
                   <th>ID</th>
-                  <th>Tên</th>
+                  <th>Tiêu đề</th>
                   <th>Link slug</th>
-                  <th>Meta</th>
                   <th>Mô tả</th>
-                  <th>Danh mục hot</th>
+                  <th>Nội dung</th>
+                  <th>Bài viết hot</th>
                   <th>Trạng thái</th>
-                  <th>Rating</th>
+                  <th>Lượt xem</th>
                   <th>Ngày tạo</th>
                   <th>Hành động</th>
                 </tr>
