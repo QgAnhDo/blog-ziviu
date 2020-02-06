@@ -24,11 +24,6 @@ class HomeRepository implements HomeRepositoryInterface {
         return $categories;
     }
 
-    public function getCategoriesId($id)
-    {
-        return Category::find($id);
-    }
-
     public function getPosts()
     {
         return Posts::join('categories', 'pos_cat_id', '=', 'cat_id')
@@ -38,9 +33,6 @@ class HomeRepository implements HomeRepositoryInterface {
             ->limit(5)
             ->get();
     }
-
-    public function getRestaurantPosts()
-    {}
 
     public function getPostsHot()
     {
@@ -77,6 +69,17 @@ class HomeRepository implements HomeRepositoryInterface {
             $postsHot->hotSmaller = $postsHotSmaller;
         }
         return $postsHot;
+    }
+
+    public function getPostsHotList()
+    {
+        $postsHotList = Posts::join('categories', 'pos_cat_id', '=', 'cat_id')
+            ->where('pos_hot', 1)->where('pos_status', 1)
+            ->select('pos_id','pos_title', 'pos_slug', 'pos_image', 'pos_description', 'pos_cat_id', 'pos_status', 'pos_rating', 'pos_view', 'pos_created_at', 'cat_id', 'cat_name', 'cat_slug')
+            ->orderBy('pos_id', 'desc')
+            ->limit(5)
+            ->get();
+        return $postsHotList;
     }
 
     public function getCategoriesHot() {

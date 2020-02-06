@@ -63,7 +63,7 @@
                                         {{$item->cat_name}}
                                     </a>
                                     -
-                                    <span>{{getTimeDuration(time()-$item->pos_created_at)}}</span>
+                                    <span>{{getTimeDuration(time()-strtotime($item->pos_created_at))}}</span>
                                 </div>
                                 <span class="item_sapo">
                                     {{$item->pos_description}}
@@ -105,8 +105,6 @@ foreach($post as $item) {
         "@type" => "ListItem",
         "url" => route('posts.index', ['slug' => $item->pos_slug, 'id' => $item->pos_id]),
         "name" => $item->pos_title,
-//        "category" => $item->cat_name,
-//        "time" => getTimeDuration(time()-$item->pos_created_at),
         "description" => $item->pos_description,
         "image" => $item->getImgPosts()
     ];

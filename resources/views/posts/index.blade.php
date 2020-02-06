@@ -46,7 +46,7 @@
                             <span class="meta_source">Theo <a href="{{$post->pos_website}}" target="_blank">
                                     {{str_ireplace('www.', '', parse_url($post->pos_website, PHP_URL_HOST))}}</a>
                             </span>
-                            <span class="meta_time">{{date('h:m - d/m/Y',$post->pos_created_at)}}</span>
+                            <span class="meta_time">{{date_format($post->pos_created_at,'H:i - d/m/Y')}}</span>
                         </div>
                         <div class="detail_socials">
                             <div class="fb-like" data-href="{{route('posts.index', ['slug' => $post->pos_slug, 'id' => $post->pos_id])}}" data-width="" data-layout="button_count" data-action="like" data-size="small" data-show-faces="true" data-share="true">
@@ -135,7 +135,7 @@
                                                     <span>Nổi bật</span>
                                                     @endif
                                                 </h4>
-                                                <span class="time">{{getTimeDuration(time()-$item->pos_created_at)}}</span>
+                                                <span class="time">{{getTimeDuration(time()-strtotime($item->pos_created_at))}}</span>
                                             </div>
                                         </li>
                                             @endforeach
@@ -157,7 +157,7 @@
                                                                 <span>Nổi bật</span>
                                                             @endif
                                                         </h4>
-                                                        <span class="time">{{getTimeDuration(time()-$item->pos_created_at)}}</span>
+                                                        <span class="time">{{getTimeDuration(time()-strtotime($item->pos_created_at))}}</span>
                                                     </div>
                                                 </li>
                                             @endforeach
@@ -181,8 +181,8 @@ $schema_data = [
     "@type" => "NewsArticle",
     "headline" => $post->pos_title,
     "description" => $post->pos_description,
-    "datePublished" => date('h:m - d/m/Y',$post->pos_created_at),
-    "dateModified" => date('h:m - d/m/Y',$post->pos_updated_at),
+    "datePublished" => date_format($post->pos_created_at,'H:i - d/m/Y'),
+    "dateModified" => date_format($post->pos_created_at,'H:i - d/m/Y'),
     "mainEntityOfPage" => [
         "@type" => "WebPage",
         "@id" => route('posts.index', ['slug' => $post->pos_slug, 'id' => $post->pos_id]),

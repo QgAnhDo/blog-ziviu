@@ -9,8 +9,8 @@ class CategoryRepository implements CategoryRepositoryInterface {
 //SELECT * FROM categories WHERE cat_id IN ( SELECT IF(cat_parent_id=0,cat_id,cat_parent_id) FROM categories WHERE cat_id = $id);
     public function getCategoryById($id)
     {
-        $a = Category::where('cat_id', $id)->selectRaw('IF(cat_parent_id=0,cat_id,cat_parent_id)')->first();
-        $categoryId = Category::whereIn('cat_id', $a)
+        $findCatId = Category::where('cat_id', $id)->selectRaw('IF(cat_parent_id=0,cat_id,cat_parent_id)')->first();
+        $categoryId = Category::whereIn('cat_id', $findCatId)
             ->select('cat_id','cat_name','cat_slug','cat_parent_id')
             ->first();
             $categoryChild = Category::where('cat_parent_id', $categoryId->cat_id)
@@ -30,20 +30,20 @@ class CategoryRepository implements CategoryRepositoryInterface {
             ->paginate(10);
     }
 
-    public function getPostHotByCategory($id)
-    {
-        $postsHot = Posts::where('pos_cat_id', $id)->where('pos_hot', 1)->where('pos_status', 1)
-            ->select('pos_id','pos_title', 'pos_slug', 'pos_image', 'pos_description', 'pos_cat_id', 'pos_status', 'pos_hot', 'pos_created_at')
-            ->orderBy('pos_id', 'desc')
-            ->first();
-        if($postsHot) {
-            $postsHotSmall = Posts:: where('pos_id', '<', $postsHot->pos_id)->where('pos_cat_id', $id)
-                ->where('pos_hot', 1)->where('pos_status', 1)
-                ->select('pos_id','pos_title', 'pos_slug', 'pos_image', 'pos_description', 'pos_status', 'pos_hot', 'pos_created_at')
-                ->orderBy('pos_id', 'desc')
-                ->first();
-            $postsHot->hotSmall = $postsHotSmall;
-        }
-        return $postsHot;
-    }
+//    public function getPostHotByCategory($id)
+//    {
+//        $postsHot = Posts::where('pos_cat_id', $id)->where('pos_hot', 1)->where('pos_status', 1)
+//            ->select('pos_id','pos_title', 'pos_slug', 'pos_image', 'pos_description', 'pos_cat_id', 'pos_status', 'pos_hot', 'pos_created_at')
+//            ->orderBy('pos_id', 'desc')
+//            ->first();
+//        if($postsHot) {
+//            $postsHotSmall = Posts:: where('pos_id', '<', $postsHot->pos_id)->where('pos_cat_id', $id)
+//                ->where('pos_hot', 1)->where('pos_status', 1)
+//                ->select('pos_id','pos_title', 'pos_slug', 'pos_image', 'pos_description', 'pos_status', 'pos_hot', 'pos_created_at')
+//                ->orderBy('pos_id', 'desc')
+//                ->first();
+//            $postsHot->hotSmall = $postsHotSmall;
+//        }
+//        return $postsHot;
+//    }
 }

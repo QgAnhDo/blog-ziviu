@@ -8,5 +8,5 @@ interface CategoryRepositoryInterface {
 
     public function getPostByCategory($id);
 
-    public function getPostHotByCategory($id);
+//    public function getPostHotByCategory($id);
 }
