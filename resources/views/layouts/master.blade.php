@@ -12,9 +12,9 @@
     <meta property="og:type" content="image/jpeg" />
     <meta property="og:url" content="{{asset('')}}" />
     <meta property="og:image" content="assets/images/logo-1.png" />
-    <meta property="og:description" itemprop="description" content="ng cấp thông tin từ các tin tức của Trip247 như nhà hàng, khách sạn, v.v..." />
+    <meta property="og:description" itemprop="description" content="nguồn cấp thông tin từ các tin tức liên quan đến nhà hàng, khách sạn, v.v..." />
     <meta property="og:url" itemprop="url" content="{{asset('')}}" />
-    <meta name="twitter:card" content="trip247" />
+    <meta name="twitter:card" content="{{asset('')}}" />
     <meta name="twitter:site" content="" />
     <meta name="twitter:creator" content="" />
     <meta name="twitter:title" content="" />

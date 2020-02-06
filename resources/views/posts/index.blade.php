@@ -189,7 +189,7 @@ $schema_data = [
     ],
     "image" => [
         "@type" => "ImageObject",
-        "url" => "http://blog.ziviu.com/uploads/posts/default/".$post->pos_image,
+        "url" => $post->getImgPosts(),
     ],
     "author" => [
         "@type" => "Person",
@@ -200,7 +200,7 @@ $schema_data = [
         "name" => "Blog.Ziviu",
         "logo" => [
             "@type" => "ImageObject",
-            "url" => "http://blog.ziviu.com/assets/images/favicon.png"
+            "url" => asset('')."assets/images/favicon.png"
         ]
     ]
 ];
