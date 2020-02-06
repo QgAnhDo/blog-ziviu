@@ -54,7 +54,6 @@
                     <td>{{ $item->adm_avatar }}</td>
                     <td>{{ $item->adm_phone }}</td>
                     <td>{{ $item->adm_active }}</td>
-                    <td><a href="{{route('admin.acc-admin.delete')}}">Xóa</a></td>
                     <td><a href="{{route('admin.acc-admin.edit')}}">Sửa</a> | <a href="{{route('admin.acc-admin.delete')}}">Xóa</a></td>
                   </tr>
                   @endforeach

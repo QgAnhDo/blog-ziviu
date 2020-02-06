@@ -48,6 +48,14 @@ class CrawlIvivuCat extends Command
                 "url"=> 'https://blog.ivivu.com/category/viet-nam/',
                 "cat_id"=> 1,
             ],
+            [
+                "url" => 'https://www.ivivu.com/blog/category/top-diem-den/diem-den-top-ivivu/',
+                "cat_id" => 1,
+            ],
+            [
+                "url" => 'https://www.ivivu.com/blog/category/muon-mau/',
+                "cat_id" => 1,
+            ],
         ];
         //vòng lặp tạo category
         foreach($cats as $item) {
@@ -88,27 +96,26 @@ class CrawlIvivuCat extends Command
                     $result = $this->saveImage($response['image'], Str::slug($response['title']));        
                     $response['image'] = implode('/', $result);
 
-                    //check trùng
-                    if(Posts::where('pos_slug', Str::slug($response["title"]))->first() === null) {
-                        $data_insert[] = [
-                            'pos_title' => $response['title'],
-                            'pos_slug' => Str::slug($response['title']),
-                            'pos_description' => $response['description'],
-                            'pos_website' => $response['website'],
-                            'pos_view' => $response['view'],
-                            'pos_image' => $response['image'],
-                            'pos_hot' => 1,
-                            'pos_status' => 1,
-                            'pos_cat_id' => $item["cat_id"],
-                            'pos_admin_id' => 1,
-                            'pos_crawl_status' => 0,
-                            'pos_created_at' => $response['created_at'],
-                        ];
-                    }    
+                    //get file html với link pos_website
+                    $html_detail = HtmlDomParser::file_get_html($response['website'], false, null, 0 );  
                     
+                    //mảng lưu trữ
+                    $response["content"] = $html_detail->find('.entry-content', 0)->plaintext;
+
+                    if ($response !== null) {
+                        $ch = curl_init();
+                        $test = curl_setopt_array($ch, array(
+                            CURLOPT_RETURNTRANSFER => true,
+                            CURLOPT_SSL_VERIFYPEER => false,
+                            CURLOPT_URL => "http://localhost:9083/api/posts",
+                            CURLOPT_POST => count($response),
+                            CURLOPT_POSTFIELDS => $response,
+                        ));
+
+                        $result = curl_exec($ch);
+                    }
+                    echo 'đã thêm bài viết. ';                
                 }
-                Posts::insert($data_insert);
-                echo 'Đã insert '.count($data_insert).' bản ghi. ';
             }
         }
     }

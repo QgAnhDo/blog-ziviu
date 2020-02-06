@@ -21,7 +21,7 @@ class Posts extends Model
         if (!$img) {
             return url('/assets/images/no-image.png');
         }
-        return parse_image($folder, $size, $img);
+        return parse_image_no_explode($folder, $size, $img);
 
     }
 }

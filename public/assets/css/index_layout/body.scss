@@ -26,7 +26,7 @@
 								vertical-align: middle;
 							}
 						}
-						h2 {
+						h1 {
 							a {
 								margin-top: 12px;
 								display: block;
@@ -664,99 +664,6 @@
 						    }
 						}
 					}
-					.content_extra_4 {
-						li {
-							padding: 25px 0;
-    						border-bottom: 1px solid #ebebeb;
-    						.eMag-home_genk {
-    							background-color: #222;
-							    border-top: 3px solid #e7343c;
-							    padding: 20px 0;
-							    .title {
-									display: flex;
-									justify-content: space-between;
-									padding: 0 20px;
-									margin-bottom: 20px;
-									align-items: center;
-									a {
-									    font-family: Gilroy-Bold;
-									    font-size: 30px;
-									    color: #fff;
-									    text-decoration: none;
-									    span {
-									    	color: #e7343c;
-									    }
-									}
-							    }
-							    .swiper_container {
-								    margin: 0 auto;
-								    position: relative;
-								    overflow: hidden;
-								    z-index: 1;
-								    .swiper_wrapper {
-								    	padding-left: 20px;
-								    	.swiper_slide {
-								    		width: 260px;
-								    		.post_slide {
-								    			width: 100%;
-											    border-radius: 5px;
-											    overflow: hidden;
-											    .thumb {
-											    	display: block;
-											    	i {
-											    		width: 100%;
-													    padding-top: 61.53%;
-													    display: block;
-													    background-size: cover;
-													    background-position: center center;
-													    background-repeat: no-repeat;
-											    	}
-											    }
-											    .post {
-													background-color: #fff;
-													display: block;
-													height: 120px;
-													padding: 12px;
-													span {
-														font-family: Arial;
-														font-weight: bold;
-													    font-size: 17px;
-													    line-height: 22px;
-													    color: #333;
-													    display: block;
-													}
-											    }
-								    		}
-								    	}
-								    }
-							    }
-    						}
-						}
-					}
-				}
-				.wrapperbtn {
-					height: 50px;
-					text-align: center;
-				    padding-top: 30px;
-				    margin-bottom: 65px;
-				    a {
-				    	width: 140px;
-					    height: 45px;
-					    background: #ed2e2e;
-					    font-family: Arial;
-					    font-weight: bold;
-					    font-size: 20px;
-					    line-height: 45px;
-					    color: #fff;
-					    text-decoration: none;
-					    text-transform: uppercase;
-					    display: inline-block;
-					    border-radius: 25px;
-					    text-align: center;
-				    }
-				    :hover {
-				    	background: #222;
-				    }
 				}
 			}
 		}

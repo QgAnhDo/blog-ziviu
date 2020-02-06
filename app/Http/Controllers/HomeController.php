@@ -53,17 +53,23 @@ class HomeController extends Controller
         $postView = $this->home->getPostView();
         $categoriesHot = $this->home->getCategoriesHot();
 
-        $dataShow['view'] = view('index')->with([
+//        $dataShow['view'] = view('index')->with([
+//            'posts' => $posts,
+//            'postsHot' => $postsHot,
+//            'postRating' => $postRating,
+//            'postView' => $postView,
+//            'categoriesHot' => $categoriesHot,
+//        ]);
+
+        return view('index')->with([
+            'categories' => $categories,
+
             'posts' => $posts,
             'postsHot' => $postsHot,
             'postRating' => $postRating,
             'postView' => $postView,
             'categoriesHot' => $categoriesHot,
-        ]);
 
-        return view('layouts/master')->with([
-            'categories' => $categories,
-            "dataShow" => $dataShow,
             'configuration' => $configuration,
         ]);
     }
@@ -82,15 +88,15 @@ class HomeController extends Controller
         $postTag = $this->post->getPostTags($id);
         $postRelateHot = $this->post->getPostRelateHot($id);
         $postRelate = $this->post->getPostRelate($id);
-        $dataShow['view'] = view('posts.index')->with([
+
+        return view('posts.index')->with([
+            'categories' => $categories,
+
             'post' => $post,
             'postTag' => $postTag,
             'postRelateHot' => $postRelateHot,
             'postRelate' => $postRelate,
-        ]);
-        return view('layouts/master')->with([
-            'categories' => $categories,
-            "dataShow" => $dataShow,
+
             'configuration' => $configuration,
         ]);
     }
@@ -108,14 +114,14 @@ class HomeController extends Controller
         $category = $this->category->getCategoryById($id);
         $post = $this->category->getPostByCategory($id);
         $postHot = $this->category->getPostHotByCategory($id);
-        $dataShow['view'] = view('categories.index')->with([
+
+        return view('categories.index')->with([
+            'categories' => $categories,
+
             'category' => $category,
             'post' => $post,
             'postHot' => $postHot,
-        ]);
-        return view('layouts/master')->with([
-            'categories' => $categories,
-            "dataShow" => $dataShow,
+
             'configuration' => $configuration,
         ]);
     }
@@ -128,12 +134,10 @@ class HomeController extends Controller
         $configuration = $this->home->getConfiguration();
 
         $findPost = $this->search->searchPosts($name);
-        $dataShow['view'] = view('search.index')->with([
-            'findPost' => $findPost,
-        ]);
-        return view('layouts/master')->with([
+
+        return view('search.index')->with([
             'categories' => $categories,
-            "dataShow" => $dataShow,
+            'findPost' => $findPost,
             'configuration' => $configuration,
         ]);
     }
@@ -150,13 +154,13 @@ class HomeController extends Controller
 
         $tag = $this->tag->getTagById($id);
         $postTag = $this->tag->getPostByTag($id);
-        $dataShow['view'] = view('tags.index')->with([
+
+        return view('tags.index')->with([
+            'categories' => $categories,
+
             'tag' => $tag,
             'postTag' => $postTag,
-        ]);
-        return view('layouts/master')->with([
-            'categories' => $categories,
-            "dataShow" => $dataShow,
+
             'configuration' => $configuration,
         ]);
     }
