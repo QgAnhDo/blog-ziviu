@@ -25,6 +25,7 @@
 
 		<div class="panel-body">
 			<form action="" method="post" enctype="multipart/form-data">
+				@csrf
 				<div class="form-group">
 					<label for="name">Tên danh mục</label>
 					<input type="text" class="form-control" name="cat_name" id="cat_name" value="{{$category->cat_name}}">

@@ -28,6 +28,8 @@ Route::get('/{slug}-t{id}','HomeController@tagWithPost')->name('tags.index')->wh
 
 Route::resource('home', 'HomeController');
 
+Route::get('test-log', 'Crawl\TestLogController@index')->name('test-log');
+
 
 
 Route::get('dangnhap', function () {

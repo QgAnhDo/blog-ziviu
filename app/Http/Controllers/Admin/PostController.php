@@ -62,7 +62,8 @@ class PostController extends Controller
             'pos_admin_id' => 1,
             'pos_created_at' => date('Y-m-d H:i:s'),
         ]);
-        return view('admin.posts.list');
+
+        return redirect('admin/posts')->with('thongbao', 'Thêm bài viết thành công');
     }
     public function getEdit($id)
     {
@@ -90,7 +91,7 @@ class PostController extends Controller
             'pos_status.required' => 'Chọn trạng thái',
         ]);
 
-        Posts::insert([
+        Posts::where('pos_id', $id)->update([
             'pos_title' => $request->title,
             'pos_slug' => slug($request->title),
             'pos_description' => $request->description,
@@ -102,7 +103,7 @@ class PostController extends Controller
             'pos_admin_id' => 1,
             'pos_updated_at' => date('Y-m-d H:i:s'),
         ]);
-        return view('admin.posts.list');
+        return redirect()->back()->with('thongbao', 'Sửa bài viết thành công');
     }
     public function getDelete($id)
     {
