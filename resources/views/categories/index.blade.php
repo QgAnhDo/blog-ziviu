@@ -3,7 +3,9 @@
 @section('title')
     {{$category->cat_name}} - Blog.Ziviu
 @endsection
-
+@section('og:url')
+    <meta property="og:url" content="{{route('categories.index', ['slug' => $category->cat_slug, 'id' => $category->cat_id])}}" />
+@endsection
 @section('content')
 <link rel="stylesheet" type="text/css" href="assets/css/category/style_categories.min.css">
 <link rel="stylesheet" type="text/css" href="assets/css/responsive/style_categories-responsive.min.css">
@@ -63,7 +65,7 @@
                                         {{$item->cat_name}}
                                     </a>
                                     -
-                                    <span>{{getTimeDuration(time()-$item->pos_created_at)}}</span>
+                                    <span>{{getTimeDuration(time()-strtotime($item->pos_created_at))}}</span>
                                 </div>
                                 <span class="item_sapo">
                                     {{$item->pos_description}}
@@ -105,8 +107,6 @@ foreach($post as $item) {
         "@type" => "ListItem",
         "url" => route('posts.index', ['slug' => $item->pos_slug, 'id' => $item->pos_id]),
         "name" => $item->pos_title,
-//        "category" => $item->cat_name,
-//        "time" => getTimeDuration(time()-$item->pos_created_at),
         "description" => $item->pos_description,
         "image" => $item->getImgPosts()
     ];

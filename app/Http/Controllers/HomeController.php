@@ -49,6 +49,7 @@ class HomeController extends Controller
 
         $posts = $this->home->getPosts();
         $postsHot = $this->home->getPostsHot();
+        $postsHotList = $this->home->getPostsHotList();
         $postRating = $this->home->getPostRating();
         $postView = $this->home->getPostView();
         $categoriesHot = $this->home->getCategoriesHot();
@@ -66,6 +67,7 @@ class HomeController extends Controller
 
             'posts' => $posts,
             'postsHot' => $postsHot,
+            'postsHotList' => $postsHotList,
             'postRating' => $postRating,
             'postView' => $postView,
             'categoriesHot' => $categoriesHot,
@@ -113,14 +115,12 @@ class HomeController extends Controller
 
         $category = $this->category->getCategoryById($id);
         $post = $this->category->getPostByCategory($id);
-        $postHot = $this->category->getPostHotByCategory($id);
 
         return view('categories.index')->with([
             'categories' => $categories,
 
             'category' => $category,
             'post' => $post,
-            'postHot' => $postHot,
 
             'configuration' => $configuration,
         ]);

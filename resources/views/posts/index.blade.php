@@ -3,7 +3,12 @@
 @section('title')
     {{$post->pos_title}} - Blog.Ziviu
 @endsection
-
+@section('og:url')
+    <meta property="og:url" content="{{route('posts.index', ['slug' => $post->pos_slug, 'id' => $post->pos_id])}}" />
+@endsection
+@section('og:image')
+    <meta property="og:image" content="{{$post->getImgPosts()}}" />
+@endsection
 @section('content')
 <link rel="stylesheet" type="text/css" href="assets/css/post/style_detail.min.css">
 <link rel="stylesheet" type="text/css" href="assets/css/responsive/style_detail-responsive.min.css">
@@ -46,7 +51,7 @@
                             <span class="meta_source">Theo <a href="{{$post->pos_website}}" target="_blank">
                                     {{str_ireplace('www.', '', parse_url($post->pos_website, PHP_URL_HOST))}}</a>
                             </span>
-                            <span class="meta_time">{{date('h:m - d/m/Y',$post->pos_created_at)}}</span>
+                            <span class="meta_time">{{date_format($post->pos_created_at,'H:i - d/m/Y')}}</span>
                         </div>
                         <div class="detail_socials">
                             <div class="fb-like" data-href="{{route('posts.index', ['slug' => $post->pos_slug, 'id' => $post->pos_id])}}" data-width="" data-layout="button_count" data-action="like" data-size="small" data-show-faces="true" data-share="true">
@@ -135,7 +140,7 @@
                                                     <span>Nổi bật</span>
                                                     @endif
                                                 </h4>
-                                                <span class="time">{{getTimeDuration(time()-$item->pos_created_at)}}</span>
+                                                <span class="time">{{getTimeDuration(time()-strtotime($item->pos_created_at))}}</span>
                                             </div>
                                         </li>
                                             @endforeach
@@ -157,7 +162,7 @@
                                                                 <span>Nổi bật</span>
                                                             @endif
                                                         </h4>
-                                                        <span class="time">{{getTimeDuration(time()-$item->pos_created_at)}}</span>
+                                                        <span class="time">{{getTimeDuration(time()-strtotime($item->pos_created_at))}}</span>
                                                     </div>
                                                 </li>
                                             @endforeach
@@ -181,15 +186,15 @@ $schema_data = [
     "@type" => "NewsArticle",
     "headline" => $post->pos_title,
     "description" => $post->pos_description,
-    "datePublished" => date('h:m - d/m/Y',$post->pos_created_at),
-    "dateModified" => date('h:m - d/m/Y',$post->pos_updated_at),
+    "datePublished" => date_format($post->pos_created_at,'H:i - d/m/Y'),
+    "dateModified" => date_format($post->pos_created_at,'H:i - d/m/Y'),
     "mainEntityOfPage" => [
         "@type" => "WebPage",
         "@id" => route('posts.index', ['slug' => $post->pos_slug, 'id' => $post->pos_id]),
     ],
     "image" => [
         "@type" => "ImageObject",
-        "url" => "http://blog.ziviu.com/uploads/posts/default/".$post->pos_image,
+        "url" => $post->getImgPosts(),
     ],
     "author" => [
         "@type" => "Person",
@@ -200,7 +205,7 @@ $schema_data = [
         "name" => "Blog.Ziviu",
         "logo" => [
             "@type" => "ImageObject",
-            "url" => "http://blog.ziviu.com/assets/images/favicon.png"
+            "url" => asset('')."assets/images/favicon.png"
         ]
     ]
 ];

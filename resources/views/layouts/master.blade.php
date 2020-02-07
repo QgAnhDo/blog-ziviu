@@ -9,12 +9,12 @@
     <meta name="description" content="Đây là 1 trang blog Ziviu chuyên tổng hợp các tin tức liên quan nhà hàng, khách sạn, địa điểm du lịch, v.v... Mục đích là để cho người dùng được cập nhật thông tin một cách chính xác và nhanh chóng nhất">
     <meta name="keywords" content="trip247, ziviu, nhà hàng, khách sạn, địa điểm, so sánh giá, tin tức, du lịch">
     <meta property="og:title" content="@yield('title')" />
-    <meta property="og:type" content="image/jpeg" />
-    <meta property="og:url" content="{{asset('')}}" />
-    <meta property="og:image" content="assets/images/logo-1.png" />
-    <meta property="og:description" itemprop="description" content="ng cấp thông tin từ các tin tức của Trip247 như nhà hàng, khách sạn, v.v..." />
+    <meta property="og:type" content="article" />
+    @yield('og:url')
+    @yield('og:image')
+    <meta property="og:description" itemprop="description" content="Đây là 1 trang blog Ziviu chuyên tổng hợp các tin tức liên quan nhà hàng, khách sạn, địa điểm du lịch, v.v... Mục đích là để cho người dùng được cập nhật thông tin một cách chính xác và nhanh chóng nhất" />
     <meta property="og:url" itemprop="url" content="{{asset('')}}" />
-    <meta name="twitter:card" content="trip247" />
+    <meta name="twitter:card" content="{{asset('')}}" />
     <meta name="twitter:site" content="" />
     <meta name="twitter:creator" content="" />
     <meta name="twitter:title" content="" />

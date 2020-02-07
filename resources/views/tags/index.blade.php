@@ -3,7 +3,9 @@
 @section('title')
     #{{$tag->tag_name}} - Blog.Ziviu
 @endsection
-
+@section('og:url')
+    <meta property="og:url" content="{{route('tags.index', ['slug' => $tag->tag_slug, 'id' => $tag->tag_id])}}" />
+@endsection
 @section('content')
 <link rel="stylesheet" type="text/css" href="assets/css/category/style_categories.css">
 <link rel="stylesheet" type="text/css" href="assets/css/responsive/style_categories-responsive.css">
@@ -48,7 +50,7 @@
                                                 {{$item->cat_name}}
                                             </a>
                                             -
-                                            <span>{{getTimeDuration(time()-$item->pos_created_at)}}</span>
+                                            <span>{{getTimeDuration(time()-strtotime($item->pos_created_at))}}</span>
                                         </div>
                                         <span class="item_sapo">
                                     {{$item->pos_description}}
