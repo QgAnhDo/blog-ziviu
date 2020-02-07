@@ -2,6 +2,12 @@
 @section('title')
     Ziviu - trang tin tức cập nhật 24h
 @endsection
+@section('og:url')
+    <meta property="og:url" content="{{asset('')}}" />
+@endsection
+@section('og:image')
+    <meta property="og:image" content="{{asset('')}}assets/images/logo-1.png" />
+@endsection
 @section('content')
 <div id="body">
     <div class="news_content">

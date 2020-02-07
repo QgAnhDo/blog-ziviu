@@ -3,7 +3,12 @@
 @section('title')
     {{$post->pos_title}} - Blog.Ziviu
 @endsection
-
+@section('og:url')
+    <meta property="og:url" content="{{route('posts.index', ['slug' => $post->pos_slug, 'id' => $post->pos_id])}}" />
+@endsection
+@section('og:image')
+    <meta property="og:image" content="{{$post->getImgPosts()}}" />
+@endsection
 @section('content')
 <link rel="stylesheet" type="text/css" href="assets/css/post/style_detail.min.css">
 <link rel="stylesheet" type="text/css" href="assets/css/responsive/style_detail-responsive.min.css">

@@ -3,7 +3,9 @@
 @section('title')
     {{$category->cat_name}} - Blog.Ziviu
 @endsection
-
+@section('og:url')
+    <meta property="og:url" content="{{route('categories.index', ['slug' => $category->cat_slug, 'id' => $category->cat_id])}}" />
+@endsection
 @section('content')
 <link rel="stylesheet" type="text/css" href="assets/css/category/style_categories.min.css">
 <link rel="stylesheet" type="text/css" href="assets/css/responsive/style_categories-responsive.min.css">
