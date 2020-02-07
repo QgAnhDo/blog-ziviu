@@ -10,10 +10,10 @@ class Posts extends Model
     public $prefix = 'pos';
     public $primaryKey = 'pos_id';
 
-    // const CREATED_AT = 'pos_created_at';
-    // const UPDATED_AT = 'pos_updated_at';
+     const CREATED_AT = 'pos_created_at';
+     const UPDATED_AT = 'pos_updated_at';
 
-    public function getImgPosts($size = 'default', $folder = 'posts')
+    public function getImgPosts($folder = 'post')
     {
 
         $img = $this->pos_image;
@@ -21,7 +21,7 @@ class Posts extends Model
         if (!$img) {
             return url('/assets/images/no-image.png');
         }
-        return parse_image_no_explode($folder, $size, $img);
+        return parse_image_by_file($folder, $img);
 
     }
 }

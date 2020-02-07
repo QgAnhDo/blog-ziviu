@@ -1,5 +1,4 @@
 @extends('layouts.master')
-
 @section('title')
     {{$post->pos_title}} - Blog.Ziviu
 @endsection
