@@ -73,6 +73,5 @@ class IvivuDetail extends Command
             
             $result = curl_exec($ch);
         }
-        dd('success');
     }
 }

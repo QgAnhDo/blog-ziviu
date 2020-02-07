@@ -93,7 +93,7 @@ class CrawlIvivuCat extends Command
                         "created_at" => strtotime($strTime),
                     ];
 
-                    $result = $this->saveImage($response['image'], Str::slug($response['title']));        
+                    $result = $this->saveImage($response['image'], Str::slug($response['title'])); 
                     $response['image'] = implode('/', $result);
 
                     //get file html với link pos_website
@@ -129,7 +129,7 @@ class CrawlIvivuCat extends Command
         $file_name = $base_name .'.'. $ext;
 
         $date = date('Y/m/d', time());
-        $folder = storage_path('uploads/post/'. $date);
+        $folder = storage_path('app/uploads/post/'. $date);
         if (!is_dir($folder)) {
             mkdir($folder, 0777, true);
         }

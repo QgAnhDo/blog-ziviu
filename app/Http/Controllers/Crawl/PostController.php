@@ -9,7 +9,6 @@ use KubAT\PhpSimple\HtmlDomParser;
 use Illuminate\Support\Str;
 use App\Models\Posts;
 use App\Exceptions\Handler;
-use Illuminate\Support\Facades\Storage;
 
 class PostController extends Controller
 {
@@ -71,7 +70,7 @@ class PostController extends Controller
     		'view' => $request->input('view'),
             'description' => $request->input('description'),
             'website' => $request->input('website'),
-            'created_at' => time()
+            'created_at' => time(),
     	];
 
     	$data_insert = [
@@ -91,13 +90,36 @@ class PostController extends Controller
         ];
 
         $test = Posts::insert($data_insert);
-        if ($test !== null) {
-        	return response()->json(['status'=> 1, 'mess'=> 'Success !']);
-        } else {
-        	return response()->json(['status'=> 0, 'mess'=> 'Error!']);
+
+        //đếm số bài viết được thêm
+        $count = count($data_insert);
+
+        //khởi tạo biến đếm số bài viết hỏng
+        $error = 0;
+
+        if ($test === null) {
+            $error = $error + 1;
         }
+        
+        return $this->writeLog($count, $error);
+    }
+
+    private function writeLog($insert, $error)
+    {
+        $log_data = [
+            'time' => date('d-m-Y H:i:s'),
+            'insert' => $insert,
+            'error' => $error
+        ];
+        $path_root = storage_path('logs');
+        if(!is_dir($path_root)) {
+            mkdir($path_root, 0777, true);
+        }
+
+        $file_name = 'crawl_data.log';
+        $fp = @fopen($path_root .'/'. $file_name, "w+");
+        $value = "[{$log_data['time']}] Tour(insert:{$log_data['insert']} | error:{$log_data['error']})\n";
+        fwrite($fp, $value);
+        fclose($fp);
     }
 }
-
-y-m-d H:i
-time mess ." /n";
