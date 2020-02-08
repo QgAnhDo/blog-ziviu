@@ -54,8 +54,8 @@ class IvivuDetail extends Command
 
         foreach ($posts as $item) {
             //get file html với link pos_website
-            $html = HtmlDomParser::file_get_html($item['pos_website'], false, null, 0 );  
-            
+            $html = HtmlDomParser::file_get_html($item['pos_website'], false, null, 0 );
+
             //mảng lưu trữ
             $response = [
                 "content" => $html->find('.entry-content', 0)->plaintext,
@@ -70,9 +70,8 @@ class IvivuDetail extends Command
                 CURLOPT_POST => count($response),
                 CURLOPT_POSTFIELDS => $response,
             ));
-            
+
             $result = curl_exec($ch);
         }
-        dd('success');
     }
 }
