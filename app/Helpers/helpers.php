@@ -52,3 +52,13 @@ function parse_image_no_explode($folder, $size, $fileName)
         return $source;
     }
 }
+
+function parse_image_by_file($folder, $fileName)
+{
+    if ($fileName == "") {
+        return "";
+    } else {
+        $source = asset('/storage/uploads/' . $folder . '/' . $fileName);
+        return $source;
+    }
+}
