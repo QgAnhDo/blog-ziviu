@@ -66,7 +66,7 @@ class CrawlIvivuCat extends Command
                 $total_page = 1;
                 foreach ($html->find('.page-numbers') as $page_numbers) {
                     $total_page = (int)$page_numbers->plaintext > $total_page ? (int)$page_numbers->plaintext : $total_page;
-                }                
+                }
             }
             else {
                 $total_page = 1;
@@ -75,7 +75,7 @@ class CrawlIvivuCat extends Command
                 $url = $item["url"]."page/{$page}";
 
                 $html = HtmlDomParser::file_get_html($url, false, null, 0 );
-                 //Insert multi 
+                 //Insert multi
                 $data_insert = [];
                 //vòng lặp để add các bài viết
                 foreach($html->find('.one-half') as $article) {
@@ -93,12 +93,12 @@ class CrawlIvivuCat extends Command
                         "created_at" => strtotime($strTime),
                     ];
 
-                    $result = $this->saveImage($response['image'], Str::slug($response['title']));        
+                    $result = $this->saveImage($response['image'], Str::slug($response['title']));
                     $response['image'] = implode('/', $result);
 
                     //get file html với link pos_website
-                    $html_detail = HtmlDomParser::file_get_html($response['website'], false, null, 0 );  
-                    
+                    $html_detail = HtmlDomParser::file_get_html($response['website'], false, null, 0 );
+
                     //mảng lưu trữ
                     $response["content"] = $html_detail->find('.entry-content', 0)->plaintext;
 
@@ -114,12 +114,12 @@ class CrawlIvivuCat extends Command
 
                         $result = curl_exec($ch);
                     }
-                    echo 'đã thêm bài viết. ';                
+                    echo 'đã thêm bài viết. ';
                 }
             }
         }
     }
-    
+
     private function saveImage($url, $base_name) {
         $ext = explode('.', $url);
         $ext = $ext[count($ext)-1];
@@ -129,7 +129,7 @@ class CrawlIvivuCat extends Command
         $file_name = $base_name .'.'. $ext;
 
         $date = date('Y/m/d', time());
-        $folder = storage_path('uploads/post/'. $date);
+        $folder = storage_path('app/uploads/post/'. $date);
         if (!is_dir($folder)) {
             mkdir($folder, 0777, true);
         }
