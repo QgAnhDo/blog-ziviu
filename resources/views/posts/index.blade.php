@@ -185,8 +185,8 @@ $schema_data = [
     "@type" => "NewsArticle",
     "headline" => $post->pos_title,
     "description" => $post->pos_description,
-    "datePublished" => date_format($post->pos_created_at,'H:i - d/m/Y'),
-    "dateModified" => date_format($post->pos_created_at,'H:i - d/m/Y'),
+    "datePublished" => $post->pos_created_at,
+    "dateModified" => $post->pos_updated_at,
     "mainEntityOfPage" => [
         "@type" => "WebPage",
         "@id" => route('posts.index', ['slug' => $post->pos_slug, 'id' => $post->pos_id]),
