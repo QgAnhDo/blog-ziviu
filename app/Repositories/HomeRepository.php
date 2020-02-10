@@ -59,15 +59,6 @@ class HomeRepository implements HomeRepositoryInterface {
                 $postsHot->hotSmaller = $postsHotSmaller;
             }
         }
-        if($postsHotSmall) {
-            $postsHotSmaller = Posts::where('pos_id', '<', $postsHotSmall->pos_id)
-                ->where('pos_hot', 1)
-                ->where('pos_status', 1)
-                ->select('pos_id','pos_title', 'pos_slug', 'pos_image', 'pos_description', 'pos_status', 'pos_hot', 'pos_created_at')
-                ->orderBy('pos_id', 'desc')
-                ->first();
-            $postsHot->hotSmaller = $postsHotSmaller;
-        }
         return $postsHot;
     }
 

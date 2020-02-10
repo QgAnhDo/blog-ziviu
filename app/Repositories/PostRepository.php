@@ -32,14 +32,12 @@ class PostRepository implements PostRepositoryInterface {
             ->select('pos_id', 'pos_cat_id')
             ->first();
 
-        $postRelateHot = Posts::where('pos_cat_id', $postDetail->pos_cat_id)
+        return Posts::where('pos_cat_id', $postDetail->pos_cat_id)
             ->where('pos_id', '<>', $id)->where('pos_hot', 1)
             ->select('pos_id', 'pos_title', 'pos_slug', 'pos_image', 'pos_hot', 'pos_created_at')
             ->orderBy('pos_id', 'desc')
             ->limit(3)
             ->get();
-
-        return $postRelateHot;
     }
 
     public function getPostRelate($id)
@@ -48,13 +46,11 @@ class PostRepository implements PostRepositoryInterface {
             ->select('pos_id', 'pos_cat_id')
             ->first();
 
-        $postRelate = Posts::where('pos_cat_id', $postDetail->pos_cat_id)
-            ->where('pos_id', '!=', $id)->where('pos_hot', 0)
+        return Posts::where('pos_cat_id', $postDetail->pos_cat_id)
+            ->where('pos_id', '<>', $id)->where('pos_hot', 0)
             ->select('pos_id', 'pos_title', 'pos_slug', 'pos_image', 'pos_hot', 'pos_created_at')
             ->orderBy('pos_id', 'desc')
             ->limit(3)
             ->get();
-
-        return $postRelate;
     }
 }

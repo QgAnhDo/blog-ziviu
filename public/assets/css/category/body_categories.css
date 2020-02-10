@@ -17,7 +17,7 @@
             width: 45px;
             height: 45px;
             color: #fff;
-            background: #ed2e2e;
+            background: #45BD33;
             border-radius: 100%;
             -webkit-border-radius: 100%;
             -moz-border-radius: 100%;
@@ -44,7 +44,7 @@
               position: relative; }
               #body .categories_content .main_content .main_content_1 .main_content_1_submenu ul li a.active {
                 color: #fff;
-                border-bottom: 4px solid #ed2e2e; }
+                border-bottom: 4px solid #45BD33; }
               #body .categories_content .main_content .main_content_1 .main_content_1_submenu ul li a, #body .categories_content .main_content .main_content_1 .main_content_1_submenu ul li span {
                 font-family: Roboto-Bold;
                 font-size: 16px;
@@ -55,7 +55,7 @@
                 padding-bottom: 7px; }
               #body .categories_content .main_content .main_content_1 .main_content_1_submenu ul li a:hover {
                 color: #fff;
-                border-bottom: 4px solid #ed2e2e;
+                border-bottom: 4px solid #45BD33;
                 padding-bottom: 7px; }
             #body .categories_content .main_content .main_content_1 .main_content_1_submenu ul li:first-child a {
               font-size: 17px;
@@ -134,7 +134,7 @@
           list-style: none;
           margin-bottom: 30px; }
           #body .categories_content .main_content nav .pagination .active .page-link {
-            color: #ed2e2e !important; }
+            color: #45BD33 !important; }
           #body .categories_content .main_content nav .pagination .page-item {
             float: left;
             margin-right: 20px; }
@@ -147,7 +147,7 @@
               line-height: 45px;
               color: black; }
             #body .categories_content .main_content nav .pagination .page-item :hover {
-              color: #ed2e2e; }
+              color: #45BD33; }
     #body .categories_content .ads {
       float: right;
       width: 300px;

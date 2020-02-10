@@ -52,7 +52,7 @@ body {
               height: 45px;
               display: block; }
             #header .genk_bottom_header .menu .menu_div .menu_list li a:hover {
-              color: #ed2e2e; }
+              color: #45BD33; }
             #header .genk_bottom_header .menu .menu_div .menu_list li .menu_icon {
               width: 30px;
               height: 45px;
@@ -132,7 +132,7 @@ body {
                 color: #333;
                 text-transform: uppercase; }
               #header .genk_bottom_header .menu_expand .menu_clear .menu_expand_list .menu_expand_item .submenu_expand_item.cate a:hover {
-                color: #ed2e2e; }
+                color: #45BD33; }
               #header .genk_bottom_header .menu_expand .menu_clear .menu_expand_list .menu_expand_item .submenu_expand_item.cate .emagazine::before {
                 content: "";
                 background: url(http://genknews.genkcdn.vn/web_images/icon_star1.png) no-repeat;
@@ -157,7 +157,7 @@ body {
               display: block;
               text-decoration: none; }
             #header .genk_bottom_header .menu_expand .menu_clear .menu_expand_list .menu_expand_item .submenu_expand_item a:hover {
-              color: #ed2e2e; }
+              color: #45BD33; }
   #header .ads_header {
     background: #f1f1f1;
     padding: 20px 0;
@@ -184,7 +184,7 @@ body {
             width: 45px;
             height: 45px;
             color: #fff;
-            background: #ed2e2e;
+            background: #45BD33;
             border-radius: 100%;
             -webkit-border-radius: 100%;
             -moz-border-radius: 100%;
@@ -211,7 +211,7 @@ body {
               position: relative; }
               #body .categories_content .main_content .main_content_1 .main_content_1_submenu ul li a.active {
                 color: #fff;
-                border-bottom: 4px solid #ed2e2e; }
+                border-bottom: 4px solid #45BD33; }
               #body .categories_content .main_content .main_content_1 .main_content_1_submenu ul li a, #body .categories_content .main_content .main_content_1 .main_content_1_submenu ul li span {
                 font-family: Roboto-Bold;
                 font-size: 16px;
@@ -222,7 +222,7 @@ body {
                 padding-bottom: 7px; }
               #body .categories_content .main_content .main_content_1 .main_content_1_submenu ul li a:hover {
                 color: #fff;
-                border-bottom: 4px solid #ed2e2e;
+                border-bottom: 4px solid #45BD33;
                 padding-bottom: 7px; }
             #body .categories_content .main_content .main_content_1 .main_content_1_submenu ul li:first-child a {
               font-size: 17px;
@@ -301,7 +301,7 @@ body {
           list-style: none;
           margin-bottom: 30px; }
           #body .categories_content .main_content nav .pagination .active .page-link {
-            color: #ed2e2e !important; }
+            color: #45BD33 !important; }
           #body .categories_content .main_content nav .pagination .page-item {
             float: left;
             margin-right: 20px; }
@@ -314,7 +314,7 @@ body {
               line-height: 45px;
               color: black; }
             #body .categories_content .main_content nav .pagination .page-item :hover {
-              color: #ed2e2e; }
+              color: #45BD33; }
     #body .categories_content .ads {
       float: right;
       width: 300px;
@@ -360,7 +360,7 @@ body {
             text-transform: uppercase;
             line-height: 60px; }
           #footer .top_footer .gfw_bottom_wrapper ul li a:hover {
-            color: #ED2E2E; }
+            color: #45BD33; }
   #footer .bottom_footer {
     padding: 35px 0;
     display: flex; }
@@ -382,7 +382,7 @@ body {
       margin-bottom: 20px; }
       #footer .bottom_footer p a {
         text-decoration: none;
-        color: #ed2e2e; }
+        color: #45BD33; }
 
 #scroller #back-top {
   position: fixed;

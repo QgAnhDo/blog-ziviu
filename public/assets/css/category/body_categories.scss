@@ -18,7 +18,7 @@
                         width: 45px;
                         height: 45px;
                         color: #fff;
-                        background: #ed2e2e;
+                        background: #45BD33;
                         border-radius: 100%;
                         -webkit-border-radius: 100%;
                         -moz-border-radius: 100%;
@@ -48,7 +48,7 @@
 							position: relative;
 							a.active {
 								color: #fff;
-								border-bottom: 4px solid #ed2e2e;
+								border-bottom: 4px solid #45BD33;
 							}
 							a, span {
 								font-family: Roboto-Bold;
@@ -61,7 +61,7 @@
 							}
 								a:hover {
 									color: #fff;
-									border-bottom: 4px solid #ed2e2e;
+									border-bottom: 4px solid #45BD33;
 									padding-bottom: 7px;
 								}
 						}
@@ -160,7 +160,7 @@
                     list-style: none;
                     margin-bottom: 30px;
                     .active {
-                        .page-link {color: #ed2e2e!important;}
+                        .page-link {color: #45BD33!important;}
                     }
                     .page-item {
                         float: left;
@@ -174,7 +174,7 @@
                             line-height: 45px;
                             color: black;
                         }
-                        :hover {color: #ed2e2e}
+                        :hover {color: #45BD33}
                     }
                 }
             }

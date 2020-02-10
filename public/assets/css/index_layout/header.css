@@ -39,7 +39,7 @@
               height: 45px;
               display: block; }
             #header .genk_bottom_header .menu .menu_div .menu_list li a:hover {
-              color: #ed2e2e; }
+              color: #45BD33; }
             #header .genk_bottom_header .menu .menu_div .menu_list li .menu_icon {
               width: 30px;
               height: 45px;
@@ -119,7 +119,7 @@
                 color: #333;
                 text-transform: uppercase; }
               #header .genk_bottom_header .menu_expand .menu_clear .menu_expand_list .menu_expand_item .submenu_expand_item.cate a:hover {
-                color: #ed2e2e; }
+                color: #45BD33; }
               #header .genk_bottom_header .menu_expand .menu_clear .menu_expand_list .menu_expand_item .submenu_expand_item.cate .emagazine::before {
                 content: "";
                 background: url(http://genknews.genkcdn.vn/web_images/icon_star1.png) no-repeat;
@@ -144,7 +144,7 @@
               display: block;
               text-decoration: none; }
             #header .genk_bottom_header .menu_expand .menu_clear .menu_expand_list .menu_expand_item .submenu_expand_item a:hover {
-              color: #ed2e2e; }
+              color: #45BD33; }
   #header .ads_header {
     background: #f1f1f1;
     padding: 20px 0;
