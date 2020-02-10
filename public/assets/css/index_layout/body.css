@@ -185,120 +185,228 @@
             #body .news_content .main_content .main_content_3 ul li.content_3_item .item_info .item_relate_wrap {
               display: block;
               padding: 5px 0 0 15px; }
-        #body .news_content .main_content .main_content_3 ul .content_extra li.content_3_trendAd {
-          padding: 0;
-          border: none; }
-          #body .news_content .main_content .main_content_3 ul .content_extra li.content_3_trendAd .read_more_and_brands_stuff {
-            width: 100%;
-            border-bottom: 1px dotted #ebebeb;
-            position: relative;
-            float: left; }
-            #body .news_content .main_content .main_content_3 ul .content_extra li.content_3_trendAd .read_more_and_brands_stuff .read_more {
-              width: 400px;
-              float: left;
-              background: #fff; }
-              #body .news_content .main_content .main_content_3 ul .content_extra li.content_3_trendAd .read_more_and_brands_stuff .read_more .tab {
-                color: #4d4d4d;
-                font-size: 22px;
-                font-family: Roboto-Bold;
-                font-weight: 700;
-                margin-top: 20px;
-                position: relative;
-                padding-left: 20px; }
-              #body .news_content .main_content .main_content_3 ul .content_extra li.content_3_trendAd .read_more_and_brands_stuff .read_more .tab:before {
-                content: '';
-                display: block;
-                width: 5px;
-                height: 20px;
-                position: absolute;
-                bottom: 1px;
-                left: 0;
-                background: #008000; }
-              #body .news_content .main_content .main_content_3 ul .content_extra li.content_3_trendAd .read_more_and_brands_stuff .read_more .item .ava {
-                width: 100%;
-                height: auto;
-                position: relative; }
-              #body .news_content .main_content .main_content_3 ul .content_extra li.content_3_trendAd .read_more_and_brands_stuff .read_more .item h3 {
-                margin-top: 7px; }
-                #body .news_content .main_content .main_content_3 ul .content_extra li.content_3_trendAd .read_more_and_brands_stuff .read_more .item h3 a {
-                  font-size: 14px;
-                  line-height: 17px;
-                  color: #222;
-                  font-family: Roboto-Light;
-                  margin-top: 6px;
-                  text-decoration: none;
-                  -webkit-line-clamp: 1;
-                  display: -webkit-box;
-                  -webkit-box-orient: vertical;
-                  overflow: hidden;
-                  text-overflow: ellipsis; }
-              #body .news_content .main_content .main_content_3 ul .content_extra li.content_3_trendAd .read_more_and_brands_stuff .read_more .item.first {
-                width: 380px;
-                margin: 18px 0 0;
-                float: left; }
-                #body .news_content .main_content .main_content_3 ul .content_extra li.content_3_trendAd .read_more_and_brands_stuff .read_more .item.first .ava a {
-                  position: relative;
-                  display: block; }
-                  #body .news_content .main_content .main_content_3 ul .content_extra li.content_3_trendAd .read_more_and_brands_stuff .read_more .item.first .ava a img {
-                    width: 100%;
-                    height: auto;
-                    border: 1px solid rgba(0, 0, 0, 0.05); }
-                #body .news_content .main_content .main_content_3 ul .content_extra li.content_3_trendAd .read_more_and_brands_stuff .read_more .item.first h3 a {
-                  font-size: 22px;
-                  line-height: 28px;
-                  display: block;
-                  font-family: Roboto-Bold;
-                  -webkit-line-clamp: 2;
-                  display: -webkit-box;
-                  -webkit-box-orient: vertical;
-                  overflow: hidden;
-                  text-overflow: ellipsis; }
-              #body .news_content .main_content .main_content_3 ul .content_extra li.content_3_trendAd .read_more_and_brands_stuff .read_more .item:not(.first) {
-                width: 380px;
-                float: left;
-                margin: 15px 20px -4px 0;
-                border-top: 1px solid #ebebeb;
-                padding-top: 5px; }
-            #body .news_content .main_content .main_content_3 ul .content_extra li.content_3_trendAd .read_more_and_brands_stuff .marketing_beats {
-              width: 310px;
-              float: right;
+        #body .news_content .main_content .main_content_3 ul .content_extra {
+          display: inline-block; }
+          #body .news_content .main_content .main_content_3 ul .content_extra li.content_3_trendAd {
+            padding: 0;
+            border: none; }
+            #body .news_content .main_content .main_content_3 ul .content_extra li.content_3_trendAd .read_more_and_brands_stuff {
+              width: 100%;
+              border-bottom: 1px dotted #ebebeb;
               position: relative;
-              max-height: 600px;
-              overflow: hidden;
-              z-index: 1;
-              background: -webkit-linear-gradient(left, #ebebeb42, #fff);
-              background: -o-linear-gradient(right, #ebebeb42, #fff);
-              background: -moz-linear-gradient(right, #ebebeb, #fff);
-              background: linear-gradient(to right, #ebebeb42, #fff);
-              background: #f0f1f5; }
-              #body .news_content .main_content .main_content_3 ul .content_extra li.content_3_trendAd .read_more_and_brands_stuff .marketing_beats .tab {
-                margin: 20px 0 3px 0;
-                color: #4d4d4d;
-                font-size: 22px;
-                font-family: Roboto-Bold;
-                font-weight: 700;
+              float: left; }
+              #body .news_content .main_content .main_content_3 ul .content_extra li.content_3_trendAd .read_more_and_brands_stuff .read_more {
+                width: 400px;
+                float: left;
+                background: #fff; }
+                #body .news_content .main_content .main_content_3 ul .content_extra li.content_3_trendAd .read_more_and_brands_stuff .read_more .tab {
+                  color: #4d4d4d;
+                  font-size: 22px;
+                  font-family: Roboto-Bold;
+                  font-weight: 700;
+                  margin-top: 20px;
+                  position: relative;
+                  padding-left: 20px; }
+                #body .news_content .main_content .main_content_3 ul .content_extra li.content_3_trendAd .read_more_and_brands_stuff .read_more .tab:before {
+                  content: '';
+                  display: block;
+                  width: 5px;
+                  height: 20px;
+                  position: absolute;
+                  bottom: 1px;
+                  left: 0;
+                  background: #008000; }
+                #body .news_content .main_content .main_content_3 ul .content_extra li.content_3_trendAd .read_more_and_brands_stuff .read_more .item .ava {
+                  width: 100%;
+                  height: auto;
+                  position: relative; }
+                #body .news_content .main_content .main_content_3 ul .content_extra li.content_3_trendAd .read_more_and_brands_stuff .read_more .item h3 {
+                  margin-top: 7px; }
+                  #body .news_content .main_content .main_content_3 ul .content_extra li.content_3_trendAd .read_more_and_brands_stuff .read_more .item h3 a {
+                    font-size: 14px;
+                    line-height: 17px;
+                    color: #222;
+                    font-family: Roboto-Light;
+                    margin-top: 6px;
+                    text-decoration: none;
+                    -webkit-line-clamp: 1;
+                    display: -webkit-box;
+                    -webkit-box-orient: vertical;
+                    overflow: hidden;
+                    text-overflow: ellipsis; }
+                #body .news_content .main_content .main_content_3 ul .content_extra li.content_3_trendAd .read_more_and_brands_stuff .read_more .item.first {
+                  width: 380px;
+                  margin: 18px 0 0;
+                  float: left; }
+                  #body .news_content .main_content .main_content_3 ul .content_extra li.content_3_trendAd .read_more_and_brands_stuff .read_more .item.first .ava a {
+                    position: relative;
+                    display: block; }
+                    #body .news_content .main_content .main_content_3 ul .content_extra li.content_3_trendAd .read_more_and_brands_stuff .read_more .item.first .ava a img {
+                      width: 100%;
+                      height: auto;
+                      border: 1px solid rgba(0, 0, 0, 0.05); }
+                  #body .news_content .main_content .main_content_3 ul .content_extra li.content_3_trendAd .read_more_and_brands_stuff .read_more .item.first h3 a {
+                    font-size: 22px;
+                    line-height: 28px;
+                    display: block;
+                    font-family: Roboto-Bold;
+                    -webkit-line-clamp: 2;
+                    display: -webkit-box;
+                    -webkit-box-orient: vertical;
+                    overflow: hidden;
+                    text-overflow: ellipsis; }
+                #body .news_content .main_content .main_content_3 ul .content_extra li.content_3_trendAd .read_more_and_brands_stuff .read_more .item:not(.first) {
+                  width: 380px;
+                  float: left;
+                  margin: 15px 20px -4px 0;
+                  border-top: 1px solid #ebebeb;
+                  padding-top: 5px; }
+              #body .news_content .main_content .main_content_3 ul .content_extra li.content_3_trendAd .read_more_and_brands_stuff .marketing_beats {
+                width: 310px;
+                float: right;
                 position: relative;
-                padding-left: 22px; }
-                #body .news_content .main_content .main_content_3 ul .content_extra li.content_3_trendAd .read_more_and_brands_stuff .marketing_beats .tab a {
+                max-height: 600px;
+                overflow: hidden;
+                z-index: 1;
+                background: -webkit-linear-gradient(left, #ebebeb42, #fff);
+                background: -o-linear-gradient(right, #ebebeb42, #fff);
+                background: -moz-linear-gradient(right, #ebebeb, #fff);
+                background: linear-gradient(to right, #ebebeb42, #fff);
+                background: #f0f1f5; }
+                #body .news_content .main_content .main_content_3 ul .content_extra li.content_3_trendAd .read_more_and_brands_stuff .marketing_beats .tab {
                   margin: 20px 0 3px 0;
                   color: #4d4d4d;
                   font-size: 22px;
                   font-family: Roboto-Bold;
                   font-weight: 700;
                   position: relative;
-                  padding-left: 0; }
-                #body .news_content .main_content .main_content_3 ul .content_extra li.content_3_trendAd .read_more_and_brands_stuff .marketing_beats .tab .tabViewMore {
-                  content: "";
-                  width: 20px;
-                  height: 18px;
-                  background: url(../../images/sprite-genk_v11.png) -255px -528px no-repeat;
+                  padding-left: 22px; }
+                  #body .news_content .main_content .main_content_3 ul .content_extra li.content_3_trendAd .read_more_and_brands_stuff .marketing_beats .tab a {
+                    margin: 20px 0 3px 0;
+                    color: #4d4d4d;
+                    font-size: 22px;
+                    font-family: Roboto-Bold;
+                    font-weight: 700;
+                    position: relative;
+                    padding-left: 0; }
+                  #body .news_content .main_content .main_content_3 ul .content_extra li.content_3_trendAd .read_more_and_brands_stuff .marketing_beats .tab .tabViewMore {
+                    content: "";
+                    width: 20px;
+                    height: 18px;
+                    background: url(../../images/sprite-genk_v11.png) -255px -528px no-repeat;
+                    position: absolute;
+                    top: 5px;
+                    right: 21px;
+                    display: inline-block;
+                    z-index: 999;
+                    margin: 0 0 0 8px; }
+                #body .news_content .main_content .main_content_3 ul .content_extra li.content_3_trendAd .read_more_and_brands_stuff .marketing_beats .tab:before {
+                  content: '';
+                  display: block;
+                  width: 5px;
+                  height: 20px;
                   position: absolute;
-                  top: 5px;
-                  right: 21px;
-                  display: inline-block;
-                  z-index: 999;
-                  margin: 0 0 0 8px; }
-              #body .news_content .main_content .main_content_3 ul .content_extra li.content_3_trendAd .read_more_and_brands_stuff .marketing_beats .tab:before {
+                  bottom: 1px;
+                  left: 0;
+                  background: #008000; }
+                #body .news_content .main_content .main_content_3 ul .content_extra li.content_3_trendAd .read_more_and_brands_stuff .marketing_beats .list_marketing {
+                  width: 100%;
+                  float: left;
+                  position: relative; }
+                  #body .news_content .main_content .main_content_3 ul .content_extra li.content_3_trendAd .read_more_and_brands_stuff .marketing_beats .list_marketing ul {
+                    position: relative;
+                    z-index: 1;
+                    min-height: 530px;
+                    list-style-type: none; }
+                #body .news_content .main_content .main_content_3 ul .content_extra li.content_3_trendAd .read_more_and_brands_stuff .marketing_beats .item {
+                  width: 270px;
+                  float: right;
+                  padding-top: 16px;
+                  position: relative;
+                  margin: 16px 20px 0 0; }
+                  #body .news_content .main_content .main_content_3 ul .content_extra li.content_3_trendAd .read_more_and_brands_stuff .marketing_beats .item h3 {
+                    float: left;
+                    width: 185px;
+                    margin-top: -4px;
+                    position: relative; }
+                    #body .news_content .main_content .main_content_3 ul .content_extra li.content_3_trendAd .read_more_and_brands_stuff .marketing_beats .item h3 a {
+                      font-size: 15px;
+                      line-height: 21px;
+                      color: #222;
+                      font-family: Roboto-Bold;
+                      font-weight: normal;
+                      text-decoration: none;
+                      -webkit-line-clamp: 4;
+                      display: -webkit-box;
+                      -webkit-box-orient: vertical;
+                      overflow: hidden;
+                      text-overflow: ellipsis; }
+                  #body .news_content .main_content .main_content_3 ul .content_extra li.content_3_trendAd .read_more_and_brands_stuff .marketing_beats .item .item_image {
+                    position: relative;
+                    display: block;
+                    float: right; }
+                    #body .news_content .main_content .main_content_3 ul .content_extra li.content_3_trendAd .read_more_and_brands_stuff .marketing_beats .item .item_image img {
+                      width: 80px;
+                      height: 80px;
+                      float: right;
+                      position: relative;
+                      z-index: 12;
+                      border: 1px solid rgba(0, 0, 0, 0.05);
+                      object-fit: cover; }
+                #body .news_content .main_content .main_content_3 ul .content_extra li.content_3_trendAd .read_more_and_brands_stuff .marketing_beats .item:after {
+                  position: absolute;
+                  content: '';
+                  height: 2px;
+                  right: 0;
+                  left: 0;
+                  top: 0;
+                  display: block;
+                  background: linear-gradient(to top, #fff 50%, #ccc 50%); }
+                #body .news_content .main_content .main_content_3 ul .content_extra li.content_3_trendAd .read_more_and_brands_stuff .marketing_beats .item.after {
+                  height: auto; }
+                  #body .news_content .main_content .main_content_3 ul .content_extra li.content_3_trendAd .read_more_and_brands_stuff .marketing_beats .item.after h3 {
+                    width: 100%; }
+                    #body .news_content .main_content .main_content_3 ul .content_extra li.content_3_trendAd .read_more_and_brands_stuff .marketing_beats .item.after h3 a {
+                      font-family: Roboto-Medium;
+                      -webkit-line-clamp: 3;
+                      display: -webkit-box;
+                      -webkit-box-orient: vertical;
+                      overflow: hidden;
+                      text-overflow: ellipsis; }
+              #body .news_content .main_content .main_content_3 ul .content_extra li.content_3_trendAd .read_more_and_brands_stuff .marketing_beats:before {
+                position: absolute;
+                content: '';
+                height: 100%;
+                width: 1px;
+                left: 0;
+                top: 34px;
+                display: block;
+                background: linear-gradient(to left, #fff 50%, #e1e1e1 50%);
+                background: #e4e4e4; }
+        #body .news_content .main_content .main_content_3 ul .content_extra_2 {
+          display: inline-block; }
+          #body .news_content .main_content .main_content_3 ul .content_extra_2 .read_more_and_brands_stuff {
+            width: 100%;
+            border-bottom: 1px dotted #ebebeb;
+            position: relative;
+            float: left; }
+            #body .news_content .main_content .main_content_3 ul .content_extra_2 .read_more_and_brands_stuff .brands {
+              height: 505px;
+              width: 280px;
+              background: #f0f1f5;
+              float: right;
+              position: relative;
+              border-left: 1px solid #e4e4e4; }
+              #body .news_content .main_content .main_content_3 ul .content_extra_2 .read_more_and_brands_stuff .brands .tab {
+                margin: 22px 0 18px 0;
+                color: #333;
+                font-size: 20px;
+                font-family: Roboto-Bold;
+                font-weight: 700;
+                position: relative;
+                position: relative;
+                padding-left: 22px; }
+              #body .news_content .main_content .main_content_3 ul .content_extra_2 .read_more_and_brands_stuff .brands .tab:before {
                 content: '';
                 display: block;
                 width: 5px;
@@ -307,102 +415,43 @@
                 bottom: 1px;
                 left: 0;
                 background: #008000; }
-              #body .news_content .main_content .main_content_3 ul .content_extra li.content_3_trendAd .read_more_and_brands_stuff .marketing_beats .list_marketing {
-                width: 100%;
-                float: left;
-                position: relative; }
-                #body .news_content .main_content .main_content_3 ul .content_extra li.content_3_trendAd .read_more_and_brands_stuff .marketing_beats .list_marketing ul {
-                  position: relative;
-                  z-index: 1;
-                  min-height: 530px;
-                  list-style-type: none; }
-              #body .news_content .main_content .main_content_3 ul .content_extra li.content_3_trendAd .read_more_and_brands_stuff .marketing_beats .item {
-                width: 270px;
-                float: right;
-                padding-top: 16px;
-                position: relative;
-                margin: 16px 20px 0 0; }
-                #body .news_content .main_content .main_content_3 ul .content_extra li.content_3_trendAd .read_more_and_brands_stuff .marketing_beats .item h3 {
-                  float: left;
-                  width: 185px;
-                  margin-top: -4px;
-                  position: relative; }
-                  #body .news_content .main_content .main_content_3 ul .content_extra li.content_3_trendAd .read_more_and_brands_stuff .marketing_beats .item h3 a {
-                    font-size: 15px;
-                    line-height: 21px;
-                    color: #222;
-                    font-family: Roboto-Bold;
-                    font-weight: normal;
-                    text-decoration: none;
-                    -webkit-line-clamp: 4;
-                    display: -webkit-box;
-                    -webkit-box-orient: vertical;
-                    overflow: hidden;
-                    text-overflow: ellipsis; }
-                #body .news_content .main_content .main_content_3 ul .content_extra li.content_3_trendAd .read_more_and_brands_stuff .marketing_beats .item .item_image {
-                  position: relative;
-                  display: block;
-                  float: right; }
-                  #body .news_content .main_content .main_content_3 ul .content_extra li.content_3_trendAd .read_more_and_brands_stuff .marketing_beats .item .item_image img {
-                    width: 80px;
-                    height: 80px;
-                    float: right;
-                    position: relative;
-                    z-index: 12;
-                    border: 1px solid rgba(0, 0, 0, 0.05);
-                    object-fit: cover; }
-              #body .news_content .main_content .main_content_3 ul .content_extra li.content_3_trendAd .read_more_and_brands_stuff .marketing_beats .item:after {
-                position: absolute;
-                content: '';
-                height: 2px;
-                right: 0;
-                left: 0;
-                top: 0;
-                display: block;
-                background: linear-gradient(to top, #fff 50%, #ccc 50%); }
-              #body .news_content .main_content .main_content_3 ul .content_extra li.content_3_trendAd .read_more_and_brands_stuff .marketing_beats .item.after {
-                height: auto; }
-                #body .news_content .main_content .main_content_3 ul .content_extra li.content_3_trendAd .read_more_and_brands_stuff .marketing_beats .item.after h3 {
-                  width: 100%; }
-                  #body .news_content .main_content .main_content_3 ul .content_extra li.content_3_trendAd .read_more_and_brands_stuff .marketing_beats .item.after h3 a {
-                    font-family: Roboto-Medium;
-                    -webkit-line-clamp: 3;
-                    display: -webkit-box;
-                    -webkit-box-orient: vertical;
-                    overflow: hidden;
-                    text-overflow: ellipsis; }
-            #body .news_content .main_content .main_content_3 ul .content_extra li.content_3_trendAd .read_more_and_brands_stuff .marketing_beats:before {
-              position: absolute;
-              content: '';
-              height: 100%;
-              width: 1px;
-              left: 0;
-              top: 34px;
-              display: block;
-              background: linear-gradient(to left, #fff 50%, #e1e1e1 50%);
-              background: #e4e4e4; }
-        #body .news_content .main_content .main_content_3 ul .content_extra_2 .read_more_and_brands_stuff {
-          width: 100%;
-          border-bottom: 1px dotted #ebebeb;
-          position: relative;
-          float: left; }
-          #body .news_content .main_content .main_content_3 ul .content_extra_2 .read_more_and_brands_stuff .brands {
-            height: 505px;
-            width: 280px;
-            background: #f0f1f5;
-            float: right;
+              #body .news_content .main_content .main_content_3 ul .content_extra_2 .read_more_and_brands_stuff .brands .other h3 {
+                width: 242px;
+                margin-left: 19px;
+                padding: 10px 0;
+                border-top: 1px solid #ccc; }
+                #body .news_content .main_content .main_content_3 ul .content_extra_2 .read_more_and_brands_stuff .brands .other h3 a {
+                  font-size: 15px;
+                  line-height: 21px;
+                  color: #222;
+                  font-family: Roboto-Light;
+                  text-decoration: none;
+                  -webkit-line-clamp: 3;
+                  display: -webkit-box;
+                  -webkit-box-orient: vertical;
+                  overflow: hidden;
+                  text-overflow: ellipsis; }
+              #body .news_content .main_content .main_content_3 ul .content_extra_2 .read_more_and_brands_stuff .brands .other h3.first a {
+                font-family: Roboto-Medium; }
+          #body .news_content .main_content .main_content_3 ul .content_extra_2 .mostview_and_beat {
+            width: 100%;
             position: relative;
-            border-left: 1px solid #e4e4e4; }
-            #body .news_content .main_content .main_content_3 ul .content_extra_2 .read_more_and_brands_stuff .brands .tab {
+            float: left;
+            border-bottom: 1px dotted #ccc;
+            margin-bottom: 25px; }
+          #body .news_content .main_content .main_content_3 ul .content_extra_2 .mostview {
+            width: 429px;
+            float: left;
+            background: #fff; }
+            #body .news_content .main_content .main_content_3 ul .content_extra_2 .mostview .tab {
               margin: 22px 0 18px 0;
               color: #333;
               font-size: 20px;
-              font-family: Roboto-Bold;
+              font-family: Arial;
               font-weight: 700;
               position: relative;
-              position: relative;
               padding-left: 22px; }
-            #body .news_content .main_content .main_content_3 ul .content_extra_2 .read_more_and_brands_stuff .brands .tab:before {
+            #body .news_content .main_content .main_content_3 ul .content_extra_2 .mostview .tab:before {
               content: '';
               display: block;
               width: 5px;
@@ -411,128 +460,85 @@
               bottom: 1px;
               left: 0;
               background: #008000; }
-            #body .news_content .main_content .main_content_3 ul .content_extra_2 .read_more_and_brands_stuff .brands .other h3 {
-              width: 242px;
-              margin-left: 19px;
-              padding: 10px 0;
-              border-top: 1px solid #ccc; }
-              #body .news_content .main_content .main_content_3 ul .content_extra_2 .read_more_and_brands_stuff .brands .other h3 a {
-                font-size: 15px;
-                line-height: 21px;
-                color: #222;
-                font-family: Roboto-Light;
-                text-decoration: none;
-                -webkit-line-clamp: 3;
-                display: -webkit-box;
-                -webkit-box-orient: vertical;
-                overflow: hidden;
-                text-overflow: ellipsis; }
-            #body .news_content .main_content .main_content_3 ul .content_extra_2 .read_more_and_brands_stuff .brands .other h3.first a {
-              font-family: Roboto-Medium; }
-        #body .news_content .main_content .main_content_3 ul .content_extra_2 .mostview_and_beat {
-          width: 100%;
-          position: relative;
-          float: left;
-          border-bottom: 1px dotted #ccc;
-          margin-bottom: 25px; }
-        #body .news_content .main_content .main_content_3 ul .content_extra_2 .mostview {
-          width: 429px;
-          float: left;
-          background: #fff; }
-          #body .news_content .main_content .main_content_3 ul .content_extra_2 .mostview .tab {
-            margin: 22px 0 18px 0;
-            color: #333;
-            font-size: 20px;
-            font-family: Arial;
-            font-weight: 700;
-            position: relative;
-            padding-left: 22px; }
-          #body .news_content .main_content .main_content_3 ul .content_extra_2 .mostview .tab:before {
-            content: '';
-            display: block;
-            width: 5px;
-            height: 20px;
-            position: absolute;
-            bottom: 1px;
-            left: 0;
-            background: #008000; }
-          #body .news_content .main_content .main_content_3 ul .content_extra_2 .mostview ul {
-            list-style-type: none; }
-            #body .news_content .main_content .main_content_3 ul .content_extra_2 .mostview ul li {
-              float: left;
-              width: 195px;
-              margin: 0 18px 15px 0; }
-              #body .news_content .main_content .main_content_3 ul .content_extra_2 .mostview ul li .item_images {
-                position: relative;
-                display: block; }
-                #body .news_content .main_content .main_content_3 ul .content_extra_2 .mostview ul li .item_images img {
-                  width: 100%;
-                  border: 1px solid rgba(0, 0, 0, 0.05); }
-              #body .news_content .main_content .main_content_3 ul .content_extra_2 .mostview ul li h3 a {
-                font: bold 16px/21px Roboto-Semibold;
-                color: #222;
-                margin-top: 8px;
-                display: block;
-                text-decoration: none;
-                -webkit-line-clamp: 4;
-                display: -webkit-box;
-                -webkit-box-orient: vertical;
-                overflow: hidden;
-                text-overflow: ellipsis; }
-        #body .news_content .main_content .main_content_3 ul .content_extra_3 .dontmiss {
-          position: relative;
-          border-bottom: 1px solid #ebebeb;
-          margin-top: 20px; }
-          #body .news_content .main_content .main_content_3 ul .content_extra_3 .dontmiss .title-box {
-            font: bold 18px/19px Arial;
-            color: #fff;
-            text-transform: uppercase;
-            background: #008000;
-            padding: 7px 0;
-            border-radius: 3px 3px 0 0;
-            text-align: center;
-            width: 210px;
-            position: relative;
-            margin: auto; }
-          #body .news_content .main_content .main_content_3 ul .content_extra_3 .dontmiss ul {
-            border-top: 2px solid #008000;
-            background: #f8f9f9;
-            list-style-type: none;
-            display: flex;
-            padding-bottom: 20px; }
-            #body .news_content .main_content .main_content_3 ul .content_extra_3 .dontmiss ul li {
-              width: 210px;
-              float: left;
-              margin: 20px 0 0 20px;
-              border-bottom: none;
-              padding-right: 0 !important;
-              background: none !important; }
-              #body .news_content .main_content .main_content_3 ul .content_extra_3 .dontmiss ul li .dontmiss_img {
-                width: 210px;
-                padding-bottom: 10px; }
-                #body .news_content .main_content .main_content_3 ul .content_extra_3 .dontmiss ul li .dontmiss_img a {
-                  width: 210px;
-                  font: normal 15px/20px Arial;
-                  color: #222; }
-                  #body .news_content .main_content .main_content_3 ul .content_extra_3 .dontmiss ul li .dontmiss_img a img {
+            #body .news_content .main_content .main_content_3 ul .content_extra_2 .mostview ul {
+              list-style-type: none; }
+              #body .news_content .main_content .main_content_3 ul .content_extra_2 .mostview ul li {
+                float: left;
+                width: 195px;
+                margin: 0 18px 15px 0; }
+                #body .news_content .main_content .main_content_3 ul .content_extra_2 .mostview ul li .item_images {
+                  position: relative;
+                  display: block; }
+                  #body .news_content .main_content .main_content_3 ul .content_extra_2 .mostview ul li .item_images img {
                     width: 100%;
-                    height: 130px;
                     border: 1px solid rgba(0, 0, 0, 0.05); }
-              #body .news_content .main_content .main_content_3 ul .content_extra_3 .dontmiss ul li .dontmiss_text {
-                margin: 5px 0 0 0;
-                display: inline-block; }
-                #body .news_content .main_content .main_content_3 ul .content_extra_3 .dontmiss ul li .dontmiss_text h4 {
-                  font: normal 15px/20px Arial; }
-                  #body .news_content .main_content .main_content_3 ul .content_extra_3 .dontmiss ul li .dontmiss_text h4 a {
+                #body .news_content .main_content .main_content_3 ul .content_extra_2 .mostview ul li h3 a {
+                  font: bold 16px/21px Roboto-Semibold;
+                  color: #222;
+                  margin-top: 8px;
+                  display: block;
+                  text-decoration: none;
+                  -webkit-line-clamp: 4;
+                  display: -webkit-box;
+                  -webkit-box-orient: vertical;
+                  overflow: hidden;
+                  text-overflow: ellipsis; }
+        #body .news_content .main_content .main_content_3 ul .content_extra_3 {
+          display: inline; }
+          #body .news_content .main_content .main_content_3 ul .content_extra_3 .dontmiss {
+            position: relative;
+            border-bottom: 1px solid #ebebeb;
+            margin-top: 20px; }
+            #body .news_content .main_content .main_content_3 ul .content_extra_3 .dontmiss .title-box {
+              font: bold 18px/19px Arial;
+              color: #fff;
+              text-transform: uppercase;
+              background: #008000;
+              padding: 7px 0;
+              border-radius: 3px 3px 0 0;
+              text-align: center;
+              width: 210px;
+              position: relative;
+              margin: auto; }
+            #body .news_content .main_content .main_content_3 ul .content_extra_3 .dontmiss ul {
+              border-top: 2px solid #008000;
+              background: #f8f9f9;
+              list-style-type: none;
+              display: flex;
+              padding-bottom: 20px; }
+              #body .news_content .main_content .main_content_3 ul .content_extra_3 .dontmiss ul li {
+                width: 210px;
+                float: left;
+                margin: 20px 0 0 20px;
+                border-bottom: none;
+                padding-right: 0 !important;
+                background: none !important; }
+                #body .news_content .main_content .main_content_3 ul .content_extra_3 .dontmiss ul li .dontmiss_img {
+                  width: 210px;
+                  padding-bottom: 10px; }
+                  #body .news_content .main_content .main_content_3 ul .content_extra_3 .dontmiss ul li .dontmiss_img a {
                     width: 210px;
                     font: normal 15px/20px Arial;
-                    color: #222;
-                    text-decoration: none;
-                    -webkit-line-clamp: 3;
-                    display: -webkit-box;
-                    -webkit-box-orient: vertical;
-                    overflow: hidden;
-                    text-overflow: ellipsis; }
+                    color: #222; }
+                    #body .news_content .main_content .main_content_3 ul .content_extra_3 .dontmiss ul li .dontmiss_img a img {
+                      width: 100%;
+                      height: 130px;
+                      border: 1px solid rgba(0, 0, 0, 0.05); }
+                #body .news_content .main_content .main_content_3 ul .content_extra_3 .dontmiss ul li .dontmiss_text {
+                  margin: 5px 0 0 0;
+                  display: inline-block; }
+                  #body .news_content .main_content .main_content_3 ul .content_extra_3 .dontmiss ul li .dontmiss_text h4 {
+                    font: normal 15px/20px Arial; }
+                    #body .news_content .main_content .main_content_3 ul .content_extra_3 .dontmiss ul li .dontmiss_text h4 a {
+                      width: 210px;
+                      font: normal 15px/20px Arial;
+                      color: #222;
+                      text-decoration: none;
+                      -webkit-line-clamp: 3;
+                      display: -webkit-box;
+                      -webkit-box-orient: vertical;
+                      overflow: hidden;
+                      text-overflow: ellipsis; }
     #body .news_content .ads {
       float: right;
       width: 300px;

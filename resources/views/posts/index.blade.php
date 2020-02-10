@@ -50,7 +50,11 @@
                             <span class="meta_source">Theo <a href="{{$post->pos_website}}" target="_blank">
                                     {{str_ireplace('www.', '', parse_url($post->pos_website, PHP_URL_HOST))}}</a>
                             </span>
-                            <span class="meta_time">{{date_format($post->pos_created_at,'H:i - d/m/Y')}}</span>
+                            <span class="meta_time">
+                                @if($post->pos_created_at)
+                                {{date_format($post->pos_created_at,'H:i - d/m/Y')}}
+                                @endif
+                            </span>
                         </div>
                         <div class="detail_socials">
                             <div class="fb-like" data-href="{{route('posts.index', ['slug' => $post->pos_slug, 'id' => $post->pos_id])}}" data-width="" data-layout="button_count" data-action="like" data-size="small" data-show-faces="true" data-share="true">
