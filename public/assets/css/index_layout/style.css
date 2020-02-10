@@ -52,7 +52,7 @@ body {
               height: 45px;
               display: block; }
             #header .genk_bottom_header .menu .menu_div .menu_list li a:hover {
-              color: #ed2e2e; }
+              color: #45BD33; }
             #header .genk_bottom_header .menu .menu_div .menu_list li .menu_icon {
               width: 30px;
               height: 45px;
@@ -132,7 +132,7 @@ body {
                 color: #333;
                 text-transform: uppercase; }
               #header .genk_bottom_header .menu_expand .menu_clear .menu_expand_list .menu_expand_item .submenu_expand_item.cate a:hover {
-                color: #ed2e2e; }
+                color: #45BD33; }
               #header .genk_bottom_header .menu_expand .menu_clear .menu_expand_list .menu_expand_item .submenu_expand_item.cate .emagazine::before {
                 content: "";
                 background: url(http://genknews.genkcdn.vn/web_images/icon_star1.png) no-repeat;
@@ -157,7 +157,7 @@ body {
               display: block;
               text-decoration: none; }
             #header .genk_bottom_header .menu_expand .menu_clear .menu_expand_list .menu_expand_item .submenu_expand_item a:hover {
-              color: #ed2e2e; }
+              color: #45BD33; }
   #header .ads_header {
     background: #f1f1f1;
     padding: 20px 0;
@@ -251,7 +251,7 @@ body {
               overflow: hidden;
               text-overflow: ellipsis; }
       #body .news_content .main_content .main_content_2 {
-        border-bottom: 4px solid #ed2e2e;
+        border-bottom: 4px solid #008000;
         margin-top: 15px;
         padding-bottom: 30px;
         position: relative;
@@ -380,7 +380,7 @@ body {
                 position: absolute;
                 bottom: 1px;
                 left: 0;
-                background: #ed2e2e; }
+                background: #008000; }
               #body .news_content .main_content .main_content_3 ul .content_extra li.content_3_trendAd .read_more_and_brands_stuff .read_more .item .ava {
                 width: 100%;
                 height: auto;
@@ -473,7 +473,7 @@ body {
                 position: absolute;
                 bottom: 1px;
                 left: 0;
-                background: #ed2e2e; }
+                background: #008000; }
               #body .news_content .main_content .main_content_3 ul .content_extra li.content_3_trendAd .read_more_and_brands_stuff .marketing_beats .list_marketing {
                 width: 100%;
                 float: left;
@@ -516,7 +516,8 @@ body {
                     float: right;
                     position: relative;
                     z-index: 12;
-                    border: 1px solid rgba(0, 0, 0, 0.05); }
+                    border: 1px solid rgba(0, 0, 0, 0.05);
+                    object-fit: cover; }
               #body .news_content .main_content .main_content_3 ul .content_extra li.content_3_trendAd .read_more_and_brands_stuff .marketing_beats .item:after {
                 position: absolute;
                 content: '';
@@ -551,8 +552,7 @@ body {
           width: 100%;
           border-bottom: 1px dotted #ebebeb;
           position: relative;
-          float: left;
-          background: #f0f1f5; }
+          float: left; }
           #body .news_content .main_content .main_content_3 ul .content_extra_2 .read_more_and_brands_stuff .brands {
             height: 505px;
             width: 280px;
@@ -577,7 +577,7 @@ body {
               position: absolute;
               bottom: 1px;
               left: 0;
-              background: #ed2e2e; }
+              background: #008000; }
             #body .news_content .main_content .main_content_3 ul .content_extra_2 .read_more_and_brands_stuff .brands .other h3 {
               width: 242px;
               margin-left: 19px;
@@ -622,7 +622,7 @@ body {
             position: absolute;
             bottom: 1px;
             left: 0;
-            background: #ed2e2e; }
+            background: #008000; }
           #body .news_content .main_content .main_content_3 ul .content_extra_2 .mostview ul {
             list-style-type: none; }
             #body .news_content .main_content .main_content_3 ul .content_extra_2 .mostview ul li {
@@ -654,7 +654,7 @@ body {
             font: bold 18px/19px Arial;
             color: #fff;
             text-transform: uppercase;
-            background: #d02e2e;
+            background: #008000;
             padding: 7px 0;
             border-radius: 3px 3px 0 0;
             text-align: center;
@@ -662,7 +662,7 @@ body {
             position: relative;
             margin: auto; }
           #body .news_content .main_content .main_content_3 ul .content_extra_3 .dontmiss ul {
-            border-top: 2px solid #d02e2e;
+            border-top: 2px solid #008000;
             background: #f8f9f9;
             list-style-type: none;
             display: flex;
@@ -746,7 +746,7 @@ body {
             text-transform: uppercase;
             line-height: 60px; }
           #footer .top_footer .gfw_bottom_wrapper ul li a:hover {
-            color: #ED2E2E; }
+            color: #45BD33; }
   #footer .bottom_footer {
     padding: 35px 0;
     display: flex; }
@@ -768,7 +768,7 @@ body {
       margin-bottom: 20px; }
       #footer .bottom_footer p a {
         text-decoration: none;
-        color: #ed2e2e; }
+        color: #45BD33; }
 
 #scroller #back-top {
   position: fixed;

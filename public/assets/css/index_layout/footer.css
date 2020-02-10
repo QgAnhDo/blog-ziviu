@@ -33,7 +33,7 @@
             text-transform: uppercase;
             line-height: 60px; }
           #footer .top_footer .gfw_bottom_wrapper ul li a:hover {
-            color: #ED2E2E; }
+            color: #45BD33; }
   #footer .bottom_footer {
     padding: 35px 0;
     display: flex; }
@@ -55,6 +55,6 @@
       margin-bottom: 20px; }
       #footer .bottom_footer p a {
         text-decoration: none;
-        color: #ed2e2e; }
+        color: #45BD33; }
 
 /*# sourceMappingURL=footer.css.map */
