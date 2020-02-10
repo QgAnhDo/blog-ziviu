@@ -70,11 +70,7 @@ class PostController extends Controller
     		'view' => $request->input('view'),
             'description' => $request->input('description'),
             'website' => $request->input('website'),
-<<<<<<< HEAD
             'created_at' => time()
-=======
-            'created_at' => time(),
->>>>>>> 12be14847283dac94bce1485587fad3e81ce6c36
     	];
 
     	$data_insert = [
@@ -94,18 +90,7 @@ class PostController extends Controller
         ];
 
         $test = Posts::insert($data_insert);
-<<<<<<< HEAD
-        if ($test !== null) {
-        	return response()->json(['status'=> 1, 'mess'=> 'Success !']);
-        } else {
-        	return response()->json(['status'=> 0, 'mess'=> 'Error!']);
-        }
-    }
-}
-
-y-m-d H:i
-time mess ." /n";
-=======
+    
 
         //đếm số bài viết được thêm
         $count = count($data_insert);
@@ -139,4 +124,3 @@ time mess ." /n";
         fclose($fp);
     }
 }
->>>>>>> 12be14847283dac94bce1485587fad3e81ce6c36

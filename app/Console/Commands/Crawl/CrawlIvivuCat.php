@@ -129,7 +129,7 @@ class CrawlIvivuCat extends Command
         $file_name = $base_name .'.'. $ext;
 
         $date = date('Y/m/d', time());
-        $folder = storage_path('app/uploads/post/'. $date);
+        $folder = storage_path('uploads/post/'. $date);
         if (!is_dir($folder)) {
             mkdir($folder, 0777, true);
         }
