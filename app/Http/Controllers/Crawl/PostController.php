@@ -70,7 +70,8 @@ class PostController extends Controller
     		'view' => $request->input('view'),
             'description' => $request->input('description'),
             'website' => $request->input('website'),
-            'created_at' => time()
+            'created_at' => time(),
+            'updated_at' => time()
     	];
 
     	$data_insert = [
@@ -87,6 +88,7 @@ class PostController extends Controller
             'pos_admin_id' => 1,
             'pos_crawl_status' => 0,
             'pos_created_at' => $response['created_at'],
+            'pos_updated_at' => $response['updated_at'],
         ];
 
         $test = Posts::insert($data_insert);
