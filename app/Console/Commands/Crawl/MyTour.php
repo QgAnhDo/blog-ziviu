@@ -7,21 +7,21 @@ use KubAT\PhpSimple\HtmlDomParser;
 use Illuminate\Support\Str;
 use App\Models\Posts;
 
-class CrawlIvivuCat extends Command
+class MyTour extends Command
 {
     /**
      * The name and signature of the console command.
      *
      * @var string
      */
-    protected $signature = 'crawl:CrawlIvivuCat';
+    protected $signature = 'crawl:MyTour';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Crawl Ivivu Cat';
+    protected $description = 'Crawl web MyTour.vn';
 
     /**
      * Create a new command instance.
@@ -45,18 +45,11 @@ class CrawlIvivuCat extends Command
         ];
         $cats = [
             [
-                "url"=> 'https://www.ivivu.com/blog/category/viet-nam/',
+                "url"=> 'https://mytour.vn/location',
                 "cat_id"=> 1,
             ],
-            [
-                "url" => 'https://www.ivivu.com/blog/category/top-diem-den/diem-den-top-ivivu/',
-                "cat_id" => 1,
-            ],
-            [
-                "url" => 'https://www.ivivu.com/blog/category/muon-mau/',
-                "cat_id" => 1,
-            ],
         ];
+
         //vòng lặp tạo category
         foreach($cats as $item) {
             //check diều kiện nếu data cũ tồn tại
@@ -64,7 +57,7 @@ class CrawlIvivuCat extends Command
                 // Get total page
                 $html = HtmlDomParser::file_get_html($item["url"], false, null, 0 );
                 $total_page = 1;
-                foreach ($html->find('.page-numbers') as $page_numbers) {
+                foreach ($html->find('.events-tracking') as $page_numbers) {
                     $total_page = (int)$page_numbers->plaintext > $total_page ? (int)$page_numbers->plaintext : $total_page;
                 }
             }
@@ -72,42 +65,40 @@ class CrawlIvivuCat extends Command
                 $total_page = 1;
             }
             for($page = 1; $page<=$total_page; $page++) {
-                $url = $item["url"]."page/{$page}";
-                
+                $url = $item["url"]."?page={$page}";
+
                 $html = HtmlDomParser::file_get_html($url, false, null, 0 );
                  //Insert multi
                 $data_insert = [];
                 //vòng lặp để add các bài viết
-                foreach($html->find('.one-half') as $article) {
-                    preg_match_all('/(\d*) views/', $article->find('.views', 0)->plaintext, $view);
-                    $view = empty($view[1][0]) ? 0 : (int)$view[1][0];
-
-                    $strTime = str_replace('/', '-', $article->find('.date', 0)->plaintext);
+                foreach($html->find('.col-sm-4') as $article) {
+                    //convert html symbol to text 
+                    $title = html_entity_decode($article->find('.blog-item>a>img', 0)->alt, ENT_QUOTES, "UTF-8");
+                    $description = html_entity_decode($article->find('.blog-item-content', 0)->plaintext, ENT_QUOTES, "UTF-8");
 
                     $response = [
-                        "title"=> $article->find('.entry-header>h2>a', 0)->plaintext,
-                        "image" => $article->find('.overlay>a>img', 0)->src,
-                        "view" => $view,
-                        "description" => $article->find('.entry-excerpt>p', 0)->plaintext,
-                        "website" => $article->find('.entry-header>h2>a', 0)->href,
-                        "created_at" => strtotime($strTime),
+                        "title" => $title,
+                        "image"=> $article->find('.blog-item>a>img', 0)->getAttribute('data-src'),
+                        "view" => $article->find('.data-view', 0)->plaintext,
+                        "description" => $description,
+                        "website" => 'https://mytour.vn'.$article->find('.blog-item>a', 0)->href,
+                        "created_at" => time(),
                     ];
 
                     $result = $this->saveImage($response['image'], Str::slug($response['title']));
                     $response['image'] = implode('/', $result);
-
                     //get file html với link pos_website
                     $html_detail = HtmlDomParser::file_get_html($response['website'], false, null, 0 );
 
                     //mảng lưu trữ
-                    $response["content"] = $html_detail->find('.entry-content', 0)->plaintext;
-
+                    $response["content"] = $html_detail->find('.detail-content', 0)->plaintext;
+                 
                     if ($response !== null) {
                         $ch = curl_init();
                         $test = curl_setopt_array($ch, array(
                             CURLOPT_RETURNTRANSFER => true,
                             CURLOPT_SSL_VERIFYPEER => false,
-                            CURLOPT_URL => "http://localhost:9083/api/posts",
+                            CURLOPT_URL => "http://localhost:9083/api/mytour",
                             CURLOPT_POST => count($response),
                             CURLOPT_POSTFIELDS => $response,
                         ));
