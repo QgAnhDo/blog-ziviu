@@ -12,6 +12,7 @@
         <div class="container">
             <div class="main_content">
                 <h1>Kết quả tìm kiếm: {{$_GET['name']}}</h1>
+                @if(count($findPost) > 0)
                 <div class="main_content_3">
                     <ul>
                         @foreach($findPost as $item)
@@ -43,6 +44,17 @@
                     </ul>
                 </div>
                 <div align="center">{{ $findPost->appends(['name' => $_GET['name']])->links() }}</div>
+                @else
+                <div class="main_content_3">
+                    <ul>
+                        <li class="content_3_item">
+                            <div class="item_info">
+                                <h4 class="item_title"><a>KHÔNG CÓ KẾT QUẢ</a></h4>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                @endif
             </div>
             @include('layouts.sidebar')
         </div>

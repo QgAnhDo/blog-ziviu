@@ -484,7 +484,7 @@
                   overflow: hidden;
                   text-overflow: ellipsis; }
         #body .news_content .main_content .main_content_3 ul .content_extra_3 {
-          display: inline; }
+          display: block; }
           #body .news_content .main_content .main_content_3 ul .content_extra_3 .dontmiss {
             position: relative;
             border-bottom: 1px solid #ebebeb;

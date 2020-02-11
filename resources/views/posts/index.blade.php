@@ -3,7 +3,7 @@
     {{$post->pos_title}} - Blog.Ziviu
 @endsection
 @section('og:url')
-    <meta property="og:url" content="{{route('posts.index', ['slug' => $post->pos_slug, 'id' => $post->pos_id])}}" />
+    <meta property="og:url" content="{{$post->getLinkPost()}}" />
 @endsection
 @section('og:image')
     <meta property="og:image" content="{{$post->getImgPosts()}}" />
@@ -29,7 +29,8 @@
                                 </li>
                                 <li>
                                     <strong>
-                                        <a href="{{route('categories.index', ['slug' => $post->cat_slug, 'id' => $post->cat_id])}}" title="{{$post->cat_name}}">
+                                        <a href="@if($post->cat_id){{route('categories.index', ['slug' => $post->cat_slug, 'id' => $post->cat_id])}}@endif"
+                                           title="{{$post->cat_name}}">
                                             <span>{{$post->cat_name}}</span>
                                         </a>
                                     </strong>
@@ -39,7 +40,7 @@
                                 </li>
                                 <li class="active">
                                     <strong>
-                                        <a href="" title="{{$post->pos_title}}">{{$post->pos_title}}</a>
+                                        <a href="{{$post->getLinkPost()}}" title="{{$post->pos_title}}">{{$post->pos_title}}</a>
                                     </strong>
                                 </li>
                             </ul>
@@ -57,7 +58,7 @@
                             </span>
                         </div>
                         <div class="detail_socials">
-                            <div class="fb-like" data-href="{{route('posts.index', ['slug' => $post->pos_slug, 'id' => $post->pos_id])}}" data-width="" data-layout="button_count" data-action="like" data-size="small" data-show-faces="true" data-share="true">
+                            <div class="fb-like" data-href="{{$post->getLinkPost()}}" data-width="" data-layout="button_count" data-action="like" data-size="small" data-show-faces="true" data-share="true">
                             </div>
                         </div>
                     </div>
@@ -81,7 +82,7 @@
                                     @if($postRelate)
                                         @foreach ($postRelate as $item)
                                     <li>
-                                        <a href="{{ route('posts.index', ['slug' => $item->pos_slug, 'id' => $item->pos_id]) }}">
+                                        <a href="{{$item->getLinkPost()}}">
                                             {{$item->pos_title}}
                                             <i class="icon-show-popup"></i>
                                         </a>
@@ -117,7 +118,7 @@
                     </div>
                     <div class="detail_comment">
                         <p class="detail_comment_title">Bình luận</p>
-                        <div class="fb-comments" data-href="http://genk.vn/vi-sao-ios-13-cang-cap-nhat-cang-lam-loi-cuu-ki-su-apple-vua-dua-ra-cau-tra-loi-cuc-ky-xac-dang-cho-van-de-nay-20191027175708348.chn"
+                        <div class="fb-comments" data-href="{{$post->getLinkPost()}}"
                              data-width="710px" data-numposts="5"></div>
                     </div>
                 </div>
@@ -131,12 +132,12 @@
                                         @if($postRelateHot)
                                             @foreach($postRelateHot as $item)
                                         <li>
-                                            <a href="{{route('posts.index', ['slug' => $item->pos_slug, 'id' => $item->pos_id])}}">
+                                            <a href="{{$item->getLinkPost()}}">
                                                 <img src="{{$item->getImgPosts()}}" title="{{$item->pos_title}}" alt="{{$item->pos_title}}">
                                             </a>
                                             <div class="info">
                                                 <h4>
-                                                    <a href="{{route('posts.index', ['slug' => $item->pos_slug, 'id' => $item->pos_id])}}" title="{{$item->pos_title}}">
+                                                    <a href="{{$item->getLinkPost()}}" title="{{$item->pos_title}}">
                                                         {{$item->pos_title}}
                                                     </a>
                                                     @if($item->pos_hot == 1)
@@ -153,12 +154,12 @@
                                         @if($postRelate)
                                             @foreach($postRelate as $item)
                                                 <li>
-                                                    <a href="{{route('posts.index', ['slug' => $item->pos_slug, 'id' => $item->pos_id])}}">
+                                                    <a href="{{$item->getLinkPost()}}">
                                                         <img src="{{$item->getImgPosts()}}" title="{{$item->pos_title}}" alt="{{$item->pos_title}}">
                                                     </a>
                                                     <div class="info">
                                                         <h4>
-                                                            <a href="{{route('posts.index', ['slug' => $item->pos_slug, 'id' => $item->pos_id])}}" title="{{$item->pos_title}}">
+                                                            <a href="{{$item->getLinkPost()}}" title="{{$item->pos_title}}">
                                                                 {{$item->pos_title}}
                                                             </a>
                                                             @if($item->pos_hot == 1)
@@ -193,7 +194,7 @@ $schema_data = [
     "dateModified" => $post->pos_updated_at,
     "mainEntityOfPage" => [
         "@type" => "WebPage",
-        "@id" => route('posts.index', ['slug' => $post->pos_slug, 'id' => $post->pos_id]),
+        "@id" => $post->getLinkPost(),
     ],
     "image" => [
         "@type" => "ImageObject",
@@ -236,7 +237,7 @@ $schema_data_bread = [
             "@type" => "ListItem",
             "position" => 2,
             "item" => [
-                "@id" => route('posts.index', ['slug' => $post->pos_slug, 'id' => $post->pos_id]),
+                "@id" => $post->getLinkPost(),
                 "name" => $post->pos_title
             ]
         ]

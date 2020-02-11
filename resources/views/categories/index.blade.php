@@ -4,7 +4,7 @@
     {{$category->cat_name}} - Blog.Ziviu
 @endsection
 @section('og:url')
-    <meta property="og:url" content="{{route('categories.index', ['slug' => $category->cat_slug, 'id' => $category->cat_id])}}" />
+    <meta property="og:url" content="{{$category->getLinkCategory()}}" />
 @endsection
 @section('content')
 <link rel="stylesheet" type="text/css" href="assets/css/category/style_categories.min.css">
@@ -17,7 +17,7 @@
                     <div class="main_content_1_submenu">
                         <ul>
                             <li>
-                                <a href="{{route('categories.index', ['slug' => $category->cat_slug, 'id' => $category->cat_id])}}"
+                                <a href="{{$category->getLinkCategory()}}"
                                    class="@foreach($post as $value)
                                                @if($value->pos_cat_id == $category->cat_id) {{'active'}}
                                                @else {{null}}
@@ -29,7 +29,7 @@
                             </li>
                             <?php foreach ($category->cat_child as $item) { ?>
                             <li>
-                                <a href="{{route('categories.index', ['slug' => $item->cat_slug, 'id' => $item->cat_id])}}"
+                                <a href="{{$item->getLinkCategory()}}"
                                    class="@foreach($post as $value)
                                                @if($value->pos_cat_id == $item->cat_id) {{'active'}}
                                                @else {{null}}
@@ -49,14 +49,14 @@
                         @foreach ($post as $item)
                         <li class="content_3_item">
                             <div class="item_image">
-                                <a href="{{ route('posts.index', ['slug' => $item->pos_slug, 'id' => $item->pos_id]) }}" title="{{ $item->pos_title }}">
+                                <a href="{{$item->getLinkPost()}}" title="{{ $item->pos_title }}">
                                     <img src="{{$item->getImgPosts()}}" width="250" height="155"
                                          title="{{$item->pos_title}}" alt="{{$item->pos_title}}">
                                 </a>
                             </div>
                             <div class="item_info">
                                 <h4 class="item_title">
-                                    <a href="{{ route('posts.index', ['slug' => $item->pos_slug, 'id' => $item->pos_id]) }}" title="{{$item->pos_title}}">
+                                    <a href="{{$item->getLinkPost()}}" title="{{$item->pos_title}}">
                                         {{$item->pos_title}}
                                     </a>
                                 </h4>
@@ -105,7 +105,7 @@ $schema_data = [
 foreach($post as $item) {
     $schema_data["mainEntity"]["itemListElement"][] = [
         "@type" => "ListItem",
-        "url" => route('posts.index', ['slug' => $item->pos_slug, 'id' => $item->pos_id]),
+        "url" => $item->getLinkPost(),
         "name" => $item->pos_title,
         "description" => $item->pos_description,
         "image" => $item->getImgPosts()
