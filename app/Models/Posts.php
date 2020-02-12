@@ -26,12 +26,6 @@ class Posts extends Model
     }
 
     public function getLinkPost() {
-
-        if($this->pos_slug && $this->pos_id) {
-            return route('posts.index', ['slug' => $this->pos_slug, 'id' => $this->pos_id]);
-        }
-        if(!$this->pos_slug || !$this->pos_id) {
-            return abort(404, 'Không tìm thấy trang này bỏi vì ko có dữ liệu <(") ');
-        }
+        return route('posts.index', ['slug' => $this->pos_slug, 'id' => $this->pos_id]);
     }
 }

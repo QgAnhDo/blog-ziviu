@@ -29,7 +29,7 @@
                                 </li>
                                 <li>
                                     <strong>
-                                        <a href="@if($post->cat_id){{route('categories.index', ['slug' => $post->cat_slug, 'id' => $post->cat_id])}}@endif"
+                                        <a href="{{route('categories.index', ['slug' => $post->cat_slug, 'id' => $post->cat_id])}}"
                                            title="{{$post->cat_name}}">
                                             <span>{{$post->cat_name}}</span>
                                         </a>

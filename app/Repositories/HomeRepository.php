@@ -11,12 +11,12 @@ class HomeRepository implements HomeRepositoryInterface {
     public function getCategories()
     {
         $categories = Category::where('cat_parent_id', 0)
-            ->where('cat_active', 1)
+            ->where('cat_active', 1)->whereNotNull('cat_slug')
             ->select('cat_id', 'cat_name', 'cat_slug', 'cat_parent_id', 'cat_active')
             ->get();
         foreach ($categories as $value) {
             $categoriesChild = Category::where('cat_parent_id', $value->cat_id)
-                ->where('cat_active', 1)
+                ->where('cat_active', 1)->whereNotNull('cat_slug')
                 ->select('cat_id', 'cat_name', 'cat_slug', 'cat_parent_id', 'cat_active')
                 ->get();
             $value->cat_child = $categoriesChild;
@@ -27,7 +27,7 @@ class HomeRepository implements HomeRepositoryInterface {
     public function getPosts()
     {
         return Posts::join('categories', 'pos_cat_id', '=', 'cat_id')
-            ->where('pos_status', 1)->whereNotNull('pos_slug')
+            ->where('pos_status', 1)->whereNotNull('pos_slug')->whereNotNull('cat_slug')
             ->select('pos_id','pos_title', 'pos_slug', 'pos_description', 'pos_image', 'pos_cat_id', 'pos_status', 'pos_rating', 'pos_view', 'pos_created_at', 'cat_id', 'cat_name', 'cat_slug')
             ->orderBy('pos_id', 'desc')
             ->limit(5)
@@ -63,7 +63,7 @@ class HomeRepository implements HomeRepositoryInterface {
     public function getPostsHotList()
     {
         return Posts::join('categories', 'pos_cat_id', '=', 'cat_id')
-            ->where('pos_hot', 1)->where('pos_status', 1)->whereNotNull('pos_slug')
+            ->where('pos_hot', 1)->where('pos_status', 1)->whereNotNull('pos_slug')->whereNotNull('cat_slug')
             ->select('pos_id','pos_title', 'pos_slug', 'pos_image', 'pos_description', 'pos_cat_id', 'pos_status', 'pos_rating', 'pos_view', 'pos_created_at', 'cat_id', 'cat_name', 'cat_slug')
             ->orderBy('pos_id', 'desc')
             ->limit(5)
@@ -78,7 +78,7 @@ class HomeRepository implements HomeRepositoryInterface {
             ->first();
         if ($categoriesHot) {
             $categoriesHotPosts = Posts::where('pos_cat_id', $categoriesHot->cat_id)
-                ->where('pos_status', 1)
+                ->where('pos_status', 1)->whereNotNull('pos_slug')
                 ->select('pos_id', 'pos_title', 'pos_slug', 'pos_image')
                 ->orderBy('pos_id', 'desc')
                 ->limit(4)
@@ -95,7 +95,7 @@ class HomeRepository implements HomeRepositoryInterface {
 
             if($categoriesHot2) {
                 $categoriesHotPosts2 = Posts::where('pos_cat_id', $categoriesHot2->cat_id)
-                    ->where('pos_status', 1)
+                    ->where('pos_status', 1)->whereNotNull('pos_slug')
                     ->select('pos_id', 'pos_title', 'pos_slug', 'pos_image')
                     ->orderBy('pos_id', 'desc')
                     ->limit(2)
@@ -110,7 +110,7 @@ class HomeRepository implements HomeRepositoryInterface {
                     ->first();
                 if($categoriesHot3) {
                     $categoriesHotPosts3 = Posts::where('pos_cat_id', $categoriesHot3->cat_id)
-                        ->where('pos_status', 1)
+                        ->where('pos_status', 1)->whereNotNull('pos_slug')
                         ->select('pos_id', 'pos_title', 'pos_slug', 'pos_image')
                         ->orderBy('pos_id', 'desc')
                         ->limit(3)
@@ -126,7 +126,7 @@ class HomeRepository implements HomeRepositoryInterface {
     public function getPostRating()
     {
         return Posts::join('categories', 'pos_cat_id', '=', 'cat_id')
-            ->where('pos_status', 1)->whereNotNull('pos_slug')
+            ->where('pos_status', 1)->whereNotNull('pos_slug')->whereNotNull('cat_slug')
             ->select('pos_id','pos_title', 'pos_slug', 'pos_image', 'pos_description', 'pos_cat_id', 'pos_status', 'pos_rating', 'pos_view', 'pos_created_at', 'cat_id', 'cat_name', 'cat_slug')
             ->orderBy('pos_rating', 'desc')
             ->limit(5)
@@ -136,7 +136,7 @@ class HomeRepository implements HomeRepositoryInterface {
     public function getPostView()
     {
         return Posts::join('categories', 'pos_cat_id', '=', 'cat_id')
-            ->where('pos_status', 1)->whereNotNull('pos_slug')
+            ->where('pos_status', 1)->whereNotNull('pos_slug')->whereNotNull('cat_slug')
             ->select('pos_id','pos_title', 'pos_slug', 'pos_image', 'pos_description', 'pos_cat_id', 'pos_status', 'pos_rating', 'pos_view', 'pos_created_at', 'cat_id', 'cat_name', 'cat_slug')
             ->orderBy('pos_view', 'desc')
             ->limit(5)

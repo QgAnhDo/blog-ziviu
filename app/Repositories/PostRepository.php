@@ -14,7 +14,7 @@ class PostRepository implements PostRepositoryInterface {
         return Posts::leftJoin('categories', 'pos_cat_id', '=', 'cat_id')
             ->leftJoin('admin', 'pos_admin_id', '=', 'adm_id')
             ->where('pos_id', $id)
-            ->select('pos_id', 'pos_title', 'pos_slug', 'pos_image', 'pos_description', 'pos_content', 'pos_status', 'pos_website', 'pos_rating', 'pos_created_at', 'pos_updated_at', 'cat_id', 'cat_name', 'cat_slug', 'adm_id', 'adm_name', 'adm_loginname')
+            ->select('pos_id', 'pos_title', 'pos_slug', 'pos_image', 'pos_description', 'pos_content', 'pos_status', 'pos_website', 'pos_rating', 'pos_created_at', 'pos_updated_at', 'pos_cat_id', 'cat_id', 'cat_name', 'cat_slug', 'adm_id', 'adm_name', 'adm_loginname')
             ->first();
     }
 
