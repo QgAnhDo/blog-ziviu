@@ -24,4 +24,8 @@ class Posts extends Model
         return parse_image_by_file($folder, $img);
 
     }
+
+    public function getLinkPost() {
+        return route('posts.index', ['slug' => $this->pos_slug, 'id' => $this->pos_id]);
+    }
 }

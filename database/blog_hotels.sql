@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th2 07, 2020 lúc 08:41 AM
+-- Thời gian đã tạo: Th2 10, 2020 lúc 03:27 PM
 -- Phiên bản máy phục vụ: 10.4.6-MariaDB
 -- Phiên bản PHP: 7.3.8
 
@@ -54,31 +54,25 @@ INSERT INTO `admin` (`adm_id`, `adm_name`, `adm_loginname`, `adm_email`, `adm_pa
 --
 
 CREATE TABLE `banners` (
-  `ban_id` int(11) NOT NULL,
-  `ban_name` varchar(255) CHARACTER SET utf8 COLLATE utf8_vietnamese_ci DEFAULT NULL,
-  `ban_picture` varchar(255) CHARACTER SET utf8 COLLATE utf8_vietnamese_ci DEFAULT NULL,
-  `ban_picture_small` varchar(255) CHARACTER SET utf8 COLLATE utf8_vietnamese_ci DEFAULT NULL,
-  `ban_link` text CHARACTER SET utf8 COLLATE utf8_vietnamese_ci DEFAULT NULL,
-  `ban_description` text CHARACTER SET utf8 COLLATE utf8_vietnamese_ci DEFAULT NULL,
-  `ban_target` varchar(255) CHARACTER SET utf8 COLLATE utf8_vietnamese_ci DEFAULT NULL,
-  `ban_type` varchar(50) CHARACTER SET utf8 COLLATE utf8_vietnamese_ci DEFAULT NULL COMMENT 'HOTEL, RESTAURANT',
-  `ban_page` varchar(255) CHARACTER SET utf8 COLLATE utf8_vietnamese_ci DEFAULT NULL,
-  `ban_position` varchar(255) CHARACTER SET utf8 COLLATE utf8_vietnamese_ci DEFAULT NULL,
-  `ban_date` int(11) DEFAULT NULL,
-  `ban_active` tinyint(4) DEFAULT NULL,
-  `ban_order` int(11) DEFAULT NULL,
-  `ban_end_time` int(11) DEFAULT NULL,
-  `admin_id` int(11) DEFAULT NULL,
-  `lang_id` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Đang đổ dữ liệu cho bảng `banners`
---
-
-INSERT INTO `banners` (`ban_id`, `ban_name`, `ban_picture`, `ban_picture_small`, `ban_link`, `ban_description`, `ban_target`, `ban_type`, `ban_page`, `ban_position`, `ban_date`, `ban_active`, `ban_order`, `ban_end_time`, `admin_id`, `lang_id`) VALUES
-(1, 'banner trang chủ', 'luy1576568596.jpg', NULL, '', 'banner trang chủ', NULL, 'HOME', 'home_page', '', NULL, 1, NULL, NULL, 1, NULL),
-(2, 'Trang chủ', 'ajn1576250388.jpg', NULL, '', '', NULL, 'HOTEL', 'home_page', '', NULL, 1, NULL, NULL, 1, NULL);
+  `ban_id` bigint(20) UNSIGNED NOT NULL,
+  `ban_name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `ban_picture` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `ban_picture_small` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `ban_link` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `ban_description` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `ban_target` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `ban_type` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `ban_page` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `ban_position` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `ban_date` int(11) NOT NULL,
+  `ban_active` smallint(6) NOT NULL,
+  `ban_order` int(11) NOT NULL,
+  `ban_end_time` int(11) NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `admin_id` int(11) NOT NULL,
+  `lang_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -194,6 +188,21 @@ INSERT INTO `configuration` (`con_id`, `con_page_size`, `con_admin_email`, `con_
 -- --------------------------------------------------------
 
 --
+-- Cấu trúc bảng cho bảng `failed_jobs`
+--
+
+CREATE TABLE `failed_jobs` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `connection` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `queue` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `payload` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `exception` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `failed_at` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Cấu trúc bảng cho bảng `media`
 --
 
@@ -232,6 +241,34 @@ CREATE TABLE `migrations` (
   `id` int(10) UNSIGNED NOT NULL,
   `migration` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `batch` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `migrations`
+--
+
+INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
+(1, '2014_10_12_000000_create_users_table', 1),
+(2, '2014_10_12_100000_create_password_resets_table', 1),
+(3, '2019_08_19_000000_create_failed_jobs_table', 1),
+(4, '2020_02_07_083710_admin_table', 2),
+(5, '2020_02_07_090018_posts_table', 3),
+(6, '2020_02_07_090108_categories_table', 3),
+(7, '2020_02_07_090145_tags_table', 3),
+(8, '2020_02_07_090226_post_tags_table', 3),
+(9, '2020_02_07_095204_create_banners_table', 3),
+(11, '2020_02_07_100821_add_attribute_admin_id_into_banners_table', 4);
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `password_resets`
+--
+
+CREATE TABLE `password_resets` (
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `token` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
@@ -1177,6 +1214,12 @@ ALTER TABLE `comments`
   ADD KEY `com_user_id` (`com_user_id`) USING BTREE;
 
 --
+-- Chỉ mục cho bảng `failed_jobs`
+--
+ALTER TABLE `failed_jobs`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Chỉ mục cho bảng `media`
 --
 ALTER TABLE `media`
@@ -1193,6 +1236,12 @@ ALTER TABLE `menu`
 --
 ALTER TABLE `migrations`
   ADD PRIMARY KEY (`id`);
+
+--
+-- Chỉ mục cho bảng `password_resets`
+--
+ALTER TABLE `password_resets`
+  ADD KEY `password_resets_email_index` (`email`);
 
 --
 -- Chỉ mục cho bảng `posts`
@@ -1252,7 +1301,7 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT cho bảng `banners`
 --
 ALTER TABLE `banners`
-  MODIFY `ban_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=283;
+  MODIFY `ban_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT cho bảng `categories`
@@ -1265,6 +1314,12 @@ ALTER TABLE `categories`
 --
 ALTER TABLE `comments`
   MODIFY `com_id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT cho bảng `failed_jobs`
+--
+ALTER TABLE `failed_jobs`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT cho bảng `media`
@@ -1282,7 +1337,7 @@ ALTER TABLE `menu`
 -- AUTO_INCREMENT cho bảng `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT cho bảng `posts`

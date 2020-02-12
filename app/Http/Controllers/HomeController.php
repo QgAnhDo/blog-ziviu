@@ -87,6 +87,9 @@ class HomeController extends Controller
         $configuration = $this->home->getConfiguration();
 
         $post = $this->post->getPostById($id);
+        if(empty($post->cat_slug) || empty($post->pos_slug)) {
+            return abort(404);
+        }
         $postTag = $this->post->getPostTags($id);
         $postRelateHot = $this->post->getPostRelateHot($id);
         $postRelate = $this->post->getPostRelate($id);
@@ -114,6 +117,9 @@ class HomeController extends Controller
         $configuration = $this->home->getConfiguration();
 
         $category = $this->category->getCategoryById($id);
+        if(empty($category->cat_slug)) {
+            abort(404);
+        }
         $post = $this->category->getPostByCategory($id);
 
         return view('categories.index')->with([

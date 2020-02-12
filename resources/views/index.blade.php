@@ -17,12 +17,12 @@
                     <div class="main_content_1_big">
                         @if($postsHot)
                         <div>
-                            <a href="{{route('posts.index', ['slug' => $postsHot->pos_slug, 'id' => $postsHot->pos_id])}}">
+                            <a href="{{$postsHot->getLinkPost()}}">
                                 <img src="{{$postsHot->getImgPosts()}}" title="{{$postsHot->pos_title}}"
                                      alt="{{$postsHot->pos_title}}">
                             </a>
                             <h1>
-                                <a href="{{route('posts.index', ['slug' => $postsHot->pos_slug, 'id' => $postsHot->pos_id])}}">
+                                <a href="{{$postsHot->getLinkPost()}}">
                                     {{$postsHot->pos_title}}
                                 </a>
                             </h1>
@@ -34,12 +34,12 @@
                         @if($postsHot)
                             @if($postsHot->hotSmall)
                         <div>
-                            <a href="{{route('posts.index', ['slug' => $postsHot->hotSmall->pos_slug, 'id' => $postsHot->hotSmall->pos_id])}}">
+                            <a href="{{$postsHot->hotSmall->getLinkPost()}}">
                                 <img src="{{$postsHot->hotSmall->getImgPosts()}}" title="{{$postsHot->hotSmall->pos_title}}"
                                      alt="{{$postsHot->hotSmall->pos_title}}">
                             </a>
                             <h2>
-                                <a href="{{route('posts.index', ['slug' => $postsHot->hotSmall->pos_slug, 'id' => $postsHot->hotSmall->pos_id])}}">
+                                <a href="{{$postsHot->hotSmall->getLinkPost()}}">
                                     {{$postsHot->hotSmall->pos_title}}
                                 </a>
                             </h2>
@@ -56,12 +56,12 @@
                                 @if($categoriesHot->posts)
                                     @foreach ($categoriesHot->posts as $item)
                             <li class="item">
-                                <a href="{{route('posts.index', ['slug' => $item->pos_slug, 'id' => $item->pos_id])}}">
+                                <a href="{{$item->getLinkPost()}}">
                                     <img src="{{$item->getImgPosts()}}" title="{{$item->pos_title}}"
                                          alt="{{$item->pos_title}}">
                                 </a>
                                 <h3>
-                                    <a href="{{route('posts.index', ['slug' => $item->pos_slug, 'id' => $item->pos_id])}}">
+                                    <a href="{{$item->getLinkPost()}}">
                                         {{$item->pos_title}}
                                     </a>
                                 </h3>
@@ -77,13 +77,13 @@
                         @foreach($posts as $item)
                             <li class="content_3_item">
                                 <div class="item_image">
-                                    <a href="{{route('posts.index', ['slug' => $item->pos_slug, 'id' => $item->pos_id])}}">
+                                    <a href="{{$item->getLinkPost()}}">
                                         <img src="{{$item->getImgPosts()}}" width="250" height="155" title="{{$item->pos_title}}" alt="{{$item->pos_title}}">
                                     </a>
                                 </div>
                                 <div class="item_info">
                                     <h4 class="item_title">
-                                        <a href="{{route('posts.index', ['slug' => $item->pos_slug, 'id' => $item->pos_id])}}">
+                                        <a href="{{$item->getLinkPost()}}">
                                             {{$item->pos_title}}
                                         </a>
                                     </h4>
@@ -110,12 +110,12 @@
                                             @if($postsHot->hotSmaller)
                                         <div class="item first">
                                             <div class="ava">
-                                                <a href="{{route('posts.index', ['slug' => $postsHot->hotSmaller->pos_slug, 'id' => $postsHot->hotSmaller->pos_id])}}">
+                                                <a href="{{$postsHot->hotSmaller->getLinkPost()}}">
                                                     <img src="{{$postsHot->hotSmaller->getImgPosts()}}" title="{{$postsHot->hotSmaller->pos_title}}" alt="{{$postsHot->hotSmaller->pos_title}}">
                                                 </a>
                                             </div>
                                             <h3>
-                                                <a href="{{route('posts.index', ['slug' => $postsHot->hotSmaller->pos_slug, 'id' => $postsHot->hotSmaller->pos_id])}}" title="{{$postsHot->hotSmaller->pos_title}}">
+                                                <a href="{{$postsHot->hotSmaller->getLinkPost()}}" title="{{$postsHot->hotSmaller->pos_title}}">
                                                     {{$postsHot->hotSmaller->pos_title}}
                                                 </a>
                                             </h3>
@@ -128,7 +128,7 @@
                                                 @foreach ($categoriesHot->posts as $item)
                                         <div class="item">
                                             <h3>
-                                                <a href="{{route('posts.index', ['slug' => $item->pos_slug, 'id' => $item->pos_id])}}" title="{{$item->pos_title}}">
+                                                <a href="{{$item->getLinkPost()}}">
                                                     {{$item->pos_title}}
                                                 </a>
                                             </h3>
@@ -150,11 +150,11 @@
                                                             @foreach ($categoriesHot->hot2->posts as $item)
                                                 <li class="item" style="display: list-item;">
                                                     <h3>
-                                                        <a href="{{route('posts.index', ['slug' => $item->pos_slug, 'id' => $item->pos_id])}}" title="{{$item->pos_title}}">
+                                                        <a href="{{$item->getLinkPost()}}" title="{{$item->pos_title}}">
                                                             {{$item->pos_title}}
                                                         </a>
                                                     </h3>
-                                                    <a class="item_image" href="{{route('posts.index', ['slug' => $item->pos_slug, 'id' => $item->pos_id])}}">
+                                                    <a class="item_image" href="{{$item->getLinkPost()}}">
                                                         <img src="{{$item->getImgPosts()}}" title="{{$item->pos_title}}" alt="{{$item->pos_title}}">
                                                     </a>
                                                 </li>
@@ -170,7 +170,7 @@
                                                                 @foreach ($categoriesHot->hot2->hot3->posts as $item)
                                                 <li class="item after" style="display: list-item;">
                                                     <h3>
-                                                        <a href="{{route('posts.index', ['slug' => $item->pos_slug, 'id' => $item->pos_id])}}" title="{{$item->pos_title}}">
+                                                        <a href="{{$item->getLinkPost()}}" title="{{$item->pos_title}}">
                                                             {{$item->pos_title}}
                                                         </a>
                                                     </h3>
@@ -189,14 +189,14 @@
                         @foreach($postRating as $item)
                             <li class="content_3_item">
                                 <div class="item_image">
-                                    <a href="{{route('posts.index', ['slug' => $item->pos_slug, 'id' => $item->pos_id])}}">
+                                    <a href="{{$item->getLinkPost()}}">
                                         <img src="{{$item->getImgPosts()}}" width="250" height="155"
                                              title="{{$item->pos_title}}" alt="{{$item->pos_title}}">
                                     </a>
                                 </div>
                                 <div class="item_info">
                                     <h4 class="item_title">
-                                        <a href="{{route('posts.index', ['slug' => $item->pos_slug, 'id' => $item->pos_id])}}">
+                                        <a href="{{$item->getLinkPost()}}">
                                             {{$item->pos_title}}
                                         </a>
                                     </h4>
@@ -223,11 +223,11 @@
                                             @if($categoriesHot->posts)
                                                 @foreach ($categoriesHot->posts as $item)
                                         <li>
-                                            <a class="item_images" href="{{route('posts.index', ['slug' => $item->pos_slug, 'id' => $item->pos_id])}}">
+                                            <a class="item_images" href="{{$item->getLinkPost()}}">
                                                 <img src="{{$item->getImgPosts()}}" title="{{$item->pos_title}}" alt="{{$item->pos_title}}">
                                             </a>
                                             <h3>
-                                                <a href="{{route('posts.index', ['slug' => $item->pos_slug, 'id' => $item->pos_id])}}" title="{{$item->pos_title}}">
+                                                <a href="{{$item->getLinkPost()}}" title="{{$item->pos_title}}">
                                                     {{$item->pos_title}}
                                                 </a>
                                             </h3>
@@ -245,7 +245,7 @@
                                                 @if($categoriesHot->hot2->posts)
                                                     @foreach ($categoriesHot->hot2->posts as $item)
                                         <h3 class="first">
-                                            <a href="{{route('posts.index', ['slug' => $item->pos_slug, 'id' => $item->pos_id])}}" title="{{$item->pos_title}}">
+                                            <a href="{{$item->getLinkPost()}}" title="{{$item->pos_title}}">
                                                 {{$item->pos_title}}
                                             </a>
                                         </h3>
@@ -260,7 +260,7 @@
                                                     @if($categoriesHot->hot2->hot3->posts)
                                                         @foreach ($categoriesHot->hot2->hot3->posts as $item)
                                         <h3>
-                                            <a href="{{route('posts.index', ['slug' => $item->pos_slug, 'id' => $item->pos_id])}}" title="{{$item->pos_title}}">
+                                            <a href="{{$item->getLinkPost()}}" title="{{$item->pos_title}}">
                                                 {{$item->pos_title}}
                                             </a>
                                         </h3>
@@ -276,14 +276,14 @@
                         @foreach($postView as $item)
                             <li class="content_3_item">
                                 <div class="item_image">
-                                    <a href="{{route('posts.index', ['slug' => $item->pos_slug, 'id' => $item->pos_id])}}">
+                                    <a href="{{$item->getLinkPost()}}">
                                         <img src="{{$item->getImgPosts()}}" width="250" height="155"
                                              title="{{$item->pos_title}}" alt="{{$item->pos_title}}">
                                     </a>
                                 </div>
                                 <div class="item_info">
                                     <h4 class="item_title">
-                                        <a href="{{route('posts.index', ['slug' => $item->pos_slug, 'id' => $item->pos_id])}}">
+                                        <a href="{{$item->getLinkPost()}}">
                                             {{$item->pos_title}}
                                         </a>
                                     </h4>
@@ -312,13 +312,13 @@
                                                     @foreach ($categoriesHot->hot2->hot3->posts as $item)
                                     <li>
                                         <div class="dontmiss_img">
-                                            <a href="{{route('posts.index', ['slug' => $item->pos_slug, 'id' => $item->pos_id])}}" title="{{$item->pos_title}}">
+                                            <a href="{{$item->getLinkPost()}}" title="{{$item->pos_title}}">
                                                 <img src="{{$item->getImgPosts()}}" title="{{$item->pos_title}}" alt="{{$item->pos_title}}">
                                             </a>
                                         </div>
                                         <div class="dontmiss_text">
                                             <h4>
-                                                <a href="{{route('posts.index', ['slug' => $item->pos_slug, 'id' => $item->pos_id])}}" title="{{$item->pos_title}}">
+                                                <a href="{{$item->getLinkPost()}}" title="{{$item->pos_title}}">
                                                     {{$item->pos_title}}
                                                 </a>
                                             </h4>
@@ -335,14 +335,14 @@
                         @foreach($postsHotList as $item)
                             <li class="content_3_item">
                                 <div class="item_image">
-                                    <a href="{{route('posts.index', ['slug' => $item->pos_slug, 'id' => $item->pos_id])}}">
+                                    <a href="{{$item->getLinkPost()}}">
                                         <img src="{{$item->getImgPosts()}}" width="250" height="155"
                                              title="{{$item->pos_title}}" alt="{{$item->pos_title}}">
                                     </a>
                                 </div>
                                 <div class="item_info">
                                     <h4 class="item_title">
-                                        <a href="{{route('posts.index', ['slug' => $item->pos_slug, 'id' => $item->pos_id])}}">
+                                        <a href="{{$item->getLinkPost()}}">
                                             {{$item->pos_title}}
                                         </a>
                                     </h4>

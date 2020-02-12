@@ -8,7 +8,7 @@
                 <ul>
                     @foreach ($categories as $item)
                     <li>
-                        <a href="{{route('categories.index', ['slug'=> $item->cat_slug, 'id'=> $item->cat_id])}}">
+                        <a href="{{$item->getLinkCategory()}}">
                             {{$item->cat_name}}
                         </a>
                     </li>

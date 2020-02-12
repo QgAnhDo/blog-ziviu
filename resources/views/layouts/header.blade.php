@@ -7,7 +7,7 @@
                     <ul class="menu_list">
                         @foreach($categories as $item)
                             <li>
-                                <a href="{{route('categories.index', ['slug'=> $item->cat_slug, 'id'=> $item->cat_id])}}">
+                                <a href="{{$item->getLinkCategory()}}">
                                     {{$item->cat_name}}
                                 </a>
                             </li>
@@ -34,13 +34,13 @@
                         <li class="menu_expand_item">
                             <ul class="submenu_expand_list">
                                 <li class="submenu_expand_item cate">
-                                    <a href="{{route('categories.index', ['slug'=> $item->cat_slug, 'id'=> $item->cat_id])}}">
+                                    <a href="{{$item->getLinkCategory()}}">
                                         {{$item->cat_name}}
                                     </a>
                                 </li>
                                 @foreach ($item->cat_child as $value)
                                 <li class="submenu_expand_item">
-                                    <a href="{{route('categories.index', ['slug'=> $value->cat_slug, 'id'=> $value->cat_id])}}">
+                                    <a href="{{$value->getLinkCategory()}}">
                                         {{$value->cat_name}}
                                     </a>
                                 </li>

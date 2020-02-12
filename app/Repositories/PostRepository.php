@@ -11,10 +11,10 @@ class PostRepository implements PostRepositoryInterface {
     public function getPostById($id)
     {
 
-        return Posts::join('categories', 'pos_cat_id', '=', 'cat_id')
-            ->join('admin', 'pos_admin_id', '=', 'adm_id')
+        return Posts::leftJoin('categories', 'pos_cat_id', '=', 'cat_id')
+            ->leftJoin('admin', 'pos_admin_id', '=', 'adm_id')
             ->where('pos_id', $id)
-            ->select('pos_id', 'pos_title', 'pos_slug', 'pos_image', 'pos_description', 'pos_content', 'pos_status', 'pos_website', 'pos_rating', 'pos_created_at', 'pos_updated_at', 'cat_id', 'cat_name', 'cat_slug', 'adm_id', 'adm_name', 'adm_loginname')
+            ->select('pos_id', 'pos_title', 'pos_slug', 'pos_image', 'pos_description', 'pos_content', 'pos_status', 'pos_website', 'pos_rating', 'pos_created_at', 'pos_updated_at', 'pos_cat_id', 'cat_id', 'cat_name', 'cat_slug', 'adm_id', 'adm_name', 'adm_loginname')
             ->first();
     }
 
@@ -31,13 +31,13 @@ class PostRepository implements PostRepositoryInterface {
         $postDetail = Posts::where('pos_id', $id)
             ->select('pos_id', 'pos_cat_id')
             ->first();
-
-        return Posts::where('pos_cat_id', $postDetail->pos_cat_id)
-            ->where('pos_id', '<>', $id)->where('pos_hot', 1)
-            ->select('pos_id', 'pos_title', 'pos_slug', 'pos_image', 'pos_hot', 'pos_created_at')
-            ->orderBy('pos_id', 'desc')
-            ->limit(3)
-            ->get();
+        if($postDetail)
+            return Posts::where('pos_cat_id', $postDetail->pos_cat_id)
+                ->where('pos_id', '<>', $id)->where('pos_hot', 1)
+                ->select('pos_id', 'pos_title', 'pos_slug', 'pos_image', 'pos_hot', 'pos_created_at')
+                ->orderBy('pos_id', 'desc')
+                ->limit(3)
+                ->get();
     }
 
     public function getPostRelate($id)
@@ -45,12 +45,12 @@ class PostRepository implements PostRepositoryInterface {
         $postDetail = Posts::where('pos_id', $id)
             ->select('pos_id', 'pos_cat_id')
             ->first();
-
-        return Posts::where('pos_cat_id', $postDetail->pos_cat_id)
-            ->where('pos_id', '<>', $id)->where('pos_hot', 0)
-            ->select('pos_id', 'pos_title', 'pos_slug', 'pos_image', 'pos_hot', 'pos_created_at')
-            ->orderBy('pos_id', 'desc')
-            ->limit(3)
-            ->get();
+        if($postDetail)
+            return Posts::where('pos_cat_id', $postDetail->pos_cat_id)
+                ->where('pos_id', '<>', $id)->where('pos_hot', 0)
+                ->select('pos_id', 'pos_title', 'pos_slug', 'pos_image', 'pos_hot', 'pos_created_at')
+                ->orderBy('pos_id', 'desc')
+                ->limit(3)
+                ->get();
     }
 }
