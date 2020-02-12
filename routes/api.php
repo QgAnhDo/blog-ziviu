@@ -23,6 +23,6 @@ Route::post('posts/{id}', 'Crawl\PostController@update')->name('posts');
 Route::post('posts', 'Crawl\PostController@insert')->name('posts');
 
 //mytour
-Route::get('mytour', 'Crawl\MyTourController@index')->name('mytour');
-Route::post('mytour/{id}', 'Crawl\MyTourController@update')->name('mytour');
-Route::post('mytour', 'Crawl\MyTourController@insert')->name('mytour');
+Route::get('mytour', 'Crawl\PostController@index')->name('mytour');
+Route::post('mytour/{id}', 'Crawl\PostController@update')->name('mytour');
+Route::post('mytour', 'Crawl\PostController@insert')->name('mytour');

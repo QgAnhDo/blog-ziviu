@@ -60,7 +60,9 @@ class PostController extends Controller
             'content' => 'required',
             'view' => 'required',
             'description' => 'required',
-            'website' => 'required'
+            'website' => 'required',
+            'cats' => 'required',
+            'created_at' => 'required'
         ]);
 
     	$response = [
@@ -70,8 +72,8 @@ class PostController extends Controller
     		'view' => $request->input('view'),
             'description' => $request->input('description'),
             'website' => $request->input('website'),
-            'created_at' => time(),
-            'updated_at' => time()
+            'cats'=> $request->input('cats'),
+            'created_at' => $request->input('created_at')
     	];
 
     	$data_insert = [
@@ -84,15 +86,14 @@ class PostController extends Controller
             'pos_content' => $response['content'],
             'pos_hot' => 1,
             'pos_status' => 1,
-            'pos_cat_id' => 12,
+            'pos_cat_id' => $response['cats'],
             'pos_admin_id' => 1,
-            'pos_crawl_status' => 0,
+            'pos_crawl_status' => 1,
             'pos_created_at' => $response['created_at'],
-            'pos_updated_at' => $response['updated_at'],
+            'pos_updated_at' => $response['created_at'],
         ];
 
-        $test = Posts::insert($data_insert);
-    
+        $test = Posts::insert($data_insert); 
 
         //đếm số bài viết được thêm
         $count = count($data_insert);
@@ -104,7 +105,8 @@ class PostController extends Controller
             $error = $error + 1;
         }
 
-        return $this->writeLog($count, $error);
+        $this->writeLog($count, $error);
+        return response()->json(['status'=> 1, 'mess'=> 'Success !']);
     }
 
     private function writeLog($insert, $error)
@@ -114,12 +116,12 @@ class PostController extends Controller
             'insert' => $insert,
             'error' => $error
         ];
-        $path_root = storage_path('logs');
+        $path_root = storage_path('logs') . '/crawl/'. date('Y/m/');
         if(!is_dir($path_root)) {
             mkdir($path_root, 0777, true);
         }
 
-        $file_name = 'crawl_data.log';
+        $file_name = date('d') .'.log';
         $fp = @fopen($path_root .'/'. $file_name, "w+");
         $value = "[{$log_data['time']}] Tour(insert:{$log_data['insert']} | error:{$log_data['error']})\n";
         fwrite($fp, $value);
