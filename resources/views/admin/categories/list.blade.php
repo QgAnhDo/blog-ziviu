@@ -35,11 +35,12 @@
                 <tr>
                   <th>ID</th>
                   <th>Tên</th>
-                  <th>Link slug</th>
+                  <th>Miêu tả</th>
                   <th>ID cha</th>
                   <th>Danh mục hot</th>
                   <th>Trạng thái</th>
                   <th>Ngày tạo</th>
+                  <th>Ngày sửa</th>
                   <th>Hành động</th>
                 </tr>
                 </thead>
@@ -48,7 +49,7 @@
                   <tr>
                     <td>{{ $item->cat_id }}</td>
                     <td>{{ $item->cat_name }}</td>
-                    <td>{{ $item->cat_slug }}</td>
+                    <td>{{ $item->cat_description }}</td>
                     <td>{{ $item->cat_parent_id }}</td>
                     <td>
                         @if($item->cat_hot == 1) {{'Có'}}
@@ -56,11 +57,14 @@
                         @endif
                     </td>
                     <td>
-                        @if($item->cat_active == 1) {{'Bật'}}
-                        @else {{'Tắt'}}
+                        @if($item->cat_active == 1)
+                            <span style="color: green"><b>Bật</b></span>
+                        @else
+                            <span style="color: red"><b>Tắt</b></span>
                         @endif
                     </td>
                     <td>{{ $item->cat_created_at }}</td>
+                    <td>{{ $item->cat_updated_at }}</td>
                     <td><a href="{{route('admin.category.edit', ['id' => $item->cat_id])}}">Sửa</a> | <a href="{{route('admin.category.delete', ['id' => $item->cat_id])}}">Xóa</a></td>
                   </tr>
                   @endforeach
@@ -69,11 +73,11 @@
                 <tr>
                   <th>ID</th>
                   <th>Tên</th>
-                  <th>Link slug</th>
                   <th>ID cha</th>
                   <th>Danh mục hot</th>
                   <th>Trạng thái</th>
                   <th>Ngày tạo</th>
+                  <th>Ngày sửa</th>
                   <th>Hành động</th>
                 </tr>
                 </tfoot>
