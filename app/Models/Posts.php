@@ -15,14 +15,12 @@ class Posts extends Model
 
     public function getImgPosts($folder = 'post')
     {
-
         $img = $this->pos_image;
 
         if (!$img) {
             return url('/assets/images/no-image.png');
         }
         return parse_image_by_file($folder, $img);
-
     }
 
     public function getLinkPost() {
