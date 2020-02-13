@@ -159,6 +159,9 @@ class HomeController extends Controller
         $configuration = $this->home->getConfiguration();
 
         $tag = $this->tag->getTagById($id);
+        if(empty($tag->tag_slug)) {
+            abort(404);
+        }
         $postTag = $this->tag->getPostByTag($id);
 
         return view('tags.index')->with([
