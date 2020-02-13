@@ -3,7 +3,9 @@
 namespace App\Exceptions;
 
 use Exception;
+use Illuminate\Contracts\Container\Container;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
+use App\Repositories\HomeRepositoryInterface;
 
 class Handler extends ExceptionHandler
 {
@@ -44,12 +46,30 @@ class Handler extends ExceptionHandler
      * @param  \Exception  $exception
      * @return \Illuminate\Http\Response
      */
+
+    public $home;
+    public function __construct(Container $container, HomeRepositoryInterface $home)
+    {
+        parent::__construct($container);
+        $this->home = $home;
+    }
+
     public function render($request, Exception $exception)
     {
-        if ($exception instanceof MethodNotAllowedHttpException)
-        {
-            abort(404);
+        $categories = $this->home->getCategories();
+        $configuration = $this->home->getConfiguration();
+
+        if($this->isHttpException($exception)) {
+            $code = $exception->getStatusCode();
+            if($code=='404') {
+                return response()->view('errors.404',[
+                    'categories' => $categories,
+                    'configuration' => $configuration,
+                ]);
+            }
         }
         return parent::render($request, $exception);
     }
+
+
 }
