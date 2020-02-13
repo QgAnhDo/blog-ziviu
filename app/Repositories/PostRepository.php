@@ -11,7 +11,7 @@ class PostRepository implements PostRepositoryInterface {
     public function getPostById($id)
     {
 
-        return Posts::leftJoin('categories', 'pos_cat_id', '=', 'cat_id')
+        return Posts::join('categories', 'pos_cat_id', '=', 'cat_id')
             ->leftJoin('admin', 'pos_admin_id', '=', 'adm_id')
             ->where('pos_id', $id)
             ->select('pos_id', 'pos_title', 'pos_slug', 'pos_image', 'pos_description', 'pos_content', 'pos_status', 'pos_website', 'pos_rating', 'pos_created_at', 'pos_updated_at', 'pos_cat_id', 'cat_id', 'cat_name', 'cat_slug', 'adm_id', 'adm_name', 'adm_loginname')
@@ -21,7 +21,7 @@ class PostRepository implements PostRepositoryInterface {
     public function getPostTags($id)
     {
         return PostTag::join('tags', 'pota_tag_id', '=', 'tag_id')
-            ->where('pota_post_id', $id)->where('tag_active', 1)
+            ->where('pota_post_id', $id)->where('tag_active', 1)->whereNotNull('tag_slug')
             ->select('pota_post_id', 'tag_id', 'tag_name', 'tag_slug', 'tag_active')
             ->get();
     }
@@ -33,7 +33,7 @@ class PostRepository implements PostRepositoryInterface {
             ->first();
         if($postDetail)
             return Posts::where('pos_cat_id', $postDetail->pos_cat_id)
-                ->where('pos_id', '<>', $id)->where('pos_hot', 1)
+                ->where('pos_id', '<>', $id)->where('pos_hot', 1)->whereNotNull('pos_slug')
                 ->select('pos_id', 'pos_title', 'pos_slug', 'pos_image', 'pos_hot', 'pos_created_at')
                 ->orderBy('pos_id', 'desc')
                 ->limit(3)
@@ -47,7 +47,7 @@ class PostRepository implements PostRepositoryInterface {
             ->first();
         if($postDetail)
             return Posts::where('pos_cat_id', $postDetail->pos_cat_id)
-                ->where('pos_id', '<>', $id)->where('pos_hot', 0)
+                ->where('pos_id', '<>', $id)->where('pos_hot', 0)->whereNotNull('pos_slug')
                 ->select('pos_id', 'pos_title', 'pos_slug', 'pos_image', 'pos_hot', 'pos_created_at')
                 ->orderBy('pos_id', 'desc')
                 ->limit(3)

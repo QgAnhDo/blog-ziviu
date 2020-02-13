@@ -56,7 +56,7 @@
     <div class="ads_header">
         <div class="container">
             <div>
-                <a href="https://trip247.net/" target="_blank"><img src="assets/images/ads-1.jpg" alt="head_banner"></a>
+                <a href="https://www.google.com/search?q=trip247.net" target="_blank"><img src="assets/images/ads-1.jpg" alt="head_banner"></a>
             </div>
         </div>
     </div>
