@@ -21,6 +21,20 @@
 
 @section('content')
 <!-- Main content -->
+@if(count($errors)>0)
+    <div class="alert alert-danger">
+        @foreach($errors->all() as $err)
+            {{ $err }}<br />
+        @endforeach
+    </div>
+@endif
+
+@if(session('thongbao'))
+    <div class="alert alert-success">
+        {{ session('thongbao') }}
+    </div>
+@endif
+
     <section class="content">
       <div class="row">
         <div class="col-12">
@@ -36,7 +50,6 @@
                   <th>ID</th>
                   <th>Tên</th>
                   <th>Link slug</th>
-                  <th>Meta</th>
                   <th>Mô tả</th>
                   <th>Trạng thái</th>
                   <th>Ngày tạo</th>
@@ -50,12 +63,17 @@
                     <td>{{ $item->tag_id }}</td>
                     <td>{{ $item->tag_name }}</td>
                     <td>{{ $item->tag_slug }}</td>
-                    <td>{{ $item->tag_meta }}</td>
                     <td>{{ $item->tag_description }}</td>
-                    <td>{{ $item->tag_active }}</td>
+                    <td>
+                        @if($item->tag_active == 1)
+                        <span style="color: green"><b>Bật</b></span>
+                        @else
+                        <span style="color: red"><b>Tắt</b></span>
+                        @endif
+                    </td>
                     <td>{{ $item->tag_created_at }}</td>
                     <td>{{ $item->tag_updated_at }}</td>
-                    <td><a href="{{route('admin.tags.edit')}}">Sửa</a> | <a href="{{route('admin.tags.delete')}}">Xóa</a></td>
+                    <td><a href="{{route('admin.tags.edit', ['id' => $item->tag_id])}}">Sửa</a> | <a href="{{route('admin.tags.delete', ['id' => $item->tag_id])}}">Xóa</a></td>
                   </tr>
                   @endforeach
                 </tbody>
@@ -64,7 +82,6 @@
                   <th>ID</th>
                   <th>Tên</th>
                   <th>Link slug</th>
-                  <th>Meta</th>
                   <th>Mô tả</th>
                   <th>Trạng thái</th>
                   <th>Ngày tạo</th>

@@ -52,7 +52,6 @@
                   <th>Tiêu đề</th>
                   <th>Link slug</th>
                   <th>Mô tả</th>
-                  <th>Bài viết</th>
                   <th>Nổi bật</th>
                   <th>Trạng thái</th>
                   <th>Lượt xem</th>
@@ -67,7 +66,6 @@
                     <td>{{ $item->pos_title }}</td>
                     <td>{{ $item->pos_slug }}</td>
                     <td>{{ $item->pos_description }}</td>
-                    <td>{{ $item->pos_content }}</td>
                     <td>
                         @if($item->pos_hot == 1) {{'Có'}}
                         @elseif($item->pos_hot == 0) {{'Không'}}
@@ -79,7 +77,7 @@
                         @endif
                     </td>
                     <td>{{ $item->pos_view }}</td>
-                    <td>{{ date('d-m-Y H:i:s', $item->pos_created_at) }}</td>
+                    <td>{{ $item->pos_created_at }}</td>
                     <td>
                         <a href="{{route('admin.posts.edit', ['id' => $item->pos_id])}}">Sửa</a> | <a href="{{route('admin.posts.delete', ['id' => $item->pos_id])}}">Xóa</a>
                     </td>
@@ -92,7 +90,6 @@
                   <th>Tiêu đề</th>
                   <th>Link slug</th>
                   <th>Mô tả</th>
-                  <th>Bài viết</th>
                   <th>Nổi bật</th>
                   <th>Trạng thái</th>
                   <th>Lượt xem</th>

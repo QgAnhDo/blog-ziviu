@@ -102,7 +102,7 @@ Route::prefix('admin')->group(function () {
     	Route::get('edit/{id}', 'Admin\TagController@getEdit')->name('admin.tags.edit');
     	Route::post('edit/{id}', 'Admin\TagController@postEdit')->name('admin.tags.edit');
 
-    	Route::get('delete', 'Admin\TagController@getDelete')->name('admin.tags.delete');
+    	Route::get('delete/{id}', 'Admin\TagController@getDelete')->name('admin.tags.delete');
     });
 
     Route::prefix('comments')->group(function () {
