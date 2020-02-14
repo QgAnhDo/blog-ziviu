@@ -21,6 +21,20 @@
 
 @section('content')
 <!-- Main content -->
+    @if(count($errors)>0)
+        <div class="alert alert-danger">
+            @foreach($errors->all() as $err)
+                {{ $err }}<br />
+            @endforeach
+        </div>
+    @endif
+
+    @if(session('thongbao'))
+        <div class="alert alert-success">
+            {{ session('thongbao') }}
+        </div>
+    @endif
+
     <section class="content">
       <div class="row">
         <div class="col-12">
@@ -65,7 +79,11 @@
                     </td>
                     <td>{{ $item->cat_created_at }}</td>
                     <td>{{ $item->cat_updated_at }}</td>
-                    <td><a href="{{route('admin.category.edit', ['id' => $item->cat_id])}}">Sửa</a> | <a href="{{route('admin.category.delete', ['id' => $item->cat_id])}}">Xóa</a></td>
+                    <td>
+                        <a href="{{route('admin.category.edit', ['id' => $item->cat_id])}}">Sửa</a>
+                        |
+                        <a href="{{route('admin.category.delete', ['id' => $item->cat_id])}}">Xóa</a>
+                    </td>
                   </tr>
                   @endforeach
                 </tbody>
