@@ -90,7 +90,7 @@ Route::prefix('admin')->group(function () {
     	Route::get('edit/{id}', 'Admin\CategoryController@getEdit')->name('admin.category.edit');
     	Route::post('edit/{id}', 'Admin\CategoryController@postEdit')->name('admin.category.edit');
 
-    	Route::get('delete', 'Admin\CategoryController@getDelete')->name('admin.category.delete');
+    	Route::get('delete/{id}', 'Admin\CategoryController@getDelete')->name('admin.category.delete');
     });
 
     Route::prefix('tags')->group(function () {
@@ -105,27 +105,15 @@ Route::prefix('admin')->group(function () {
     	Route::get('delete/{id}', 'Admin\TagController@getDelete')->name('admin.tags.delete');
     });
 
-    Route::prefix('comments')->group(function () {
-    	Route::get('/', 'Admin\CommentController@getList');
+    Route::prefix('post-tags')->group(function () {
+    	Route::get('/', 'Admin\PostTagController@getList')->name('admin.post-tags');
 
-    	Route::get('add', 'Admin\CommentController@getAdd');
-    	Route::post('add', 'Admin\CommentController@postAdd');
+    	Route::get('add', 'Admin\PostTagController@getAdd')->name('admin.post-tags.add');
+    	Route::post('add', 'Admin\PostTagController@postAdd')->name('admin.post-tags.add');
 
-    	Route::get('edit/{id}', 'Admin\CommentController@getEdit');
-    	Route::post('edit/{id}', 'Admin\CommentController@postEdit');
+    	Route::get('edit/{id}', 'Admin\PostTagController@getEdit')->name('admin.post-tags.edit');
+    	Route::post('edit/{id}', 'Admin\PostTagController@postEdit')->name('admin.post-tags.edit');
 
-    	Route::get('delete', 'Admin\CommentController@getDelete');
-    });
-
-    Route::prefix('menu')->group(function () {
-    	Route::get('/', 'Admin\MenuController@getList');
-
-    	Route::get('add', 'Admin\MenuController@getAdd');
-    	Route::post('add', 'Admin\MenuController@postAdd');
-
-    	Route::get('edit/{id}', 'Admin\MenuController@getEdit');
-    	Route::post('edit/{id}', 'Admin\MenuController@postEdit');
-
-    	Route::get('delete', 'Admin\MenuController@getDelete');
+    	Route::get('delete/{id}', 'Admin\PostTagController@getDelete')->name('admin.post-tags.delete');
     });
 });

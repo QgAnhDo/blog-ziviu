@@ -21,38 +21,54 @@
 
 @section('content')
 <!-- Main content -->
-    <section class="content">
+    @if(count($errors)>0)
+        <div class="alert alert-danger">
+            @foreach($errors->all() as $err)
+                {{ $err }}<br />
+            @endforeach
+        </div>
+    @endif
 
+    @if(session('thongbao'))
+        <div class="alert alert-success">
+            {{ session('thongbao') }}
+        </div>
+    @endif
+
+    <section class="content">
+        <a class="btn btn-primary btn-sm" href="{{route('admin.category')}}">Về trang danh sách</a><br /><br />
 		<div class="panel-body">
 			<form action="" method="post" enctype="multipart/form-data">
 				@csrf
-				<div class="form-group">
-					<label for="name">Tên danh mục</label>
+				<div class="form-group col-sm-6">
+					<label for="cat_name">Tên danh mục:</label>
 					<input type="text" class="form-control" name="cat_name" id="cat_name" value="{{$category->cat_name}}">
 				</div>
-				<div class="form-group">
-					<label for="name">Mô tả</label>
-					<input type="text" class="form-control" name="description" id="description" value="{{$category->cat_description}}">
+				<div class="form-group col-sm-6">
+					<label for="cat_description">Mô tả</label>
+					<input type="text" class="form-control" name="cat_description" id="cat_description" value="{{$category->cat_description}}">
 				</div>
-				<div class="form-group">
-					<label for="name">Ảnh đại diện</label>
-					<input type="file" class="form-control" name="avatar" id="avatar">
-				</div>
-
-				<div class="form-group">
+                <div class="form-group col-sm-6">
+                    <label for="cat_parent_id">Danh mục cha (*):</label>
+                    <select name="cat_parent_id" id="cat_parent_id" class="form-control">
+                        <option value="0">Đặt làm cấp cha</option>
+                        @foreach($categories as $item)
+                            <option value="{{$item->cat_id}}" {{$item->cat_id == $category->cat_parent_id ? "selected" : ""}}>{{$item->cat_name}}</option>
+                        @endforeach
+                    </select>
+                </div>
+				<div class="form-group col-sm-6">
 					<label for="cat_hot">Danh mục hot?</label>
-					<input type="radio" name="cat_hot" value="1"> Nổi bật
-					<input type="radio" name="cat_hot" value="0"> Không<br>
+					<input type="radio" name="cat_hot" value="1" {{$category->cat_hot == 1 ? "checked" : ""}}> Nổi bật
+					<input type="radio" name="cat_hot" value="0" {{$category->cat_hot == 0 ? "checked" : ""}}> Không<br>
 				</div>
-
-				<div class="form-group">
+				<div class="form-group col-sm-6">
 					<label for="cat_status">Trạng thái?</label>
-					<input type="radio" name="cat_active" value="1"> Hoạt động
-					<input type="radio" name="cat_active" value="0"> Không<br>
+					<input type="radio" name="cat_active" value="1" {{$category->cat_active == 1 ? "checked" : ""}}> Hoạt động
+					<input type="radio" name="cat_active" value="0" {{$category->cat_active == 0 ? "checked" : ""}}> Không<br>
 				</div>
 
 				<button class="btn btn-primary" type="submit" name="submit">Thêm Mới</button>
-				<a class="btn btn-danger" type="submit" name="" href="list.php">Trở lại</a>			
 			</form>
 		</div>
 	</section>
@@ -85,6 +101,4 @@
     });
   });
 </script>
-</body>
-</html>
 @endsection

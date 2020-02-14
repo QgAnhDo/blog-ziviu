@@ -1,7 +1,7 @@
 @extends('admin.layouts.master')
 
 @section('title')
-    Sửa tag
+    Sửa post tag
 @endsection
 
 @section('css')
@@ -20,7 +20,7 @@
 @endsection
 
 @section('content')
-<!-- Main content -->
+    <!-- Main content -->
     @if(count($errors)>0)
         <div class="alert alert-danger">
             @foreach($errors->all() as $err)
@@ -35,33 +35,32 @@
         </div>
     @endif
 
-<section class="content">
-    <a class="btn btn-primary btn-sm" href="{{route('admin.tags')}}">Về trang danh sách</a><br /><br />
-    <div class="panel-body">
-        <form action="" method="post" enctype="multipart/form-data">
-            @csrf
-            <div class="form-group col-sm-6">
-                <label for="tag_name">Tên tag(*):</label>
-                <input type="text" class="form-control" name="tag_name" id="tag_name" value="{{$tags->tag_name}}">
-            </div>
-            <div class="form-group col-sm-6">
-                <label for="tag_slug">Link slug:</label>
-                <input type="text" class="form-control" name="tag_slug" id="tag_slug" value="{{$tags->tag_slug}}" readonly>
-            </div>
-            <div class="form-group col-sm-6">
-                <label for="tag_description">Mô tả:</label>
-                <input type="text" class="form-control" name="tag_description" id="tag_description" value="{{$tags->tag_description}}">
-            </div>
-            <div class="form-group">
-                <label for="name">Trạng thái?</label>
-                <input type="radio" name="tag_active" value="1" {{$tags->tag_active == 1 ? "checked" : ""}}> Hoạt động
-                <input type="radio" name="tag_active" value="0" {{$tags->tag_active == 0 ? "checked" : ""}}> Không<br>
-            </div>
-            <button class="btn btn-primary" type="submit" name="submit">Chỉnh sửa</button>
-        </form>
-    </div>
-</section>
-<!-- /.content -->
+    <section class="content">
+        <a class="btn btn-primary btn-sm" href="{{route('admin.post-tags')}}">Về trang danh sách</a><br /><br />
+        <div class="panel-body">
+            <form action="" method="post" enctype="multipart/form-data">
+                @csrf
+                <div class="form-group col-sm-8">
+                    <label for="pota_post_id">Tin tức:</label>
+                    <select class="form-control" name="pota_post_id" id="pota_post_id">
+                        @foreach($post as $item)
+                            <option value="{{$item->pos_id}}" {{$item->pos_id == $post_tags->pota_post_id ? "selected" : ""}}>{{$item->pos_title}}</option>
+                        @endforeach
+                    </select>
+                </div>
+                <div class="form-group col-sm-6">
+                    <label for="pota_tag_id">Tag:</label>
+                    <select class="form-control" name="pota_tag_id" id="pota_tag_id">
+                        @foreach($tags as $item)
+                            <option value="{{$item->tag_id}}" {{$item->tag_id == $post_tags->pota_tag_id ? "selected" : ""}}>{{$item->tag_name}}</option>
+                        @endforeach
+                    </select>
+                </div>
+                <button class="btn btn-primary" type="submit" name="submit">Chỉnh sửa</button>
+            </form>
+        </div>
+    </section>
+    <!-- /.content -->
 @endsection
 
 @section('script')

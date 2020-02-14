@@ -65,7 +65,7 @@ class TagController extends Controller
             'tag_description' => $request->tag_description,
             'tag_active' => $request->tag_active,
         ]);
-        return redirect()->back()->with('thongbao', 'Sửa tag thành công');
+        return redirect('admin/tags')->with('thongbao', 'Sửa tag thành công');
     }
 
     public function getDelete($id)
