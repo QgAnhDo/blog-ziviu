@@ -50,8 +50,8 @@
                 <tr>
                   <th>ID</th>
                   <th>Tiêu đề</th>
-                  <th>Link slug</th>
                   <th>Mô tả</th>
+                  <th>Ảnh</th>
                   <th>Nổi bật</th>
                   <th>Trạng thái</th>
                   <th>Lượt xem</th>
@@ -63,23 +63,29 @@
                 @foreach($posts as $item)
                   <tr>
                     <td>{{ $item->pos_id }}</td>
-                    <td>{{ $item->pos_title }}</td>
-                    <td>{{ $item->pos_slug }}</td>
+                    <td><a href="{{ $item->pos_website }}" target="_blank ">{{ $item->pos_title }}</a></td>
                     <td>{{ $item->pos_description }}</td>
+                    <td><img src="{{ $item->getImgPosts() }}" alt="" width="150px"></td>
                     <td>
-                        @if($item->pos_hot == 1) {{'Có'}}
-                        @elseif($item->pos_hot == 0) {{'Không'}}
+                        @if($item->pos_hot == 1)
+                            <span>Có</span>
+                        @else
+                            <span>Không</span>
                         @endif
                     </td>
                     <td>
-                        @if($item->pos_active == 1) {{'Bật'}}
-                        @elseif($item->pos_active == 0) {{'Tắt'}}
+                        @if($item->pos_status == 1)
+                            <span style="color: green"><b>Bật</b></span>
+                        @else
+                            <span style="color: red"><b>Tắt</b></span>
                         @endif
                     </td>
-                    <td>{{ $item->pos_view }}</td>
+                    <td>{{ $item->pos_view }} Lượt</td>
                     <td>{{ $item->pos_created_at }}</td>
                     <td>
-                        <a href="{{route('admin.posts.edit', ['id' => $item->pos_id])}}">Sửa</a> | <a href="{{route('admin.posts.delete', ['id' => $item->pos_id])}}">Xóa</a>
+                        <a href="{{route('admin.posts.edit', ['id' => $item->pos_id])}}">Sửa</a>
+                        |
+                        <a href="{{route('admin.posts.delete', ['id' => $item->pos_id])}}">Xóa</a>
                     </td>
                   </tr>
                   @endforeach
@@ -88,9 +94,9 @@
                 <tr>
                   <th>ID</th>
                   <th>Tiêu đề</th>
-                  <th>Link slug</th>
                   <th>Mô tả</th>
                   <th>Nổi bật</th>
+                  <th>Ảnh</th>
                   <th>Trạng thái</th>
                   <th>Lượt xem</th>
                   <th>Ngày tạo</th>

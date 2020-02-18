@@ -39,68 +39,61 @@
 		<div class="panel-body">
 			<form action="" method="post" enctype="multipart/form-data">
 				@csrf
-				<div class="form-group">
-					<label for="name">Tiêu đề</label>
-					<input type="text" class="form-control" name="title" id="title" value="{{$post->pos_title}}">
-				</div>
-				<div class="form-group">
-					<label for="slug">Link slug</label>
-					<input type="text" class="form-control" name="slug" id="slug" value="{{$post->pos_slug}}" disabled="">
-				</div>
-				<div class="form-group">
-					<label for="description">Mô tả</label>
-					<input type="text" class="form-control" name="description" id="description" value="{{$post->pos_description}}">
-				</div>
-				<div class="form-group">
-					<label for="content">Nội dung</label>
-					<input type="text" class="form-control" name="content" id="content" value="{{$post->pos_content}}">
-				</div>
+                <div class="col-sm-8">
+                    <div class="form-group col-sm-12">
+                        <label for="name">Tiêu đề (*):</label>
+                        <input type="text" class="form-control" name="title" id="title" value="{{$post->pos_title}}">
+                    </div>
+                    <div class="form-group col-sm-12">
+                        <label for="slug">Link slug:</label>
+                        <input type="text" class="form-control" name="slug" id="slug" value="{{$post->pos_slug}}" disabled="">
+                    </div>
+                    <div class="form-group col-sm-12">
+                        <label for="description">Mô tả:</label>
+                        <input type="text" class="form-control" name="description" id="description" value="{{$post->pos_description}}">
+                    </div>
+                    <div class="form-group col-sm-12">
+                        <label for="pos_content">Nội dung (*):</label>
+                        <textarea class="form-control" name="pos_content" id="pos_content">{{$post->pos_content}}</textarea>
+                    </div>
+                    <div class="form-group col-sm-12">
+                        <label for="pos_website">Nguồn bài viết (Link website):</label>
+                        <input type="text" class="form-control" name="pos_website" id="pos_website" value="{{$post->pos_website}}">
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="form-group col-sm-12">
+                        <label for="category">Danh mục:</label>
+                        <select class="form-control" name="category" id="category">
+                        @foreach($category as $item)
+                            <option value="{{$item->cat_id}}" {{$item->cat_id == $post->pos_cat_id ? 'selected' : ''}}>
+                                {{$item->cat_name}}
+                            </option>
+                        @endforeach
+                        </select>
+                    </div>
 
-				<div class="form-group">
-					<label for="image">Thêm ảnh</label>
-					<input type="file" name="image" id="image">
-				</div>
+                    <div class="form-group col-sm-12">
+                        <label for="pos_hot">Bài viết hot?</label>
+                        <input type="radio" name="pos_hot" value="1" {{$post->pos_hot == 1 ? "checked" : ""}}> Nổi bật
+                        <input type="radio" name="pos_hot" value="0" {{$post->pos_hot == 0 ? "checked" : ""}}> Không<br>
+                    </div>
 
-				<div class="form-group">
-					<label for="category">Chọn danh mục</label>
-					<select class="form-control" name="category" id="category">
-					@foreach($category as $item)
-						<option value="{{$item->cat_id}}"
-							@if($item->cat_id == $post->cat_id)
-								{{"selected"}}
-							@endif
-						>{{$item->cat_name}}</option>
-					@endforeach
-					</select>
-				</div>
+                    <div class="form-group col-sm-12">
+                        <label for="pos_status">Trạng thái?</label>
+                        <input type="radio" name="pos_status" value="1" {{$post->pos_status == 1 ? "checked" : ""}}> Hoạt động
+                        <input type="radio" name="pos_status" value="0" {{$post->pos_status == 0 ? "checked" : ""}}> Không<br>
+                    </div>
 
-				<div class="form-group">
-					<label for="tag">Chọn thẻ tag</label>
-					<select class="form-control" name="tag" id="tag">
-					@foreach($tag as $item)
-						<option value="{{$item->tag_id}}"
-							@if($item->tag_id == $post->tag_id)
-								{{"selected"}}
-							@endif
-						>{{$item->tag_name}}</option>
-					@endforeach
-					</select>
-				</div>
-
-				<div class="form-group">
-					<label for="name">Bài viết hot?</label>
-					<input type="radio" name="gender" value="1"> Nổi bật
-					<input type="radio" name="gender" value="0"> Không<br>
-				</div>
-
-				<div class="form-group">
-					<label for="name">Trạng thái?</label>
-					<input type="radio" name="gender" value="1"> Hoạt động
-					<input type="radio" name="gender" value="0"> Không<br>
-				</div>
-
-				<button class="btn btn-primary" type="submit" name="submit">Thêm Mới</button>
-				<a class="btn btn-danger" type="submit" name="" href="list.php">Trở lại</a>
+                    <div class="form-group col-sm-12">
+                        <label for="pos_image">Thêm ảnh (*):</label>
+                        <input type="file" class="form-control" name="pos_image" id="pos_image" value="{{$post->pos_image}}">
+                    </div>
+                </div>
+                <div class="col-sm-12">
+                    <button class="btn btn-primary" type="submit" name="submit">Chỉnh sửa</button>
+                    <a class="btn btn-danger" type="submit" name="" href="list.php">Trở lại</a>
+                </div>
 			</form>
 		</div>
 	</section>
@@ -133,6 +126,8 @@
     });
   });
 </script>
-</body>
-</html>
+<script src="{{ asset('ckeditor/ckeditor.js') }}"></script>
+<script>
+    CKEDITOR.replace( 'pos_content' );
+</script>
 @endsection
