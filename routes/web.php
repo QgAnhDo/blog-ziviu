@@ -78,7 +78,7 @@ Route::prefix('admin')->group(function () {
     	Route::get('edit/{id}', 'Admin\UserController@getEdit')->name('admin.users.edit');
     	Route::post('edit/{id}', 'Admin\UserController@postEdit')->name('admin.users.edit');
 
-    	Route::get('delete', 'Admin\UserController@getDelete')->name('admin.users.delete');
+    	Route::get('delete/{id}', 'Admin\UserController@getDelete')->name('admin.users.delete');
     });
 
     Route::prefix('categories')->group(function () {
