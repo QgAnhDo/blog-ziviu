@@ -41,7 +41,7 @@
 			<form action="" method="post" enctype="multipart/form-data">
 				@csrf
 				<div class="form-group col-sm-6">
-					<label for="cat_name">Tên danh mục:</label>
+					<label for="cat_name">Tên danh mục (*):</label>
 					<input type="text" class="form-control" name="cat_name" id="cat_name" value="{{$category->cat_name}}">
 				</div>
 				<div class="form-group col-sm-6">
@@ -49,7 +49,7 @@
 					<input type="text" class="form-control" name="cat_description" id="cat_description" value="{{$category->cat_description}}">
 				</div>
                 <div class="form-group col-sm-6">
-                    <label for="cat_parent_id">Danh mục cha (*):</label>
+                    <label for="cat_parent_id">Danh mục cha:</label>
                     <select name="cat_parent_id" id="cat_parent_id" class="form-control">
                         <option value="0">Đặt làm cấp cha</option>
                         @foreach($categories as $item)
