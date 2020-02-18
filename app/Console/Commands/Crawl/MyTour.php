@@ -41,19 +41,19 @@ class MyTour extends Command
     public function handle()
     {
         $request = [
-            "mode"=> true //true: crawl all data old | false: crawl new
+            "mode"=> $this->confirm('Do you want crawl MyTour?')
         ];
         $cats = [
             [
                 "url"=> 'https://mytour.vn/location',
-                "cat_id"=> 1,
+                "cat_id"=> 3,
             ],
         ];
 
         //vòng lặp tạo category
         foreach($cats as $item) {
             //check diều kiện nếu data cũ tồn tại
-            if($request["mode"]) {
+            if($request["mode"] == 'yes') {
                 // Get total page
                 $html = HtmlDomParser::file_get_html($item["url"], false, null, 0 );
                 $total_page = 1;
@@ -75,6 +75,7 @@ class MyTour extends Command
                     //convert html symbol to text 
                     $title = html_entity_decode($article->find('.blog-item>a>img', 0)->alt, ENT_QUOTES, "UTF-8");
                     $description = html_entity_decode($article->find('.blog-item-content', 0)->plaintext, ENT_QUOTES, "UTF-8");
+                    $strTime = str_replace('/', '-', $article->find('.date', 0)->plaintext);
 
                     $response = [
                         "title" => $title,
@@ -82,7 +83,8 @@ class MyTour extends Command
                         "view" => $article->find('.data-view', 0)->plaintext,
                         "description" => $description,
                         "website" => 'https://mytour.vn'.$article->find('.blog-item>a', 0)->href,
-                        "created_at" => time(),
+                        "created_at" => strtotime($strTime),
+                        "cats" => $item["cat_id"]
                     ];
 
                     $result = $this->saveImage($response['image'], Str::slug($response['title']));
@@ -98,7 +100,7 @@ class MyTour extends Command
                         $test = curl_setopt_array($ch, array(
                             CURLOPT_RETURNTRANSFER => true,
                             CURLOPT_SSL_VERIFYPEER => false,
-                            CURLOPT_URL => "http://localhost:9083/api/mytour",
+                            CURLOPT_URL => route('mytour'),
                             CURLOPT_POST => count($response),
                             CURLOPT_POSTFIELDS => $response,
                         ));

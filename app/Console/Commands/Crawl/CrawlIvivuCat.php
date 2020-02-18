@@ -41,26 +41,26 @@ class CrawlIvivuCat extends Command
     public function handle()
     {
         $request = [
-            "mode"=> true //true: crawl all data old | false: crawl new
+            "mode"=> $this->confirm('Do you want crawl Ivivu?')
         ];
         $cats = [
             [
                 "url"=> 'https://www.ivivu.com/blog/category/viet-nam/',
-                "cat_id"=> 1,
+                "cat_id"=> 3,
             ],
             [
                 "url" => 'https://www.ivivu.com/blog/category/top-diem-den/diem-den-top-ivivu/',
-                "cat_id" => 1,
+                "cat_id" => 11,
             ],
             [
                 "url" => 'https://www.ivivu.com/blog/category/muon-mau/',
-                "cat_id" => 1,
+                "cat_id" => 12,
             ],
         ];
         //vòng lặp tạo category
         foreach($cats as $item) {
             //check diều kiện nếu data cũ tồn tại
-            if($request["mode"]) {
+            if($request["mode"] == 'yes') {
                 // Get total page
                 $html = HtmlDomParser::file_get_html($item["url"], false, null, 0 );
                 $total_page = 1;
@@ -91,6 +91,7 @@ class CrawlIvivuCat extends Command
                         "description" => $article->find('.entry-excerpt>p', 0)->plaintext,
                         "website" => $article->find('.entry-header>h2>a', 0)->href,
                         "created_at" => strtotime($strTime),
+                        "cats" => $item['cat_id']
                     ];
 
                     $result = $this->saveImage($response['image'], Str::slug($response['title']));
@@ -107,14 +108,13 @@ class CrawlIvivuCat extends Command
                         $test = curl_setopt_array($ch, array(
                             CURLOPT_RETURNTRANSFER => true,
                             CURLOPT_SSL_VERIFYPEER => false,
-                            CURLOPT_URL => "http://localhost:9083/api/posts",
+                            CURLOPT_URL => route('posts'),
                             CURLOPT_POST => count($response),
                             CURLOPT_POSTFIELDS => $response,
                         ));
 
                         $result = curl_exec($ch);
                     }
-                    echo 'đã thêm bài viết. ';
                 }
             }
         }
