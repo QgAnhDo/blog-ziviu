@@ -1,6 +1,6 @@
 #body {
 	width: 100%;
-	background: #f1f1f1;
+	background: #fff;
 	.categories_content {
 		width: 100%;
 		display: flex;
@@ -34,7 +34,7 @@
                     }
                 }
 				.main_content_1_submenu {
-					background: #222;
+					background: #e7e7e7;
 					width: 100%;
 					height: auto;
 					padding-left: 20px;
@@ -47,7 +47,7 @@
 							margin-right: 35px;
 							position: relative;
 							a.active {
-								color: #fff;
+								color: #000;
 								border-bottom: 4px solid #45BD33;
 							}
 							a, span {
@@ -60,7 +60,7 @@
 								padding-bottom: 7px;
 							}
 								a:hover {
-									color: #fff;
+									color: #000;
 									border-bottom: 4px solid #45BD33;
 									padding-bottom: 7px;
 								}

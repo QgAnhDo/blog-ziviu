@@ -3,6 +3,7 @@
 namespace App\Repositories;
 
 use App\Models\Category;
+use App\Models\Banner;
 use App\Models\Posts;
 use App\Models\Configuration;
 
@@ -22,6 +23,14 @@ class HomeRepository implements HomeRepositoryInterface {
             $value->cat_child = $categoriesChild;
         }
         return $categories;
+    }
+
+    public function getBanner()
+    {
+        return Banner::where('ban_active', 1)
+            ->orderBy('ban_id', 'desc')
+            ->limit(3)
+            ->get();
     }
 
     public function getPosts()

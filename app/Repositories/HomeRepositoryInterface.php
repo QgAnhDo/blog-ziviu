@@ -6,6 +6,8 @@ interface HomeRepositoryInterface {
 
     public function getCategories();
 
+    public function getBanner();
+
     public function getPosts();
 
     public function getPostsHot();

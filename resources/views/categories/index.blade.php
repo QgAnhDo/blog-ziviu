@@ -18,28 +18,20 @@
                         <ul>
                             <li>
                                 <a href="{{$category->getLinkCategory()}}"
-                                   class="@foreach($post as $value)
-                                               @if($value->pos_cat_id == $category->cat_id) {{'active'}}
-                                               @else {{null}}
-                                               @endif
-                                           @endforeach">
+                                   class="@foreach($post as $value) {{$value->pos_cat_id == $category->cat_id ? 'active' : null}} @endforeach">
                                     {{$category->cat_name}}
                                     <span></span>
                                 </a>
                             </li>
-                            <?php foreach ($category->cat_child as $item) { ?>
+                            @foreach ($category->cat_child as $item)
                             <li>
                                 <a href="{{$item->getLinkCategory()}}"
-                                   class="@foreach($post as $value)
-                                               @if($value->pos_cat_id == $item->cat_id) {{'active'}}
-                                               @else {{null}}
-                                               @endif
-                                           @endforeach">
-                                    <?= $item->cat_name ?>
+                                   class="@foreach($post as $value) {{$value->pos_cat_id == $item->cat_id ? 'active' : null}} @endforeach">
+                                    {{$item->cat_name}}
                                     <span></span>
                                 </a>
                             </li>
-                            <?php } ?>
+                            @endforeach
                         </ul>
                     </div>
                 </div>

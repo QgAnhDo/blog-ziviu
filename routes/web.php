@@ -116,4 +116,16 @@ Route::prefix('admin')->group(function () {
 
     	Route::get('delete/{id}', 'Admin\PostTagController@getDelete')->name('admin.post-tags.delete');
     });
+
+    Route::prefix('banner')->group(function () {
+        Route::get('/', 'Admin\BannerController@getList')->name('admin.banner');
+
+        Route::get('add', 'Admin\BannerController@getAdd')->name('admin.banner.add');
+        Route::post('add', 'Admin\BannerController@postAdd')->name('admin.banner.add');
+
+        Route::get('edit/{id}', 'Admin\BannerController@getEdit')->name('admin.banner.edit');
+        Route::post('edit/{id}', 'Admin\BannerController@postEdit')->name('admin.banner.edit');
+
+        Route::get('delete/{id}', 'Admin\BannerController@getDelete')->name('admin.banner.delete');
+    });
 });

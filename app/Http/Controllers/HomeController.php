@@ -45,6 +45,7 @@ class HomeController extends Controller
     public function index()
     {
         $categories = $this->home->getCategories();
+        $banner = $this->home->getBanner();
         $configuration = $this->home->getConfiguration();
 
         $posts = $this->home->getPosts();
@@ -65,6 +66,8 @@ class HomeController extends Controller
         return view('index')->with([
             'categories' => $categories,
 
+            'banner' => $banner,
+
             'posts' => $posts,
             'postsHot' => $postsHot,
             'postsHotList' => $postsHotList,
@@ -84,6 +87,7 @@ class HomeController extends Controller
         ];
 
         $categories = $this->home->getCategories();
+        $banner = $this->home->getBanner();
         $configuration = $this->home->getConfiguration();
 
         $post = $this->post->getPostById($id);
@@ -96,6 +100,8 @@ class HomeController extends Controller
 
         return view('posts.index')->with([
             'categories' => $categories,
+
+            'banner' => $banner,
 
             'post' => $post,
             'postTag' => $postTag,
@@ -114,6 +120,7 @@ class HomeController extends Controller
         ];
 
         $categories = $this->home->getCategories();
+        $banner = $this->home->getBanner();
         $configuration = $this->home->getConfiguration();
 
         $category = $this->category->getCategoryById($id);
@@ -124,6 +131,8 @@ class HomeController extends Controller
 
         return view('categories.index')->with([
             'categories' => $categories,
+
+            'banner' => $banner,
 
             'category' => $category,
             'post' => $post,
@@ -137,12 +146,14 @@ class HomeController extends Controller
         $name = $_GET['name'];
 
         $categories = $this->home->getCategories();
+        $banner = $this->home->getBanner();
         $configuration = $this->home->getConfiguration();
 
         $findPost = $this->search->searchPosts($name);
 
         return view('search.index')->with([
             'categories' => $categories,
+            'banner' => $banner,
             'findPost' => $findPost,
             'configuration' => $configuration,
         ]);
@@ -156,6 +167,7 @@ class HomeController extends Controller
         ];
 
         $categories = $this->home->getCategories();
+        $banner = $this->home->getBanner();
         $configuration = $this->home->getConfiguration();
 
         $tag = $this->tag->getTagById($id);
@@ -166,6 +178,8 @@ class HomeController extends Controller
 
         return view('tags.index')->with([
             'categories' => $categories,
+
+            'banner' => $banner,
 
             'tag' => $tag,
             'postTag' => $postTag,

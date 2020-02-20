@@ -19,7 +19,7 @@
                             </a>
                         </li>
                     </ul>
-                    <a href="#" class="search_icon" id="btnSearch"><img src="assets/images/icon-search.png" alt="search"></a>
+                    <a href="#" class="search_icon" id="btnSearch"><img src="assets/images/magnifying-glass.png" alt="search"></a>
                     <form action="{{route('search.index')}}" method="GET">
                         <input class="searchbox showsearch" type="text" name="name" value="{{isset($_GET['name']) ? $_GET['name'] :''}}" placeholder="Nhập nội dung tìm kiếm ...">
                     </form>

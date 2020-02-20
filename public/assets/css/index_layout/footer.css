@@ -1,11 +1,11 @@
 #footer {
   width: 100%;
-  background: #191919; }
+  background: #e7e7e7; }
   #footer .top_footer {
     border-bottom: 1px solid #45BD33; }
     #footer .top_footer .gfw_top_wrapper {
       padding: 25px 0;
-      border-bottom: 1px solid #333;
+      border-bottom: 1px solid #ED2E2E;
       display: flex; }
       #footer .top_footer .gfw_top_wrapper a {
         background-position: 0 0;
@@ -25,7 +25,7 @@
           float: left;
           margin-right: 40px; }
           #footer .top_footer .gfw_bottom_wrapper ul li a {
-            color: #fff;
+            color: #000;
             font-size: 13px;
             line-height: 18px;
             font-family: Roboto-Medium;
@@ -51,10 +51,10 @@
       font-family: Arial;
       font-size: 12px;
       line-height: 18px;
-      color: #999;
+      color: #717171;
       margin-bottom: 20px; }
       #footer .bottom_footer p a {
         text-decoration: none;
-        color: #45BD33; }
+        color: #000; }
 
 /*# sourceMappingURL=footer.css.map */

@@ -8,8 +8,7 @@
     background: #fff;
     border: 1px solid #dbe0e8; }
   #body .detail_content {
-    display: flex;
-    margin-bottom: 10px; }
+    display: flex; }
     #body .detail_content .detail_left {
       width: 710px;
       position: relative;
