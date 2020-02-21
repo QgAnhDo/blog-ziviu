@@ -57,7 +57,7 @@
                     <td><a target="_blank" href="https://facebook.com/profile.php?id={{ $item->use_facebook_id }}">{{ $item->use_facebook_id }}</a></td>
                     <td>{{ $item->use_active }}</td>
                     <td>{{ $item->use_created_at }}</td>
-                    <td><a href="{{route('admin.users.edit')}}">Sửa</a> | <a href="{{route('admin.users.delete')}}">Xóa</a></td>
+                    <td><a href="{{route('admin.users.edit', ['id' => $item->use_id])}}">Sửa</a> | <a href="{{route('admin.users.delete', ['id' => $item->use_id])}}">Xóa</a></td>
                   </tr>
                   @endforeach
                 </tbody>
