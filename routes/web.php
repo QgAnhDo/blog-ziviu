@@ -28,7 +28,7 @@ Route::get('/{slug}-t{id}','HomeController@tagWithPost')->name('tags.index')->wh
 
 Route::resource('home', 'HomeController');
 
-Route::get('test-log', 'Crawl\TestLogController@index')->name('test-log');
+Route::get('test-log', 'Crawl\Trip247Controller@handle')->name('test-log');
 
 
 
@@ -127,5 +127,17 @@ Route::prefix('admin')->group(function () {
         Route::post('edit/{id}', 'Admin\BannerController@postEdit')->name('admin.banner.edit');
 
         Route::get('delete/{id}', 'Admin\BannerController@getDelete')->name('admin.banner.delete');
+    });
+
+    Route::prefix('configuration')->group(function () {
+        Route::get('/', 'Admin\ConfigurationController@getList')->name('admin.configuration');
+
+        Route::get('add', 'Admin\ConfigurationController@getAdd')->name('admin.configuration.add');
+        Route::post('add', 'Admin\ConfigurationController@postAdd')->name('admin.configuration.add');
+
+        Route::get('edit/{id}', 'Admin\ConfigurationController@getEdit')->name('admin.configuration.edit');
+        Route::post('edit/{id}', 'Admin\ConfigurationController@postEdit')->name('admin.configuration.edit');
+
+        Route::get('delete/{id}', 'Admin\ConfigurationController@getDelete')->name('admin.configuration.delete');
     });
 });

@@ -50,7 +50,7 @@
                     </div>
                     <div class="form-group col-sm-12">
                         <label for="description">Mô tả:</label>
-                        <input type="text" class="form-control" name="description" id="description" value="{{$post->pos_description}}">
+                        <textarea class="form-control" name="description" id="description" rows="5">{{$post->pos_description}}</textarea>
                     </div>
                     <div class="form-group col-sm-12">
                         <label for="pos_content">Nội dung (*):</label>

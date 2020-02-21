@@ -47,7 +47,7 @@
                     </div>
                     <div class="form-group col-sm-12">
                         <label for="description">Mô tả:</label>
-                        <textarea class="form-control" name="description" id="description">Nhập mô tả ngắn</textarea>
+                        <textarea class="form-control" name="description" id="description" rows="5">Nhập mô tả ngắn</textarea>
                     </div>
                     <div class="form-group col-sm-12">
                         <label for="pos_content">Nội dung (*):</label>

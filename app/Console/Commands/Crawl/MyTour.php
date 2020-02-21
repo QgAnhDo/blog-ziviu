@@ -68,11 +68,12 @@ class MyTour extends Command
                 $url = $item["url"]."?page={$page}";
 
                 $html = HtmlDomParser::file_get_html($url, false, null, 0 );
+
                  //Insert multi
                 $data_insert = [];
                 //vòng lặp để add các bài viết
                 foreach($html->find('.col-sm-4') as $article) {
-                    //convert html symbol to text 
+                    //convert html symbol to text
                     $title = html_entity_decode($article->find('.blog-item>a>img', 0)->alt, ENT_QUOTES, "UTF-8");
                     $description = html_entity_decode($article->find('.blog-item-content', 0)->plaintext, ENT_QUOTES, "UTF-8");
                     $strTime = str_replace('/', '-', $article->find('.date', 0)->plaintext);
@@ -94,7 +95,7 @@ class MyTour extends Command
 
                     //mảng lưu trữ
                     $response["content"] = $html_detail->find('.detail-content', 0)->plaintext;
-                 
+
                     if ($response !== null) {
                         $ch = curl_init();
                         $test = curl_setopt_array($ch, array(
