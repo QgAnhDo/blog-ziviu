@@ -48,28 +48,28 @@ class Handler extends ExceptionHandler
      */
 
     public $home;
-    public function __construct(Container $container, HomeRepositoryInterface $home)
+    public function __construct(Container $container/*, HomeRepositoryInterface $home*/)
     {
         parent::__construct($container);
-        $this->home = $home;
+//        $this->home = $home;
     }
 
-    public function render($request, Exception $exception)
-    {
-        $categories = $this->home->getCategories();
-        $configuration = $this->home->getConfiguration();
-
-        if($this->isHttpException($exception)) {
-            $code = $exception->getStatusCode();
-            if($code=='404') {
-                return response()->view('errors.404',[
-                    'categories' => $categories,
-                    'configuration' => $configuration,
-                ]);
-            }
-        }
-        return parent::render($request, $exception);
-    }
+//    public function render($request, Exception $exception)
+//    {
+//        $categories = $this->home->getCategories();
+//        $configuration = $this->home->getConfiguration();
+//
+//        if($this->isHttpException($exception)) {
+//            $code = $exception->getStatusCode();
+//            if($code=='404') {
+//                return response()->view('errors.404',[
+//                    'categories' => $categories,
+//                    'configuration' => $configuration,
+//                ]);
+//            }
+//        }
+//        return parent::render($request, $exception);
+//    }
 
 
 }

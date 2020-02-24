@@ -26,3 +26,8 @@ Route::post('posts', 'Crawl\PostController@insert')->name('posts');
 Route::get('mytour', 'Crawl\PostController@index')->name('mytour');
 Route::post('mytour/{id}', 'Crawl\PostController@update')->name('mytour');
 Route::post('mytour', 'Crawl\PostController@insert')->name('mytour');
+
+//Genk
+Route::get('genk', 'Crawl\PostController@index')->name('genk');
+Route::post('genk/{id}', 'Crawl\PostController@update')->name('genk');
+Route::post('genk', 'Crawl\PostController@insert')->name('genk');
