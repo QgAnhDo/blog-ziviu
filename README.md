@@ -1,1 +1,1 @@
-# blog.ziviu
+# blog.ziviu.com
